@@ -8,7 +8,7 @@
         $('#error_text').text('If you are reading this, something has gone wrong!');
       }
 
-      $.get('/EtcPal/versions.txt', function(data) {
+      $.get('/EtcPalDocs/versions.txt', function(data) {
         var success = false;
         if (data) {
           var lines = data.split('\n');
