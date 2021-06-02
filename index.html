@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
-  <script type="text/javascript" src="docs/head/jquery.js"></script>
+  <script type="text/javascript" src="head/jquery.js"></script>
   <script type="text/javascript">
       show_error = function() {
         $('#error_text').text('If you are reading this, something has gone wrong!');
@@ -20,7 +20,7 @@
               }
               line = line.split(':');
               if (line.length > 1 && line[1] == 'latest') {
-                window.location = 'docs/' + line[0];
+                window.location = line[0];
                 success = true;
               }
             });
