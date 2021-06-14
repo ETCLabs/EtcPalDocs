@@ -1,9 +1,9 @@
 var cpp_2inet_8h =
 [
     [ "IpAddrType", "cpp_2inet_8h.html#gaf149bcc08653396944a3699b8c5a57c5", [
-      [ "Invalid", "cpp_2inet_8h.html#ggaf149bcc08653396944a3699b8c5a57c5a4bbb8f967da6d1a610596d7257179c2b", null ],
-      [ "V4", "cpp_2inet_8h.html#ggaf149bcc08653396944a3699b8c5a57c5ab354cab57768c7d4c1106eb4e82c75dc", null ],
-      [ "V6", "cpp_2inet_8h.html#ggaf149bcc08653396944a3699b8c5a57c5adb93f1c35b844334e2b266951618b4fe", null ]
+      [ "kInvalid", "cpp_2inet_8h.html#ggaf149bcc08653396944a3699b8c5a57c5ab10913c938482a8aa4ba85b7a1116cb4", null ],
+      [ "kV4", "cpp_2inet_8h.html#ggaf149bcc08653396944a3699b8c5a57c5a1f8c410c50e635115c07960934430005", null ],
+      [ "kV6", "cpp_2inet_8h.html#ggaf149bcc08653396944a3699b8c5a57c5a9bb0e4acd128e05b15bfa2fbffbdefbc", null ]
     ] ],
     [ "operator!=", "cpp_2inet_8h.html#ga1411baba5a5bf886eeb107b6cbb80571", null ],
     [ "operator!=", "cpp_2inet_8h.html#gaad3e3c8a6ea3ff7f0f4bfd6093eb176b", null ],

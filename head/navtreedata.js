@@ -53,10 +53,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "acn__pdu_8h_source.html",
-"classetcpal_1_1_signal.html#a57e433d2fa16d80ff2f02992c74d480c",
-"functions_func_r.html",
-"group__etcpal__log.html#ga943bb13f1d71efce45b30b466e757138",
-"group__etcpal__thread.html#ga41f1567e754166e758fc1fdda38fc300"
+"classetcpal_1_1_semaphore.html#ae8eb9255ebee517187eaa5d88b3edf45",
+"functions_func_p.html",
+"group__etcpal__log.html#ga8e4610f86f8ce68f198d55c3623c2b0a",
+"group__etcpal__thread.html#ga3539233977b6e793b9b5a4c071fd6e78"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

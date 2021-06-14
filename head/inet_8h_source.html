@@ -442,65 +442,64 @@ $(document).ready(function(){initNavTree('inet_8h_source.html',''); initResizabl
 <div class="line"><a name="l00475"></a><span class="lineno">  475</span>&#160;{</div>
 <div class="line"><a name="l00476"></a><span class="lineno">  476</span>&#160;  <span class="keywordflow">if</span> (a.<a class="code" href="struct_etc_pal_sock_addr.html#a8e0798404bf2cf5dabb84c5ba9a4f236">port</a> == b.<a class="code" href="struct_etc_pal_sock_addr.html#a8e0798404bf2cf5dabb84c5ba9a4f236">port</a>)</div>
 <div class="line"><a name="l00477"></a><span class="lineno">  477</span>&#160;    <span class="keywordflow">return</span> (<a class="code" href="group__etcpal__inet.html#gaf766d207bd3e85c6b3d75768f28a00c6">etcpal_ip_cmp</a>(&amp;a.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>, &amp;b.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>) &lt; 0);</div>
-<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;    <span class="keywordflow">return</span> (a.<a class="code" href="struct_etc_pal_sock_addr.html#a8e0798404bf2cf5dabb84c5ba9a4f236">port</a> &lt; b.<a class="code" href="struct_etc_pal_sock_addr.html#a8e0798404bf2cf5dabb84c5ba9a4f236">port</a>);</div>
-<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;}</div>
-<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160; </div>
-<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; b)</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;{</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;  <span class="keywordflow">return</span> b &lt; a;</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;}</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160; </div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; b)</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;{</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;  <span class="keywordflow">return</span> !(b &lt; a);</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;}</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160; </div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; b)</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;{</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  <span class="keywordflow">return</span> !(a &lt; b);</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;}</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; </div>
-<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160;<span class="comment">/* Comparison operators for MacAddrs */</span></div>
-<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160; </div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;{</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="group__etcpal__inet.html#ga4aadcedf06a097132f1eef8176b83419">ETCPAL_MAC_CMP</a>(&amp;a, &amp;b) == 0);</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;}</div>
-<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160; </div>
-<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;{</div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;  <span class="keywordflow">return</span> !(a == b);</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;}</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;{</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="group__etcpal__inet.html#ga4aadcedf06a097132f1eef8176b83419">ETCPAL_MAC_CMP</a>(&amp;a, &amp;b) &lt; 0);</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;}</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160; </div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;{</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;  <span class="keywordflow">return</span> b &lt; a;</div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160;}</div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160; </div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;{</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;  <span class="keywordflow">return</span> !(b &lt; a);</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160;}</div>
-<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160; </div>
-<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
-<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;{</div>
-<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;  <span class="keywordflow">return</span> !(a &lt; b);</div>
-<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160;}</div>
-<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160; </div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160; </div>
-<div class="line"><a name="l00535"></a><span class="lineno">  535</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ETCPAL_INET_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00478"></a><span class="lineno">  478</span>&#160;  <span class="keywordflow">return</span> (a.<a class="code" href="struct_etc_pal_sock_addr.html#a8e0798404bf2cf5dabb84c5ba9a4f236">port</a> &lt; b.<a class="code" href="struct_etc_pal_sock_addr.html#a8e0798404bf2cf5dabb84c5ba9a4f236">port</a>);</div>
+<div class="line"><a name="l00479"></a><span class="lineno">  479</span>&#160;}</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160; </div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; b)</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;{</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;  <span class="keywordflow">return</span> b &lt; a;</div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;}</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160; </div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; b)</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;{</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;  <span class="keywordflow">return</span> !(b &lt; a);</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;}</div>
+<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160; </div>
+<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; b)</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;{</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;  <span class="keywordflow">return</span> !(a &lt; b);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;}</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
+<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160;<span class="comment">/* Comparison operators for MacAddrs */</span></div>
+<div class="line"><a name="l00497"></a><span class="lineno">  497</span>&#160; </div>
+<div class="line"><a name="l00498"></a><span class="lineno">  498</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;{</div>
+<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="group__etcpal__inet.html#ga4aadcedf06a097132f1eef8176b83419">ETCPAL_MAC_CMP</a>(&amp;a, &amp;b) == 0);</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;}</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;{</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;  <span class="keywordflow">return</span> !(a == b);</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;}</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160; </div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;{</div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;  <span class="keywordflow">return</span> (<a class="code" href="group__etcpal__inet.html#ga4aadcedf06a097132f1eef8176b83419">ETCPAL_MAC_CMP</a>(&amp;a, &amp;b) &lt; 0);</div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;}</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160; </div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;{</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;  <span class="keywordflow">return</span> b &lt; a;</div>
+<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;}</div>
+<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;{</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;  <span class="keywordflow">return</span> !(b &lt; a);</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;}</div>
+<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
+<div class="line"><a name="l00523"></a><span class="lineno">  523</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; a, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; b)</div>
+<div class="line"><a name="l00524"></a><span class="lineno">  524</span>&#160;{</div>
+<div class="line"><a name="l00525"></a><span class="lineno">  525</span>&#160;  <span class="keywordflow">return</span> !(a &lt; b);</div>
+<div class="line"><a name="l00526"></a><span class="lineno">  526</span>&#160;}</div>
+<div class="line"><a name="l00527"></a><span class="lineno">  527</span>&#160; </div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160; </div>
+<div class="line"><a name="l00534"></a><span class="lineno">  534</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ETCPAL_INET_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="agroup__etcpal__error_html_ga743b0648f0ca798ef29c9f69c6e255af"><div class="ttname"><a href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a></div><div class="ttdeci">etcpal_error_t</div><div class="ttdoc">A set of error codes that can be returned by library functions.</div><div class="ttdef"><b>Definition:</b> error.h:49</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga003c67a34af543e33ae4854360961ab7"><div class="ttname"><a href="group__etcpal__inet.html#ga003c67a34af543e33ae4854360961ab7">EtcPalNetintInfo</a></div><div class="ttdeci">struct EtcPalNetintInfo EtcPalNetintInfo</div><div class="ttdoc">A description of a single address assigned to a network interface.</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga087efaef8630f32173eb397b4cb1ae7f"><div class="ttname"><a href="group__etcpal__inet.html#ga087efaef8630f32173eb397b4cb1ae7f">sockaddr_os_to_etcpal</a></div><div class="ttdeci">bool sockaddr_os_to_etcpal(const etcpal_os_sockaddr_t *os_sa, EtcPalSockAddr *sa)</div><div class="ttdoc">Convert a platform-specific socket address to an EtcPalSockAddr.</div></div>
-<div class="ttc" id="agroup__etcpal__inet_html_ga0f8ba14963ce91bfd74626f2a1e957f0"><div class="ttname"><a href="group__etcpal__inet.html#ga0f8ba14963ce91bfd74626f2a1e957f0">etcpal_ip_mask_from_length</a></div><div class="ttdeci">EtcPalIpAddr etcpal_ip_mask_from_length(etcpal_iptype_t type, unsigned int mask_length)</div><div class="ttdoc">Create a netmask given a length in bits.</div><div class="ttdef"><b>Definition:</b> inet.c:312</div></div>
-<div class="ttc" id="agroup__etcpal__inet_html_ga2112e37aae54451f5b7b03168183cace"><div class="ttname"><a href="group__etcpal__inet.html#ga2112e37aae54451f5b7b03168183cace">etcpal_ip_network_portions_equal</a></div><div class="ttdeci">bool etcpal_ip_network_portions_equal(const EtcPalIpAddr *ip1, const EtcPalIpAddr *ip2, const EtcPalIpAddr *netmask)</div><div class="ttdoc">Compare the network portions of two IP addresses using a netmask.</div><div class="ttdef"><b>Definition:</b> inet.c:380</div></div>
+<div class="ttc" id="agroup__etcpal__inet_html_ga0f8ba14963ce91bfd74626f2a1e957f0"><div class="ttname"><a href="group__etcpal__inet.html#ga0f8ba14963ce91bfd74626f2a1e957f0">etcpal_ip_mask_from_length</a></div><div class="ttdeci">EtcPalIpAddr etcpal_ip_mask_from_length(etcpal_iptype_t type, unsigned int mask_length)</div><div class="ttdoc">Create a netmask given a length in bits.</div><div class="ttdef"><b>Definition:</b> inet.c:311</div></div>
+<div class="ttc" id="agroup__etcpal__inet_html_ga2112e37aae54451f5b7b03168183cace"><div class="ttname"><a href="group__etcpal__inet.html#ga2112e37aae54451f5b7b03168183cace">etcpal_ip_network_portions_equal</a></div><div class="ttdeci">bool etcpal_ip_network_portions_equal(const EtcPalIpAddr *ip1, const EtcPalIpAddr *ip2, const EtcPalIpAddr *netmask)</div><div class="ttdoc">Compare the network portions of two IP addresses using a netmask.</div><div class="ttdef"><b>Definition:</b> inet.c:379</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga2222b6d9e40f95ec1d74e1865537863f"><div class="ttname"><a href="group__etcpal__inet.html#ga2222b6d9e40f95ec1d74e1865537863f">ETCPAL_MAC_BYTES</a></div><div class="ttdeci">#define ETCPAL_MAC_BYTES</div><div class="ttdoc">The number of bytes in a MAC address.</div><div class="ttdef"><b>Definition:</b> inet.h:317</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga4aadcedf06a097132f1eef8176b83419"><div class="ttname"><a href="group__etcpal__inet.html#ga4aadcedf06a097132f1eef8176b83419">ETCPAL_MAC_CMP</a></div><div class="ttdeci">#define ETCPAL_MAC_CMP(mac1ptr, mac2ptr)</div><div class="ttdoc">Compare two EtcPalMacAddrs numerically.</div><div class="ttdef"><b>Definition:</b> inet.h:333</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga5d91044202026978c99000b6da2d226e"><div class="ttname"><a href="group__etcpal__inet.html#ga5d91044202026978c99000b6da2d226e">etcpal_ip_set_wildcard</a></div><div class="ttdeci">void etcpal_ip_set_wildcard(etcpal_iptype_t type, EtcPalIpAddr *ip)</div><div class="ttdoc">Initialize a EtcPalIpAddr with a wildcard address.</div><div class="ttdef"><b>Definition:</b> inet.c:174</div></div>
@@ -512,7 +511,7 @@ $(document).ready(function(){initNavTree('inet_8h_source.html',''); initResizabl
 <div class="ttc" id="agroup__etcpal__inet_html_ga80ecc76598182ef0f0b0fc5e08135873"><div class="ttname"><a href="group__etcpal__inet.html#ga80ecc76598182ef0f0b0fc5e08135873">EtcPalIpAddr</a></div><div class="ttdeci">struct EtcPalIpAddr EtcPalIpAddr</div><div class="ttdoc">An IP address.</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga847282e3fd17bf75ec83292326c455ee"><div class="ttname"><a href="group__etcpal__inet.html#ga847282e3fd17bf75ec83292326c455ee">etcpal_iptype_t</a></div><div class="ttdeci">etcpal_iptype_t</div><div class="ttdoc">Used to identify the type of IP address contained in a EtcPalIpAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:53</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga92ba01cb2c81a8a97b9555ecf0ab2fe5"><div class="ttname"><a href="group__etcpal__inet.html#ga92ba01cb2c81a8a97b9555ecf0ab2fe5">etcpal_string_to_ip</a></div><div class="ttdeci">etcpal_error_t etcpal_string_to_ip(etcpal_iptype_t type, const char *src, EtcPalIpAddr *dest)</div><div class="ttdoc">Convert IPv4 and IPv6 addresses from text to binary form.</div></div>
-<div class="ttc" id="agroup__etcpal__inet_html_ga9a86a44681bc856e5919578bbf652e38"><div class="ttname"><a href="group__etcpal__inet.html#ga9a86a44681bc856e5919578bbf652e38">etcpal_ip_mask_length</a></div><div class="ttdeci">unsigned int etcpal_ip_mask_length(const EtcPalIpAddr *netmask)</div><div class="ttdoc">Get the length in bits of a netmask.</div><div class="ttdef"><b>Definition:</b> inet.c:257</div></div>
+<div class="ttc" id="agroup__etcpal__inet_html_ga9a86a44681bc856e5919578bbf652e38"><div class="ttname"><a href="group__etcpal__inet.html#ga9a86a44681bc856e5919578bbf652e38">etcpal_ip_mask_length</a></div><div class="ttdeci">unsigned int etcpal_ip_mask_length(const EtcPalIpAddr *netmask)</div><div class="ttdoc">Get the length in bits of a netmask.</div><div class="ttdef"><b>Definition:</b> inet.c:256</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gaa4b21b32f8776276e582d473e17bf768"><div class="ttname"><a href="group__etcpal__inet.html#gaa4b21b32f8776276e582d473e17bf768">etcpal_ip_is_link_local</a></div><div class="ttdeci">bool etcpal_ip_is_link_local(const EtcPalIpAddr *ip)</div><div class="ttdoc">Determine whether a EtcPalIpAddr contains a link-local address.</div><div class="ttdef"><b>Definition:</b> inet.c:60</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gaa8d939a802f0ab99ae1a6e8f9253a83d"><div class="ttname"><a href="group__etcpal__inet.html#gaa8d939a802f0ab99ae1a6e8f9253a83d">sockaddr_etcpal_to_os</a></div><div class="ttdeci">size_t sockaddr_etcpal_to_os(const EtcPalSockAddr *sa, etcpal_os_sockaddr_t *os_sa)</div><div class="ttdoc">Convert an EtcPalSockAddr to a platform-specific socket address.</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gabf23694805ba92b1a24ac0e79854e6b8"><div class="ttname"><a href="group__etcpal__inet.html#gabf23694805ba92b1a24ac0e79854e6b8">EtcPalSockAddr</a></div><div class="ttdeci">struct EtcPalSockAddr EtcPalSockAddr</div><div class="ttdoc">An IP address with associated interface and port.</div></div>

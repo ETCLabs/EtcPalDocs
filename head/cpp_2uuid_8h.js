@@ -1,12 +1,12 @@
 var cpp_2uuid_8h =
 [
     [ "UuidVersion", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4", [
-      [ "V1", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4ab4daca084ad9eabfc8de231929477ed6", null ],
-      [ "V2", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4aec765f1adc3b4253f2d3b131a4a8618f", null ],
-      [ "V3", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4ad5b50b8cf96bcc8aba90f306f5e6189c", null ],
-      [ "V4", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4ab354cab57768c7d4c1106eb4e82c75dc", null ],
-      [ "V5", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4a8cff5423006469332e8ae5e3a8c8559c", null ],
-      [ "Unknown", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4a88183b946cc5f0e8c96b2e66e1c74a7e", null ]
+      [ "kV1", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4a790b6df8fd08a606e4c417e5c921e031", null ],
+      [ "kV2", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4a99bb759166b80bceafecac4f43048396", null ],
+      [ "kV3", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4a30efeebab3557b922a237ab8a19bd41b", null ],
+      [ "kV4", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4a1f8c410c50e635115c07960934430005", null ],
+      [ "kV5", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4ade259dad2b9cdde2c352350a1db6b712", null ],
+      [ "kUnknown", "cpp_2uuid_8h.html#ac6e0bea8f4b482fd8ab17250626a3cf4a25c2dc47991b3df171ed5192bcf70390", null ]
     ] ],
     [ "operator!=", "cpp_2uuid_8h.html#ga4d4fba09a04cb2c313d44e12d7be13f2", null ],
     [ "operator!=", "cpp_2uuid_8h.html#gada353910f7488990257b651043133a03", null ],

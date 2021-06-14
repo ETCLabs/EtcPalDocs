@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"functions_func_p.html":[2,3,1,14],
+"functions_func_q.html":[2,3,1,15],
 "functions_func_r.html":[2,3,1,16],
 "functions_func_s.html":[2,3,1,17],
 "functions_func_t.html":[2,3,1,18],
@@ -89,8 +91,8 @@ var NAVTREEINDEX2 =
 "group__etcpal__cpp__inet.html#gaf149bcc08653396944a3699b8c5a57c5":[1,0,3,2,3],
 "group__etcpal__cpp__log.html":[1,0,3,3],
 "group__etcpal__cpp__log.html#ga886bd6be55942894f6ddb878d1cfc662":[1,0,3,3,3],
-"group__etcpal__cpp__log.html#gga886bd6be55942894f6ddb878d1cfc662a7b2f31b90fe1c2cc33a52233c1925df3":[1,0,3,3,3,1],
-"group__etcpal__cpp__log.html#gga886bd6be55942894f6ddb878d1cfc662afd1dd0c603be8170f9eae0be9f2f6afb":[1,0,3,3,3,0],
+"group__etcpal__cpp__log.html#gga886bd6be55942894f6ddb878d1cfc662a023506f9e1203a14ea275f5e6acb2e1a":[1,0,3,3,3,1],
+"group__etcpal__cpp__log.html#gga886bd6be55942894f6ddb878d1cfc662aa9a2bb1cd77c7a81a96b73f10722040e":[1,0,3,3,3,0],
 "group__etcpal__cpp__mutex.html":[1,0,3,4],
 "group__etcpal__cpp__opaque__id.html":[1,0,3,5],
 "group__etcpal__cpp__queue.html":[1,0,3,6],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "group__etcpal__log.html#ga752539f8bfef40f0c19dc4ef67a59473":[1,0,0,3,24],
 "group__etcpal__log.html#ga83c2035b9784a9cb0625bc4f33fbdc76":[1,0,0,3,34],
 "group__etcpal__log.html#ga895ff8dd5230b10b4ab6d955e556d318":[1,0,0,3,64],
-"group__etcpal__log.html#ga8bdf4e7812a1fe1d3b2c5da3ffc4f028":[1,0,0,3,66],
-"group__etcpal__log.html#ga8e4610f86f8ce68f198d55c3623c2b0a":[1,0,0,3,57],
-"group__etcpal__log.html#ga92640deb4a6a2625e4fc36038cd8d45d":[1,0,0,3,25]
+"group__etcpal__log.html#ga8bdf4e7812a1fe1d3b2c5da3ffc4f028":[1,0,0,3,66]
 };

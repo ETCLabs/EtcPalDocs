@@ -413,74 +413,67 @@ $(document).ready(function(){initNavTree('cpp_2thread_8h_source.html',''); initR
 <div class="line"><a name="l00427"></a><span class="lineno">  427</span>&#160;  <span class="keywordflow">if</span> (thread_)</div>
 <div class="line"><a name="l00428"></a><span class="lineno">  428</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afadb17bb2ec24e7755170e8afbd5b10bc2">kEtcPalErrInvalid</a>;</div>
 <div class="line"><a name="l00429"></a><span class="lineno">  429</span>&#160; </div>
-<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  thread_.reset(<span class="keyword">new</span> <a class="code" href="group__etcpal__thread.html#ga6ea2bb55f405380e3ea296e3b6164ae8">etcpal_thread_t</a>);</div>
+<div class="line"><a name="l00430"></a><span class="lineno">  430</span>&#160;  thread_ = std::unique_ptr&lt;etcpal_thread_t&gt;(<span class="keyword">new</span> <a class="code" href="group__etcpal__thread.html#ga6ea2bb55f405380e3ea296e3b6164ae8">etcpal_thread_t</a>);</div>
 <div class="line"><a name="l00431"></a><span class="lineno">  431</span>&#160;  <span class="keywordflow">if</span> (!thread_)</div>
 <div class="line"><a name="l00432"></a><span class="lineno">  432</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afad16b0fe51e8664f8b30b740ea1e51599">kEtcPalErrNoMem</a>;</div>
 <div class="line"><a name="l00433"></a><span class="lineno">  433</span>&#160; </div>
-<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  <span class="keyword">auto</span> new_f = std::unique_ptr&lt;FunctionType&gt;(</div>
-<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;      <span class="keyword">new</span> FunctionType(std::bind(std::forward&lt;Function&gt;(func), std::forward&lt;Args&gt;(args)...)));</div>
-<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;  <span class="keywordflow">if</span> (!new_f)</div>
-<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afad16b0fe51e8664f8b30b740ea1e51599">kEtcPalErrNoMem</a>;</div>
-<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160; </div>
-<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160;  <a class="code" href="classetcpal_1_1_error.html">Error</a> create_res = <a class="code" href="group__etcpal__thread.html#ga16f3116e3a533530d44c0d47b263f8e9">etcpal_thread_create</a>(thread_.get(), &amp;params_, CppThreadFn, new_f.get());</div>
-<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  <span class="keywordflow">if</span> (create_res)</div>
-<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;    new_f.release();</div>
-<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;    thread_.reset();</div>
-<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;  <span class="keywordflow">return</span> create_res;</div>
-<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;}</div>
-<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160; </div>
-<div class="line"><a name="l00458"></a><span class="lineno"><a class="line" href="classetcpal_1_1_thread.html#aea418c2372922b6b295e06814c4fe988">  458</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_error.html">Error</a> <a class="code" href="classetcpal_1_1_thread.html#aea418c2372922b6b295e06814c4fe988">Thread::Join</a>(<span class="keywordtype">int</span> timeout_ms) noexcept</div>
-<div class="line"><a name="l00459"></a><span class="lineno">  459</span>&#160;{</div>
-<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;  <span class="keywordflow">if</span> (thread_)</div>
-<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;  {</div>
-<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <a class="code" href="classetcpal_1_1_error.html">Error</a> join_res = <a class="code" href="group__etcpal__thread.html#ga37eccd4b250f7b697bd366922d081f13">etcpal_thread_timed_join</a>(thread_.get(), timeout_ms);</div>
-<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160;    <span class="keywordflow">if</span> (join_res)</div>
-<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;      thread_.reset();</div>
-<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;    <span class="keywordflow">return</span> join_res;</div>
-<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;  }</div>
-<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;  {</div>
-<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afadb17bb2ec24e7755170e8afbd5b10bc2">kEtcPalErrInvalid</a>;</div>
-<div class="line"><a name="l00470"></a><span class="lineno">  470</span>&#160;  }</div>
-<div class="line"><a name="l00471"></a><span class="lineno">  471</span>&#160;}</div>
-<div class="line"><a name="l00472"></a><span class="lineno">  472</span>&#160; </div>
-<div class="line"><a name="l00482"></a><span class="lineno"><a class="line" href="classetcpal_1_1_thread.html#a07e5d2b8f7fce024200c4ec8a41c6570">  482</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_error.html">Error</a> <a class="code" href="classetcpal_1_1_thread.html#a07e5d2b8f7fce024200c4ec8a41c6570">Thread::Terminate</a>() noexcept</div>
-<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160;{</div>
-<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;  <span class="keywordflow">if</span> (thread_)</div>
-<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;  {</div>
-<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    <a class="code" href="classetcpal_1_1_error.html">Error</a> terminate_res = <a class="code" href="group__etcpal__thread.html#ga9906049c7d559046052fa9509aedb705">etcpal_thread_terminate</a>(thread_.get());</div>
-<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;    <span class="keywordflow">if</span> (terminate_res)</div>
-<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;      thread_.reset();</div>
-<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160;    <span class="keywordflow">return</span> terminate_res;</div>
-<div class="line"><a name="l00490"></a><span class="lineno">  490</span>&#160;  }</div>
-<div class="line"><a name="l00491"></a><span class="lineno">  491</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;  {</div>
-<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afadb17bb2ec24e7755170e8afbd5b10bc2">kEtcPalErrInvalid</a>;</div>
-<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;  }</div>
-<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160;}</div>
-<div class="line"><a name="l00496"></a><span class="lineno">  496</span>&#160; </div>
-<div class="line"><a name="l00498"></a><span class="lineno"><a class="line" href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">  498</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">Thread::Sleep</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ms) noexcept</div>
-<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;{</div>
-<div class="line"><a name="l00500"></a><span class="lineno">  500</span>&#160;  <a class="code" href="group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08">etcpal_thread_sleep</a>(ms);</div>
-<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;}</div>
-<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160; </div>
-<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
-<div class="line"><a name="l00507"></a><span class="lineno"><a class="line" href="classetcpal_1_1_thread.html#a0e7e603ebed62b739065a10cd090213b">  507</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">Thread::Sleep</a>(<span class="keyword">const</span> std::chrono::duration&lt;Rep, Period&gt;&amp; sleep_duration) noexcept</div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;{</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;  <span class="comment">// This implementation cannot sleep longer than UINT_MAX.</span></div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sleep_ms_clamped = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(</div>
-<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;      std::min(std::chrono::milliseconds(sleep_duration).count(),</div>
-<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;               <span class="keyword">static_cast&lt;</span>std::chrono::milliseconds::rep<span class="keyword">&gt;</span>(std::numeric_limits&lt;unsigned int&gt;::max())));</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;  Sleep(sleep_ms_clamped);</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;}</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160;};  <span class="comment">// namespace etcpal</span></div>
-<div class="line"><a name="l00517"></a><span class="lineno">  517</span>&#160; </div>
-<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// ETCPAL_CPP_THREAD_H_</span></div>
+<div class="line"><a name="l00434"></a><span class="lineno">  434</span>&#160;  <span class="comment">// TODO evaluate changing bind to lambda</span></div>
+<div class="line"><a name="l00435"></a><span class="lineno">  435</span>&#160;  <span class="keyword">auto</span> new_f = std::unique_ptr&lt;FunctionType&gt;(<span class="keyword">new</span> FunctionType(</div>
+<div class="line"><a name="l00436"></a><span class="lineno">  436</span>&#160;      std::bind(std::forward&lt;Function&gt;(func), std::forward&lt;Args&gt;(args)...)));  <span class="comment">// NOLINT(modernize-avoid-bind)</span></div>
+<div class="line"><a name="l00437"></a><span class="lineno">  437</span>&#160;  <span class="keywordflow">if</span> (!new_f)</div>
+<div class="line"><a name="l00438"></a><span class="lineno">  438</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afad16b0fe51e8664f8b30b740ea1e51599">kEtcPalErrNoMem</a>;</div>
+<div class="line"><a name="l00439"></a><span class="lineno">  439</span>&#160; </div>
+<div class="line"><a name="l00440"></a><span class="lineno">  440</span>&#160;  <a class="code" href="classetcpal_1_1_error.html">Error</a> create_res = <a class="code" href="group__etcpal__thread.html#ga16f3116e3a533530d44c0d47b263f8e9">etcpal_thread_create</a>(thread_.get(), &amp;params_, CppThreadFn, new_f.get());</div>
+<div class="line"><a name="l00441"></a><span class="lineno">  441</span>&#160;  <span class="keywordflow">if</span> (create_res)</div>
+<div class="line"><a name="l00442"></a><span class="lineno">  442</span>&#160;    new_f.release();</div>
+<div class="line"><a name="l00443"></a><span class="lineno">  443</span>&#160;  <span class="keywordflow">else</span></div>
+<div class="line"><a name="l00444"></a><span class="lineno">  444</span>&#160;    thread_.reset();</div>
+<div class="line"><a name="l00445"></a><span class="lineno">  445</span>&#160;  <span class="keywordflow">return</span> create_res;</div>
+<div class="line"><a name="l00446"></a><span class="lineno">  446</span>&#160;}</div>
+<div class="line"><a name="l00447"></a><span class="lineno">  447</span>&#160; </div>
+<div class="line"><a name="l00459"></a><span class="lineno"><a class="line" href="classetcpal_1_1_thread.html#aea418c2372922b6b295e06814c4fe988">  459</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_error.html">Error</a> <a class="code" href="classetcpal_1_1_thread.html#aea418c2372922b6b295e06814c4fe988">Thread::Join</a>(<span class="keywordtype">int</span> timeout_ms) noexcept</div>
+<div class="line"><a name="l00460"></a><span class="lineno">  460</span>&#160;{</div>
+<div class="line"><a name="l00461"></a><span class="lineno">  461</span>&#160;  <span class="keywordflow">if</span> (!thread_)</div>
+<div class="line"><a name="l00462"></a><span class="lineno">  462</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afadb17bb2ec24e7755170e8afbd5b10bc2">kEtcPalErrInvalid</a>;</div>
+<div class="line"><a name="l00463"></a><span class="lineno">  463</span>&#160; </div>
+<div class="line"><a name="l00464"></a><span class="lineno">  464</span>&#160;  <a class="code" href="classetcpal_1_1_error.html">Error</a> join_res = <a class="code" href="group__etcpal__thread.html#ga37eccd4b250f7b697bd366922d081f13">etcpal_thread_timed_join</a>(thread_.get(), timeout_ms);</div>
+<div class="line"><a name="l00465"></a><span class="lineno">  465</span>&#160;  <span class="keywordflow">if</span> (join_res)</div>
+<div class="line"><a name="l00466"></a><span class="lineno">  466</span>&#160;    thread_.reset();</div>
+<div class="line"><a name="l00467"></a><span class="lineno">  467</span>&#160;  <span class="keywordflow">return</span> join_res;</div>
+<div class="line"><a name="l00468"></a><span class="lineno">  468</span>&#160;}</div>
+<div class="line"><a name="l00469"></a><span class="lineno">  469</span>&#160; </div>
+<div class="line"><a name="l00479"></a><span class="lineno"><a class="line" href="classetcpal_1_1_thread.html#a07e5d2b8f7fce024200c4ec8a41c6570">  479</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_error.html">Error</a> <a class="code" href="classetcpal_1_1_thread.html#a07e5d2b8f7fce024200c4ec8a41c6570">Thread::Terminate</a>() noexcept</div>
+<div class="line"><a name="l00480"></a><span class="lineno">  480</span>&#160;{</div>
+<div class="line"><a name="l00481"></a><span class="lineno">  481</span>&#160;  <span class="keywordflow">if</span> (!thread_)</div>
+<div class="line"><a name="l00482"></a><span class="lineno">  482</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afadb17bb2ec24e7755170e8afbd5b10bc2">kEtcPalErrInvalid</a>;</div>
+<div class="line"><a name="l00483"></a><span class="lineno">  483</span>&#160; </div>
+<div class="line"><a name="l00484"></a><span class="lineno">  484</span>&#160;  <a class="code" href="classetcpal_1_1_error.html">Error</a> terminate_res = <a class="code" href="group__etcpal__thread.html#ga9906049c7d559046052fa9509aedb705">etcpal_thread_terminate</a>(thread_.get());</div>
+<div class="line"><a name="l00485"></a><span class="lineno">  485</span>&#160;  <span class="keywordflow">if</span> (terminate_res)</div>
+<div class="line"><a name="l00486"></a><span class="lineno">  486</span>&#160;    thread_.reset();</div>
+<div class="line"><a name="l00487"></a><span class="lineno">  487</span>&#160;  <span class="keywordflow">return</span> terminate_res;</div>
+<div class="line"><a name="l00488"></a><span class="lineno">  488</span>&#160;}</div>
+<div class="line"><a name="l00489"></a><span class="lineno">  489</span>&#160; </div>
+<div class="line"><a name="l00491"></a><span class="lineno"><a class="line" href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">  491</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">Thread::Sleep</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> ms) noexcept</div>
+<div class="line"><a name="l00492"></a><span class="lineno">  492</span>&#160;{</div>
+<div class="line"><a name="l00493"></a><span class="lineno">  493</span>&#160;  <a class="code" href="group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08">etcpal_thread_sleep</a>(ms);</div>
+<div class="line"><a name="l00494"></a><span class="lineno">  494</span>&#160;}</div>
+<div class="line"><a name="l00495"></a><span class="lineno">  495</span>&#160; </div>
+<div class="line"><a name="l00499"></a><span class="lineno">  499</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> Rep, <span class="keyword">typename</span> Period&gt;</div>
+<div class="line"><a name="l00500"></a><span class="lineno"><a class="line" href="classetcpal_1_1_thread.html#a0e7e603ebed62b739065a10cd090213b">  500</a></span>&#160;<span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">Thread::Sleep</a>(<span class="keyword">const</span> std::chrono::duration&lt;Rep, Period&gt;&amp; sleep_duration) noexcept</div>
+<div class="line"><a name="l00501"></a><span class="lineno">  501</span>&#160;{</div>
+<div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;  <span class="comment">// This implementation cannot sleep longer than UINT_MAX.</span></div>
+<div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;  <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> sleep_ms_clamped = <span class="keyword">static_cast&lt;</span><span class="keywordtype">unsigned</span> <span class="keywordtype">int</span><span class="keyword">&gt;</span>(</div>
+<div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;      std::min(std::chrono::milliseconds(sleep_duration).count(),</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;               <span class="keyword">static_cast&lt;</span>std::chrono::milliseconds::rep<span class="keyword">&gt;</span>(std::numeric_limits&lt;unsigned int&gt;::max())));</div>
+<div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;  Sleep(sleep_ms_clamped);</div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;}</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160; </div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;};  <span class="comment">// namespace etcpal</span></div>
+<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160; </div>
+<div class="line"><a name="l00511"></a><span class="lineno">  511</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// ETCPAL_CPP_THREAD_H_</span></div>
 <div class="ttc" id="aclassetcpal_1_1_error_html"><div class="ttname"><a href="classetcpal_1_1_error.html">etcpal::Error</a></div><div class="ttdoc">A wrapper class for the EtcPal error type.</div><div class="ttdef"><b>Definition:</b> error.h:94</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html"><div class="ttname"><a href="classetcpal_1_1_thread.html">etcpal::Thread</a></div><div class="ttdoc">A thread class, modeled after std::thread.</div><div class="ttdef"><b>Definition:</b> thread.h:143</div></div>
-<div class="ttc" id="aclassetcpal_1_1_thread_html_a07e5d2b8f7fce024200c4ec8a41c6570"><div class="ttname"><a href="classetcpal_1_1_thread.html#a07e5d2b8f7fce024200c4ec8a41c6570">etcpal::Thread::Terminate</a></div><div class="ttdeci">Error Terminate() noexcept</div><div class="ttdoc">Forcefully kill the thread.</div><div class="ttdef"><b>Definition:</b> thread.h:482</div></div>
+<div class="ttc" id="aclassetcpal_1_1_thread_html_a07e5d2b8f7fce024200c4ec8a41c6570"><div class="ttname"><a href="classetcpal_1_1_thread.html#a07e5d2b8f7fce024200c4ec8a41c6570">etcpal::Thread::Terminate</a></div><div class="ttdeci">Error Terminate() noexcept</div><div class="ttdoc">Forcefully kill the thread.</div><div class="ttdef"><b>Definition:</b> thread.h:479</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html_a1e4efbd2bc46e7d5a1b2077ff2038ad8"><div class="ttname"><a href="classetcpal_1_1_thread.html#a1e4efbd2bc46e7d5a1b2077ff2038ad8">etcpal::Thread::stack_size</a></div><div class="ttdeci">unsigned int stack_size() const noexcept</div><div class="ttdoc">Get the stack size of this thread in bytes (not valid on all platforms).</div><div class="ttdef"><b>Definition:</b> thread.h:290</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html_a1f9139cb02adad1237dcc17c5cbb7fec"><div class="ttname"><a href="classetcpal_1_1_thread.html#a1f9139cb02adad1237dcc17c5cbb7fec">etcpal::Thread::os_handle</a></div><div class="ttdeci">etcpal_thread_os_handle_t os_handle() const noexcept</div><div class="ttdoc">Get the native OS handle of this thread.</div><div class="ttdef"><b>Definition:</b> thread.h:316</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html_a22b3fcc6a92ed687e662730c073d9f7d"><div class="ttname"><a href="classetcpal_1_1_thread.html#a22b3fcc6a92ed687e662730c073d9f7d">etcpal::Thread::priority</a></div><div class="ttdeci">unsigned int priority() const noexcept</div><div class="ttdoc">Get the priority of this thread (not valid on all platforms).</div><div class="ttdef"><b>Definition:</b> thread.h:284</div></div>
@@ -494,13 +487,13 @@ $(document).ready(function(){initNavTree('cpp_2thread_8h_source.html',''); initR
 <div class="ttc" id="aclassetcpal_1_1_thread_html_a87a9c69a69ee4b13cb1ec5772f6d32ad"><div class="ttname"><a href="classetcpal_1_1_thread.html#a87a9c69a69ee4b13cb1ec5772f6d32ad">etcpal::Thread::~Thread</a></div><div class="ttdeci">virtual ~Thread()</div><div class="ttdoc">Destroy the thread object.</div><div class="ttdef"><b>Definition:</b> thread.h:248</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html_a9d4db99a6df429bcc275d02dbcffa57d"><div class="ttname"><a href="classetcpal_1_1_thread.html#a9d4db99a6df429bcc275d02dbcffa57d">etcpal::Thread::SetParams</a></div><div class="ttdeci">Thread &amp; SetParams(const EtcPalThreadParams &amp;params) noexcept</div><div class="ttdoc">Set this thread's parameters from an existing EtcPalThreadParams struct.</div><div class="ttdef"><b>Definition:</b> thread.h:396</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html_aa66aa5c50746cd41312f22bebbf0d4e0"><div class="ttname"><a href="classetcpal_1_1_thread.html#aa66aa5c50746cd41312f22bebbf0d4e0">etcpal::Thread::params</a></div><div class="ttdeci">const EtcPalThreadParams &amp; params() const noexcept</div><div class="ttdoc">Get a reference the parameters of this thread.</div><div class="ttdef"><b>Definition:</b> thread.h:308</div></div>
-<div class="ttc" id="aclassetcpal_1_1_thread_html_abc8bb8ec9948b769e1189506ed635c9d"><div class="ttname"><a href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">etcpal::Thread::Sleep</a></div><div class="ttdeci">static void Sleep(unsigned int ms) noexcept</div><div class="ttdoc">Blocks the current thread for the specified number of milliseconds.</div><div class="ttdef"><b>Definition:</b> thread.h:498</div></div>
+<div class="ttc" id="aclassetcpal_1_1_thread_html_abc8bb8ec9948b769e1189506ed635c9d"><div class="ttname"><a href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">etcpal::Thread::Sleep</a></div><div class="ttdeci">static void Sleep(unsigned int ms) noexcept</div><div class="ttdoc">Blocks the current thread for the specified number of milliseconds.</div><div class="ttdef"><b>Definition:</b> thread.h:491</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html_abd79ef28387daa09c6c37909bdff5c69"><div class="ttname"><a href="classetcpal_1_1_thread.html#abd79ef28387daa09c6c37909bdff5c69">etcpal::Thread::operator=</a></div><div class="ttdeci">Thread &amp; operator=(const Thread &amp;other)=delete</div><div class="ttdoc">Deleted copy assignment operator - threads are not copyable.</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html_ac0e98e4ce31becd580ed2ea39cd926b3"><div class="ttname"><a href="classetcpal_1_1_thread.html#ac0e98e4ce31becd580ed2ea39cd926b3">etcpal::Thread::platform_data</a></div><div class="ttdeci">void * platform_data() const noexcept</div><div class="ttdoc">Get the platform-specific data of this thread.</div><div class="ttdef"><b>Definition:</b> thread.h:302</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html_ac83a10f16662668e1d8a494ddb6e1234"><div class="ttname"><a href="classetcpal_1_1_thread.html#ac83a10f16662668e1d8a494ddb6e1234">etcpal::Thread::SetPriority</a></div><div class="ttdeci">Thread &amp; SetPriority(unsigned int priority) noexcept</div><div class="ttdoc">Set the priority of this thread.</div><div class="ttdef"><b>Definition:</b> thread.h:328</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html_acf0ebde1823ff6854a4add729b40a0c4"><div class="ttname"><a href="classetcpal_1_1_thread.html#acf0ebde1823ff6854a4add729b40a0c4">etcpal::Thread::Thread</a></div><div class="ttdeci">Thread()=default</div><div class="ttdoc">Create a new thread object which does not yet represent a thread.</div></div>
 <div class="ttc" id="aclassetcpal_1_1_thread_html_ae6cedd23a7b2b24f90059df894846864"><div class="ttname"><a href="classetcpal_1_1_thread.html#ae6cedd23a7b2b24f90059df894846864">etcpal::Thread::SetName</a></div><div class="ttdeci">Thread &amp; SetName(const char *name) noexcept</div><div class="ttdoc">Set the name of this thread.</div><div class="ttdef"><b>Definition:</b> thread.h:355</div></div>
-<div class="ttc" id="aclassetcpal_1_1_thread_html_aea418c2372922b6b295e06814c4fe988"><div class="ttname"><a href="classetcpal_1_1_thread.html#aea418c2372922b6b295e06814c4fe988">etcpal::Thread::Join</a></div><div class="ttdeci">Error Join(int timeout_ms=ETCPAL_WAIT_FOREVER) noexcept</div><div class="ttdoc">Wait for the thread to finish execution.</div><div class="ttdef"><b>Definition:</b> thread.h:458</div></div>
+<div class="ttc" id="aclassetcpal_1_1_thread_html_aea418c2372922b6b295e06814c4fe988"><div class="ttname"><a href="classetcpal_1_1_thread.html#aea418c2372922b6b295e06814c4fe988">etcpal::Thread::Join</a></div><div class="ttdeci">Error Join(int timeout_ms=ETCPAL_WAIT_FOREVER) noexcept</div><div class="ttdoc">Wait for the thread to finish execution.</div><div class="ttdef"><b>Definition:</b> thread.h:459</div></div>
 <div class="ttc" id="acpp_2common_8h_html"><div class="ttname"><a href="cpp_2common_8h.html">common.h</a></div><div class="ttdoc">Common definitions used by EtcPal C++ wrappers.</div></div>
 <div class="ttc" id="acpp_2error_8h_html"><div class="ttname"><a href="cpp_2error_8h.html">error.h</a></div><div class="ttdoc">C++ wrapper and utilities for etcpal/error.h.</div></div>
 <div class="ttc" id="agroup__etcpal__error_html_gga743b0648f0ca798ef29c9f69c6e255afad16b0fe51e8664f8b30b740ea1e51599"><div class="ttname"><a href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afad16b0fe51e8664f8b30b740ea1e51599">kEtcPalErrNoMem</a></div><div class="ttdeci">@ kEtcPalErrNoMem</div><div class="ttdoc">A dynamic memory allocation failed, or there is no space left in a statically allocated array.</div><div class="ttdef"><b>Definition:</b> error.h:56</div></div>

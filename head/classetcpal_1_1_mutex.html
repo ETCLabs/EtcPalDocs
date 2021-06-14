@@ -208,7 +208,7 @@ $(document).ready(function(){initNavTree('classetcpal_1_1_mutex.html',''); initR
 <div class="contents">
 <a name="details" id="details"></a><h2 class="groupheader">Overview</h2>
 <div class="textblock"><p>A wrapper class for the EtcPal mutex type. </p>
-<p>Note: The <a class="el" href="classetcpal_1_1_mutex.html" title="A wrapper class for the EtcPal mutex type.">etcpal::Mutex</a> functions are not normally used directly - prefer usage of the RAII type <a class="el" href="classetcpal_1_1_mutex_guard.html" title="Lock guard around a mutex.">etcpal::MutexGuard</a> to manage locking and unlocking of an <a class="el" href="classetcpal_1_1_mutex.html" title="A wrapper class for the EtcPal mutex type.">etcpal::Mutex</a>.</p>
+<p>Note: The <a class="el" href="classetcpal_1_1_mutex.html" title="A wrapper class for the EtcPal mutex type.">etcpal::Mutex</a> functions are not normally used directly - prefer usage of the RAII type <a class="el" href="classetcpal_1_1_mutex_guard.html" title="Lock guard around a mutex.">etcpal::MutexGuard</a> to manage locking and Unlocking of an <a class="el" href="classetcpal_1_1_mutex.html" title="A wrapper class for the EtcPal mutex type.">etcpal::Mutex</a>.</p>
 <p>Example usage: </p><div class="fragment"><div class="line"><span class="keyword">static</span> <span class="keywordtype">int</span> shared_counter;</div>
 <div class="line"><a class="code" href="classetcpal_1_1_mutex.html">etcpal::Mutex</a> mutex;</div>
 <div class="line"> </div>
@@ -243,7 +243,7 @@ $(document).ready(function(){initNavTree('classetcpal_1_1_mutex.html',''); initR
 <div class="line">}</div>
 <div class="ttc" id="aclassetcpal_1_1_mutex_guard_html"><div class="ttname"><a href="classetcpal_1_1_mutex_guard.html">etcpal::MutexGuard</a></div><div class="ttdoc">Lock guard around a mutex.</div><div class="ttdef"><b>Definition:</b> mutex.h:173</div></div>
 <div class="ttc" id="aclassetcpal_1_1_mutex_html"><div class="ttname"><a href="classetcpal_1_1_mutex.html">etcpal::Mutex</a></div><div class="ttdoc">A wrapper class for the EtcPal mutex type.</div><div class="ttdef"><b>Definition:</b> mutex.h:88</div></div>
-<div class="ttc" id="aclassetcpal_1_1_thread_html_abc8bb8ec9948b769e1189506ed635c9d"><div class="ttname"><a href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">etcpal::Thread::Sleep</a></div><div class="ttdeci">static void Sleep(unsigned int ms) noexcept</div><div class="ttdoc">Blocks the current thread for the specified number of milliseconds.</div><div class="ttdef"><b>Definition:</b> thread.h:498</div></div>
+<div class="ttc" id="aclassetcpal_1_1_thread_html_abc8bb8ec9948b769e1189506ed635c9d"><div class="ttname"><a href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">etcpal::Thread::Sleep</a></div><div class="ttdeci">static void Sleep(unsigned int ms) noexcept</div><div class="ttdoc">Blocks the current thread for the specified number of milliseconds.</div><div class="ttdef"><b>Definition:</b> thread.h:491</div></div>
 </div><!-- fragment --><p>See <a class="el" href="group__etcpal__mutex.html">mutex (Mutexes)</a> for more information. </p>
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -371,7 +371,7 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Unlock the mutex. </p>
-<p>See <a class="el" href="group__etcpal__mutex.html#ga8468c318f6d0737460888bfd6ddd3fe5" title="Unlock a mutex.">etcpal_mutex_unlock()</a>. </p>
+<p>See etcpal_mutex_Unlock(). </p>
 
 </div>
 </div>

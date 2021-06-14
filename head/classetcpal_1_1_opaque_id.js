@@ -6,6 +6,6 @@ var classetcpal_1_1_opaque_id =
     [ "IsValid", "classetcpal_1_1_opaque_id.html#ab0b02c2ae96656027facd95c8015b7db", null ],
     [ "operator bool", "classetcpal_1_1_opaque_id.html#ad0ed9dded3dc4405713f0b9270930a92", null ],
     [ "operator!", "classetcpal_1_1_opaque_id.html#ac252a44c73ef696bf047b7b7b0ea13bc", null ],
-    [ "SetValue", "classetcpal_1_1_opaque_id.html#a12d7606ea10d50f9e6bc7cb4dc20e721", null ],
+    [ "SetValue", "classetcpal_1_1_opaque_id.html#aa3400e764897b9a5a857300f871ea035", null ],
     [ "value", "classetcpal_1_1_opaque_id.html#afbeb3ea2eee6f9695aa8328ce7d9bac4", null ]
 ];

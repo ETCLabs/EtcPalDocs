@@ -6,6 +6,5 @@ var searchData=
   ['dealloc_5ff_65',['dealloc_f',['../struct_etc_pal_rb_tree.html#a29c69388460d3c40b35a388dcbea6b58',1,'EtcPalRbTree']]],
   ['debug_66',['Debug',['../classetcpal_1_1_logger.html#ae78231bc988b651151e0f7099a873daa',1,'etcpal::Logger']]],
   ['device_67',['Device',['../classetcpal_1_1_uuid.html#a30a2f58b68d4d0e7d2ae6a63213a388a',1,'etcpal::Uuid::Device(const std::string &amp;device_str, const uint8_t *mac_addr, uint32_t uuid_num) noexcept'],['../classetcpal_1_1_uuid.html#a2d8ba319ae1c2e12b6ed12742562d038',1,'etcpal::Uuid::Device(const std::string &amp;device_str, const std::array&lt; uint8_t, 6 &gt; &amp;mac_addr, uint32_t uuid_num) noexcept']]],
-  ['direct_68',['Direct',['../group__etcpal__cpp__log.html#gga886bd6be55942894f6ddb878d1cfc662afd1dd0c603be8170f9eae0be9f2f6afb',1,'etcpal']]],
-  ['dispatch_5fpolicy_69',['dispatch_policy',['../classetcpal_1_1_logger.html#a49d1636c7a4675c4bfc73cf52edacbc2',1,'etcpal::Logger']]]
+  ['dispatch_5fpolicy_68',['dispatch_policy',['../classetcpal_1_1_logger.html#a49d1636c7a4675c4bfc73cf52edacbc2',1,'etcpal::Logger']]]
 ];

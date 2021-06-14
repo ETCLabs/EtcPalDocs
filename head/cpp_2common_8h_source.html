@@ -258,12 +258,12 @@ $(document).ready(function(){initNavTree('cpp_2common_8h_source.html',''); initR
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160; </div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="keyword">namespace </span>detail</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;{</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">enum class</span> enabler</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">enum class</span> Enabler</div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define ETCPAL_ENABLE_IF_ARG(...) typename std::enable_if&lt;(__VA_ARGS__)&gt;::type* = nullptr</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define ETCPAL_ENABLE_IF_TEMPLATE(...) typename = typename std::enable_if&lt;(__VA_ARGS__), detail::enabler&gt;::type</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define ETCPAL_ENABLE_IF_TEMPLATE(...) typename = typename std::enable_if&lt;(__VA_ARGS__), detail::Enabler&gt;::type</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}  <span class="comment">// namespace detail</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>

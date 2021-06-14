@@ -255,7 +255,7 @@ $(document).ready(function(){initNavTree('group__etcpal__cpp__thread.html',''); 
 <div class="line"><span class="keyword">using namespace </span>std::chrono_literals;</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">etcpal::Thread::Sleep</a>(1min); <span class="comment">// Sleep for 1 minute</span></div>
-<div class="ttc" id="aclassetcpal_1_1_thread_html_abc8bb8ec9948b769e1189506ed635c9d"><div class="ttname"><a href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">etcpal::Thread::Sleep</a></div><div class="ttdeci">static void Sleep(unsigned int ms) noexcept</div><div class="ttdoc">Blocks the current thread for the specified number of milliseconds.</div><div class="ttdef"><b>Definition:</b> thread.h:498</div></div>
+<div class="ttc" id="aclassetcpal_1_1_thread_html_abc8bb8ec9948b769e1189506ed635c9d"><div class="ttname"><a href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">etcpal::Thread::Sleep</a></div><div class="ttdeci">static void Sleep(unsigned int ms) noexcept</div><div class="ttdoc">Blocks the current thread for the specified number of milliseconds.</div><div class="ttdef"><b>Definition:</b> thread.h:491</div></div>
 </div><!-- fragment --><p><b>IMPORTANT NOTE FOR RTOS USERS:</b> The EtcPal threading API does not initialize the scheduler on real-time systems (e.g. it does not call vTaskStartScheduler() on FreeRTOS or _mqx() on MQX). The application writer is responsible for managing the interaction between starting the scheduler and starting EtcPal threads, just like when starting native RTOS tasks. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>

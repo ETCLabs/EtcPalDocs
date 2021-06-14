@@ -51,7 +51,7 @@ var group__etcpal__cpp__log =
       [ "Warning", "classetcpal_1_1_logger.html#a97d41b6faaf421937e6b82bd1c3067db", null ]
     ] ],
     [ "LogDispatchPolicy", "group__etcpal__cpp__log.html#ga886bd6be55942894f6ddb878d1cfc662", [
-      [ "Direct", "group__etcpal__cpp__log.html#gga886bd6be55942894f6ddb878d1cfc662afd1dd0c603be8170f9eae0be9f2f6afb", null ],
-      [ "Queued", "group__etcpal__cpp__log.html#gga886bd6be55942894f6ddb878d1cfc662a7b2f31b90fe1c2cc33a52233c1925df3", null ]
+      [ "kDirect", "group__etcpal__cpp__log.html#gga886bd6be55942894f6ddb878d1cfc662aa9a2bb1cd77c7a81a96b73f10722040e", null ],
+      [ "kQueued", "group__etcpal__cpp__log.html#gga886bd6be55942894f6ddb878d1cfc662a023506f9e1203a14ea275f5e6acb2e1a", null ]
     ] ]
 ];

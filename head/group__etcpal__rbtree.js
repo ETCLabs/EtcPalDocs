@@ -37,7 +37,7 @@ var group__etcpal__rbtree =
     [ "etcpal_rbtree_clear", "group__etcpal__rbtree.html#ga1347a53b2f8505e22707702f490949e8", null ],
     [ "etcpal_rbtree_clear_with_cb", "group__etcpal__rbtree.html#ga2dfae49efd1e9a9dbd02635bdea8e73d", null ],
     [ "etcpal_rbtree_find", "group__etcpal__rbtree.html#ga4d3d93cb20130fc9d34fc13d1ea92316", null ],
-    [ "etcpal_rbtree_init", "group__etcpal__rbtree.html#ga82765df01bbb32545a67ec148536602a", null ],
+    [ "etcpal_rbtree_init", "group__etcpal__rbtree.html#gab0a4770c9d96c8eddd30684490b2d587", null ],
     [ "etcpal_rbtree_insert", "group__etcpal__rbtree.html#gae87df653a152c3942b54a8f8e7c235c6", null ],
     [ "etcpal_rbtree_insert_node", "group__etcpal__rbtree.html#ga036f8c0aea4ac2050bd2deb904affed6", null ],
     [ "etcpal_rbtree_node_cmp_ptr_cb", "group__etcpal__rbtree.html#gabda4a5620ad7cddcc09ef71d4d8222c7", null ],

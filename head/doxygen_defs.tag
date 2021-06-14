@@ -70,9 +70,9 @@
       <anchorfile>group__etcpal__cpp__inet.html</anchorfile>
       <anchor>gaf149bcc08653396944a3699b8c5a57c5</anchor>
       <arglist></arglist>
-      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5a4bbb8f967da6d1a610596d7257179c2b">Invalid</enumvalue>
-      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5ab354cab57768c7d4c1106eb4e82c75dc">V4</enumvalue>
-      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5adb93f1c35b844334e2b266951618b4fe">V6</enumvalue>
+      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5ab10913c938482a8aa4ba85b7a1116cb4">kInvalid</enumvalue>
+      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5a1f8c410c50e635115c07960934430005">kV4</enumvalue>
+      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5a9bb0e4acd128e05b15bfa2fbffbdefbc">kV6</enumvalue>
     </member>
   </compound>
   <compound kind="file">
@@ -92,8 +92,8 @@
       <anchorfile>group__etcpal__cpp__log.html</anchorfile>
       <anchor>ga886bd6be55942894f6ddb878d1cfc662</anchor>
       <arglist></arglist>
-      <enumvalue file="group__etcpal__cpp__log.html" anchor="gga886bd6be55942894f6ddb878d1cfc662afd1dd0c603be8170f9eae0be9f2f6afb">Direct</enumvalue>
-      <enumvalue file="group__etcpal__cpp__log.html" anchor="gga886bd6be55942894f6ddb878d1cfc662a7b2f31b90fe1c2cc33a52233c1925df3">Queued</enumvalue>
+      <enumvalue file="group__etcpal__cpp__log.html" anchor="gga886bd6be55942894f6ddb878d1cfc662aa9a2bb1cd77c7a81a96b73f10722040e">kDirect</enumvalue>
+      <enumvalue file="group__etcpal__cpp__log.html" anchor="gga886bd6be55942894f6ddb878d1cfc662a023506f9e1203a14ea275f5e6acb2e1a">kQueued</enumvalue>
     </member>
   </compound>
   <compound kind="file">
@@ -169,12 +169,12 @@
       <anchorfile>cpp_2uuid_8h.html</anchorfile>
       <anchor>ac6e0bea8f4b482fd8ab17250626a3cf4</anchor>
       <arglist></arglist>
-      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4ab4daca084ad9eabfc8de231929477ed6">V1</enumvalue>
-      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4aec765f1adc3b4253f2d3b131a4a8618f">V2</enumvalue>
-      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4ad5b50b8cf96bcc8aba90f306f5e6189c">V3</enumvalue>
-      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4ab354cab57768c7d4c1106eb4e82c75dc">V4</enumvalue>
-      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4a8cff5423006469332e8ae5e3a8c8559c">V5</enumvalue>
-      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4a88183b946cc5f0e8c96b2e66e1c74a7e">Unknown</enumvalue>
+      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4a790b6df8fd08a606e4c417e5c921e031">kV1</enumvalue>
+      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4a99bb759166b80bceafecac4f43048396">kV2</enumvalue>
+      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4a30efeebab3557b922a237ab8a19bd41b">kV3</enumvalue>
+      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4a1f8c410c50e635115c07960934430005">kV4</enumvalue>
+      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4ade259dad2b9cdde2c352350a1db6b712">kV5</enumvalue>
+      <enumvalue file="cpp_2uuid_8h.html" anchor="ac6e0bea8f4b482fd8ab17250626a3cf4a25c2dc47991b3df171ed5192bcf70390">kUnknown</enumvalue>
     </member>
   </compound>
   <compound kind="file">
@@ -314,8 +314,8 @@
       <type></type>
       <name>BadExpectedAccess</name>
       <anchorfile>classetcpal_1_1_bad_expected_access.html</anchorfile>
-      <anchor>a408f3d0470d7f1a3330830eb96db77d9</anchor>
-      <arglist>(Error res)</arglist>
+      <anchor>a8356ca92f27aa666055fcade64bb5451</anchor>
+      <arglist>(Error err)</arglist>
     </member>
     <member kind="function">
       <type>Error</type>
@@ -2276,8 +2276,8 @@
       <type>ETCPAL_CONSTEXPR_14 void</type>
       <name>SetValue</name>
       <anchorfile>classetcpal_1_1_opaque_id.html</anchorfile>
-      <anchor>a12d7606ea10d50f9e6bc7cb4dc20e721</anchor>
-      <arglist>(const ValueType &amp;newValue)</arglist>
+      <anchor>aa3400e764897b9a5a857300f871ea035</anchor>
+      <arglist>(const ValueType &amp;new_value)</arglist>
     </member>
     <member kind="function">
       <type>ETCPAL_CONSTEXPR_14 void</type>
@@ -3328,20 +3328,6 @@
       <anchorfile>classetcpal_1_1_uuid.html</anchorfile>
       <anchor>aa2f1033714bf728e62eafbc880d502b6</anchor>
       <arglist>(const uint8_t *data) noexcept</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Uuid</name>
-      <anchorfile>classetcpal_1_1_uuid.html</anchorfile>
-      <anchor>a65228b364866048f39a365f5aaabcccb</anchor>
-      <arglist>(uint32_t time_low, uint16_t time_mid, uint16_t time_hi_and_version, const uint8_t clock_seq_and_node[8])</arglist>
-    </member>
-    <member kind="function">
-      <type></type>
-      <name>Uuid</name>
-      <anchorfile>classetcpal_1_1_uuid.html</anchorfile>
-      <anchor>a3682e9b132ceba22426927fefdafdeb3</anchor>
-      <arglist>(uint32_t time_low, uint16_t time_mid, uint16_t time_hi_and_version, const std::array&lt; uint8_t, 8 &gt; &amp;clock_seq_and_node)</arglist>
     </member>
     <member kind="function">
       <type>constexpr</type>
@@ -5314,8 +5300,8 @@
       <type>EtcPalRbTree *</type>
       <name>etcpal_rbtree_init</name>
       <anchorfile>group__etcpal__rbtree.html</anchorfile>
-      <anchor>ga82765df01bbb32545a67ec148536602a</anchor>
-      <arglist>(EtcPalRbTree *self, EtcPalRbTreeNodeCmpFunc cmp, EtcPalRbNodeAllocFunc alloc_f, EtcPalRbNodeDeallocFunc dealloc_f)</arglist>
+      <anchor>gab0a4770c9d96c8eddd30684490b2d587</anchor>
+      <arglist>(EtcPalRbTree *self, EtcPalRbTreeNodeCmpFunc node_cmp_cb, EtcPalRbNodeAllocFunc alloc_f, EtcPalRbNodeDeallocFunc dealloc_f)</arglist>
     </member>
     <member kind="function">
       <type>void *</type>
@@ -6323,9 +6309,9 @@
       <anchorfile>group__etcpal__cpp__inet.html</anchorfile>
       <anchor>gaf149bcc08653396944a3699b8c5a57c5</anchor>
       <arglist></arglist>
-      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5a4bbb8f967da6d1a610596d7257179c2b">Invalid</enumvalue>
-      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5ab354cab57768c7d4c1106eb4e82c75dc">V4</enumvalue>
-      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5adb93f1c35b844334e2b266951618b4fe">V6</enumvalue>
+      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5ab10913c938482a8aa4ba85b7a1116cb4">kInvalid</enumvalue>
+      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5a1f8c410c50e635115c07960934430005">kV4</enumvalue>
+      <enumvalue file="group__etcpal__cpp__inet.html" anchor="ggaf149bcc08653396944a3699b8c5a57c5a9bb0e4acd128e05b15bfa2fbffbdefbc">kV6</enumvalue>
     </member>
   </compound>
   <compound kind="group">
@@ -6341,8 +6327,8 @@
       <anchorfile>group__etcpal__cpp__log.html</anchorfile>
       <anchor>ga886bd6be55942894f6ddb878d1cfc662</anchor>
       <arglist></arglist>
-      <enumvalue file="group__etcpal__cpp__log.html" anchor="gga886bd6be55942894f6ddb878d1cfc662afd1dd0c603be8170f9eae0be9f2f6afb">Direct</enumvalue>
-      <enumvalue file="group__etcpal__cpp__log.html" anchor="gga886bd6be55942894f6ddb878d1cfc662a7b2f31b90fe1c2cc33a52233c1925df3">Queued</enumvalue>
+      <enumvalue file="group__etcpal__cpp__log.html" anchor="gga886bd6be55942894f6ddb878d1cfc662aa9a2bb1cd77c7a81a96b73f10722040e">kDirect</enumvalue>
+      <enumvalue file="group__etcpal__cpp__log.html" anchor="gga886bd6be55942894f6ddb878d1cfc662a023506f9e1203a14ea275f5e6acb2e1a">kQueued</enumvalue>
     </member>
   </compound>
   <compound kind="group">

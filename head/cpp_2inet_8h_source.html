@@ -240,9 +240,9 @@ $(document).ready(function(){initNavTree('cpp_2inet_8h_source.html',''); initRes
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
 <div class="line"><a name="l00045"></a><span class="lineno"><a class="line" href="group__etcpal__cpp__inet.html#gaf149bcc08653396944a3699b8c5a57c5">   45</a></span>&#160;<span class="keyword">enum class</span> <a class="code" href="group__etcpal__cpp__inet.html#gaf149bcc08653396944a3699b8c5a57c5">IpAddrType</a></div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;{</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  Invalid = <a class="code" href="group__etcpal__inet.html#gga847282e3fd17bf75ec83292326c455eea0e789a4e187f4a7fdbda7271a754eca8">kEtcPalIpTypeInvalid</a>,</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  V4 = <a class="code" href="group__etcpal__inet.html#gga847282e3fd17bf75ec83292326c455eea73ea615eceba61f26d92a63f3738f635">kEtcPalIpTypeV4</a>,</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  V6 = <a class="code" href="group__etcpal__inet.html#gga847282e3fd17bf75ec83292326c455eead480ed8d686b23bdb2e5bfc06b93d7ae">kEtcPalIpTypeV6</a></div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;  kInvalid = <a class="code" href="group__etcpal__inet.html#gga847282e3fd17bf75ec83292326c455eea0e789a4e187f4a7fdbda7271a754eca8">kEtcPalIpTypeInvalid</a>,</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;  kV4 = <a class="code" href="group__etcpal__inet.html#gga847282e3fd17bf75ec83292326c455eea73ea615eceba61f26d92a63f3738f635">kEtcPalIpTypeV4</a>,</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;  kV6 = <a class="code" href="group__etcpal__inet.html#gga847282e3fd17bf75ec83292326c455eead480ed8d686b23bdb2e5bfc06b93d7ae">kEtcPalIpTypeV6</a></div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;};</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="classetcpal_1_1_ip_addr.html">   56</a></span>&#160;<span class="keyword">class </span><a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a></div>
@@ -335,12 +335,12 @@ $(document).ready(function(){initNavTree('cpp_2inet_8h_source.html',''); initRes
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
 <div class="line"><a name="l00162"></a><span class="lineno"><a class="line" href="classetcpal_1_1_ip_addr.html#a19c380b03cea21d7ac7325136a131ff0">  162</a></span>&#160;<span class="keyword">inline</span> std::string <a class="code" href="classetcpal_1_1_ip_addr.html#a19c380b03cea21d7ac7325136a131ff0">IpAddr::ToString</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  <span class="keywordtype">char</span> str_buf[<a class="code" href="group__etcpal__inet.html#gacd7ec0d81e171166483c7629669bf05d">ETCPAL_IP_STRING_BYTES</a>];</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;  <span class="keyword">auto</span> result = <a class="code" href="group__etcpal__inet.html#gaf98da0ae21f7960b5e046c55b8d79c4a">etcpal_ip_to_string</a>(&amp;addr_, str_buf);</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keywordflow">if</span> (result == <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d">kEtcPalErrOk</a>)</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;    <span class="keywordflow">return</span> str_buf;</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">return</span> std::string();</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;  std::array&lt;char, ETCPAL_IP_STRING_BYTES&gt; str_buf;  <span class="comment">// NOLINT(cppcoreguidelines-pro-type-member-init)</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;  <span class="keyword">auto</span> result = <a class="code" href="group__etcpal__inet.html#gaf98da0ae21f7960b5e046c55b8d79c4a">etcpal_ip_to_string</a>(&amp;addr_, str_buf.data());</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;  <span class="keywordflow">if</span> (result == <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d">kEtcPalErrOk</a>)</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    <span class="keywordflow">return</span> {str_buf.data()};</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;  <span class="keywordflow">return</span> {};</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;}</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
 <div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="classetcpal_1_1_ip_addr.html#acde4ca75e6e22c1a6899c84d923273db">  177</a></span>&#160;constexpr uint32_t <a class="code" href="classetcpal_1_1_ip_addr.html#acde4ca75e6e22c1a6899c84d923273db">IpAddr::v4_data</a>() const noexcept</div>
@@ -356,7 +356,7 @@ $(document).ready(function(){initNavTree('cpp_2inet_8h_source.html',''); initRes
 <div class="line"><a name="l00195"></a><span class="lineno"><a class="line" href="classetcpal_1_1_ip_addr.html#a9d6d96f2d5b5fb9fd6a16bcceb8dea59">  195</a></span>&#160;<span class="keyword">inline</span> std::array&lt;uint8_t, ETCPAL_IPV6_BYTES&gt; <a class="code" href="classetcpal_1_1_ip_addr.html#a9d6d96f2d5b5fb9fd6a16bcceb8dea59">IpAddr::ToV6Array</a>()<span class="keyword"> const</span></div>
 <div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;  <span class="comment">// RVO should hopefully make this only a single copy</span></div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  std::array&lt;uint8_t, ETCPAL_IPV6_BYTES&gt; arr;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;  std::array&lt;uint8_t, ETCPAL_IPV6_BYTES&gt; arr;  <span class="comment">// NOLINT(cppcoreguidelines-pro-type-member-init)</span></div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;  std::memcpy(arr.data(), <a class="code" href="group__etcpal__inet.html#gaaee800da95371923f9375dec1a6c0a5c">ETCPAL_IP_V6_ADDRESS</a>(&amp;addr_), <a class="code" href="group__etcpal__inet.html#gad5f18940857b50304b956505fb77df20">ETCPAL_IPV6_BYTES</a>);</div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;  <span class="keywordflow">return</span> arr;</div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;}</div>
@@ -443,12 +443,12 @@ $(document).ready(function(){initNavTree('cpp_2inet_8h_source.html',''); initRes
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
 <div class="line"><a name="l00330"></a><span class="lineno"><a class="line" href="classetcpal_1_1_ip_addr.html#a8ddb6547f191f5d3f3b24f3f02727095">  330</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a> <a class="code" href="classetcpal_1_1_ip_addr.html#a8ddb6547f191f5d3f3b24f3f02727095">IpAddr::WildcardV4</a>() noexcept</div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;{</div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classetcpal_1_1_ip_addr.html#a6dd5f9ef79404118ec2427c68eedad86">Wildcard</a>(IpAddrType::V4);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classetcpal_1_1_ip_addr.html#a6dd5f9ef79404118ec2427c68eedad86">Wildcard</a>(IpAddrType::kV4);</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;}</div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160; </div>
 <div class="line"><a name="l00338"></a><span class="lineno"><a class="line" href="classetcpal_1_1_ip_addr.html#a24fd3077450fceffa3e02fb4c76be7df">  338</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a> <a class="code" href="classetcpal_1_1_ip_addr.html#a24fd3077450fceffa3e02fb4c76be7df">IpAddr::WildcardV6</a>() noexcept</div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;{</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classetcpal_1_1_ip_addr.html#a6dd5f9ef79404118ec2427c68eedad86">Wildcard</a>(IpAddrType::V6);</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="classetcpal_1_1_ip_addr.html#a6dd5f9ef79404118ec2427c68eedad86">Wildcard</a>(IpAddrType::kV6);</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;}</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160; </div>
 <div class="line"><a name="l00346"></a><span class="lineno"><a class="line" href="classetcpal_1_1_ip_addr.html#a6dd5f9ef79404118ec2427c68eedad86">  346</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a> <a class="code" href="classetcpal_1_1_ip_addr.html#a6dd5f9ef79404118ec2427c68eedad86">IpAddr::Wildcard</a>(<a class="code" href="group__etcpal__cpp__inet.html#gaf149bcc08653396944a3699b8c5a57c5">IpAddrType</a> type) noexcept</div>
@@ -460,12 +460,12 @@ $(document).ready(function(){initNavTree('cpp_2inet_8h_source.html',''); initRes
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160; </div>
 <div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="classetcpal_1_1_ip_addr.html#a0dc66641cafbf7a9f76d26c494bfe189">  356</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a> <a class="code" href="classetcpal_1_1_ip_addr.html#a0dc66641cafbf7a9f76d26c494bfe189">IpAddr::NetmaskV4</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mask_length) noexcept</div>
 <div class="line"><a name="l00357"></a><span class="lineno">  357</span>&#160;{</div>
-<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  <span class="keywordflow">return</span> Netmask(IpAddrType::V4, mask_length);</div>
+<div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160;  <span class="keywordflow">return</span> Netmask(IpAddrType::kV4, mask_length);</div>
 <div class="line"><a name="l00359"></a><span class="lineno">  359</span>&#160;}</div>
 <div class="line"><a name="l00360"></a><span class="lineno">  360</span>&#160; </div>
 <div class="line"><a name="l00364"></a><span class="lineno"><a class="line" href="classetcpal_1_1_ip_addr.html#a69e83da0c99b42fe1be96dede839304d">  364</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a> <a class="code" href="classetcpal_1_1_ip_addr.html#a69e83da0c99b42fe1be96dede839304d">IpAddr::NetmaskV6</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mask_length) noexcept</div>
 <div class="line"><a name="l00365"></a><span class="lineno">  365</span>&#160;{</div>
-<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keywordflow">return</span> Netmask(IpAddrType::V6, mask_length);</div>
+<div class="line"><a name="l00366"></a><span class="lineno">  366</span>&#160;  <span class="keywordflow">return</span> Netmask(IpAddrType::kV6, mask_length);</div>
 <div class="line"><a name="l00367"></a><span class="lineno">  367</span>&#160;}</div>
 <div class="line"><a name="l00368"></a><span class="lineno">  368</span>&#160; </div>
 <div class="line"><a name="l00372"></a><span class="lineno"><a class="line" href="classetcpal_1_1_ip_addr.html#a517378a65c041aa6ee09fc02765a5a97">  372</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a> <a class="code" href="classetcpal_1_1_ip_addr.html#a517378a65c041aa6ee09fc02765a5a97">IpAddr::Netmask</a>(<a class="code" href="group__etcpal__cpp__inet.html#gaf149bcc08653396944a3699b8c5a57c5">IpAddrType</a> type, <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> mask_length) noexcept</div>
@@ -570,359 +570,358 @@ $(document).ready(function(){initNavTree('cpp_2inet_8h_source.html',''); initRes
 <div class="line"><a name="l00502"></a><span class="lineno">  502</span>&#160;<span class="keyword"></span>{</div>
 <div class="line"><a name="l00503"></a><span class="lineno">  503</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="group__etcpal__inet.html#ga4ed3a313f7503031100bb169ad03bc89">ETCPAL_IP_IS_V4</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>))</div>
 <div class="line"><a name="l00504"></a><span class="lineno">  504</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a3ab600814133b2eb30bfc9d2816d6acd">ip</a>().<a class="code" href="classetcpal_1_1_ip_addr.html#a19c380b03cea21d7ac7325136a131ff0">ToString</a>() + <span class="charliteral">&#39;:&#39;</span> + std::to_string(addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a8e0798404bf2cf5dabb84c5ba9a4f236">port</a>);</div>
-<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code" href="group__etcpal__inet.html#ga85d241eed93be1b271e5dc68a56e9473">ETCPAL_IP_IS_V6</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>))</div>
+<div class="line"><a name="l00505"></a><span class="lineno">  505</span>&#160;  <span class="keywordflow">if</span> (<a class="code" href="group__etcpal__inet.html#ga85d241eed93be1b271e5dc68a56e9473">ETCPAL_IP_IS_V6</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>))</div>
 <div class="line"><a name="l00506"></a><span class="lineno">  506</span>&#160;    <span class="keywordflow">return</span> <span class="charliteral">&#39;[&#39;</span> + <a class="code" href="classetcpal_1_1_sock_addr.html#a3ab600814133b2eb30bfc9d2816d6acd">ip</a>().<a class="code" href="classetcpal_1_1_ip_addr.html#a19c380b03cea21d7ac7325136a131ff0">ToString</a>() + <span class="stringliteral">&quot;]:&quot;</span> + std::to_string(addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a8e0798404bf2cf5dabb84c5ba9a4f236">port</a>);</div>
-<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;  <span class="keywordflow">else</span></div>
-<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;    <span class="keywordflow">return</span> std::string();</div>
-<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160;}</div>
-<div class="line"><a name="l00510"></a><span class="lineno">  510</span>&#160; </div>
-<div class="line"><a name="l00512"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a3ab600814133b2eb30bfc9d2816d6acd">  512</a></span>&#160;constexpr <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a> <a class="code" href="classetcpal_1_1_sock_addr.html#a3ab600814133b2eb30bfc9d2816d6acd">SockAddr::ip</a>() const noexcept</div>
-<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;{</div>
-<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;  <span class="keywordflow">return</span> addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>;</div>
-<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160;}</div>
-<div class="line"><a name="l00516"></a><span class="lineno">  516</span>&#160; </div>
-<div class="line"><a name="l00518"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#abab82fa2b4ca400b38cb9691a2c3fb8a">  518</a></span>&#160;constexpr uint16_t <a class="code" href="classetcpal_1_1_sock_addr.html#abab82fa2b4ca400b38cb9691a2c3fb8a">SockAddr::port</a>() const noexcept</div>
-<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;{</div>
-<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;  <span class="keywordflow">return</span> addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a8e0798404bf2cf5dabb84c5ba9a4f236">port</a>;</div>
-<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160;}</div>
-<div class="line"><a name="l00522"></a><span class="lineno">  522</span>&#160; </div>
-<div class="line"><a name="l00528"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#acde4ca75e6e22c1a6899c84d923273db">  528</a></span>&#160;constexpr uint32_t <a class="code" href="classetcpal_1_1_sock_addr.html#acde4ca75e6e22c1a6899c84d923273db">SockAddr::v4_data</a>() const noexcept</div>
-<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;{</div>
-<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga35262011f1ae20211d8aad5c79ab1b50">ETCPAL_IP_V4_ADDRESS</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
-<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160;}</div>
-<div class="line"><a name="l00532"></a><span class="lineno">  532</span>&#160; </div>
-<div class="line"><a name="l00537"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#af7af815dfdf62cfaa17f98743a769028">  537</a></span>&#160;constexpr <span class="keyword">const</span> uint8_t* <a class="code" href="classetcpal_1_1_sock_addr.html#af7af815dfdf62cfaa17f98743a769028">SockAddr::v6_data</a>() const noexcept</div>
-<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;{</div>
-<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#gaaee800da95371923f9375dec1a6c0a5c">ETCPAL_IP_V6_ADDRESS</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
-<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160;}</div>
-<div class="line"><a name="l00541"></a><span class="lineno">  541</span>&#160; </div>
-<div class="line"><a name="l00546"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a9d6d96f2d5b5fb9fd6a16bcceb8dea59">  546</a></span>&#160;<span class="keyword">inline</span> std::array&lt;uint8_t, ETCPAL_IPV6_BYTES&gt; <a class="code" href="classetcpal_1_1_sock_addr.html#a9d6d96f2d5b5fb9fd6a16bcceb8dea59">SockAddr::ToV6Array</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;  <span class="comment">// RVO should hopefully make this only a single copy</span></div>
-<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;  std::array&lt;uint8_t, ETCPAL_IPV6_BYTES&gt; arr;</div>
-<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;  std::memcpy(arr.data(), <a class="code" href="group__etcpal__inet.html#gaaee800da95371923f9375dec1a6c0a5c">ETCPAL_IP_V6_ADDRESS</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>), <a class="code" href="group__etcpal__inet.html#gad5f18940857b50304b956505fb77df20">ETCPAL_IPV6_BYTES</a>);</div>
-<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;  <span class="keywordflow">return</span> arr;</div>
-<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160;}</div>
-<div class="line"><a name="l00553"></a><span class="lineno">  553</span>&#160; </div>
-<div class="line"><a name="l00563"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a14185dd1b4566147495318504a551034">  563</a></span>&#160;constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a14185dd1b4566147495318504a551034">SockAddr::scope_id</a>() const noexcept</div>
-<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;{</div>
-<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga88982a2d40356f278c53563ddf96d8b2">ETCPAL_IP_V6_SCOPE_ID</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
-<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160;}</div>
-<div class="line"><a name="l00567"></a><span class="lineno">  567</span>&#160; </div>
-<div class="line"><a name="l00569"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a6d02bb05c3ab899ab6752bbab4e3dbcf">  569</a></span>&#160;constexpr <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a6d02bb05c3ab899ab6752bbab4e3dbcf">SockAddr::IsValid</a>() const noexcept</div>
-<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;{</div>
-<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;  <span class="keywordflow">return</span> !<a class="code" href="group__etcpal__inet.html#ga56a6933874bc52770eac5865f237e225">ETCPAL_IP_IS_INVALID</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
-<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160;}</div>
-<div class="line"><a name="l00573"></a><span class="lineno">  573</span>&#160; </div>
-<div class="line"><a name="l00575"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a6408a893e29a2fcb75d7c6c842db5902">  575</a></span>&#160;constexpr <a class="code" href="group__etcpal__cpp__inet.html#gaf149bcc08653396944a3699b8c5a57c5">IpAddrType</a> <a class="code" href="classetcpal_1_1_sock_addr.html#a6408a893e29a2fcb75d7c6c842db5902">SockAddr::type</a>() const noexcept</div>
-<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;{</div>
-<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="group__etcpal__cpp__inet.html#gaf149bcc08653396944a3699b8c5a57c5">IpAddrType</a><span class="keyword">&gt;</span>(addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>.<a class="code" href="struct_etc_pal_ip_addr.html#a89368dca599010efedd3d8ca663d5953">type</a>);</div>
-<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160;}</div>
-<div class="line"><a name="l00579"></a><span class="lineno">  579</span>&#160; </div>
-<div class="line"><a name="l00581"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a3c808bdaebc8f534c871ac28bf379a7a">  581</a></span>&#160;constexpr <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a3c808bdaebc8f534c871ac28bf379a7a">SockAddr::IsV4</a>() const noexcept</div>
-<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;{</div>
-<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga4ed3a313f7503031100bb169ad03bc89">ETCPAL_IP_IS_V4</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
-<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160;}</div>
-<div class="line"><a name="l00585"></a><span class="lineno">  585</span>&#160; </div>
-<div class="line"><a name="l00587"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a08a35ea1e7f3f0a6047fbf28810d53e9">  587</a></span>&#160;constexpr <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a08a35ea1e7f3f0a6047fbf28810d53e9">SockAddr::IsV6</a>() const noexcept</div>
-<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;{</div>
-<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga85d241eed93be1b271e5dc68a56e9473">ETCPAL_IP_IS_V6</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
-<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160;}</div>
-<div class="line"><a name="l00591"></a><span class="lineno">  591</span>&#160; </div>
-<div class="line"><a name="l00593"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a211a72caa8aba79efd967fa3114e8c95">  593</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a211a72caa8aba79efd967fa3114e8c95">SockAddr::IsLinkLocal</a>() const noexcept</div>
-<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;{</div>
-<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#gaa4b21b32f8776276e582d473e17bf768">etcpal_ip_is_link_local</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
-<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160;}</div>
-<div class="line"><a name="l00597"></a><span class="lineno">  597</span>&#160; </div>
-<div class="line"><a name="l00599"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a4833f2d2e3f0434978f59f5020a7f84b">  599</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a4833f2d2e3f0434978f59f5020a7f84b">SockAddr::IsLoopback</a>() const noexcept</div>
-<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;{</div>
-<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga6f59d1ebf7873649f0812ee1cae171e7">etcpal_ip_is_loopback</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
-<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160;}</div>
-<div class="line"><a name="l00603"></a><span class="lineno">  603</span>&#160; </div>
-<div class="line"><a name="l00605"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a2f371a6bc900dd3ddcf0f7f16c5db00a">  605</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a2f371a6bc900dd3ddcf0f7f16c5db00a">SockAddr::IsMulticast</a>() const noexcept</div>
-<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;{</div>
-<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga71b745e5bdc7c77bba5320241639f450">etcpal_ip_is_multicast</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
-<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160;}</div>
-<div class="line"><a name="l00609"></a><span class="lineno">  609</span>&#160; </div>
-<div class="line"><a name="l00613"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#ac384adc1cbf470fe6672659bdef8358c">  613</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#ac384adc1cbf470fe6672659bdef8358c">SockAddr::IsWildcard</a>() const noexcept</div>
-<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;{</div>
-<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#gaef79c0c7eac819d7decf1473246d3b82">etcpal_ip_is_wildcard</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
-<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160;}</div>
-<div class="line"><a name="l00617"></a><span class="lineno">  617</span>&#160; </div>
-<div class="line"><a name="l00623"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">  623</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">SockAddr::SetAddress</a>(uint32_t v4_data) noexcept</div>
-<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;{</div>
-<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;  <a class="code" href="group__etcpal__inet.html#ga5e36f7ec503aef51829aed6fbd88c889">ETCPAL_IP_SET_V4_ADDRESS</a>(&amp;addr_.ip, v4_data);</div>
-<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160;}</div>
-<div class="line"><a name="l00627"></a><span class="lineno">  627</span>&#160; </div>
-<div class="line"><a name="l00633"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a5b87e44914b8e5d6acc662c0e7ada452">  633</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">SockAddr::SetAddress</a>(<span class="keyword">const</span> uint8_t* v6_data) noexcept</div>
-<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;{</div>
-<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;  <a class="code" href="group__etcpal__inet.html#gae0d14b2f44b81a6687390839e0aea869">ETCPAL_IP_SET_V6_ADDRESS</a>(&amp;addr_.ip, v6_data);</div>
-<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160;}</div>
-<div class="line"><a name="l00637"></a><span class="lineno">  637</span>&#160; </div>
-<div class="line"><a name="l00644"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a5e188695085f61a2fd9c0ba28a6e0893">  644</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">SockAddr::SetAddress</a>(<span class="keyword">const</span> uint8_t* v6_data, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> scope_id) noexcept</div>
-<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;{</div>
-<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;  <a class="code" href="group__etcpal__inet.html#gaeb96cdc37b6f57f448b0ac15971380d8">ETCPAL_IP_SET_V6_ADDRESS_WITH_SCOPE_ID</a>(&amp;addr_.ip, v6_data, scope_id);</div>
-<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160;}</div>
-<div class="line"><a name="l00648"></a><span class="lineno">  648</span>&#160; </div>
-<div class="line"><a name="l00651"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a297607ac00a2f71ea955edfbaa43875f">  651</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">SockAddr::SetAddress</a>(<span class="keyword">const</span> <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a>&amp; ip) noexcept</div>
-<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;{</div>
-<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;  addr_.ip = ip.get();</div>
-<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160;}</div>
-<div class="line"><a name="l00655"></a><span class="lineno">  655</span>&#160; </div>
-<div class="line"><a name="l00658"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a8f2a678aed9c3bdd389633dea859b5d2">  658</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a8f2a678aed9c3bdd389633dea859b5d2">SockAddr::SetPort</a>(uint16_t port) noexcept</div>
-<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;{</div>
-<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;  addr_.port = port;</div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;}</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160; </div>
-<div class="line"><a name="l00667"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html">  667</a></span>&#160;<span class="keyword">class </span><a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a></div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;{</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00671"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">  671</a></span>&#160;  <a class="code" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">MacAddr</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;  <span class="comment">// Note: this constructor is not explicit by design, to allow implicit conversions e.g.</span></div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;  <span class="comment">//   etcpal::MacAddr sa = etcpal_c_function_that_returns_macaddr();</span></div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;  constexpr <a class="code" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">MacAddr</a>(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept;</div>
-<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;  <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a>&amp; <a class="code" href="classetcpal_1_1_mac_addr.html#abf74026b5f8428336b974584cbd534df">operator=</a>(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept;</div>
-<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">MacAddr</a>(<span class="keyword">const</span> uint8_t* mac_data) noexcept;</div>
-<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>
-<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;  constexpr <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; <a class="code" href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">get</a>() const noexcept;</div>
-<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp;    <a class="code" href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">get</a>() noexcept;</div>
-<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;  std::<span class="keywordtype">string</span>                           <a class="code" href="classetcpal_1_1_mac_addr.html#a19c380b03cea21d7ac7325136a131ff0">ToString</a>() const;</div>
-<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;  constexpr const uint8_t*              <a class="code" href="classetcpal_1_1_mac_addr.html#a3f4c46c5e6a3a561bad84c6a91ecc8f0">data</a>() const noexcept;</div>
-<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160;  std::array&lt;uint8_t, <a class="code" href="group__etcpal__inet.html#ga2222b6d9e40f95ec1d74e1865537863f">ETCPAL_MAC_BYTES</a>&gt; <a class="code" href="classetcpal_1_1_mac_addr.html#a9ef1e40476be6ec748b2cb8d1e7235ce">ToArray</a>() const noexcept;</div>
-<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160; </div>
-<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_mac_addr.html#a27909eb1d61b8b261d259be7c70c58dd">IsNull</a>() const noexcept;</div>
-<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160; </div>
-<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;  static <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a> <a class="code" href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">FromString</a>(const <span class="keywordtype">char</span>* mac_str) noexcept;</div>
-<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160;  static <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a> <a class="code" href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">FromString</a>(const std::<span class="keywordtype">string</span>&amp; mac_str) noexcept;</div>
-<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160; </div>
-<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;private:</div>
-<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;  <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a> addr_{};</div>
-<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160;};</div>
-<div class="line"><a name="l00692"></a><span class="lineno">  692</span>&#160; </div>
-<div class="line"><a name="l00694"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a786b90567f5a0f50072a11180bed1e63">  694</a></span>&#160;constexpr <a class="code" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">MacAddr::MacAddr</a>(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept : addr_(c_mac)</div>
-<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;{</div>
-<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160;}</div>
-<div class="line"><a name="l00697"></a><span class="lineno">  697</span>&#160; </div>
-<div class="line"><a name="l00699"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#abf74026b5f8428336b974584cbd534df">  699</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a>&amp; <a class="code" href="classetcpal_1_1_mac_addr.html#abf74026b5f8428336b974584cbd534df">MacAddr::operator=</a>(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept</div>
-<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;{</div>
-<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;  addr_ = c_mac;</div>
-<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
-<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160;}</div>
-<div class="line"><a name="l00704"></a><span class="lineno">  704</span>&#160; </div>
-<div class="line"><a name="l00707"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#aff3e9838bb257f6f5c09396be07fa4f3">  707</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">MacAddr::MacAddr</a>(<span class="keyword">const</span> uint8_t* mac_data) noexcept</div>
-<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;{</div>
-<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;  std::memcpy(addr_.data, mac_data, <a class="code" href="group__etcpal__inet.html#ga2222b6d9e40f95ec1d74e1865537863f">ETCPAL_MAC_BYTES</a>);</div>
-<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160;}</div>
-<div class="line"><a name="l00711"></a><span class="lineno">  711</span>&#160; </div>
-<div class="line"><a name="l00713"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">  713</a></span>&#160;constexpr <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; <a class="code" href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">MacAddr::get</a>() const noexcept</div>
-<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;{</div>
-<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;  <span class="keywordflow">return</span> addr_;</div>
-<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160;}</div>
-<div class="line"><a name="l00717"></a><span class="lineno">  717</span>&#160; </div>
-<div class="line"><a name="l00719"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a770c9d747f6e9be2eef81c41e926d660">  719</a></span>&#160;<a class="code" href="group__etcpal__cpp.html#ga598701b6928c77a8c086183a0a1cb9cc">ETCPAL_CONSTEXPR_14_OR_INLINE</a> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; <a class="code" href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">MacAddr::get</a>() noexcept</div>
-<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;{</div>
-<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;  <span class="keywordflow">return</span> addr_;</div>
-<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160;}</div>
-<div class="line"><a name="l00723"></a><span class="lineno">  723</span>&#160; </div>
-<div class="line"><a name="l00727"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a19c380b03cea21d7ac7325136a131ff0">  727</a></span>&#160;<span class="keyword">inline</span> std::string <a class="code" href="classetcpal_1_1_mac_addr.html#a19c380b03cea21d7ac7325136a131ff0">MacAddr::ToString</a>()<span class="keyword"> const</span></div>
-<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;<span class="keyword"></span>{</div>
-<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;  <span class="keywordtype">char</span> str_buf[<a class="code" href="group__etcpal__inet.html#ga73f73b31cc309024d3284ebcf4b66b45">ETCPAL_MAC_STRING_BYTES</a>];</div>
-<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;  <a class="code" href="group__etcpal__inet.html#gaf1e26c55e9ece4a8a17bd9953eca0886">etcpal_mac_to_string</a>(&amp;addr_, str_buf);</div>
-<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;  <span class="keywordflow">return</span> str_buf;</div>
-<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160;}</div>
-<div class="line"><a name="l00733"></a><span class="lineno">  733</span>&#160; </div>
-<div class="line"><a name="l00736"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a3f4c46c5e6a3a561bad84c6a91ecc8f0">  736</a></span>&#160;constexpr <span class="keyword">const</span> uint8_t* <a class="code" href="classetcpal_1_1_mac_addr.html#a3f4c46c5e6a3a561bad84c6a91ecc8f0">MacAddr::data</a>() const noexcept</div>
-<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;{</div>
-<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;  <span class="keywordflow">return</span> addr_.<a class="code" href="struct_etc_pal_mac_addr.html#a251236fb1e367947c8f6f5498a86896b">data</a>;</div>
-<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160;}</div>
-<div class="line"><a name="l00740"></a><span class="lineno">  740</span>&#160; </div>
-<div class="line"><a name="l00744"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a9ef1e40476be6ec748b2cb8d1e7235ce">  744</a></span>&#160;<span class="keyword">inline</span> std::array&lt;uint8_t, ETCPAL_MAC_BYTES&gt; <a class="code" href="classetcpal_1_1_mac_addr.html#a9ef1e40476be6ec748b2cb8d1e7235ce">MacAddr::ToArray</a>() const noexcept</div>
-<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;{</div>
-<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;  <span class="comment">// RVO should hopefully make this only a single copy</span></div>
-<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;  std::array&lt;uint8_t, ETCPAL_MAC_BYTES&gt; arr;</div>
-<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;  std::memcpy(arr.data(), addr_.<a class="code" href="struct_etc_pal_mac_addr.html#a251236fb1e367947c8f6f5498a86896b">data</a>, <a class="code" href="group__etcpal__inet.html#ga2222b6d9e40f95ec1d74e1865537863f">ETCPAL_MAC_BYTES</a>);</div>
-<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;  <span class="keywordflow">return</span> arr;</div>
-<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160;}</div>
-<div class="line"><a name="l00751"></a><span class="lineno">  751</span>&#160; </div>
-<div class="line"><a name="l00753"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a27909eb1d61b8b261d259be7c70c58dd">  753</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_mac_addr.html#a27909eb1d61b8b261d259be7c70c58dd">MacAddr::IsNull</a>() const noexcept</div>
-<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;{</div>
-<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga84ac8ff7c11b7b3d05e66192205ae0cb">ETCPAL_MAC_IS_NULL</a>(&amp;addr_);</div>
-<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160;}</div>
-<div class="line"><a name="l00757"></a><span class="lineno">  757</span>&#160; </div>
-<div class="line"><a name="l00761"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">  761</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a> <a class="code" href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">MacAddr::FromString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* mac_str) noexcept</div>
-<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;{</div>
-<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;  <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a> result;</div>
-<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;  <a class="code" href="group__etcpal__inet.html#gac2175076e5d4834fccf76e17a29bbbfe">etcpal_string_to_mac</a>(mac_str, &amp;result.addr_);</div>
-<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;  <span class="keywordflow">return</span> result;</div>
-<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160;}</div>
-<div class="line"><a name="l00767"></a><span class="lineno">  767</span>&#160; </div>
-<div class="line"><a name="l00771"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a4ddd74c443669ab0d7c1aefac0e13fd7">  771</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a> <a class="code" href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">MacAddr::FromString</a>(<span class="keyword">const</span> std::string&amp; mac_str) noexcept</div>
-<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;{</div>
-<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;  <span class="keywordflow">return</span> FromString(mac_str.c_str());</div>
-<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160;}</div>
-<div class="line"><a name="l00775"></a><span class="lineno">  775</span>&#160; </div>
-<div class="line"><a name="l00777"></a><span class="lineno">  777</span>&#160;<span class="comment">// Operators</span></div>
-<div class="line"><a name="l00779"></a><span class="lineno">  779</span>&#160;<span class="comment"></span> </div>
-<div class="line"><a name="l00782"></a><span class="lineno">  782</span>&#160; </div>
-<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160; </div>
-<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160;<span class="comment">// Special operators for comparing with the underlying types</span></div>
-<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160; </div>
-<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a>&amp; c_ip, <span class="keyword">const</span> <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a>&amp; ip) noexcept</div>
-<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;{</div>
-<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;  <span class="keywordflow">return</span> c_ip == ip.get();</div>
-<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160;}</div>
-<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160; </div>
-<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a>&amp; c_ip, <span class="keyword">const</span> IpAddr&amp; ip) noexcept</div>
-<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;{</div>
-<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;  <span class="keywordflow">return</span> !(c_ip == ip);</div>
-<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160;}</div>
-<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160; </div>
-<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> IpAddr&amp; ip, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a>&amp; c_ip) noexcept</div>
-<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;{</div>
-<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;  <span class="keywordflow">return</span> ip.get() == c_ip;</div>
-<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160;}</div>
-<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160; </div>
-<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> IpAddr&amp; ip, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a>&amp; c_ip) noexcept</div>
-<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;{</div>
-<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;  <span class="keywordflow">return</span> !(ip == c_ip);</div>
-<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160;}</div>
-<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160; </div>
-<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; c_ip, <span class="keyword">const</span> SockAddr&amp; ip) noexcept</div>
-<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;{</div>
-<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;  <span class="keywordflow">return</span> c_ip == ip.get();</div>
-<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160;}</div>
-<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160; </div>
-<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; c_ip, <span class="keyword">const</span> SockAddr&amp; ip) noexcept</div>
-<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;{</div>
-<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;  <span class="keywordflow">return</span> !(c_ip == ip);</div>
-<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160;}</div>
-<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160; </div>
-<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> SockAddr&amp; ip, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; c_ip) noexcept</div>
-<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;{</div>
-<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;  <span class="keywordflow">return</span> ip.get() == c_ip;</div>
-<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160;}</div>
-<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160; </div>
-<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> SockAddr&amp; ip, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; c_ip) noexcept</div>
-<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;{</div>
-<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;  <span class="keywordflow">return</span> !(ip == c_ip);</div>
-<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160;}</div>
-<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160; </div>
-<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac, <span class="keyword">const</span> MacAddr&amp; mac) noexcept</div>
-<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;{</div>
-<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;  <span class="keywordflow">return</span> c_mac == mac.get();</div>
-<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160;}</div>
-<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160; </div>
-<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac, <span class="keyword">const</span> MacAddr&amp; mac) noexcept</div>
-<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;{</div>
-<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;  <span class="keywordflow">return</span> !(c_mac == mac);</div>
-<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160;}</div>
-<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160; </div>
-<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> MacAddr&amp; mac, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept</div>
-<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;{</div>
-<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;  <span class="keywordflow">return</span> mac.get() == c_mac;</div>
-<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160;}</div>
-<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160; </div>
-<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> MacAddr&amp; mac, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept</div>
-<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;{</div>
-<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;  <span class="keywordflow">return</span> !(mac == c_mac);</div>
-<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160;}</div>
-<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160; </div>
-<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160;<span class="comment">// Standard operators</span></div>
-<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160; </div>
-<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;{</div>
-<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;  <span class="keywordflow">return</span> a.get() == b.get();</div>
-<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160;}</div>
-<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160; </div>
-<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;{</div>
-<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;  <span class="keywordflow">return</span> !(a == b);</div>
-<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160;}</div>
-<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160; </div>
-<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;{</div>
-<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;  <span class="keywordflow">return</span> a.get() &lt; b.get();</div>
-<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160;}</div>
-<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160; </div>
-<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;{</div>
-<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;  <span class="keywordflow">return</span> b &lt; a;</div>
-<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160;}</div>
-<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160; </div>
-<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;{</div>
-<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;  <span class="keywordflow">return</span> !(b &lt; a);</div>
-<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160;}</div>
-<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160; </div>
-<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;{</div>
-<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;  <span class="keywordflow">return</span> !(a &lt; b);</div>
-<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160;}</div>
-<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160; </div>
-<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;{</div>
-<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;  <span class="keywordflow">return</span> a.get() == b.get();</div>
-<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160;}</div>
-<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160; </div>
-<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;{</div>
-<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;  <span class="keywordflow">return</span> !(a == b);</div>
-<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160;}</div>
-<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160; </div>
-<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;{</div>
-<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;  <span class="keywordflow">return</span> a.get() &lt; b.get();</div>
-<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160;}</div>
-<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160; </div>
-<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;{</div>
-<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;  <span class="keywordflow">return</span> b &lt; a;</div>
-<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160;}</div>
-<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160; </div>
-<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;{</div>
-<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;  <span class="keywordflow">return</span> !(b &lt; a);</div>
-<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160;}</div>
-<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160; </div>
-<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;{</div>
-<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;  <span class="keywordflow">return</span> !(a &lt; b);</div>
-<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160;}</div>
-<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160; </div>
-<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;{</div>
-<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;  <span class="keywordflow">return</span> a.get() == b.get();</div>
-<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160;}</div>
-<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160; </div>
-<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;{</div>
-<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;  <span class="keywordflow">return</span> !(a == b);</div>
-<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160;}</div>
-<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160; </div>
-<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;{</div>
-<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;  <span class="keywordflow">return</span> a.get() &lt; b.get();</div>
-<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160;}</div>
-<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160; </div>
-<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;{</div>
-<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;  <span class="keywordflow">return</span> b &lt; a;</div>
-<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160;}</div>
-<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160; </div>
-<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;{</div>
-<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;  <span class="keywordflow">return</span> !(b &lt; a);</div>
-<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160;}</div>
-<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160; </div>
-<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
-<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;{</div>
-<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;  <span class="keywordflow">return</span> !(a &lt; b);</div>
-<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160;}</div>
-<div class="line"><a name="l00939"></a><span class="lineno">  939</span>&#160; </div>
-<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160; </div>
-<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160;};  <span class="comment">// namespace etcpal</span></div>
-<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160; </div>
-<div class="line"><a name="l00945"></a><span class="lineno">  945</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// ETCPAL_CPP_LOCK_H_</span></div>
+<div class="line"><a name="l00507"></a><span class="lineno">  507</span>&#160;  <span class="keywordflow">return</span> {};</div>
+<div class="line"><a name="l00508"></a><span class="lineno">  508</span>&#160;}</div>
+<div class="line"><a name="l00509"></a><span class="lineno">  509</span>&#160; </div>
+<div class="line"><a name="l00511"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a3ab600814133b2eb30bfc9d2816d6acd">  511</a></span>&#160;constexpr <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a> <a class="code" href="classetcpal_1_1_sock_addr.html#a3ab600814133b2eb30bfc9d2816d6acd">SockAddr::ip</a>() const noexcept</div>
+<div class="line"><a name="l00512"></a><span class="lineno">  512</span>&#160;{</div>
+<div class="line"><a name="l00513"></a><span class="lineno">  513</span>&#160;  <span class="keywordflow">return</span> addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>;</div>
+<div class="line"><a name="l00514"></a><span class="lineno">  514</span>&#160;}</div>
+<div class="line"><a name="l00515"></a><span class="lineno">  515</span>&#160; </div>
+<div class="line"><a name="l00517"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#abab82fa2b4ca400b38cb9691a2c3fb8a">  517</a></span>&#160;constexpr uint16_t <a class="code" href="classetcpal_1_1_sock_addr.html#abab82fa2b4ca400b38cb9691a2c3fb8a">SockAddr::port</a>() const noexcept</div>
+<div class="line"><a name="l00518"></a><span class="lineno">  518</span>&#160;{</div>
+<div class="line"><a name="l00519"></a><span class="lineno">  519</span>&#160;  <span class="keywordflow">return</span> addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a8e0798404bf2cf5dabb84c5ba9a4f236">port</a>;</div>
+<div class="line"><a name="l00520"></a><span class="lineno">  520</span>&#160;}</div>
+<div class="line"><a name="l00521"></a><span class="lineno">  521</span>&#160; </div>
+<div class="line"><a name="l00527"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#acde4ca75e6e22c1a6899c84d923273db">  527</a></span>&#160;constexpr uint32_t <a class="code" href="classetcpal_1_1_sock_addr.html#acde4ca75e6e22c1a6899c84d923273db">SockAddr::v4_data</a>() const noexcept</div>
+<div class="line"><a name="l00528"></a><span class="lineno">  528</span>&#160;{</div>
+<div class="line"><a name="l00529"></a><span class="lineno">  529</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga35262011f1ae20211d8aad5c79ab1b50">ETCPAL_IP_V4_ADDRESS</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
+<div class="line"><a name="l00530"></a><span class="lineno">  530</span>&#160;}</div>
+<div class="line"><a name="l00531"></a><span class="lineno">  531</span>&#160; </div>
+<div class="line"><a name="l00536"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#af7af815dfdf62cfaa17f98743a769028">  536</a></span>&#160;constexpr <span class="keyword">const</span> uint8_t* <a class="code" href="classetcpal_1_1_sock_addr.html#af7af815dfdf62cfaa17f98743a769028">SockAddr::v6_data</a>() const noexcept</div>
+<div class="line"><a name="l00537"></a><span class="lineno">  537</span>&#160;{</div>
+<div class="line"><a name="l00538"></a><span class="lineno">  538</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#gaaee800da95371923f9375dec1a6c0a5c">ETCPAL_IP_V6_ADDRESS</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
+<div class="line"><a name="l00539"></a><span class="lineno">  539</span>&#160;}</div>
+<div class="line"><a name="l00540"></a><span class="lineno">  540</span>&#160; </div>
+<div class="line"><a name="l00545"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a9d6d96f2d5b5fb9fd6a16bcceb8dea59">  545</a></span>&#160;<span class="keyword">inline</span> std::array&lt;uint8_t, ETCPAL_IPV6_BYTES&gt; <a class="code" href="classetcpal_1_1_sock_addr.html#a9d6d96f2d5b5fb9fd6a16bcceb8dea59">SockAddr::ToV6Array</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00546"></a><span class="lineno">  546</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00547"></a><span class="lineno">  547</span>&#160;  <span class="comment">// RVO should hopefully make this only a single copy</span></div>
+<div class="line"><a name="l00548"></a><span class="lineno">  548</span>&#160;  std::array&lt;uint8_t, ETCPAL_IPV6_BYTES&gt; arr;  <span class="comment">// NOLINT(cppcoreguidelines-pro-type-member-init)</span></div>
+<div class="line"><a name="l00549"></a><span class="lineno">  549</span>&#160;  std::memcpy(arr.data(), <a class="code" href="group__etcpal__inet.html#gaaee800da95371923f9375dec1a6c0a5c">ETCPAL_IP_V6_ADDRESS</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>), <a class="code" href="group__etcpal__inet.html#gad5f18940857b50304b956505fb77df20">ETCPAL_IPV6_BYTES</a>);</div>
+<div class="line"><a name="l00550"></a><span class="lineno">  550</span>&#160;  <span class="keywordflow">return</span> arr;</div>
+<div class="line"><a name="l00551"></a><span class="lineno">  551</span>&#160;}</div>
+<div class="line"><a name="l00552"></a><span class="lineno">  552</span>&#160; </div>
+<div class="line"><a name="l00562"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a14185dd1b4566147495318504a551034">  562</a></span>&#160;constexpr <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a14185dd1b4566147495318504a551034">SockAddr::scope_id</a>() const noexcept</div>
+<div class="line"><a name="l00563"></a><span class="lineno">  563</span>&#160;{</div>
+<div class="line"><a name="l00564"></a><span class="lineno">  564</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga88982a2d40356f278c53563ddf96d8b2">ETCPAL_IP_V6_SCOPE_ID</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
+<div class="line"><a name="l00565"></a><span class="lineno">  565</span>&#160;}</div>
+<div class="line"><a name="l00566"></a><span class="lineno">  566</span>&#160; </div>
+<div class="line"><a name="l00568"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a6d02bb05c3ab899ab6752bbab4e3dbcf">  568</a></span>&#160;constexpr <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a6d02bb05c3ab899ab6752bbab4e3dbcf">SockAddr::IsValid</a>() const noexcept</div>
+<div class="line"><a name="l00569"></a><span class="lineno">  569</span>&#160;{</div>
+<div class="line"><a name="l00570"></a><span class="lineno">  570</span>&#160;  <span class="keywordflow">return</span> !<a class="code" href="group__etcpal__inet.html#ga56a6933874bc52770eac5865f237e225">ETCPAL_IP_IS_INVALID</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
+<div class="line"><a name="l00571"></a><span class="lineno">  571</span>&#160;}</div>
+<div class="line"><a name="l00572"></a><span class="lineno">  572</span>&#160; </div>
+<div class="line"><a name="l00574"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a6408a893e29a2fcb75d7c6c842db5902">  574</a></span>&#160;constexpr <a class="code" href="group__etcpal__cpp__inet.html#gaf149bcc08653396944a3699b8c5a57c5">IpAddrType</a> <a class="code" href="classetcpal_1_1_sock_addr.html#a6408a893e29a2fcb75d7c6c842db5902">SockAddr::type</a>() const noexcept</div>
+<div class="line"><a name="l00575"></a><span class="lineno">  575</span>&#160;{</div>
+<div class="line"><a name="l00576"></a><span class="lineno">  576</span>&#160;  <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span><a class="code" href="group__etcpal__cpp__inet.html#gaf149bcc08653396944a3699b8c5a57c5">IpAddrType</a><span class="keyword">&gt;</span>(addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>.<a class="code" href="struct_etc_pal_ip_addr.html#a89368dca599010efedd3d8ca663d5953">type</a>);</div>
+<div class="line"><a name="l00577"></a><span class="lineno">  577</span>&#160;}</div>
+<div class="line"><a name="l00578"></a><span class="lineno">  578</span>&#160; </div>
+<div class="line"><a name="l00580"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a3c808bdaebc8f534c871ac28bf379a7a">  580</a></span>&#160;constexpr <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a3c808bdaebc8f534c871ac28bf379a7a">SockAddr::IsV4</a>() const noexcept</div>
+<div class="line"><a name="l00581"></a><span class="lineno">  581</span>&#160;{</div>
+<div class="line"><a name="l00582"></a><span class="lineno">  582</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga4ed3a313f7503031100bb169ad03bc89">ETCPAL_IP_IS_V4</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
+<div class="line"><a name="l00583"></a><span class="lineno">  583</span>&#160;}</div>
+<div class="line"><a name="l00584"></a><span class="lineno">  584</span>&#160; </div>
+<div class="line"><a name="l00586"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a08a35ea1e7f3f0a6047fbf28810d53e9">  586</a></span>&#160;constexpr <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a08a35ea1e7f3f0a6047fbf28810d53e9">SockAddr::IsV6</a>() const noexcept</div>
+<div class="line"><a name="l00587"></a><span class="lineno">  587</span>&#160;{</div>
+<div class="line"><a name="l00588"></a><span class="lineno">  588</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga85d241eed93be1b271e5dc68a56e9473">ETCPAL_IP_IS_V6</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
+<div class="line"><a name="l00589"></a><span class="lineno">  589</span>&#160;}</div>
+<div class="line"><a name="l00590"></a><span class="lineno">  590</span>&#160; </div>
+<div class="line"><a name="l00592"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a211a72caa8aba79efd967fa3114e8c95">  592</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a211a72caa8aba79efd967fa3114e8c95">SockAddr::IsLinkLocal</a>() const noexcept</div>
+<div class="line"><a name="l00593"></a><span class="lineno">  593</span>&#160;{</div>
+<div class="line"><a name="l00594"></a><span class="lineno">  594</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#gaa4b21b32f8776276e582d473e17bf768">etcpal_ip_is_link_local</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
+<div class="line"><a name="l00595"></a><span class="lineno">  595</span>&#160;}</div>
+<div class="line"><a name="l00596"></a><span class="lineno">  596</span>&#160; </div>
+<div class="line"><a name="l00598"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a4833f2d2e3f0434978f59f5020a7f84b">  598</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a4833f2d2e3f0434978f59f5020a7f84b">SockAddr::IsLoopback</a>() const noexcept</div>
+<div class="line"><a name="l00599"></a><span class="lineno">  599</span>&#160;{</div>
+<div class="line"><a name="l00600"></a><span class="lineno">  600</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga6f59d1ebf7873649f0812ee1cae171e7">etcpal_ip_is_loopback</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
+<div class="line"><a name="l00601"></a><span class="lineno">  601</span>&#160;}</div>
+<div class="line"><a name="l00602"></a><span class="lineno">  602</span>&#160; </div>
+<div class="line"><a name="l00604"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a2f371a6bc900dd3ddcf0f7f16c5db00a">  604</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a2f371a6bc900dd3ddcf0f7f16c5db00a">SockAddr::IsMulticast</a>() const noexcept</div>
+<div class="line"><a name="l00605"></a><span class="lineno">  605</span>&#160;{</div>
+<div class="line"><a name="l00606"></a><span class="lineno">  606</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga71b745e5bdc7c77bba5320241639f450">etcpal_ip_is_multicast</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
+<div class="line"><a name="l00607"></a><span class="lineno">  607</span>&#160;}</div>
+<div class="line"><a name="l00608"></a><span class="lineno">  608</span>&#160; </div>
+<div class="line"><a name="l00612"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#ac384adc1cbf470fe6672659bdef8358c">  612</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_sock_addr.html#ac384adc1cbf470fe6672659bdef8358c">SockAddr::IsWildcard</a>() const noexcept</div>
+<div class="line"><a name="l00613"></a><span class="lineno">  613</span>&#160;{</div>
+<div class="line"><a name="l00614"></a><span class="lineno">  614</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#gaef79c0c7eac819d7decf1473246d3b82">etcpal_ip_is_wildcard</a>(&amp;addr_.<a class="code" href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">ip</a>);</div>
+<div class="line"><a name="l00615"></a><span class="lineno">  615</span>&#160;}</div>
+<div class="line"><a name="l00616"></a><span class="lineno">  616</span>&#160; </div>
+<div class="line"><a name="l00622"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">  622</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">SockAddr::SetAddress</a>(uint32_t v4_data) noexcept</div>
+<div class="line"><a name="l00623"></a><span class="lineno">  623</span>&#160;{</div>
+<div class="line"><a name="l00624"></a><span class="lineno">  624</span>&#160;  <a class="code" href="group__etcpal__inet.html#ga5e36f7ec503aef51829aed6fbd88c889">ETCPAL_IP_SET_V4_ADDRESS</a>(&amp;addr_.ip, v4_data);</div>
+<div class="line"><a name="l00625"></a><span class="lineno">  625</span>&#160;}</div>
+<div class="line"><a name="l00626"></a><span class="lineno">  626</span>&#160; </div>
+<div class="line"><a name="l00632"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a5b87e44914b8e5d6acc662c0e7ada452">  632</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">SockAddr::SetAddress</a>(<span class="keyword">const</span> uint8_t* v6_data) noexcept</div>
+<div class="line"><a name="l00633"></a><span class="lineno">  633</span>&#160;{</div>
+<div class="line"><a name="l00634"></a><span class="lineno">  634</span>&#160;  <a class="code" href="group__etcpal__inet.html#gae0d14b2f44b81a6687390839e0aea869">ETCPAL_IP_SET_V6_ADDRESS</a>(&amp;addr_.ip, v6_data);</div>
+<div class="line"><a name="l00635"></a><span class="lineno">  635</span>&#160;}</div>
+<div class="line"><a name="l00636"></a><span class="lineno">  636</span>&#160; </div>
+<div class="line"><a name="l00643"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a5e188695085f61a2fd9c0ba28a6e0893">  643</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">SockAddr::SetAddress</a>(<span class="keyword">const</span> uint8_t* v6_data, <span class="keywordtype">unsigned</span> <span class="keywordtype">long</span> scope_id) noexcept</div>
+<div class="line"><a name="l00644"></a><span class="lineno">  644</span>&#160;{</div>
+<div class="line"><a name="l00645"></a><span class="lineno">  645</span>&#160;  <a class="code" href="group__etcpal__inet.html#gaeb96cdc37b6f57f448b0ac15971380d8">ETCPAL_IP_SET_V6_ADDRESS_WITH_SCOPE_ID</a>(&amp;addr_.ip, v6_data, scope_id);</div>
+<div class="line"><a name="l00646"></a><span class="lineno">  646</span>&#160;}</div>
+<div class="line"><a name="l00647"></a><span class="lineno">  647</span>&#160; </div>
+<div class="line"><a name="l00650"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a297607ac00a2f71ea955edfbaa43875f">  650</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">SockAddr::SetAddress</a>(<span class="keyword">const</span> <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a>&amp; ip) noexcept</div>
+<div class="line"><a name="l00651"></a><span class="lineno">  651</span>&#160;{</div>
+<div class="line"><a name="l00652"></a><span class="lineno">  652</span>&#160;  addr_.ip = ip.get();</div>
+<div class="line"><a name="l00653"></a><span class="lineno">  653</span>&#160;}</div>
+<div class="line"><a name="l00654"></a><span class="lineno">  654</span>&#160; </div>
+<div class="line"><a name="l00657"></a><span class="lineno"><a class="line" href="classetcpal_1_1_sock_addr.html#a8f2a678aed9c3bdd389633dea859b5d2">  657</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="classetcpal_1_1_sock_addr.html#a8f2a678aed9c3bdd389633dea859b5d2">SockAddr::SetPort</a>(uint16_t port) noexcept</div>
+<div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;{</div>
+<div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;  addr_.port = port;</div>
+<div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160;}</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160; </div>
+<div class="line"><a name="l00666"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html">  666</a></span>&#160;<span class="keyword">class </span><a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a></div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;{</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00670"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">  670</a></span>&#160;  <a class="code" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">MacAddr</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;  <span class="comment">// Note: this constructor is not explicit by design, to allow implicit conversions e.g.</span></div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;  <span class="comment">//   etcpal::MacAddr sa = etcpal_c_function_that_returns_macaddr();</span></div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;  constexpr <a class="code" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">MacAddr</a>(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;  <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a>&amp; <a class="code" href="classetcpal_1_1_mac_addr.html#abf74026b5f8428336b974584cbd534df">operator=</a>(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept;</div>
+<div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">MacAddr</a>(<span class="keyword">const</span> uint8_t* mac_data) noexcept;</div>
+<div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160; </div>
+<div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160;  constexpr <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; <a class="code" href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">get</a>() const noexcept;</div>
+<div class="line"><a name="l00678"></a><span class="lineno">  678</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp;    <a class="code" href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">get</a>() noexcept;</div>
+<div class="line"><a name="l00679"></a><span class="lineno">  679</span>&#160;  std::<span class="keywordtype">string</span>                           <a class="code" href="classetcpal_1_1_mac_addr.html#a19c380b03cea21d7ac7325136a131ff0">ToString</a>() const;</div>
+<div class="line"><a name="l00680"></a><span class="lineno">  680</span>&#160;  constexpr const uint8_t*              <a class="code" href="classetcpal_1_1_mac_addr.html#a3f4c46c5e6a3a561bad84c6a91ecc8f0">data</a>() const noexcept;</div>
+<div class="line"><a name="l00681"></a><span class="lineno">  681</span>&#160;  std::array&lt;uint8_t, <a class="code" href="group__etcpal__inet.html#ga2222b6d9e40f95ec1d74e1865537863f">ETCPAL_MAC_BYTES</a>&gt; <a class="code" href="classetcpal_1_1_mac_addr.html#a9ef1e40476be6ec748b2cb8d1e7235ce">ToArray</a>() const noexcept;</div>
+<div class="line"><a name="l00682"></a><span class="lineno">  682</span>&#160; </div>
+<div class="line"><a name="l00683"></a><span class="lineno">  683</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_mac_addr.html#a27909eb1d61b8b261d259be7c70c58dd">IsNull</a>() const noexcept;</div>
+<div class="line"><a name="l00684"></a><span class="lineno">  684</span>&#160; </div>
+<div class="line"><a name="l00685"></a><span class="lineno">  685</span>&#160;  static <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a> <a class="code" href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">FromString</a>(const <span class="keywordtype">char</span>* mac_str) noexcept;</div>
+<div class="line"><a name="l00686"></a><span class="lineno">  686</span>&#160;  static <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a> <a class="code" href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">FromString</a>(const std::<span class="keywordtype">string</span>&amp; mac_str) noexcept;</div>
+<div class="line"><a name="l00687"></a><span class="lineno">  687</span>&#160; </div>
+<div class="line"><a name="l00688"></a><span class="lineno">  688</span>&#160;private:</div>
+<div class="line"><a name="l00689"></a><span class="lineno">  689</span>&#160;  <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a> addr_{};</div>
+<div class="line"><a name="l00690"></a><span class="lineno">  690</span>&#160;};</div>
+<div class="line"><a name="l00691"></a><span class="lineno">  691</span>&#160; </div>
+<div class="line"><a name="l00693"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a786b90567f5a0f50072a11180bed1e63">  693</a></span>&#160;constexpr <a class="code" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">MacAddr::MacAddr</a>(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept : addr_(c_mac)</div>
+<div class="line"><a name="l00694"></a><span class="lineno">  694</span>&#160;{</div>
+<div class="line"><a name="l00695"></a><span class="lineno">  695</span>&#160;}</div>
+<div class="line"><a name="l00696"></a><span class="lineno">  696</span>&#160; </div>
+<div class="line"><a name="l00698"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#abf74026b5f8428336b974584cbd534df">  698</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a>&amp; <a class="code" href="classetcpal_1_1_mac_addr.html#abf74026b5f8428336b974584cbd534df">MacAddr::operator=</a>(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept</div>
+<div class="line"><a name="l00699"></a><span class="lineno">  699</span>&#160;{</div>
+<div class="line"><a name="l00700"></a><span class="lineno">  700</span>&#160;  addr_ = c_mac;</div>
+<div class="line"><a name="l00701"></a><span class="lineno">  701</span>&#160;  <span class="keywordflow">return</span> *<span class="keyword">this</span>;</div>
+<div class="line"><a name="l00702"></a><span class="lineno">  702</span>&#160;}</div>
+<div class="line"><a name="l00703"></a><span class="lineno">  703</span>&#160; </div>
+<div class="line"><a name="l00706"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#aff3e9838bb257f6f5c09396be07fa4f3">  706</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">MacAddr::MacAddr</a>(<span class="keyword">const</span> uint8_t* mac_data) noexcept</div>
+<div class="line"><a name="l00707"></a><span class="lineno">  707</span>&#160;{</div>
+<div class="line"><a name="l00708"></a><span class="lineno">  708</span>&#160;  std::memcpy(addr_.data, mac_data, <a class="code" href="group__etcpal__inet.html#ga2222b6d9e40f95ec1d74e1865537863f">ETCPAL_MAC_BYTES</a>);</div>
+<div class="line"><a name="l00709"></a><span class="lineno">  709</span>&#160;}</div>
+<div class="line"><a name="l00710"></a><span class="lineno">  710</span>&#160; </div>
+<div class="line"><a name="l00712"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">  712</a></span>&#160;constexpr <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; <a class="code" href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">MacAddr::get</a>() const noexcept</div>
+<div class="line"><a name="l00713"></a><span class="lineno">  713</span>&#160;{</div>
+<div class="line"><a name="l00714"></a><span class="lineno">  714</span>&#160;  <span class="keywordflow">return</span> addr_;</div>
+<div class="line"><a name="l00715"></a><span class="lineno">  715</span>&#160;}</div>
+<div class="line"><a name="l00716"></a><span class="lineno">  716</span>&#160; </div>
+<div class="line"><a name="l00718"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a770c9d747f6e9be2eef81c41e926d660">  718</a></span>&#160;<a class="code" href="group__etcpal__cpp.html#ga598701b6928c77a8c086183a0a1cb9cc">ETCPAL_CONSTEXPR_14_OR_INLINE</a> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; <a class="code" href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">MacAddr::get</a>() noexcept</div>
+<div class="line"><a name="l00719"></a><span class="lineno">  719</span>&#160;{</div>
+<div class="line"><a name="l00720"></a><span class="lineno">  720</span>&#160;  <span class="keywordflow">return</span> addr_;</div>
+<div class="line"><a name="l00721"></a><span class="lineno">  721</span>&#160;}</div>
+<div class="line"><a name="l00722"></a><span class="lineno">  722</span>&#160; </div>
+<div class="line"><a name="l00726"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a19c380b03cea21d7ac7325136a131ff0">  726</a></span>&#160;<span class="keyword">inline</span> std::string <a class="code" href="classetcpal_1_1_mac_addr.html#a19c380b03cea21d7ac7325136a131ff0">MacAddr::ToString</a>()<span class="keyword"> const</span></div>
+<div class="line"><a name="l00727"></a><span class="lineno">  727</span>&#160;<span class="keyword"></span>{</div>
+<div class="line"><a name="l00728"></a><span class="lineno">  728</span>&#160;  std::array&lt;char, ETCPAL_MAC_STRING_BYTES&gt; str_buf;  <span class="comment">// NOLINT(cppcoreguidelines-pro-type-member-init)</span></div>
+<div class="line"><a name="l00729"></a><span class="lineno">  729</span>&#160;  <a class="code" href="group__etcpal__inet.html#gaf1e26c55e9ece4a8a17bd9953eca0886">etcpal_mac_to_string</a>(&amp;addr_, str_buf.<a class="code" href="struct_etc_pal_mac_addr.html#a251236fb1e367947c8f6f5498a86896b">data</a>());</div>
+<div class="line"><a name="l00730"></a><span class="lineno">  730</span>&#160;  <span class="keywordflow">return</span> {str_buf.data()};</div>
+<div class="line"><a name="l00731"></a><span class="lineno">  731</span>&#160;}</div>
+<div class="line"><a name="l00732"></a><span class="lineno">  732</span>&#160; </div>
+<div class="line"><a name="l00735"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a3f4c46c5e6a3a561bad84c6a91ecc8f0">  735</a></span>&#160;constexpr <span class="keyword">const</span> uint8_t* <a class="code" href="classetcpal_1_1_mac_addr.html#a3f4c46c5e6a3a561bad84c6a91ecc8f0">MacAddr::data</a>() const noexcept</div>
+<div class="line"><a name="l00736"></a><span class="lineno">  736</span>&#160;{</div>
+<div class="line"><a name="l00737"></a><span class="lineno">  737</span>&#160;  <span class="keywordflow">return</span> addr_.<a class="code" href="struct_etc_pal_mac_addr.html#a251236fb1e367947c8f6f5498a86896b">data</a>;</div>
+<div class="line"><a name="l00738"></a><span class="lineno">  738</span>&#160;}</div>
+<div class="line"><a name="l00739"></a><span class="lineno">  739</span>&#160; </div>
+<div class="line"><a name="l00743"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a9ef1e40476be6ec748b2cb8d1e7235ce">  743</a></span>&#160;<span class="keyword">inline</span> std::array&lt;uint8_t, ETCPAL_MAC_BYTES&gt; <a class="code" href="classetcpal_1_1_mac_addr.html#a9ef1e40476be6ec748b2cb8d1e7235ce">MacAddr::ToArray</a>() const noexcept</div>
+<div class="line"><a name="l00744"></a><span class="lineno">  744</span>&#160;{</div>
+<div class="line"><a name="l00745"></a><span class="lineno">  745</span>&#160;  <span class="comment">// RVO should hopefully make this only a single copy</span></div>
+<div class="line"><a name="l00746"></a><span class="lineno">  746</span>&#160;  std::array&lt;uint8_t, ETCPAL_MAC_BYTES&gt; arr;  <span class="comment">// NOLINT(cppcoreguidelines-pro-type-member-init)</span></div>
+<div class="line"><a name="l00747"></a><span class="lineno">  747</span>&#160;  std::memcpy(arr.data(), addr_.<a class="code" href="struct_etc_pal_mac_addr.html#a251236fb1e367947c8f6f5498a86896b">data</a>, <a class="code" href="group__etcpal__inet.html#ga2222b6d9e40f95ec1d74e1865537863f">ETCPAL_MAC_BYTES</a>);</div>
+<div class="line"><a name="l00748"></a><span class="lineno">  748</span>&#160;  <span class="keywordflow">return</span> arr;</div>
+<div class="line"><a name="l00749"></a><span class="lineno">  749</span>&#160;}</div>
+<div class="line"><a name="l00750"></a><span class="lineno">  750</span>&#160; </div>
+<div class="line"><a name="l00752"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a27909eb1d61b8b261d259be7c70c58dd">  752</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_mac_addr.html#a27909eb1d61b8b261d259be7c70c58dd">MacAddr::IsNull</a>() const noexcept</div>
+<div class="line"><a name="l00753"></a><span class="lineno">  753</span>&#160;{</div>
+<div class="line"><a name="l00754"></a><span class="lineno">  754</span>&#160;  <span class="keywordflow">return</span> <a class="code" href="group__etcpal__inet.html#ga84ac8ff7c11b7b3d05e66192205ae0cb">ETCPAL_MAC_IS_NULL</a>(&amp;addr_);</div>
+<div class="line"><a name="l00755"></a><span class="lineno">  755</span>&#160;}</div>
+<div class="line"><a name="l00756"></a><span class="lineno">  756</span>&#160; </div>
+<div class="line"><a name="l00760"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">  760</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a> <a class="code" href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">MacAddr::FromString</a>(<span class="keyword">const</span> <span class="keywordtype">char</span>* mac_str) noexcept</div>
+<div class="line"><a name="l00761"></a><span class="lineno">  761</span>&#160;{</div>
+<div class="line"><a name="l00762"></a><span class="lineno">  762</span>&#160;  <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a> result;</div>
+<div class="line"><a name="l00763"></a><span class="lineno">  763</span>&#160;  <a class="code" href="group__etcpal__inet.html#gac2175076e5d4834fccf76e17a29bbbfe">etcpal_string_to_mac</a>(mac_str, &amp;result.addr_);</div>
+<div class="line"><a name="l00764"></a><span class="lineno">  764</span>&#160;  <span class="keywordflow">return</span> result;</div>
+<div class="line"><a name="l00765"></a><span class="lineno">  765</span>&#160;}</div>
+<div class="line"><a name="l00766"></a><span class="lineno">  766</span>&#160; </div>
+<div class="line"><a name="l00770"></a><span class="lineno"><a class="line" href="classetcpal_1_1_mac_addr.html#a4ddd74c443669ab0d7c1aefac0e13fd7">  770</a></span>&#160;<span class="keyword">inline</span> <a class="code" href="classetcpal_1_1_mac_addr.html">MacAddr</a> <a class="code" href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">MacAddr::FromString</a>(<span class="keyword">const</span> std::string&amp; mac_str) noexcept</div>
+<div class="line"><a name="l00771"></a><span class="lineno">  771</span>&#160;{</div>
+<div class="line"><a name="l00772"></a><span class="lineno">  772</span>&#160;  <span class="keywordflow">return</span> FromString(mac_str.c_str());</div>
+<div class="line"><a name="l00773"></a><span class="lineno">  773</span>&#160;}</div>
+<div class="line"><a name="l00774"></a><span class="lineno">  774</span>&#160; </div>
+<div class="line"><a name="l00776"></a><span class="lineno">  776</span>&#160;<span class="comment">// Operators</span></div>
+<div class="line"><a name="l00778"></a><span class="lineno">  778</span>&#160;<span class="comment"></span> </div>
+<div class="line"><a name="l00781"></a><span class="lineno">  781</span>&#160; </div>
+<div class="line"><a name="l00784"></a><span class="lineno">  784</span>&#160; </div>
+<div class="line"><a name="l00785"></a><span class="lineno">  785</span>&#160;<span class="comment">// Special operators for comparing with the underlying types</span></div>
+<div class="line"><a name="l00786"></a><span class="lineno">  786</span>&#160; </div>
+<div class="line"><a name="l00787"></a><span class="lineno">  787</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a>&amp; c_ip, <span class="keyword">const</span> <a class="code" href="classetcpal_1_1_ip_addr.html">IpAddr</a>&amp; ip) noexcept</div>
+<div class="line"><a name="l00788"></a><span class="lineno">  788</span>&#160;{</div>
+<div class="line"><a name="l00789"></a><span class="lineno">  789</span>&#160;  <span class="keywordflow">return</span> c_ip == ip.get();</div>
+<div class="line"><a name="l00790"></a><span class="lineno">  790</span>&#160;}</div>
+<div class="line"><a name="l00791"></a><span class="lineno">  791</span>&#160; </div>
+<div class="line"><a name="l00792"></a><span class="lineno">  792</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a>&amp; c_ip, <span class="keyword">const</span> IpAddr&amp; ip) noexcept</div>
+<div class="line"><a name="l00793"></a><span class="lineno">  793</span>&#160;{</div>
+<div class="line"><a name="l00794"></a><span class="lineno">  794</span>&#160;  <span class="keywordflow">return</span> !(c_ip == ip);</div>
+<div class="line"><a name="l00795"></a><span class="lineno">  795</span>&#160;}</div>
+<div class="line"><a name="l00796"></a><span class="lineno">  796</span>&#160; </div>
+<div class="line"><a name="l00797"></a><span class="lineno">  797</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> IpAddr&amp; ip, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a>&amp; c_ip) noexcept</div>
+<div class="line"><a name="l00798"></a><span class="lineno">  798</span>&#160;{</div>
+<div class="line"><a name="l00799"></a><span class="lineno">  799</span>&#160;  <span class="keywordflow">return</span> ip.get() == c_ip;</div>
+<div class="line"><a name="l00800"></a><span class="lineno">  800</span>&#160;}</div>
+<div class="line"><a name="l00801"></a><span class="lineno">  801</span>&#160; </div>
+<div class="line"><a name="l00802"></a><span class="lineno">  802</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> IpAddr&amp; ip, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a>&amp; c_ip) noexcept</div>
+<div class="line"><a name="l00803"></a><span class="lineno">  803</span>&#160;{</div>
+<div class="line"><a name="l00804"></a><span class="lineno">  804</span>&#160;  <span class="keywordflow">return</span> !(ip == c_ip);</div>
+<div class="line"><a name="l00805"></a><span class="lineno">  805</span>&#160;}</div>
+<div class="line"><a name="l00806"></a><span class="lineno">  806</span>&#160; </div>
+<div class="line"><a name="l00807"></a><span class="lineno">  807</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; c_ip, <span class="keyword">const</span> SockAddr&amp; ip) noexcept</div>
+<div class="line"><a name="l00808"></a><span class="lineno">  808</span>&#160;{</div>
+<div class="line"><a name="l00809"></a><span class="lineno">  809</span>&#160;  <span class="keywordflow">return</span> c_ip == ip.get();</div>
+<div class="line"><a name="l00810"></a><span class="lineno">  810</span>&#160;}</div>
+<div class="line"><a name="l00811"></a><span class="lineno">  811</span>&#160; </div>
+<div class="line"><a name="l00812"></a><span class="lineno">  812</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; c_ip, <span class="keyword">const</span> SockAddr&amp; ip) noexcept</div>
+<div class="line"><a name="l00813"></a><span class="lineno">  813</span>&#160;{</div>
+<div class="line"><a name="l00814"></a><span class="lineno">  814</span>&#160;  <span class="keywordflow">return</span> !(c_ip == ip);</div>
+<div class="line"><a name="l00815"></a><span class="lineno">  815</span>&#160;}</div>
+<div class="line"><a name="l00816"></a><span class="lineno">  816</span>&#160; </div>
+<div class="line"><a name="l00817"></a><span class="lineno">  817</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> SockAddr&amp; ip, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; c_ip) noexcept</div>
+<div class="line"><a name="l00818"></a><span class="lineno">  818</span>&#160;{</div>
+<div class="line"><a name="l00819"></a><span class="lineno">  819</span>&#160;  <span class="keywordflow">return</span> ip.get() == c_ip;</div>
+<div class="line"><a name="l00820"></a><span class="lineno">  820</span>&#160;}</div>
+<div class="line"><a name="l00821"></a><span class="lineno">  821</span>&#160; </div>
+<div class="line"><a name="l00822"></a><span class="lineno">  822</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> SockAddr&amp; ip, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a>&amp; c_ip) noexcept</div>
+<div class="line"><a name="l00823"></a><span class="lineno">  823</span>&#160;{</div>
+<div class="line"><a name="l00824"></a><span class="lineno">  824</span>&#160;  <span class="keywordflow">return</span> !(ip == c_ip);</div>
+<div class="line"><a name="l00825"></a><span class="lineno">  825</span>&#160;}</div>
+<div class="line"><a name="l00826"></a><span class="lineno">  826</span>&#160; </div>
+<div class="line"><a name="l00827"></a><span class="lineno">  827</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac, <span class="keyword">const</span> MacAddr&amp; mac) noexcept</div>
+<div class="line"><a name="l00828"></a><span class="lineno">  828</span>&#160;{</div>
+<div class="line"><a name="l00829"></a><span class="lineno">  829</span>&#160;  <span class="keywordflow">return</span> c_mac == mac.get();</div>
+<div class="line"><a name="l00830"></a><span class="lineno">  830</span>&#160;}</div>
+<div class="line"><a name="l00831"></a><span class="lineno">  831</span>&#160; </div>
+<div class="line"><a name="l00832"></a><span class="lineno">  832</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac, <span class="keyword">const</span> MacAddr&amp; mac) noexcept</div>
+<div class="line"><a name="l00833"></a><span class="lineno">  833</span>&#160;{</div>
+<div class="line"><a name="l00834"></a><span class="lineno">  834</span>&#160;  <span class="keywordflow">return</span> !(c_mac == mac);</div>
+<div class="line"><a name="l00835"></a><span class="lineno">  835</span>&#160;}</div>
+<div class="line"><a name="l00836"></a><span class="lineno">  836</span>&#160; </div>
+<div class="line"><a name="l00837"></a><span class="lineno">  837</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> MacAddr&amp; mac, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept</div>
+<div class="line"><a name="l00838"></a><span class="lineno">  838</span>&#160;{</div>
+<div class="line"><a name="l00839"></a><span class="lineno">  839</span>&#160;  <span class="keywordflow">return</span> mac.get() == c_mac;</div>
+<div class="line"><a name="l00840"></a><span class="lineno">  840</span>&#160;}</div>
+<div class="line"><a name="l00841"></a><span class="lineno">  841</span>&#160; </div>
+<div class="line"><a name="l00842"></a><span class="lineno">  842</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> MacAddr&amp; mac, <span class="keyword">const</span> <a class="code" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a>&amp; c_mac) noexcept</div>
+<div class="line"><a name="l00843"></a><span class="lineno">  843</span>&#160;{</div>
+<div class="line"><a name="l00844"></a><span class="lineno">  844</span>&#160;  <span class="keywordflow">return</span> !(mac == c_mac);</div>
+<div class="line"><a name="l00845"></a><span class="lineno">  845</span>&#160;}</div>
+<div class="line"><a name="l00846"></a><span class="lineno">  846</span>&#160; </div>
+<div class="line"><a name="l00847"></a><span class="lineno">  847</span>&#160;<span class="comment">// Standard operators</span></div>
+<div class="line"><a name="l00848"></a><span class="lineno">  848</span>&#160; </div>
+<div class="line"><a name="l00849"></a><span class="lineno">  849</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00850"></a><span class="lineno">  850</span>&#160;{</div>
+<div class="line"><a name="l00851"></a><span class="lineno">  851</span>&#160;  <span class="keywordflow">return</span> a.get() == b.get();</div>
+<div class="line"><a name="l00852"></a><span class="lineno">  852</span>&#160;}</div>
+<div class="line"><a name="l00853"></a><span class="lineno">  853</span>&#160; </div>
+<div class="line"><a name="l00854"></a><span class="lineno">  854</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00855"></a><span class="lineno">  855</span>&#160;{</div>
+<div class="line"><a name="l00856"></a><span class="lineno">  856</span>&#160;  <span class="keywordflow">return</span> !(a == b);</div>
+<div class="line"><a name="l00857"></a><span class="lineno">  857</span>&#160;}</div>
+<div class="line"><a name="l00858"></a><span class="lineno">  858</span>&#160; </div>
+<div class="line"><a name="l00859"></a><span class="lineno">  859</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00860"></a><span class="lineno">  860</span>&#160;{</div>
+<div class="line"><a name="l00861"></a><span class="lineno">  861</span>&#160;  <span class="keywordflow">return</span> a.get() &lt; b.get();</div>
+<div class="line"><a name="l00862"></a><span class="lineno">  862</span>&#160;}</div>
+<div class="line"><a name="l00863"></a><span class="lineno">  863</span>&#160; </div>
+<div class="line"><a name="l00864"></a><span class="lineno">  864</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00865"></a><span class="lineno">  865</span>&#160;{</div>
+<div class="line"><a name="l00866"></a><span class="lineno">  866</span>&#160;  <span class="keywordflow">return</span> b &lt; a;</div>
+<div class="line"><a name="l00867"></a><span class="lineno">  867</span>&#160;}</div>
+<div class="line"><a name="l00868"></a><span class="lineno">  868</span>&#160; </div>
+<div class="line"><a name="l00869"></a><span class="lineno">  869</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00870"></a><span class="lineno">  870</span>&#160;{</div>
+<div class="line"><a name="l00871"></a><span class="lineno">  871</span>&#160;  <span class="keywordflow">return</span> !(b &lt; a);</div>
+<div class="line"><a name="l00872"></a><span class="lineno">  872</span>&#160;}</div>
+<div class="line"><a name="l00873"></a><span class="lineno">  873</span>&#160; </div>
+<div class="line"><a name="l00874"></a><span class="lineno">  874</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> IpAddr&amp; a, <span class="keyword">const</span> IpAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00875"></a><span class="lineno">  875</span>&#160;{</div>
+<div class="line"><a name="l00876"></a><span class="lineno">  876</span>&#160;  <span class="keywordflow">return</span> !(a &lt; b);</div>
+<div class="line"><a name="l00877"></a><span class="lineno">  877</span>&#160;}</div>
+<div class="line"><a name="l00878"></a><span class="lineno">  878</span>&#160; </div>
+<div class="line"><a name="l00879"></a><span class="lineno">  879</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00880"></a><span class="lineno">  880</span>&#160;{</div>
+<div class="line"><a name="l00881"></a><span class="lineno">  881</span>&#160;  <span class="keywordflow">return</span> a.get() == b.get();</div>
+<div class="line"><a name="l00882"></a><span class="lineno">  882</span>&#160;}</div>
+<div class="line"><a name="l00883"></a><span class="lineno">  883</span>&#160; </div>
+<div class="line"><a name="l00884"></a><span class="lineno">  884</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00885"></a><span class="lineno">  885</span>&#160;{</div>
+<div class="line"><a name="l00886"></a><span class="lineno">  886</span>&#160;  <span class="keywordflow">return</span> !(a == b);</div>
+<div class="line"><a name="l00887"></a><span class="lineno">  887</span>&#160;}</div>
+<div class="line"><a name="l00888"></a><span class="lineno">  888</span>&#160; </div>
+<div class="line"><a name="l00889"></a><span class="lineno">  889</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00890"></a><span class="lineno">  890</span>&#160;{</div>
+<div class="line"><a name="l00891"></a><span class="lineno">  891</span>&#160;  <span class="keywordflow">return</span> a.get() &lt; b.get();</div>
+<div class="line"><a name="l00892"></a><span class="lineno">  892</span>&#160;}</div>
+<div class="line"><a name="l00893"></a><span class="lineno">  893</span>&#160; </div>
+<div class="line"><a name="l00894"></a><span class="lineno">  894</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00895"></a><span class="lineno">  895</span>&#160;{</div>
+<div class="line"><a name="l00896"></a><span class="lineno">  896</span>&#160;  <span class="keywordflow">return</span> b &lt; a;</div>
+<div class="line"><a name="l00897"></a><span class="lineno">  897</span>&#160;}</div>
+<div class="line"><a name="l00898"></a><span class="lineno">  898</span>&#160; </div>
+<div class="line"><a name="l00899"></a><span class="lineno">  899</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00900"></a><span class="lineno">  900</span>&#160;{</div>
+<div class="line"><a name="l00901"></a><span class="lineno">  901</span>&#160;  <span class="keywordflow">return</span> !(b &lt; a);</div>
+<div class="line"><a name="l00902"></a><span class="lineno">  902</span>&#160;}</div>
+<div class="line"><a name="l00903"></a><span class="lineno">  903</span>&#160; </div>
+<div class="line"><a name="l00904"></a><span class="lineno">  904</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> SockAddr&amp; a, <span class="keyword">const</span> SockAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00905"></a><span class="lineno">  905</span>&#160;{</div>
+<div class="line"><a name="l00906"></a><span class="lineno">  906</span>&#160;  <span class="keywordflow">return</span> !(a &lt; b);</div>
+<div class="line"><a name="l00907"></a><span class="lineno">  907</span>&#160;}</div>
+<div class="line"><a name="l00908"></a><span class="lineno">  908</span>&#160; </div>
+<div class="line"><a name="l00909"></a><span class="lineno">  909</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00910"></a><span class="lineno">  910</span>&#160;{</div>
+<div class="line"><a name="l00911"></a><span class="lineno">  911</span>&#160;  <span class="keywordflow">return</span> a.get() == b.get();</div>
+<div class="line"><a name="l00912"></a><span class="lineno">  912</span>&#160;}</div>
+<div class="line"><a name="l00913"></a><span class="lineno">  913</span>&#160; </div>
+<div class="line"><a name="l00914"></a><span class="lineno">  914</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00915"></a><span class="lineno">  915</span>&#160;{</div>
+<div class="line"><a name="l00916"></a><span class="lineno">  916</span>&#160;  <span class="keywordflow">return</span> !(a == b);</div>
+<div class="line"><a name="l00917"></a><span class="lineno">  917</span>&#160;}</div>
+<div class="line"><a name="l00918"></a><span class="lineno">  918</span>&#160; </div>
+<div class="line"><a name="l00919"></a><span class="lineno">  919</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00920"></a><span class="lineno">  920</span>&#160;{</div>
+<div class="line"><a name="l00921"></a><span class="lineno">  921</span>&#160;  <span class="keywordflow">return</span> a.get() &lt; b.get();</div>
+<div class="line"><a name="l00922"></a><span class="lineno">  922</span>&#160;}</div>
+<div class="line"><a name="l00923"></a><span class="lineno">  923</span>&#160; </div>
+<div class="line"><a name="l00924"></a><span class="lineno">  924</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00925"></a><span class="lineno">  925</span>&#160;{</div>
+<div class="line"><a name="l00926"></a><span class="lineno">  926</span>&#160;  <span class="keywordflow">return</span> b &lt; a;</div>
+<div class="line"><a name="l00927"></a><span class="lineno">  927</span>&#160;}</div>
+<div class="line"><a name="l00928"></a><span class="lineno">  928</span>&#160; </div>
+<div class="line"><a name="l00929"></a><span class="lineno">  929</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&lt;=(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00930"></a><span class="lineno">  930</span>&#160;{</div>
+<div class="line"><a name="l00931"></a><span class="lineno">  931</span>&#160;  <span class="keywordflow">return</span> !(b &lt; a);</div>
+<div class="line"><a name="l00932"></a><span class="lineno">  932</span>&#160;}</div>
+<div class="line"><a name="l00933"></a><span class="lineno">  933</span>&#160; </div>
+<div class="line"><a name="l00934"></a><span class="lineno">  934</span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> operator&gt;=(<span class="keyword">const</span> MacAddr&amp; a, <span class="keyword">const</span> MacAddr&amp; b) noexcept</div>
+<div class="line"><a name="l00935"></a><span class="lineno">  935</span>&#160;{</div>
+<div class="line"><a name="l00936"></a><span class="lineno">  936</span>&#160;  <span class="keywordflow">return</span> !(a &lt; b);</div>
+<div class="line"><a name="l00937"></a><span class="lineno">  937</span>&#160;}</div>
+<div class="line"><a name="l00938"></a><span class="lineno">  938</span>&#160; </div>
+<div class="line"><a name="l00941"></a><span class="lineno">  941</span>&#160; </div>
+<div class="line"><a name="l00942"></a><span class="lineno">  942</span>&#160;};  <span class="comment">// namespace etcpal</span></div>
+<div class="line"><a name="l00943"></a><span class="lineno">  943</span>&#160; </div>
+<div class="line"><a name="l00944"></a><span class="lineno">  944</span>&#160;<span class="preprocessor">#endif  </span><span class="comment">// ETCPAL_CPP_LOCK_H_</span></div>
 <div class="ttc" id="aclassetcpal_1_1_ip_addr_html"><div class="ttname"><a href="classetcpal_1_1_ip_addr.html">etcpal::IpAddr</a></div><div class="ttdoc">A wrapper class for the EtcPal IP address type.</div><div class="ttdef"><b>Definition:</b> inet.h:57</div></div>
 <div class="ttc" id="aclassetcpal_1_1_ip_addr_html_a0613200b3e9958598089ca48824732be"><div class="ttname"><a href="classetcpal_1_1_ip_addr.html#a0613200b3e9958598089ca48824732be">etcpal::IpAddr::MaskLength</a></div><div class="ttdeci">unsigned int MaskLength() const noexcept</div><div class="ttdoc">The number of consecutive set bits in a netmask.</div><div class="ttdef"><b>Definition:</b> inet.h:270</div></div>
 <div class="ttc" id="aclassetcpal_1_1_ip_addr_html_a08a35ea1e7f3f0a6047fbf28810d53e9"><div class="ttname"><a href="classetcpal_1_1_ip_addr.html#a08a35ea1e7f3f0a6047fbf28810d53e9">etcpal::IpAddr::IsV6</a></div><div class="ttdeci">constexpr bool IsV6() const noexcept</div><div class="ttdoc">Whether an IpAddr contains a valid IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:236</div></div>
@@ -949,42 +948,42 @@ $(document).ready(function(){initNavTree('cpp_2inet_8h_source.html',''); initRes
 <div class="ttc" id="aclassetcpal_1_1_ip_addr_html_acde4ca75e6e22c1a6899c84d923273db"><div class="ttname"><a href="classetcpal_1_1_ip_addr.html#acde4ca75e6e22c1a6899c84d923273db">etcpal::IpAddr::v4_data</a></div><div class="ttdeci">constexpr uint32_t v4_data() const noexcept</div><div class="ttdoc">Get the raw 32-bit representation of an IPv4 address.</div><div class="ttdef"><b>Definition:</b> inet.h:177</div></div>
 <div class="ttc" id="aclassetcpal_1_1_ip_addr_html_af68058aa8f42f5ce7aa01eb92b583bd1"><div class="ttname"><a href="classetcpal_1_1_ip_addr.html#af68058aa8f42f5ce7aa01eb92b583bd1">etcpal::IpAddr::operator=</a></div><div class="ttdeci">IpAddr &amp; operator=(const EtcPalIpAddr &amp;c_ip) noexcept</div><div class="ttdoc">Assign an instance of the C EtcPalIpAddr type to an instance of this class.</div><div class="ttdef"><b>Definition:</b> inet.h:116</div></div>
 <div class="ttc" id="aclassetcpal_1_1_ip_addr_html_af7af815dfdf62cfaa17f98743a769028"><div class="ttname"><a href="classetcpal_1_1_ip_addr.html#af7af815dfdf62cfaa17f98743a769028">etcpal::IpAddr::v6_data</a></div><div class="ttdeci">constexpr const uint8_t * v6_data() const noexcept</div><div class="ttdoc">Get the raw 16-byte array representation of an IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:186</div></div>
-<div class="ttc" id="aclassetcpal_1_1_mac_addr_html"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html">etcpal::MacAddr</a></div><div class="ttdoc">A wrapper for the EtcPal MAC address type.</div><div class="ttdef"><b>Definition:</b> inet.h:668</div></div>
-<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_a19c380b03cea21d7ac7325136a131ff0"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#a19c380b03cea21d7ac7325136a131ff0">etcpal::MacAddr::ToString</a></div><div class="ttdeci">std::string ToString() const</div><div class="ttdoc">Convert the MAC address to a string representation.</div><div class="ttdef"><b>Definition:</b> inet.h:727</div></div>
-<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_a27909eb1d61b8b261d259be7c70c58dd"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#a27909eb1d61b8b261d259be7c70c58dd">etcpal::MacAddr::IsNull</a></div><div class="ttdeci">bool IsNull() const noexcept</div><div class="ttdoc">Whether this MacAddr represents a null (all 0's) MAC address.</div><div class="ttdef"><b>Definition:</b> inet.h:753</div></div>
-<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_a32186693c8d1faea349dc007768684b4"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">etcpal::MacAddr::FromString</a></div><div class="ttdeci">static MacAddr FromString(const char *mac_str) noexcept</div><div class="ttdoc">Construct a MacAddr from a string representation.</div><div class="ttdef"><b>Definition:</b> inet.h:761</div></div>
-<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_a3f4c46c5e6a3a561bad84c6a91ecc8f0"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#a3f4c46c5e6a3a561bad84c6a91ecc8f0">etcpal::MacAddr::data</a></div><div class="ttdeci">constexpr const uint8_t * data() const noexcept</div><div class="ttdoc">Get the raw 6-byte array representation of a MAC address.</div><div class="ttdef"><b>Definition:</b> inet.h:736</div></div>
-<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_a9ef1e40476be6ec748b2cb8d1e7235ce"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#a9ef1e40476be6ec748b2cb8d1e7235ce">etcpal::MacAddr::ToArray</a></div><div class="ttdeci">std::array&lt; uint8_t, ETCPAL_MAC_BYTES &gt; ToArray() const noexcept</div><div class="ttdoc">Get a 6-byte std::array representation of a MAC address.</div><div class="ttdef"><b>Definition:</b> inet.h:744</div></div>
-<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_ab9705cc97de2a4013b231b7bde2ad82b"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">etcpal::MacAddr::get</a></div><div class="ttdeci">constexpr const EtcPalMacAddr &amp; get() const noexcept</div><div class="ttdoc">Get a const reference to the underlying C type.</div><div class="ttdef"><b>Definition:</b> inet.h:713</div></div>
-<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_abf74026b5f8428336b974584cbd534df"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#abf74026b5f8428336b974584cbd534df">etcpal::MacAddr::operator=</a></div><div class="ttdeci">MacAddr &amp; operator=(const EtcPalMacAddr &amp;c_mac) noexcept</div><div class="ttdoc">Assign an instance of the C EtcPalMacAddr type to an instance of this class.</div><div class="ttdef"><b>Definition:</b> inet.h:699</div></div>
+<div class="ttc" id="aclassetcpal_1_1_mac_addr_html"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html">etcpal::MacAddr</a></div><div class="ttdoc">A wrapper for the EtcPal MAC address type.</div><div class="ttdef"><b>Definition:</b> inet.h:667</div></div>
+<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_a19c380b03cea21d7ac7325136a131ff0"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#a19c380b03cea21d7ac7325136a131ff0">etcpal::MacAddr::ToString</a></div><div class="ttdeci">std::string ToString() const</div><div class="ttdoc">Convert the MAC address to a string representation.</div><div class="ttdef"><b>Definition:</b> inet.h:726</div></div>
+<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_a27909eb1d61b8b261d259be7c70c58dd"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#a27909eb1d61b8b261d259be7c70c58dd">etcpal::MacAddr::IsNull</a></div><div class="ttdeci">bool IsNull() const noexcept</div><div class="ttdoc">Whether this MacAddr represents a null (all 0's) MAC address.</div><div class="ttdef"><b>Definition:</b> inet.h:752</div></div>
+<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_a32186693c8d1faea349dc007768684b4"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#a32186693c8d1faea349dc007768684b4">etcpal::MacAddr::FromString</a></div><div class="ttdeci">static MacAddr FromString(const char *mac_str) noexcept</div><div class="ttdoc">Construct a MacAddr from a string representation.</div><div class="ttdef"><b>Definition:</b> inet.h:760</div></div>
+<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_a3f4c46c5e6a3a561bad84c6a91ecc8f0"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#a3f4c46c5e6a3a561bad84c6a91ecc8f0">etcpal::MacAddr::data</a></div><div class="ttdeci">constexpr const uint8_t * data() const noexcept</div><div class="ttdoc">Get the raw 6-byte array representation of a MAC address.</div><div class="ttdef"><b>Definition:</b> inet.h:735</div></div>
+<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_a9ef1e40476be6ec748b2cb8d1e7235ce"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#a9ef1e40476be6ec748b2cb8d1e7235ce">etcpal::MacAddr::ToArray</a></div><div class="ttdeci">std::array&lt; uint8_t, ETCPAL_MAC_BYTES &gt; ToArray() const noexcept</div><div class="ttdoc">Get a 6-byte std::array representation of a MAC address.</div><div class="ttdef"><b>Definition:</b> inet.h:743</div></div>
+<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_ab9705cc97de2a4013b231b7bde2ad82b"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#ab9705cc97de2a4013b231b7bde2ad82b">etcpal::MacAddr::get</a></div><div class="ttdeci">constexpr const EtcPalMacAddr &amp; get() const noexcept</div><div class="ttdoc">Get a const reference to the underlying C type.</div><div class="ttdef"><b>Definition:</b> inet.h:712</div></div>
+<div class="ttc" id="aclassetcpal_1_1_mac_addr_html_abf74026b5f8428336b974584cbd534df"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#abf74026b5f8428336b974584cbd534df">etcpal::MacAddr::operator=</a></div><div class="ttdeci">MacAddr &amp; operator=(const EtcPalMacAddr &amp;c_mac) noexcept</div><div class="ttdoc">Assign an instance of the C EtcPalMacAddr type to an instance of this class.</div><div class="ttdef"><b>Definition:</b> inet.h:698</div></div>
 <div class="ttc" id="aclassetcpal_1_1_mac_addr_html_ae745add18e97ed3960a513f993c4fd39"><div class="ttname"><a href="classetcpal_1_1_mac_addr.html#ae745add18e97ed3960a513f993c4fd39">etcpal::MacAddr::MacAddr</a></div><div class="ttdeci">MacAddr()=default</div><div class="ttdoc">Constructs a null MAC address by default.</div></div>
 <div class="ttc" id="aclassetcpal_1_1_sock_addr_html"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html">etcpal::SockAddr</a></div><div class="ttdoc">A wrapper for the EtcPal socket address type.</div><div class="ttdef"><b>Definition:</b> inet.h:383</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a08a35ea1e7f3f0a6047fbf28810d53e9"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a08a35ea1e7f3f0a6047fbf28810d53e9">etcpal::SockAddr::IsV6</a></div><div class="ttdeci">constexpr bool IsV6() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a valid IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:587</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a14185dd1b4566147495318504a551034"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a14185dd1b4566147495318504a551034">etcpal::SockAddr::scope_id</a></div><div class="ttdeci">constexpr unsigned long scope_id() const noexcept</div><div class="ttdoc">Get the scope ID of the SockAddr's IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:563</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a08a35ea1e7f3f0a6047fbf28810d53e9"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a08a35ea1e7f3f0a6047fbf28810d53e9">etcpal::SockAddr::IsV6</a></div><div class="ttdeci">constexpr bool IsV6() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a valid IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:586</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a14185dd1b4566147495318504a551034"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a14185dd1b4566147495318504a551034">etcpal::SockAddr::scope_id</a></div><div class="ttdeci">constexpr unsigned long scope_id() const noexcept</div><div class="ttdoc">Get the scope ID of the SockAddr's IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:562</div></div>
 <div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a19c380b03cea21d7ac7325136a131ff0"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a19c380b03cea21d7ac7325136a131ff0">etcpal::SockAddr::ToString</a></div><div class="ttdeci">std::string ToString() const</div><div class="ttdoc">Convert the IP address and port to a string representation.</div><div class="ttdef"><b>Definition:</b> inet.h:501</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a211a72caa8aba79efd967fa3114e8c95"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a211a72caa8aba79efd967fa3114e8c95">etcpal::SockAddr::IsLinkLocal</a></div><div class="ttdeci">bool IsLinkLocal() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a link-local address.</div><div class="ttdef"><b>Definition:</b> inet.h:593</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a289b584a63be9da802a0692f16a9a7fc"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">etcpal::SockAddr::SetAddress</a></div><div class="ttdeci">void SetAddress(uint32_t v4_data) noexcept</div><div class="ttdoc">Set the IPv4 address data.</div><div class="ttdef"><b>Definition:</b> inet.h:623</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a2f371a6bc900dd3ddcf0f7f16c5db00a"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a2f371a6bc900dd3ddcf0f7f16c5db00a">etcpal::SockAddr::IsMulticast</a></div><div class="ttdeci">bool IsMulticast() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a multicast address.</div><div class="ttdef"><b>Definition:</b> inet.h:605</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a3ab600814133b2eb30bfc9d2816d6acd"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a3ab600814133b2eb30bfc9d2816d6acd">etcpal::SockAddr::ip</a></div><div class="ttdeci">constexpr IpAddr ip() const noexcept</div><div class="ttdoc">Get the IP address from the SockAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:512</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a3c808bdaebc8f534c871ac28bf379a7a"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a3c808bdaebc8f534c871ac28bf379a7a">etcpal::SockAddr::IsV4</a></div><div class="ttdeci">constexpr bool IsV4() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a valid IPv4 address.</div><div class="ttdef"><b>Definition:</b> inet.h:581</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a4833f2d2e3f0434978f59f5020a7f84b"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a4833f2d2e3f0434978f59f5020a7f84b">etcpal::SockAddr::IsLoopback</a></div><div class="ttdeci">bool IsLoopback() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a loopback address.</div><div class="ttdef"><b>Definition:</b> inet.h:599</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a211a72caa8aba79efd967fa3114e8c95"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a211a72caa8aba79efd967fa3114e8c95">etcpal::SockAddr::IsLinkLocal</a></div><div class="ttdeci">bool IsLinkLocal() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a link-local address.</div><div class="ttdef"><b>Definition:</b> inet.h:592</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a289b584a63be9da802a0692f16a9a7fc"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a289b584a63be9da802a0692f16a9a7fc">etcpal::SockAddr::SetAddress</a></div><div class="ttdeci">void SetAddress(uint32_t v4_data) noexcept</div><div class="ttdoc">Set the IPv4 address data.</div><div class="ttdef"><b>Definition:</b> inet.h:622</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a2f371a6bc900dd3ddcf0f7f16c5db00a"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a2f371a6bc900dd3ddcf0f7f16c5db00a">etcpal::SockAddr::IsMulticast</a></div><div class="ttdeci">bool IsMulticast() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a multicast address.</div><div class="ttdef"><b>Definition:</b> inet.h:604</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a3ab600814133b2eb30bfc9d2816d6acd"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a3ab600814133b2eb30bfc9d2816d6acd">etcpal::SockAddr::ip</a></div><div class="ttdeci">constexpr IpAddr ip() const noexcept</div><div class="ttdoc">Get the IP address from the SockAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:511</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a3c808bdaebc8f534c871ac28bf379a7a"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a3c808bdaebc8f534c871ac28bf379a7a">etcpal::SockAddr::IsV4</a></div><div class="ttdeci">constexpr bool IsV4() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a valid IPv4 address.</div><div class="ttdef"><b>Definition:</b> inet.h:580</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a4833f2d2e3f0434978f59f5020a7f84b"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a4833f2d2e3f0434978f59f5020a7f84b">etcpal::SockAddr::IsLoopback</a></div><div class="ttdeci">bool IsLoopback() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a loopback address.</div><div class="ttdef"><b>Definition:</b> inet.h:598</div></div>
 <div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a59860773d22c6c62384a1fe03e774630"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a59860773d22c6c62384a1fe03e774630">etcpal::SockAddr::get</a></div><div class="ttdeci">constexpr const EtcPalSockAddr &amp; get() const noexcept</div><div class="ttdoc">Get a const reference to the underlying C type.</div><div class="ttdef"><b>Definition:</b> inet.h:485</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a6408a893e29a2fcb75d7c6c842db5902"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a6408a893e29a2fcb75d7c6c842db5902">etcpal::SockAddr::type</a></div><div class="ttdeci">constexpr IpAddrType type() const noexcept</div><div class="ttdoc">Get the type of the SockAddr's IP address.</div><div class="ttdef"><b>Definition:</b> inet.h:575</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a6d02bb05c3ab899ab6752bbab4e3dbcf"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a6d02bb05c3ab899ab6752bbab4e3dbcf">etcpal::SockAddr::IsValid</a></div><div class="ttdeci">constexpr bool IsValid() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a valid IPv4 or IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:569</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a8f2a678aed9c3bdd389633dea859b5d2"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a8f2a678aed9c3bdd389633dea859b5d2">etcpal::SockAddr::SetPort</a></div><div class="ttdeci">void SetPort(uint16_t port) noexcept</div><div class="ttdoc">Set the port.</div><div class="ttdef"><b>Definition:</b> inet.h:658</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a9d6d96f2d5b5fb9fd6a16bcceb8dea59"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a9d6d96f2d5b5fb9fd6a16bcceb8dea59">etcpal::SockAddr::ToV6Array</a></div><div class="ttdeci">std::array&lt; uint8_t, ETCPAL_IPV6_BYTES &gt; ToV6Array() const</div><div class="ttdoc">Get a 16-byte std::array representation of the SockAddr's IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:546</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a6408a893e29a2fcb75d7c6c842db5902"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a6408a893e29a2fcb75d7c6c842db5902">etcpal::SockAddr::type</a></div><div class="ttdeci">constexpr IpAddrType type() const noexcept</div><div class="ttdoc">Get the type of the SockAddr's IP address.</div><div class="ttdef"><b>Definition:</b> inet.h:574</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a6d02bb05c3ab899ab6752bbab4e3dbcf"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a6d02bb05c3ab899ab6752bbab4e3dbcf">etcpal::SockAddr::IsValid</a></div><div class="ttdeci">constexpr bool IsValid() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a valid IPv4 or IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:568</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a8f2a678aed9c3bdd389633dea859b5d2"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a8f2a678aed9c3bdd389633dea859b5d2">etcpal::SockAddr::SetPort</a></div><div class="ttdeci">void SetPort(uint16_t port) noexcept</div><div class="ttdoc">Set the port.</div><div class="ttdef"><b>Definition:</b> inet.h:657</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_a9d6d96f2d5b5fb9fd6a16bcceb8dea59"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#a9d6d96f2d5b5fb9fd6a16bcceb8dea59">etcpal::SockAddr::ToV6Array</a></div><div class="ttdeci">std::array&lt; uint8_t, ETCPAL_IPV6_BYTES &gt; ToV6Array() const</div><div class="ttdoc">Get a 16-byte std::array representation of the SockAddr's IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:545</div></div>
 <div class="ttc" id="aclassetcpal_1_1_sock_addr_html_aa75677e1db37e94003d6f82a25934b0f"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#aa75677e1db37e94003d6f82a25934b0f">etcpal::SockAddr::operator=</a></div><div class="ttdeci">SockAddr &amp; operator=(const EtcPalSockAddr &amp;c_sa) noexcept</div><div class="ttdoc">Assign an instance of the C EtcPalSockAddr type to an instance of this class.</div><div class="ttdef"><b>Definition:</b> inet.h:438</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_abab82fa2b4ca400b38cb9691a2c3fb8a"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#abab82fa2b4ca400b38cb9691a2c3fb8a">etcpal::SockAddr::port</a></div><div class="ttdeci">constexpr uint16_t port() const noexcept</div><div class="ttdoc">Get the port number from the SockAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:518</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_ac384adc1cbf470fe6672659bdef8358c"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#ac384adc1cbf470fe6672659bdef8358c">etcpal::SockAddr::IsWildcard</a></div><div class="ttdeci">bool IsWildcard() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a wildcard address.</div><div class="ttdef"><b>Definition:</b> inet.h:613</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_abab82fa2b4ca400b38cb9691a2c3fb8a"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#abab82fa2b4ca400b38cb9691a2c3fb8a">etcpal::SockAddr::port</a></div><div class="ttdeci">constexpr uint16_t port() const noexcept</div><div class="ttdoc">Get the port number from the SockAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:517</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_ac384adc1cbf470fe6672659bdef8358c"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#ac384adc1cbf470fe6672659bdef8358c">etcpal::SockAddr::IsWildcard</a></div><div class="ttdeci">bool IsWildcard() const noexcept</div><div class="ttdoc">Whether a SockAddr contains a wildcard address.</div><div class="ttdef"><b>Definition:</b> inet.h:612</div></div>
 <div class="ttc" id="aclassetcpal_1_1_sock_addr_html_acde4b684334acb25ea606acc6a032f09"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#acde4b684334acb25ea606acc6a032f09">etcpal::SockAddr::SockAddr</a></div><div class="ttdeci">ETCPAL_CONSTEXPR_14 SockAddr() noexcept</div><div class="ttdoc">Constructs an invalid SockAddr by default.</div><div class="ttdef"><b>Definition:</b> inet.h:427</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_acde4ca75e6e22c1a6899c84d923273db"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#acde4ca75e6e22c1a6899c84d923273db">etcpal::SockAddr::v4_data</a></div><div class="ttdeci">constexpr uint32_t v4_data() const noexcept</div><div class="ttdoc">Get the raw 32-bit representation of the SockAddr's IPv4 address.</div><div class="ttdef"><b>Definition:</b> inet.h:528</div></div>
-<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_af7af815dfdf62cfaa17f98743a769028"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#af7af815dfdf62cfaa17f98743a769028">etcpal::SockAddr::v6_data</a></div><div class="ttdeci">constexpr const uint8_t * v6_data() const noexcept</div><div class="ttdoc">Get the raw 16-byte array representation of the SockAddr's IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:537</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_acde4ca75e6e22c1a6899c84d923273db"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#acde4ca75e6e22c1a6899c84d923273db">etcpal::SockAddr::v4_data</a></div><div class="ttdeci">constexpr uint32_t v4_data() const noexcept</div><div class="ttdoc">Get the raw 32-bit representation of the SockAddr's IPv4 address.</div><div class="ttdef"><b>Definition:</b> inet.h:527</div></div>
+<div class="ttc" id="aclassetcpal_1_1_sock_addr_html_af7af815dfdf62cfaa17f98743a769028"><div class="ttname"><a href="classetcpal_1_1_sock_addr.html#af7af815dfdf62cfaa17f98743a769028">etcpal::SockAddr::v6_data</a></div><div class="ttdeci">constexpr const uint8_t * v6_data() const noexcept</div><div class="ttdoc">Get the raw 16-byte array representation of the SockAddr's IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:536</div></div>
 <div class="ttc" id="acpp_2common_8h_html"><div class="ttname"><a href="cpp_2common_8h.html">common.h</a></div><div class="ttdoc">Common definitions used by EtcPal C++ wrappers.</div></div>
 <div class="ttc" id="agroup__etcpal__cpp__inet_html_gaf149bcc08653396944a3699b8c5a57c5"><div class="ttname"><a href="group__etcpal__cpp__inet.html#gaf149bcc08653396944a3699b8c5a57c5">etcpal::IpAddrType</a></div><div class="ttdeci">IpAddrType</div><div class="ttdoc">Indicates an IP address family, or an invalid IP address.</div><div class="ttdef"><b>Definition:</b> inet.h:46</div></div>
 <div class="ttc" id="agroup__etcpal__cpp_html_ga27619ac477b23790da36baecb4389ee1"><div class="ttname"><a href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a></div><div class="ttdeci">#define ETCPAL_CONSTEXPR_14</div><div class="ttdoc">Stand-in for &quot;constexpr&quot; on entities that can only be defined &quot;constexpr&quot; in C++14 or later.</div><div class="ttdef"><b>Definition:</b> common.h:53</div></div>
 <div class="ttc" id="agroup__etcpal__cpp_html_ga598701b6928c77a8c086183a0a1cb9cc"><div class="ttname"><a href="group__etcpal__cpp.html#ga598701b6928c77a8c086183a0a1cb9cc">ETCPAL_CONSTEXPR_14_OR_INLINE</a></div><div class="ttdeci">#define ETCPAL_CONSTEXPR_14_OR_INLINE</div><div class="ttdoc">Defined to &quot;constexpr&quot; in C++14 or later, &quot;inline&quot; earlier.</div><div class="ttdef"><b>Definition:</b> common.h:54</div></div>
 <div class="ttc" id="agroup__etcpal__error_html_gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d"><div class="ttname"><a href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d">kEtcPalErrOk</a></div><div class="ttdeci">@ kEtcPalErrOk</div><div class="ttdoc">The call was successful, no error occurred.</div><div class="ttdef"><b>Definition:</b> error.h:51</div></div>
-<div class="ttc" id="agroup__etcpal__inet_html_ga0f8ba14963ce91bfd74626f2a1e957f0"><div class="ttname"><a href="group__etcpal__inet.html#ga0f8ba14963ce91bfd74626f2a1e957f0">etcpal_ip_mask_from_length</a></div><div class="ttdeci">EtcPalIpAddr etcpal_ip_mask_from_length(etcpal_iptype_t type, unsigned int mask_length)</div><div class="ttdoc">Create a netmask given a length in bits.</div><div class="ttdef"><b>Definition:</b> inet.c:312</div></div>
+<div class="ttc" id="agroup__etcpal__inet_html_ga0f8ba14963ce91bfd74626f2a1e957f0"><div class="ttname"><a href="group__etcpal__inet.html#ga0f8ba14963ce91bfd74626f2a1e957f0">etcpal_ip_mask_from_length</a></div><div class="ttdeci">EtcPalIpAddr etcpal_ip_mask_from_length(etcpal_iptype_t type, unsigned int mask_length)</div><div class="ttdoc">Create a netmask given a length in bits.</div><div class="ttdef"><b>Definition:</b> inet.c:311</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga2222b6d9e40f95ec1d74e1865537863f"><div class="ttname"><a href="group__etcpal__inet.html#ga2222b6d9e40f95ec1d74e1865537863f">ETCPAL_MAC_BYTES</a></div><div class="ttdeci">#define ETCPAL_MAC_BYTES</div><div class="ttdoc">The number of bytes in a MAC address.</div><div class="ttdef"><b>Definition:</b> inet.h:317</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga35262011f1ae20211d8aad5c79ab1b50"><div class="ttname"><a href="group__etcpal__inet.html#ga35262011f1ae20211d8aad5c79ab1b50">ETCPAL_IP_V4_ADDRESS</a></div><div class="ttdeci">#define ETCPAL_IP_V4_ADDRESS(etcpal_ip_ptr)</div><div class="ttdoc">Get the IPv4 address from a EtcPalIpAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:230</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga4ed3a313f7503031100bb169ad03bc89"><div class="ttname"><a href="group__etcpal__inet.html#ga4ed3a313f7503031100bb169ad03bc89">ETCPAL_IP_IS_V4</a></div><div class="ttdeci">#define ETCPAL_IP_IS_V4(etcpal_ip_ptr)</div><div class="ttdoc">Determine whether a EtcPalIpAddr contains an IPv4 address.</div><div class="ttdef"><b>Definition:</b> inet.h:205</div></div>
@@ -993,18 +992,16 @@ $(document).ready(function(){initNavTree('cpp_2inet_8h_source.html',''); initRes
 <div class="ttc" id="agroup__etcpal__inet_html_ga5e36f7ec503aef51829aed6fbd88c889"><div class="ttname"><a href="group__etcpal__inet.html#ga5e36f7ec503aef51829aed6fbd88c889">ETCPAL_IP_SET_V4_ADDRESS</a></div><div class="ttdeci">#define ETCPAL_IP_SET_V4_ADDRESS(etcpal_ip_ptr, val)</div><div class="ttdoc">Set the IPv4 address in a EtcPalIpAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:262</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga6f59d1ebf7873649f0812ee1cae171e7"><div class="ttname"><a href="group__etcpal__inet.html#ga6f59d1ebf7873649f0812ee1cae171e7">etcpal_ip_is_loopback</a></div><div class="ttdeci">bool etcpal_ip_is_loopback(const EtcPalIpAddr *ip)</div><div class="ttdoc">Determine whether a EtcPalIpAddr contains a loopback address.</div><div class="ttdef"><b>Definition:</b> inet.c:88</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga71b745e5bdc7c77bba5320241639f450"><div class="ttname"><a href="group__etcpal__inet.html#ga71b745e5bdc7c77bba5320241639f450">etcpal_ip_is_multicast</a></div><div class="ttdeci">bool etcpal_ip_is_multicast(const EtcPalIpAddr *ip)</div><div class="ttdoc">Determine whether a EtcPalIpAddr contains a multicast address.</div><div class="ttdef"><b>Definition:</b> inet.c:115</div></div>
-<div class="ttc" id="agroup__etcpal__inet_html_ga73f73b31cc309024d3284ebcf4b66b45"><div class="ttname"><a href="group__etcpal__inet.html#ga73f73b31cc309024d3284ebcf4b66b45">ETCPAL_MAC_STRING_BYTES</a></div><div class="ttdeci">#define ETCPAL_MAC_STRING_BYTES</div><div class="ttdoc">Maximum length of the string representation of a MAC address.</div><div class="ttdef"><b>Definition:</b> inet.h:396</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga847282e3fd17bf75ec83292326c455ee"><div class="ttname"><a href="group__etcpal__inet.html#ga847282e3fd17bf75ec83292326c455ee">etcpal_iptype_t</a></div><div class="ttdeci">etcpal_iptype_t</div><div class="ttdoc">Used to identify the type of IP address contained in a EtcPalIpAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:53</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga84ac8ff7c11b7b3d05e66192205ae0cb"><div class="ttname"><a href="group__etcpal__inet.html#ga84ac8ff7c11b7b3d05e66192205ae0cb">ETCPAL_MAC_IS_NULL</a></div><div class="ttdeci">#define ETCPAL_MAC_IS_NULL(macptr)</div><div class="ttdoc">Determine if a MAC address is null.</div><div class="ttdef"><b>Definition:</b> inet.h:346</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga85d241eed93be1b271e5dc68a56e9473"><div class="ttname"><a href="group__etcpal__inet.html#ga85d241eed93be1b271e5dc68a56e9473">ETCPAL_IP_IS_V6</a></div><div class="ttdeci">#define ETCPAL_IP_IS_V6(etcpal_ip_ptr)</div><div class="ttdoc">Determine whether a EtcPalIpAddr contains an IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:212</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga88982a2d40356f278c53563ddf96d8b2"><div class="ttname"><a href="group__etcpal__inet.html#ga88982a2d40356f278c53563ddf96d8b2">ETCPAL_IP_V6_SCOPE_ID</a></div><div class="ttdeci">#define ETCPAL_IP_V6_SCOPE_ID(etcpal_ip_ptr)</div><div class="ttdoc">Get the IPv6 scope ID from an EtcPalIpAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:252</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga92ba01cb2c81a8a97b9555ecf0ab2fe5"><div class="ttname"><a href="group__etcpal__inet.html#ga92ba01cb2c81a8a97b9555ecf0ab2fe5">etcpal_string_to_ip</a></div><div class="ttdeci">etcpal_error_t etcpal_string_to_ip(etcpal_iptype_t type, const char *src, EtcPalIpAddr *dest)</div><div class="ttdoc">Convert IPv4 and IPv6 addresses from text to binary form.</div></div>
-<div class="ttc" id="agroup__etcpal__inet_html_ga9a86a44681bc856e5919578bbf652e38"><div class="ttname"><a href="group__etcpal__inet.html#ga9a86a44681bc856e5919578bbf652e38">etcpal_ip_mask_length</a></div><div class="ttdeci">unsigned int etcpal_ip_mask_length(const EtcPalIpAddr *netmask)</div><div class="ttdoc">Get the length in bits of a netmask.</div><div class="ttdef"><b>Definition:</b> inet.c:257</div></div>
+<div class="ttc" id="agroup__etcpal__inet_html_ga9a86a44681bc856e5919578bbf652e38"><div class="ttname"><a href="group__etcpal__inet.html#ga9a86a44681bc856e5919578bbf652e38">etcpal_ip_mask_length</a></div><div class="ttdeci">unsigned int etcpal_ip_mask_length(const EtcPalIpAddr *netmask)</div><div class="ttdoc">Get the length in bits of a netmask.</div><div class="ttdef"><b>Definition:</b> inet.c:256</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gaa4b21b32f8776276e582d473e17bf768"><div class="ttname"><a href="group__etcpal__inet.html#gaa4b21b32f8776276e582d473e17bf768">etcpal_ip_is_link_local</a></div><div class="ttdeci">bool etcpal_ip_is_link_local(const EtcPalIpAddr *ip)</div><div class="ttdoc">Determine whether a EtcPalIpAddr contains a link-local address.</div><div class="ttdef"><b>Definition:</b> inet.c:60</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gaaee800da95371923f9375dec1a6c0a5c"><div class="ttname"><a href="group__etcpal__inet.html#gaaee800da95371923f9375dec1a6c0a5c">ETCPAL_IP_V6_ADDRESS</a></div><div class="ttdeci">#define ETCPAL_IP_V6_ADDRESS(etcpal_ip_ptr)</div><div class="ttdoc">Get the IPv6 address from a EtcPalIpAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:241</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gab7df63744affbe2833fcb455e69b6ff5"><div class="ttname"><a href="group__etcpal__inet.html#gab7df63744affbe2833fcb455e69b6ff5">ETCPAL_IP_SET_INVALID</a></div><div class="ttdeci">#define ETCPAL_IP_SET_INVALID(etcpal_ip_ptr)</div><div class="ttdoc">Set the type field in a EtcPalIpAddr to indicate that it does not contain a valid address.</div><div class="ttdef"><b>Definition:</b> inet.h:303</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gac2175076e5d4834fccf76e17a29bbbfe"><div class="ttname"><a href="group__etcpal__inet.html#gac2175076e5d4834fccf76e17a29bbbfe">etcpal_string_to_mac</a></div><div class="ttdeci">etcpal_error_t etcpal_string_to_mac(const char *src, EtcPalMacAddr *dest)</div><div class="ttdoc">Create a MAC address from a string representation.</div><div class="ttdef"><b>Definition:</b> inet.c:524</div></div>
-<div class="ttc" id="agroup__etcpal__inet_html_gacd7ec0d81e171166483c7629669bf05d"><div class="ttname"><a href="group__etcpal__inet.html#gacd7ec0d81e171166483c7629669bf05d">ETCPAL_IP_STRING_BYTES</a></div><div class="ttdeci">#define ETCPAL_IP_STRING_BYTES</div><div class="ttdoc">Maximum length of the string representation of an IP address.</div><div class="ttdef"><b>Definition:</b> inet.h:394</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gad5f18940857b50304b956505fb77df20"><div class="ttname"><a href="group__etcpal__inet.html#gad5f18940857b50304b956505fb77df20">ETCPAL_IPV6_BYTES</a></div><div class="ttdeci">#define ETCPAL_IPV6_BYTES</div><div class="ttdoc">The number of bytes in an IPv6 address.</div><div class="ttdef"><b>Definition:</b> inet.h:63</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gad8ef4406c72bd87baad2ce085fb29daf"><div class="ttname"><a href="group__etcpal__inet.html#gad8ef4406c72bd87baad2ce085fb29daf">ETCPAL_IP_INVALID_INIT</a></div><div class="ttdeci">#define ETCPAL_IP_INVALID_INIT</div><div class="ttdoc">An initializer for an invalid EtcPalIpAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:121</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gae0d14b2f44b81a6687390839e0aea869"><div class="ttname"><a href="group__etcpal__inet.html#gae0d14b2f44b81a6687390839e0aea869">ETCPAL_IP_SET_V6_ADDRESS</a></div><div class="ttdeci">#define ETCPAL_IP_SET_V6_ADDRESS(etcpal_ip_ptr, addr_val)</div><div class="ttdoc">Set the IPv6 address in a EtcPalIpAddr.</div><div class="ttdef"><b>Definition:</b> inet.h:278</div></div>

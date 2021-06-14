@@ -217,7 +217,7 @@ class etcpal::Expected&lt; T &gt;</h3>
 <p><b>Usage</b></p>
 <p><a class="el" href="classetcpal_1_1_expected.html" title="A type representing either a value or an etcpal_error_t code.">Expected</a> is almost always used as the return type of an API function. Consider a function that either creates a network socket or returns an error.</p>
 <div class="fragment"><div class="line"><a class="code" href="classetcpal_1_1_expected.html">etcpal::Expected&lt;etcpal_socket_t&gt;</a> CreateSocket(<span class="keywordtype">int</span> family, <span class="keywordtype">int</span> type);</div>
-<div class="ttc" id="aclassetcpal_1_1_expected_html"><div class="ttname"><a href="classetcpal_1_1_expected.html">etcpal::Expected</a></div><div class="ttdoc">A type representing either a value or an etcpal_error_t code.</div><div class="ttdef"><b>Definition:</b> error.h:470</div></div>
+<div class="ttc" id="aclassetcpal_1_1_expected_html"><div class="ttname"><a href="classetcpal_1_1_expected.html">etcpal::Expected</a></div><div class="ttdoc">A type representing either a value or an etcpal_error_t code.</div><div class="ttdef"><b>Definition:</b> error.h:477</div></div>
 </div><!-- fragment --><p>When using this function, check whether the result contains an error: </p><div class="fragment"><div class="line"><span class="keyword">auto</span> socket_res = CreateSocket(AF_INET, SOCK_STREAM);</div>
 <div class="line"><span class="keywordflow">if</span> (socket_res) <span class="comment">// or socket_res.has_value()</span></div>
 <div class="line">{</div>
