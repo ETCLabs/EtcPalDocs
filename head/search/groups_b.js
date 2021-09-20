@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['sem_20_28counting_20semaphores_29_1438',['sem (Counting Semaphores)',['../group__etcpal__cpp__sem.html',1,'(Global Namespace)'],['../group__etcpal__sem.html',1,'(Global Namespace)']]],
-  ['signal_20_28signal_20objects_29_1439',['signal (Signal Objects)',['../group__etcpal__cpp__signal.html',1,'']]],
-  ['signal_20_28signals_29_1440',['signal (Signals)',['../group__etcpal__signal.html',1,'']]],
-  ['socket_20_28network_20socket_20interface_29_1441',['socket (Network Socket Interface)',['../group__etcpal__socket.html',1,'']]]
+  ['rbtree_20_28red_2dblack_20trees_29_1454',['rbtree (Red-Black Trees)',['../group__etcpal__rbtree.html',1,'']]],
+  ['recursive_5fmutex_20_28recursive_20mutexes_29_1455',['recursive_mutex (Recursive Mutexes)',['../group__etcpal__cpp__recursive__mutex.html',1,'(Global Namespace)'],['../group__etcpal__recursive__mutex.html',1,'(Global Namespace)']]],
+  ['rwlock_20_28read_2dwrite_20locks_29_1456',['rwlock (Read-Write Locks)',['../group__etcpal__cpp__rwlock.html',1,'(Global Namespace)'],['../group__etcpal__rwlock.html',1,'(Global Namespace)']]]
 ];

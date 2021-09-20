@@ -51,5 +51,6 @@ var annotated_dup =
     [ "EtcPalSyslogParams", "struct_etc_pal_syslog_params.html", "struct_etc_pal_syslog_params" ],
     [ "EtcPalThreadParams", "struct_etc_pal_thread_params.html", "struct_etc_pal_thread_params" ],
     [ "EtcPalTimer", "struct_etc_pal_timer.html", "struct_etc_pal_timer" ],
-    [ "EtcPalUuid", "struct_etc_pal_uuid.html", "struct_etc_pal_uuid" ]
+    [ "EtcPalUuid", "struct_etc_pal_uuid.html", "struct_etc_pal_uuid" ],
+    [ "IntHandleManager", "struct_int_handle_manager.html", "struct_int_handle_manager" ]
 ];

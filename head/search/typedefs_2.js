@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['valuetype_1369',['ValueType',['../classetcpal_1_1_expected.html#aecaeabaa9da616ae42bb20787878260d',1,'etcpal::Expected']]]
+  ['handlevalueinusefunction_1385',['HandleValueInUseFunction',['../group__etcpal__handle__manager.html#ga73979c8d153b67aa866db1280228bff3',1,'handle_manager.h']]]
 ];

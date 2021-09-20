@@ -7,6 +7,7 @@ var dir_81a3fb26cc06c42d281987e41831a70b =
     [ "common.h", "common_8h_source.html", null ],
     [ "error.h", "error_8h_source.html", null ],
     [ "event_group.h", "event__group_8h_source.html", null ],
+    [ "handle_manager.h", "handle__manager_8h_source.html", null ],
     [ "inet.h", "inet_8h_source.html", null ],
     [ "log.h", "log_8h_source.html", null ],
     [ "mempool.h", "mempool_8h_source.html", null ],

@@ -28,6 +28,7 @@ var hierarchy =
     [ "EtcPalUuid", "struct_etc_pal_uuid.html", null ],
     [ "EventGroup", "classetcpal_1_1_event_group.html", null ],
     [ "Expected< T >", "classetcpal_1_1_expected.html", null ],
+    [ "IntHandleManager", "struct_int_handle_manager.html", null ],
     [ "IpAddr", "classetcpal_1_1_ip_addr.html", null ],
     [ "Logger", "classetcpal_1_1_logger.html", null ],
     [ "logic_error", null, [

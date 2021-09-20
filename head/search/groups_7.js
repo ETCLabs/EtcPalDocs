@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['opaque_5fid_20_28strongly_20typed_20handles_29_1431',['opaque_id (Strongly typed handles)',['../group__etcpal__cpp__opaque__id.html',1,'']]],
-  ['os_20abstraction_20modules_1432',['OS Abstraction Modules',['../group__etcpal__os.html',1,'']]]
+  ['netint_20_28network_20interfaces_29_1448',['netint (Network Interfaces)',['../group__etcpal__netint.html',1,'']]],
+  ['network_20abstraction_20modules_1449',['Network Abstraction Modules',['../group__etcpal__net.html',1,'']]]
 ];

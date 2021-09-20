@@ -1293,6 +1293,45 @@
       <arglist>(U &amp;&amp;def_val) &amp;&amp;</arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>IntHandleManager</name>
+    <filename>struct_int_handle_manager.html</filename>
+    <member kind="variable">
+      <type>int</type>
+      <name>last_handle</name>
+      <anchorfile>struct_int_handle_manager.html</anchorfile>
+      <anchor>a9337859a5f288fcb3d0e347f17fa40f1</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>max_value</name>
+      <anchorfile>struct_int_handle_manager.html</anchorfile>
+      <anchor>aff3c96df7d67617d6ee82fa1f257ff84</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>bool</type>
+      <name>check_value_in_use</name>
+      <anchorfile>struct_int_handle_manager.html</anchorfile>
+      <anchor>a9470aa8a510599ff6589491f9de01513</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>HandleValueInUseFunction</type>
+      <name>value_in_use</name>
+      <anchorfile>struct_int_handle_manager.html</anchorfile>
+      <anchor>abd2192f66657434c5c7f410dce1d5609</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>void *</type>
+      <name>context</name>
+      <anchorfile>struct_int_handle_manager.html</anchorfile>
+      <anchor>ae376f130b17d169ee51be68077a89ed0</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
   <compound kind="class">
     <name>etcpal::IpAddr</name>
     <filename>classetcpal_1_1_ip_addr.html</filename>
@@ -3877,6 +3916,7 @@
     <subgroup>etcpal_acn_pdu</subgroup>
     <subgroup>etcpal_acn_rlp</subgroup>
     <subgroup>etcpal_error</subgroup>
+    <subgroup>etcpal_handle_manager</subgroup>
     <subgroup>etcpal_log</subgroup>
     <subgroup>etcpal_mempool</subgroup>
     <subgroup>etcpal_pack</subgroup>
@@ -4115,6 +4155,40 @@
       <anchorfile>group__etcpal__error.html</anchorfile>
       <anchor>ga4902a840d9801e02baebd4c70924c4b0</anchor>
       <arglist>(etcpal_error_t code)</arglist>
+    </member>
+  </compound>
+  <compound kind="group">
+    <name>etcpal_handle_manager</name>
+    <title>handle_manager</title>
+    <filename>group__etcpal__handle__manager.html</filename>
+    <class kind="struct">IntHandleManager</class>
+    <member kind="typedef">
+      <type>bool(*</type>
+      <name>HandleValueInUseFunction</name>
+      <anchorfile>group__etcpal__handle__manager.html</anchorfile>
+      <anchor>ga73979c8d153b67aa866db1280228bff3</anchor>
+      <arglist>)(int handle_val, void *context)</arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct IntHandleManager</type>
+      <name>IntHandleManager</name>
+      <anchorfile>group__etcpal__handle__manager.html</anchorfile>
+      <anchor>gad8312cee69355acbb88c52543da8989f</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>init_int_handle_manager</name>
+      <anchorfile>group__etcpal__handle__manager.html</anchorfile>
+      <anchor>ga39b0483a9f5bb16cf49ab8ef27e07893</anchor>
+      <arglist>(IntHandleManager *manager, int max_value, HandleValueInUseFunction value_in_use_func, void *context)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>get_next_int_handle</name>
+      <anchorfile>group__etcpal__handle__manager.html</anchorfile>
+      <anchor>ga521bcf0eabc66fa156cb3bee35551a2b</anchor>
+      <arglist>(IntHandleManager *manager)</arglist>
     </member>
   </compound>
   <compound kind="group">

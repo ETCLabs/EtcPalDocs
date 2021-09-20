@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['pack_20_28buffer_20packing_20and_20unpacking_29_1433',['pack (Buffer Packing and Unpacking)',['../group__etcpal__pack.html',1,'']]]
+  ['opaque_5fid_20_28strongly_20typed_20handles_29_1450',['opaque_id (Strongly typed handles)',['../group__etcpal__cpp__opaque__id.html',1,'']]],
+  ['os_20abstraction_20modules_1451',['OS Abstraction Modules',['../group__etcpal__os.html',1,'']]]
 ];

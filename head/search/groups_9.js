@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['queue_20_28rtos_20queues_29_1434',['queue (RTOS queues)',['../group__etcpal__cpp__queue.html',1,'(Global Namespace)'],['../group__etcpal__queue.html',1,'(Global Namespace)']]]
+  ['pack_20_28buffer_20packing_20and_20unpacking_29_1452',['pack (Buffer Packing and Unpacking)',['../group__etcpal__pack.html',1,'']]]
 ];
