@@ -19,10 +19,10 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="etclibtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
 <link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
-<!-- BEGIN ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () {
     $.get('/EtcPalDocs/versions.txt', function (data) {
@@ -53,7 +53,7 @@
     }, 'text');
   });
 </script>
-<!-- END ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () { selectAllC() });
 </script>
@@ -138,7 +138,7 @@
    </div>
    <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
-  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
     <div id="otherversions">
       View other versions:
@@ -146,7 +146,7 @@
       </select>
     </div>
   </td>
-  <!-- END VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
  </tr>
  </tbody>
 </table>
@@ -241,14 +241,14 @@ $(document).ready(function(){initNavTree('acn__rlp_8h_source.html',''); initResi
 <div class="line"><a name="l00054"></a><span class="lineno"><a class="line" href="group__etcpal__acn__rlp.html#ga29ae7e116cd77cc00366461415bf54a7">   54</a></span>&#160;<span class="preprocessor">#define ACN_RLP_HEADER_SIZE_NORMAL_LEN 22</span></div>
 <div class="line"><a name="l00056"></a><span class="lineno"><a class="line" href="group__etcpal__acn__rlp.html#ga9d9a7bd4498a28d5b0de8ed598141c66">   56</a></span>&#160;<span class="preprocessor">#define ACN_RLP_HEADER_SIZE_EXT_LEN 23</span></div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_SDT ACN_PROTOCOL_SDT</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_SDT             ACN_PROTOCOL_SDT</span></div>
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_DRAFT_E131_DATA ACN_PROTOCOL_DRAFT_E131_DATA</span></div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_E131_DATA ACN_PROTOCOL_E131_DATA</span></div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_E131_EXTENDED ACN_PROTOCOL_E131_EXTENDED</span></div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_LLRP ACN_PROTOCOL_LLRP</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_BROKER ACN_PROTOCOL_BROKER</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_RPT ACN_PROTOCOL_RPT</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_EPT ACN_PROTOCOL_EPT</span></div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_E131_DATA       ACN_PROTOCOL_E131_DATA</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_E131_EXTENDED   ACN_PROTOCOL_E131_EXTENDED</span></div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_LLRP            ACN_PROTOCOL_LLRP</span></div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_BROKER          ACN_PROTOCOL_BROKER</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_RPT             ACN_PROTOCOL_RPT</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define ACN_VECTOR_ROOT_EPT             ACN_PROTOCOL_EPT</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno"><a class="line" href="struct_acn_tcp_preamble.html">   77</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_acn_tcp_preamble.html">AcnTcpPreamble</a></div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;{</div>
 <div class="line"><a name="l00080"></a><span class="lineno"><a class="line" href="struct_acn_tcp_preamble.html#a6df9d0f27538da177c52996a97e0a1d8">   80</a></span>&#160;  <span class="keyword">const</span> uint8_t* <a class="code" href="struct_acn_tcp_preamble.html#a6df9d0f27538da177c52996a97e0a1d8">rlp_block</a>;</div>

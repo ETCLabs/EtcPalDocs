@@ -19,10 +19,10 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="etclibtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
 <link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
-<!-- BEGIN ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () {
     $.get('/EtcPalDocs/versions.txt', function (data) {
@@ -53,7 +53,7 @@
     }, 'text');
   });
 </script>
-<!-- END ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () { selectAllC() });
 </script>
@@ -138,7 +138,7 @@
    </div>
    <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
-  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
     <div id="otherversions">
       View other versions:
@@ -146,7 +146,7 @@
       </select>
     </div>
   </td>
-  <!-- END VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
  </tr>
  </tbody>
 </table>
@@ -303,7 +303,7 @@ $(document).ready(function(){initNavTree('inet_8h_source.html',''); initResizabl
 <div class="line"><a name="l00262"></a><span class="lineno"><a class="line" href="group__etcpal__inet.html#ga5e36f7ec503aef51829aed6fbd88c889">  262</a></span>&#160;<span class="preprocessor">#define ETCPAL_IP_SET_V4_ADDRESS(etcpal_ip_ptr, val) \</span></div>
 <div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;<span class="preprocessor">  do                                                 \</span></div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;<span class="preprocessor">  {                                                  \</span></div>
-<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor">    (etcpal_ip_ptr)-&gt;type = kEtcPalIpTypeV4;         \</span></div>
+<div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;<span class="preprocessor">    (etcpal_ip_ptr)-&gt;type    = kEtcPalIpTypeV4;      \</span></div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;<span class="preprocessor">    (etcpal_ip_ptr)-&gt;addr.v4 = val;                  \</span></div>
 <div class="line"><a name="l00267"></a><span class="lineno">  267</span>&#160;<span class="preprocessor">  } while (0)</span></div>
 <div class="line"><a name="l00268"></a><span class="lineno">  268</span>&#160; </div>

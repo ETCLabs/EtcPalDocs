@@ -19,10 +19,10 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="etclibtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
 <link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
-<!-- BEGIN ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () {
     $.get('/EtcPalDocs/versions.txt', function (data) {
@@ -53,7 +53,7 @@
     }, 'text');
   });
 </script>
-<!-- END ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () { selectAllC() });
 </script>
@@ -138,7 +138,7 @@
    </div>
    <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
-  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
     <div id="otherversions">
       View other versions:
@@ -146,7 +146,7 @@
       </select>
     </div>
   </td>
-  <!-- END VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
  </tr>
  </tbody>
 </table>
@@ -230,7 +230,7 @@ $(document).ready(function(){initNavTree('cpp_2common_8h_source.html',''); initR
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160; </div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;<span class="preprocessor">#if ((defined(_MSC_VER) &amp;&amp; (_MSC_VER &gt; 1900)) || (__cplusplus &gt;= 201402L))</span></div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define ETCPAL_CONSTEXPR_14 constexpr</span></div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#define ETCPAL_CONSTEXPR_14           constexpr</span></div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="preprocessor">#define ETCPAL_CONSTEXPR_14_OR_INLINE constexpr</span></div>
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">   53</a></span>&#160;<span class="preprocessor">#define ETCPAL_CONSTEXPR_14</span></div>
@@ -243,11 +243,11 @@ $(document).ready(function(){initNavTree('cpp_2common_8h_source.html',''); initR
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160; </div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="preprocessor">#if (defined(__cpp_exceptions) || defined(__EXCEPTIONS) || defined(_CPPUNWIND)) &amp;&amp; !defined(ETCPAL_NO_EXCEPTIONS)</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define ETCPAL_THROW(exception) throw exception</span></div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#define ETCPAL_THROW(exception)         throw exception</span></div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;<span class="preprocessor">#define ETCPAL_BUILDING_WITH_EXCEPTIONS 1</span></div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#else</span></div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="preprocessor">#include &lt;cstdlib&gt;</span></div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define ETCPAL_THROW(exception) std::abort()</span></div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;<span class="preprocessor">#define ETCPAL_THROW(exception)         std::abort()</span></div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;<span class="preprocessor">#define ETCPAL_BUILDING_WITH_EXCEPTIONS 0</span></div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160; </div>
@@ -262,7 +262,7 @@ $(document).ready(function(){initNavTree('cpp_2common_8h_source.html',''); initR
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;{</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;};</div>
 <div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define ETCPAL_ENABLE_IF_ARG(...) typename std::enable_if&lt;(__VA_ARGS__)&gt;::type* = nullptr</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define ETCPAL_ENABLE_IF_ARG(...)      typename std::enable_if&lt;(__VA_ARGS__)&gt;::type* = nullptr</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#define ETCPAL_ENABLE_IF_TEMPLATE(...) typename = typename std::enable_if&lt;(__VA_ARGS__), detail::Enabler&gt;::type</span></div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
 <div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;}  <span class="comment">// namespace detail</span></div>

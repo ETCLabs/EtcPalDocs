@@ -19,10 +19,10 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="etclibtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
 <link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
-<!-- BEGIN ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () {
     $.get('/EtcPalDocs/versions.txt', function (data) {
@@ -53,7 +53,7 @@
     }, 'text');
   });
 </script>
-<!-- END ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () { selectAllC() });
 </script>
@@ -138,7 +138,7 @@
    </div>
    <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
-  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
     <div id="otherversions">
       View other versions:
@@ -146,7 +146,7 @@
       </select>
     </div>
   </td>
-  <!-- END VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
  </tr>
  </tbody>
 </table>
@@ -254,12 +254,12 @@ $(document).ready(function(){initNavTree('cpp_2log_8h_source.html',''); initResi
 <div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> hour,</div>
 <div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> minute,</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> second,</div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> msec = 0,</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;                         <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> msec       = 0,</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;                         <span class="keywordtype">int</span>          utc_offset = 0);</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_log_timestamp.html#a472f705194218179e9cf26ffb288da6c">IsValid</a>() const noexcept;</div>
 <div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  constexpr const <a class="code" href="struct_etc_pal_log_timestamp.html">EtcPalLogTimestamp</a>&amp; <a class="code" href="classetcpal_1_1_log_timestamp.html#a45b0c3e59f7392736d9a1f7a91ab6e7e">get</a>() const noexcept;</div>
+<div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;  constexpr const <a class="code" href="struct_etc_pal_log_timestamp.html">EtcPalLogTimestamp</a>&amp;     <a class="code" href="classetcpal_1_1_log_timestamp.html#a45b0c3e59f7392736d9a1f7a91ab6e7e">get</a>() const noexcept;</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> <a class="code" href="struct_etc_pal_log_timestamp.html">EtcPalLogTimestamp</a>&amp; <a class="code" href="classetcpal_1_1_log_timestamp.html#a45b0c3e59f7392736d9a1f7a91ab6e7e">get</a>() noexcept;</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;  static <a class="code" href="classetcpal_1_1_log_timestamp.html">LogTimestamp</a> <a class="code" href="classetcpal_1_1_log_timestamp.html#ad9fe329da06c0386ffc6fd84b840dcc9">Invalid</a>();</div>
@@ -411,11 +411,11 @@ $(document).ready(function(){initNavTree('cpp_2log_8h_source.html',''); initResi
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;<span class="keyword">inline</span> Logger::Logger()</div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;{</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;  <span class="comment">// Default logging parameters</span></div>
-<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  log_params_.<a class="code" href="struct_etc_pal_log_params.html#a9ba0f2f280a2a2e49c17508af48aad91">action</a> = <a class="code" href="group__etcpal__log.html#ga45d65c059c3b46a251f8ca4141ca1810">ETCPAL_LOG_CREATE_HUMAN_READABLE</a>;</div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  log_params_.<a class="code" href="struct_etc_pal_log_params.html#a9a6659e83ffc5e4e7ab3c5ba5009f4e7">log_fn</a> = LogCallbackFn;</div>
+<div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;  log_params_.<a class="code" href="struct_etc_pal_log_params.html#a9ba0f2f280a2a2e49c17508af48aad91">action</a>   = <a class="code" href="group__etcpal__log.html#ga45d65c059c3b46a251f8ca4141ca1810">ETCPAL_LOG_CREATE_HUMAN_READABLE</a>;</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;  log_params_.<a class="code" href="struct_etc_pal_log_params.html#a9a6659e83ffc5e4e7ab3c5ba5009f4e7">log_fn</a>   = LogCallbackFn;</div>
 <div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;  log_params_.<a class="code" href="struct_etc_pal_log_params.html#ac695d621aaa836a9d13d65a912be9518">log_mask</a> = <a class="code" href="group__etcpal__log.html#gaecd624f2fc15671bb3e4c01ede198a08">ETCPAL_LOG_UPTO</a>(<a class="code" href="group__etcpal__log.html#ga4e46d489885b63c38263e35ad5aca8b6">ETCPAL_LOG_DEBUG</a>);</div>
-<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  log_params_.<a class="code" href="struct_etc_pal_log_params.html#aceff50b76400c01d88b158c0a68f32d8">time_fn</a> = LogTimestampFn;</div>
-<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  log_params_.<a class="code" href="struct_etc_pal_log_params.html#ae376f130b17d169ee51be68077a89ed0">context</a> = <span class="keyword">nullptr</span>;</div>
+<div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;  log_params_.<a class="code" href="struct_etc_pal_log_params.html#aceff50b76400c01d88b158c0a68f32d8">time_fn</a>  = LogTimestampFn;</div>
+<div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;  log_params_.<a class="code" href="struct_etc_pal_log_params.html#ae376f130b17d169ee51be68077a89ed0">context</a>  = <span class="keyword">nullptr</span>;</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;}</div>
 <div class="line"><a name="l00345"></a><span class="lineno">  345</span>&#160; </div>
 <div class="line"><a name="l00352"></a><span class="lineno"><a class="line" href="classetcpal_1_1_logger.html#a84e487b1e20733405bd8b870e59f670c">  352</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_logger.html#a84e487b1e20733405bd8b870e59f670c">Logger::Startup</a>(<a class="code" href="classetcpal_1_1_log_message_handler.html">LogMessageHandler</a>&amp; message_handler)</div>
@@ -440,8 +440,8 @@ $(document).ready(function(){initNavTree('cpp_2log_8h_source.html',''); initResi
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;  <span class="comment">// kQueued</span></div>
 <div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  <span class="comment">// Start the log dispatch thread</span></div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  running_ = <span class="keyword">true</span>;</div>
-<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  signal_ = std::unique_ptr&lt;etcpal::Signal&gt;(<span class="keyword">new</span> <a class="code" href="classetcpal_1_1_signal.html">etcpal::Signal</a>);</div>
-<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  mutex_ = std::unique_ptr&lt;etcpal::Mutex&gt;(<span class="keyword">new</span> <a class="code" href="classetcpal_1_1_mutex.html">etcpal::Mutex</a>);</div>
+<div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160;  signal_  = std::unique_ptr&lt;etcpal::Signal&gt;(<span class="keyword">new</span> <a class="code" href="classetcpal_1_1_signal.html">etcpal::Signal</a>);</div>
+<div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  mutex_   = std::unique_ptr&lt;etcpal::Mutex&gt;(<span class="keyword">new</span> <a class="code" href="classetcpal_1_1_mutex.html">etcpal::Mutex</a>);</div>
 <div class="line"><a name="l00376"></a><span class="lineno">  376</span>&#160;  <span class="keywordflow">if</span> (!thread_.<a class="code" href="classetcpal_1_1_thread.html#ae6cedd23a7b2b24f90059df894846864">SetName</a>(<span class="stringliteral">&quot;EtcPalLoggerThread&quot;</span>).<a class="code" href="classetcpal_1_1_thread.html#a63e85f031a9b180d9e932df21f7a2e64">Start</a>(&amp;Logger::LogThreadRun, <span class="keyword">this</span>))</div>
 <div class="line"><a name="l00377"></a><span class="lineno">  377</span>&#160;  {</div>
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;    <a class="code" href="group__etcpal.html#ga0792bdcd2f824009584744db01d7a352">etcpal_deinit</a>(<a class="code" href="group__etcpal.html#ga8c7c1f9430362540e56af3a2742a25d4">ETCPAL_FEATURE_LOGGING</a>);</div>

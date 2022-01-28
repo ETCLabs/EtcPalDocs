@@ -1,5 +1,5 @@
 /******************************************************************************
- * Styling for misc. EtcLibTool-inserted constructs
+ * Styling for misc. EtcDevTool-inserted constructs
  *****************************************************************************/
 
 div#otherversions {
@@ -8,7 +8,7 @@ div#otherversions {
 
 /******************************************************************************
  * doxygen-awesome compatible CSS for the custom code tabs that can be generated
- * by EtcLibTool. See the HTML snippets generated in docs.py to associate these
+ * by EtcDevTool. See the HTML snippets generated in docs.py to associate these
  * classes with elements.
  *****************************************************************************/
 

@@ -19,10 +19,10 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="etclibtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
 <link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
-<!-- BEGIN ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () {
     $.get('/EtcPalDocs/versions.txt', function (data) {
@@ -53,7 +53,7 @@
     }, 'text');
   });
 </script>
-<!-- END ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () { selectAllC() });
 </script>
@@ -138,7 +138,7 @@
    </div>
    <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
-  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
     <div id="otherversions">
       View other versions:
@@ -146,7 +146,7 @@
       </select>
     </div>
   </td>
-  <!-- END VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
  </tr>
  </tbody>
 </table>
@@ -392,9 +392,9 @@ $(document).ready(function(){initNavTree('cpp_2error_8h_source.html',''); initRe
 <div class="line"><a name="l00274"></a><span class="lineno">  274</span>&#160; </div>
 <div class="line"><a name="l00275"></a><span class="lineno">  275</span>&#160;  <span class="keywordtype">void</span> DestructValue() { value_.~ValueType(); }</div>
 <div class="line"><a name="l00276"></a><span class="lineno">  276</span>&#160; </div>
-<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  constexpr <span class="keyword">const</span> ValueType&amp;  value() const&amp; { <span class="keywordflow">return</span> value_; }</div>
-<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  ValueType&amp;                  value() &amp; { <span class="keywordflow">return</span> value_; }</div>
-<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  constexpr <span class="keyword">const</span> ValueType&amp;&amp; value() const&amp;&amp; { <span class="keywordflow">return</span> std::move(value_); }</div>
+<div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160;  constexpr <span class="keyword">const</span> ValueType&amp;      value() const&amp; { <span class="keywordflow">return</span> value_; }</div>
+<div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;  ValueType&amp;                      value() &amp; { <span class="keywordflow">return</span> value_; }</div>
+<div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;  constexpr <span class="keyword">const</span> ValueType&amp;&amp;     value() const&amp;&amp; { <span class="keywordflow">return</span> std::move(value_); }</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> ValueType&amp;&amp; value() &amp;&amp; { <span class="keywordflow">return</span> std::move(value_); }</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;  <span class="keyword">const</span> ValueType*                value_ptr()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> &amp;value_; }</div>
 <div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;  ValueType*                      value_ptr() { <span class="keywordflow">return</span> &amp;value_; }</div>
@@ -425,13 +425,13 @@ $(document).ready(function(){initNavTree('cpp_2error_8h_source.html',''); initRe
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;<span class="keyword">class </span>ExpectedStorage : <span class="keyword">public</span> ExpectedStorageImpl&lt;T&gt;</div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;{</div>
 <div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  ExpectedStorage() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;  ExpectedStorage()  = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;  ~ExpectedStorage() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160; </div>
 <div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;  <span class="keyword">explicit</span> ExpectedStorage(<span class="keywordtype">bool</span> has_value) : ExpectedStorageImpl&lt;T&gt;(has_value) {}</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160; </div>
 <div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;  ExpectedStorage(<span class="keyword">const</span> ExpectedStorage&amp; other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  ExpectedStorage(ExpectedStorage&amp;&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;  ExpectedStorage(ExpectedStorage&amp;&amp; other)      = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;};</div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160; </div>
 <div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
@@ -439,7 +439,7 @@ $(document).ready(function(){initNavTree('cpp_2error_8h_source.html',''); initRe
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;<span class="keyword">class </span>ExpectedStorage&lt;T, true, true&gt; : <span class="keyword">public</span> ExpectedStorageImpl&lt;T&gt;</div>
 <div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;{</div>
 <div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  ExpectedStorage() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;  ExpectedStorage()  = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;  ~ExpectedStorage() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160; </div>
 <div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;  <span class="keyword">explicit</span> ExpectedStorage(<span class="keywordtype">bool</span> has_value) : ExpectedStorageImpl&lt;T&gt;(has_value) {}</div>
@@ -466,7 +466,7 @@ $(document).ready(function(){initNavTree('cpp_2error_8h_source.html',''); initRe
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;<span class="keyword">class </span>ExpectedStorage&lt;T, true, false&gt; : <span class="keyword">public</span> ExpectedStorageImpl&lt;T&gt;</div>
 <div class="line"><a name="l00349"></a><span class="lineno">  349</span>&#160;{</div>
 <div class="line"><a name="l00350"></a><span class="lineno">  350</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  ExpectedStorage() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00351"></a><span class="lineno">  351</span>&#160;  ExpectedStorage()  = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00352"></a><span class="lineno">  352</span>&#160;  ~ExpectedStorage() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00353"></a><span class="lineno">  353</span>&#160; </div>
 <div class="line"><a name="l00354"></a><span class="lineno">  354</span>&#160;  <span class="keyword">explicit</span> ExpectedStorage(<span class="keywordtype">bool</span> has_value) : ExpectedStorageImpl&lt;T&gt;(has_value) {}</div>
@@ -487,7 +487,7 @@ $(document).ready(function(){initNavTree('cpp_2error_8h_source.html',''); initRe
 <div class="line"><a name="l00369"></a><span class="lineno">  369</span>&#160;<span class="keyword">class </span>ExpectedStorage&lt;T, false, true&gt; : <span class="keyword">public</span> ExpectedStorageImpl&lt;T&gt;</div>
 <div class="line"><a name="l00370"></a><span class="lineno">  370</span>&#160;{</div>
 <div class="line"><a name="l00371"></a><span class="lineno">  371</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  ExpectedStorage() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00372"></a><span class="lineno">  372</span>&#160;  ExpectedStorage()  = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00373"></a><span class="lineno">  373</span>&#160;  ~ExpectedStorage() = <span class="keywordflow">default</span>;</div>
 <div class="line"><a name="l00374"></a><span class="lineno">  374</span>&#160; </div>
 <div class="line"><a name="l00375"></a><span class="lineno">  375</span>&#160;  <span class="keyword">explicit</span> ExpectedStorage(<span class="keywordtype">bool</span> has_value) : ExpectedStorageImpl&lt;T&gt;(has_value) {}</div>
@@ -650,20 +650,20 @@ $(document).ready(function(){initNavTree('cpp_2error_8h_source.html',''); initRe
 <div class="line"><a name="l00658"></a><span class="lineno">  658</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> <a class="code" href="classetcpal_1_1_expected.html">Expected</a>(<a class="code" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a> <a class="code" href="classetcpal_1_1_expected.html#a60850b440a4ff7f769627b46d79043f6">error</a>);</div>
 <div class="line"><a name="l00659"></a><span class="lineno">  659</span>&#160;  <a class="code" href="classetcpal_1_1_expected.html#a8da4910031b4040699233168372b0102">~Expected</a>();</div>
 <div class="line"><a name="l00660"></a><span class="lineno">  660</span>&#160; </div>
-<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;  constexpr <span class="keyword">const</span> T*  <a class="code" href="classetcpal_1_1_expected.html#a59a8d66ef67871af2a14f8cc08dc1d2e">operator-&gt;</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;  T*                  <a class="code" href="classetcpal_1_1_expected.html#a59a8d66ef67871af2a14f8cc08dc1d2e">operator-&gt;</a>();</div>
-<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;  constexpr <span class="keyword">const</span> T&amp;  <a class="code" href="classetcpal_1_1_expected.html#a6573281a3d9396dfc8c2c5f1cca82247">operator*</a>() const&amp;;</div>
-<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;  T&amp;                  operator*() &amp;;</div>
-<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;  constexpr const T&amp;&amp; operator*() const&amp;&amp;;</div>
-<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> T&amp;&amp;   operator*() &amp;&amp;;</div>
-<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;  constexpr explicit        operator <span class="keywordtype">bool</span>() const noexcept;</div>
-<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;  constexpr <span class="keywordtype">bool</span>            <a class="code" href="classetcpal_1_1_expected.html#a6988ba57722f67cbb444b0931468282e">has_value</a>() const noexcept;</div>
-<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> const T&amp; <a class="code" href="classetcpal_1_1_expected.html#a35aa923de0534bc610141949cd6fdf89">value</a>() const&amp;;</div>
-<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;  T&amp;                           <a class="code" href="classetcpal_1_1_expected.html#a35aa923de0534bc610141949cd6fdf89">value</a>() &amp;;</div>
+<div class="line"><a name="l00661"></a><span class="lineno">  661</span>&#160;  constexpr <span class="keyword">const</span> T*            <a class="code" href="classetcpal_1_1_expected.html#a59a8d66ef67871af2a14f8cc08dc1d2e">operator-&gt;</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00662"></a><span class="lineno">  662</span>&#160;  T*                            <a class="code" href="classetcpal_1_1_expected.html#a59a8d66ef67871af2a14f8cc08dc1d2e">operator-&gt;</a>();</div>
+<div class="line"><a name="l00663"></a><span class="lineno">  663</span>&#160;  constexpr <span class="keyword">const</span> T&amp;            <a class="code" href="classetcpal_1_1_expected.html#a6573281a3d9396dfc8c2c5f1cca82247">operator*</a>() const&amp;;</div>
+<div class="line"><a name="l00664"></a><span class="lineno">  664</span>&#160;  T&amp;                            operator*() &amp;;</div>
+<div class="line"><a name="l00665"></a><span class="lineno">  665</span>&#160;  constexpr const T&amp;&amp;           operator*() const&amp;&amp;;</div>
+<div class="line"><a name="l00666"></a><span class="lineno">  666</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> T&amp;&amp;       operator*() &amp;&amp;;</div>
+<div class="line"><a name="l00667"></a><span class="lineno">  667</span>&#160;  constexpr explicit            operator <span class="keywordtype">bool</span>() const noexcept;</div>
+<div class="line"><a name="l00668"></a><span class="lineno">  668</span>&#160;  constexpr <span class="keywordtype">bool</span>                <a class="code" href="classetcpal_1_1_expected.html#a6988ba57722f67cbb444b0931468282e">has_value</a>() const noexcept;</div>
+<div class="line"><a name="l00669"></a><span class="lineno">  669</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> const T&amp;  <a class="code" href="classetcpal_1_1_expected.html#a35aa923de0534bc610141949cd6fdf89">value</a>() const&amp;;</div>
+<div class="line"><a name="l00670"></a><span class="lineno">  670</span>&#160;  T&amp;                            <a class="code" href="classetcpal_1_1_expected.html#a35aa923de0534bc610141949cd6fdf89">value</a>() &amp;;</div>
 <div class="line"><a name="l00671"></a><span class="lineno">  671</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> const T&amp;&amp; <a class="code" href="classetcpal_1_1_expected.html#a35aa923de0534bc610141949cd6fdf89">value</a>() const&amp;&amp;;</div>
-<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> T&amp;&amp;  <a class="code" href="classetcpal_1_1_expected.html#a35aa923de0534bc610141949cd6fdf89">value</a>() &amp;&amp;;</div>
-<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;  constexpr <a class="code" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a> <a class="code" href="classetcpal_1_1_expected.html#ad74bb8607bbb3705c22342bd852e16b8">error_code</a>() const noexcept;</div>
-<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;  constexpr <a class="code" href="classetcpal_1_1_error.html">Error</a>          <a class="code" href="classetcpal_1_1_expected.html#a60850b440a4ff7f769627b46d79043f6">error</a>() const noexcept;</div>
+<div class="line"><a name="l00672"></a><span class="lineno">  672</span>&#160;  <a class="code" href="group__etcpal__cpp.html#ga27619ac477b23790da36baecb4389ee1">ETCPAL_CONSTEXPR_14</a> T&amp;&amp;       <a class="code" href="classetcpal_1_1_expected.html#a35aa923de0534bc610141949cd6fdf89">value</a>() &amp;&amp;;</div>
+<div class="line"><a name="l00673"></a><span class="lineno">  673</span>&#160;  constexpr <a class="code" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a>      <a class="code" href="classetcpal_1_1_expected.html#ad74bb8607bbb3705c22342bd852e16b8">error_code</a>() const noexcept;</div>
+<div class="line"><a name="l00674"></a><span class="lineno">  674</span>&#160;  constexpr <a class="code" href="classetcpal_1_1_error.html">Error</a>               <a class="code" href="classetcpal_1_1_expected.html#a60850b440a4ff7f769627b46d79043f6">error</a>() const noexcept;</div>
 <div class="line"><a name="l00675"></a><span class="lineno">  675</span>&#160; </div>
 <div class="line"><a name="l00676"></a><span class="lineno">  676</span>&#160;  <span class="comment">// clang-format off</span></div>
 <div class="line"><a name="l00677"></a><span class="lineno">  677</span>&#160; </div>

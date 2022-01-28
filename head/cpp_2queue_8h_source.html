@@ -19,10 +19,10 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="etclibtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
 <link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
-<!-- BEGIN ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () {
     $.get('/EtcPalDocs/versions.txt', function (data) {
@@ -53,7 +53,7 @@
     }, 'text');
   });
 </script>
-<!-- END ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () { selectAllC() });
 </script>
@@ -138,7 +138,7 @@
    </div>
    <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
-  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
     <div id="otherversions">
       View other versions:
@@ -146,7 +146,7 @@
       </select>
     </div>
   </td>
-  <!-- END VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
  </tr>
  </tbody>
 </table>
@@ -247,7 +247,7 @@ $(document).ready(function(){initNavTree('cpp_2queue_8h_source.html',''); initRe
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
 <div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;  <a class="code" href="classetcpal_1_1_queue.html#ae729f6dede41f22b98b861eac4ac1895">Queue</a>(<span class="keyword">const</span> <a class="code" href="classetcpal_1_1_queue.html">Queue</a>&amp; other) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;  <a class="code" href="classetcpal_1_1_queue.html">Queue</a>&amp; operator=(<span class="keyword">const</span> <a class="code" href="classetcpal_1_1_queue.html">Queue</a>&amp; other) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="classetcpal_1_1_queue.html#ae729f6dede41f22b98b861eac4ac1895">Queue</a>(<a class="code" href="classetcpal_1_1_queue.html">Queue</a>&amp;&amp; other) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;  <a class="code" href="classetcpal_1_1_queue.html#ae729f6dede41f22b98b861eac4ac1895">Queue</a>(<a class="code" href="classetcpal_1_1_queue.html">Queue</a>&amp;&amp; other)                 = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;  <a class="code" href="classetcpal_1_1_queue.html">Queue</a>&amp; operator=(<a class="code" href="classetcpal_1_1_queue.html">Queue</a>&amp;&amp; other) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_queue.html#ad23735bc801c21635a277a31ac31b267">Send</a>(<span class="keyword">const</span> T&amp; data, <span class="keywordtype">int</span> timeout_ms = <a class="code" href="group__etcpal.html#ga1cfb33811295439bc08ce2e8b74c1d13">ETCPAL_WAIT_FOREVER</a>);</div>
@@ -255,13 +255,13 @@ $(document).ready(function(){initNavTree('cpp_2queue_8h_source.html',''); initRe
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160; </div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_queue.html#ae2bd22bccd067e5b8558810eb878f7bf">Receive</a>(T&amp; data, <span class="keywordtype">int</span> timeout_ms = <a class="code" href="group__etcpal.html#ga1cfb33811295439bc08ce2e8b74c1d13">ETCPAL_WAIT_FOREVER</a>);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  <span class="keyword">template</span> &lt;<span class="keyword">class</span> Rep, <span class="keyword">class</span> Period&gt;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_queue.html#ae2bd22bccd067e5b8558810eb878f7bf">Receive</a>(T&amp; data, <span class="keyword">const</span> std::chrono::duration&lt;Rep, Period&gt;&amp; timeout);</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_queue.html#a6d23c1b53807ebce980dce934789a4e4">ReceiveFromIsr</a>(T&amp; data);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_queue.html#a65e181fc77234e509cf5fa9aa9575839">Reset</a>();</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_queue.html#a8e12342fc420701fbffd97025421575a">IsEmpty</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_queue.html#a9cc49246382de0eeb66f493207fb4dbc">IsEmptyFromIsr</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_queue.html#af5d30d3dd704e8e683b98a6ed6c5d9ca">IsFull</a>() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">bool</span> <a class="code" href="classetcpal_1_1_queue.html#acf599d4a90f1b8f8c7892fe84789f6ac">IsFullFromIsr</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordtype">bool</span>   <a class="code" href="classetcpal_1_1_queue.html#ae2bd22bccd067e5b8558810eb878f7bf">Receive</a>(T&amp; data, <span class="keyword">const</span> std::chrono::duration&lt;Rep, Period&gt;&amp; timeout);</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="keywordtype">bool</span>   <a class="code" href="classetcpal_1_1_queue.html#a6d23c1b53807ebce980dce934789a4e4">ReceiveFromIsr</a>(T&amp; data);</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;  <span class="keywordtype">bool</span>   <a class="code" href="classetcpal_1_1_queue.html#a65e181fc77234e509cf5fa9aa9575839">Reset</a>();</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;  <span class="keywordtype">bool</span>   <a class="code" href="classetcpal_1_1_queue.html#a8e12342fc420701fbffd97025421575a">IsEmpty</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;  <span class="keywordtype">bool</span>   <a class="code" href="classetcpal_1_1_queue.html#a9cc49246382de0eeb66f493207fb4dbc">IsEmptyFromIsr</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;  <span class="keywordtype">bool</span>   <a class="code" href="classetcpal_1_1_queue.html#af5d30d3dd704e8e683b98a6ed6c5d9ca">IsFull</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;  <span class="keywordtype">bool</span>   <a class="code" href="classetcpal_1_1_queue.html#acf599d4a90f1b8f8c7892fe84789f6ac">IsFullFromIsr</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classetcpal_1_1_queue.html#ae99315f221f70d76e0ee29ae08ee59b0">SlotsUsed</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classetcpal_1_1_queue.html#ae855857d6bf35a221bff10549405453b">SlotsUsedFromIsr</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;  <span class="keywordtype">size_t</span> <a class="code" href="classetcpal_1_1_queue.html#aeecede9e1bc1a6e7394c5bf09b59b3f1">SlotsAvailable</a>() <span class="keyword">const</span>;</div>

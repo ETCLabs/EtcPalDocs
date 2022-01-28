@@ -19,10 +19,10 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="etclibtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
 <link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
-<!-- BEGIN ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () {
     $.get('/EtcPalDocs/versions.txt', function (data) {
@@ -53,7 +53,7 @@
     }, 'text');
   });
 </script>
-<!-- END ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () { selectAllC() });
 </script>
@@ -138,7 +138,7 @@
    </div>
    <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
-  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
     <div id="otherversions">
       View other versions:
@@ -146,7 +146,7 @@
       </select>
     </div>
   </td>
-  <!-- END VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
  </tr>
  </tbody>
 </table>
@@ -291,14 +291,14 @@ $(document).ready(function(){initNavTree('socket_8h_source.html',''); initResiza
 <div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="struct_etc_pal_group_req.html#ab8ed4113f331d191260b09e960e94254">  165</a></span>&#160;  <a class="code" href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a> <a class="code" href="struct_etc_pal_group_req.html#ab8ed4113f331d191260b09e960e94254">group</a>;</div>
 <div class="line"><a name="l00166"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#ga0786ad1e373f47ea4d5b457af141a9d9">  166</a></span>&#160;} <a class="code" href="group__etcpal__socket.html#ga0786ad1e373f47ea4d5b457af141a9d9">EtcPalGroupReq</a>;</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#define ETCPAL_SHUT_RD 0</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#define ETCPAL_SHUT_WR 1</span></div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;<span class="preprocessor">#define ETCPAL_SHUT_RD   0</span></div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;<span class="preprocessor">#define ETCPAL_SHUT_WR   1</span></div>
 <div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;<span class="preprocessor">#define ETCPAL_SHUT_RDWR 2</span></div>
 <div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;<span class="preprocessor">#define ETCPAL_AF_UNSPEC 0u</span></div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#define ETCPAL_AF_INET 1u</span></div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#define ETCPAL_AF_INET6 2u</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;<span class="preprocessor">#define ETCPAL_AF_INET   1u</span></div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;<span class="preprocessor">#define ETCPAL_AF_INET6  2u</span></div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;<span class="preprocessor">#define ETCPAL_SOCK_STREAM 0u</span></div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#define ETCPAL_SOCK_DGRAM 1u</span></div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;<span class="preprocessor">#define ETCPAL_SOCK_DGRAM  1u</span></div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;<span class="comment">/********************** Mimic sys/socket.h functions *************************/</span></div>
 <div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160; </div>
 <div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
@@ -339,11 +339,11 @@ $(document).ready(function(){initNavTree('socket_8h_source.html',''); initResiza
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160; </div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;<span class="comment">/**************************** Mimic poll() API *******************************/</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160; </div>
-<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#ga4e4bec5c7c2860538445ebdba2dd4283">  244</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_IN 0x1u </span></div>
-<div class="line"><a name="l00245"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#ga04ebfb989375a6cf612d69f229a74954">  245</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_OUT 0x2u </span></div>
-<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#gabbd670e11bf27a8a815b2d7985b9a364">  246</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_CONNECT 0x4u </span></div>
-<div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#ga1da970a4c0bd353ec963e4bb70c0f8b8">  247</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_OOB 0x8u </span></div>
-<div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#ga837082b33f4ca260e78373ee40bd25ec">  248</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_ERR 0x10u </span></div>
+<div class="line"><a name="l00244"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#ga4e4bec5c7c2860538445ebdba2dd4283">  244</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_IN      0x1u  </span></div>
+<div class="line"><a name="l00245"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#ga04ebfb989375a6cf612d69f229a74954">  245</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_OUT     0x2u  </span></div>
+<div class="line"><a name="l00246"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#gabbd670e11bf27a8a815b2d7985b9a364">  246</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_CONNECT 0x4u  </span></div>
+<div class="line"><a name="l00247"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#ga1da970a4c0bd353ec963e4bb70c0f8b8">  247</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_OOB     0x8u  </span></div>
+<div class="line"><a name="l00248"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#ga837082b33f4ca260e78373ee40bd25ec">  248</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_ERR     0x10u </span></div>
 <div class="line"><a name="l00254"></a><span class="lineno"><a class="line" href="group__etcpal__socket.html#ga05f5bfa7ea20aa326aa97b2424481d99">  254</a></span>&#160;<span class="preprocessor">#define ETCPAL_POLL_VALID_INPUT_EVENT_MASK 0x0fu</span></div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160; </div>
 <div class="line"><a name="l00257"></a><span class="lineno"><a class="line" href="struct_etc_pal_poll_event.html">  257</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_etc_pal_poll_event.html">EtcPalPollEvent</a></div>
@@ -369,8 +369,8 @@ $(document).ready(function(){initNavTree('socket_8h_source.html',''); initResiza
 <div class="line"><a name="l00277"></a><span class="lineno">  277</span>&#160; </div>
 <div class="line"><a name="l00278"></a><span class="lineno">  278</span>&#160;<span class="comment">/************************ Mimic getaddrinfo() API ****************************/</span></div>
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160; </div>
-<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="preprocessor">#define ETCPAL_AI_PASSIVE 0x01</span></div>
-<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">#define ETCPAL_AI_CANONNAME 0x02</span></div>
+<div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;<span class="preprocessor">#define ETCPAL_AI_PASSIVE     0x01</span></div>
+<div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;<span class="preprocessor">#define ETCPAL_AI_CANONNAME   0x02</span></div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;<span class="preprocessor">#define ETCPAL_AI_NUMERICHOST 0x04</span></div>
 <div class="line"><a name="l00294"></a><span class="lineno"><a class="line" href="struct_etc_pal_addrinfo.html">  294</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_etc_pal_addrinfo.html">EtcPalAddrinfo</a></div>
 <div class="line"><a name="l00295"></a><span class="lineno">  295</span>&#160;{</div>

@@ -19,10 +19,10 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="etclibtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
 <link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
-<!-- BEGIN ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () {
     $.get('/EtcPalDocs/versions.txt', function (data) {
@@ -53,7 +53,7 @@
     }, 'text');
   });
 </script>
-<!-- END ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () { selectAllC() });
 </script>
@@ -138,7 +138,7 @@
    </div>
    <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
-  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
     <div id="otherversions">
       View other versions:
@@ -146,7 +146,7 @@
       </select>
     </div>
   </td>
-  <!-- END VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
  </tr>
  </tbody>
 </table>
@@ -364,9 +364,9 @@ $(document).ready(function(){initNavTree('log_8h_source.html',''); initResizable
 <div class="line"><a name="l00347"></a><span class="lineno"><a class="line" href="struct_etc_pal_syslog_params.html">  347</a></span>&#160;<span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code" href="struct_etc_pal_syslog_params.html">EtcPalSyslogParams</a></div>
 <div class="line"><a name="l00348"></a><span class="lineno">  348</span>&#160;{</div>
 <div class="line"><a name="l00350"></a><span class="lineno"><a class="line" href="struct_etc_pal_syslog_params.html#a213afa2e73e0c2102f43d4067e41b90f">  350</a></span>&#160;  <span class="keywordtype">int</span> <a class="code" href="struct_etc_pal_syslog_params.html#a213afa2e73e0c2102f43d4067e41b90f">facility</a>;</div>
-<div class="line"><a name="l00352"></a><span class="lineno"><a class="line" href="struct_etc_pal_syslog_params.html#acf45ed2a37e15e83167bd1edcd9fbbbe">  352</a></span>&#160;  <span class="keywordtype">char</span> <a class="code" href="struct_etc_pal_syslog_params.html#acf45ed2a37e15e83167bd1edcd9fbbbe">hostname</a>[<a class="code" href="group__etcpal__log.html#gafc4fcfbaaffb603d10e2b27f54e122d2">ETCPAL_LOG_HOSTNAME_MAX_LEN</a>]; <span class="comment">// NOLINT(modernize-avoid-c-arrays,cppcoreguidelines-avoid-c-arrays)</span></div>
-<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="struct_etc_pal_syslog_params.html#a6d20b2dcf8c2bc4f864b3d719ad00ad0">  354</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">char</span> <a class="code" href="struct_etc_pal_syslog_params.html#a6d20b2dcf8c2bc4f864b3d719ad00ad0">app_name</a>[<a class="code" href="group__etcpal__log.html#ga2b336b7e2828f1f9c576fb4a6e357b1a">ETCPAL_LOG_APP_NAME_MAX_LEN</a>]; <span class="comment">// NOLINT(modernize-avoid-c-arrays,cppcoreguidelines-avoid-c-arrays)</span></div>
-<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="struct_etc_pal_syslog_params.html#aa3d06040894562832d2218511875b444">  356</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">char</span> <a class="code" href="struct_etc_pal_syslog_params.html#aa3d06040894562832d2218511875b444">procid</a>[<a class="code" href="group__etcpal__log.html#ga1786d1616917fb0bf1315504e14060c4">ETCPAL_LOG_PROCID_MAX_LEN</a>]; <span class="comment">// NOLINT(modernize-avoid-c-arrays,cppcoreguidelines-avoid-c-arrays)</span></div>
+<div class="line"><a name="l00352"></a><span class="lineno"><a class="line" href="struct_etc_pal_syslog_params.html#acf45ed2a37e15e83167bd1edcd9fbbbe">  352</a></span>&#160;  <span class="keywordtype">char</span> <a class="code" href="struct_etc_pal_syslog_params.html#acf45ed2a37e15e83167bd1edcd9fbbbe">hostname</a>[<a class="code" href="group__etcpal__log.html#gafc4fcfbaaffb603d10e2b27f54e122d2">ETCPAL_LOG_HOSTNAME_MAX_LEN</a>];  <span class="comment">// NOLINT(modernize-avoid-c-arrays,cppcoreguidelines-avoid-c-arrays)</span></div>
+<div class="line"><a name="l00354"></a><span class="lineno"><a class="line" href="struct_etc_pal_syslog_params.html#a6d20b2dcf8c2bc4f864b3d719ad00ad0">  354</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">char</span> <a class="code" href="struct_etc_pal_syslog_params.html#a6d20b2dcf8c2bc4f864b3d719ad00ad0">app_name</a>[<a class="code" href="group__etcpal__log.html#ga2b336b7e2828f1f9c576fb4a6e357b1a">ETCPAL_LOG_APP_NAME_MAX_LEN</a>];  <span class="comment">// NOLINT(modernize-avoid-c-arrays,cppcoreguidelines-avoid-c-arrays)</span></div>
+<div class="line"><a name="l00356"></a><span class="lineno"><a class="line" href="struct_etc_pal_syslog_params.html#aa3d06040894562832d2218511875b444">  356</a></span>&#160;<span class="comment"></span>  <span class="keywordtype">char</span> <a class="code" href="struct_etc_pal_syslog_params.html#aa3d06040894562832d2218511875b444">procid</a>[<a class="code" href="group__etcpal__log.html#ga1786d1616917fb0bf1315504e14060c4">ETCPAL_LOG_PROCID_MAX_LEN</a>];  <span class="comment">// NOLINT(modernize-avoid-c-arrays,cppcoreguidelines-avoid-c-arrays)</span></div>
 <div class="line"><a name="l00357"></a><span class="lineno"><a class="line" href="group__etcpal__log.html#ga63d8dfda4efb8cc33f805e1681cfde0f">  357</a></span>&#160;} <a class="code" href="group__etcpal__log.html#ga63d8dfda4efb8cc33f805e1681cfde0f">EtcPalSyslogParams</a>;</div>
 <div class="line"><a name="l00358"></a><span class="lineno">  358</span>&#160; </div>
 <div class="line"><a name="l00368"></a><span class="lineno"><a class="line" href="group__etcpal__log.html#gaa0719223c22e26ee648c97be97ce2aad">  368</a></span>&#160;<span class="preprocessor">#define ETCPAL_SYSLOG_PARAMS_INIT \</span></div>

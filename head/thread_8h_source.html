@@ -19,10 +19,10 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="etclibtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
 <link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
-<!-- BEGIN ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () {
     $.get('/EtcPalDocs/versions.txt', function (data) {
@@ -53,7 +53,7 @@
     }, 'text');
   });
 </script>
-<!-- END ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () { selectAllC() });
 </script>
@@ -138,7 +138,7 @@
    </div>
    <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
-  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
     <div id="otherversions">
       View other versions:
@@ -146,7 +146,7 @@
       </select>
     </div>
   </td>
-  <!-- END VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
  </tr>
  </tbody>
 </table>
@@ -241,13 +241,13 @@ $(document).ready(function(){initNavTree('thread_8h_source.html',''); initResiza
 <div class="line"><a name="l00156"></a><span class="lineno"><a class="line" href="struct_etc_pal_thread_params.html#ac7426f48be885f66ad98c90f342f653b">  156</a></span>&#160;  <span class="keywordtype">void</span>* <a class="code" href="struct_etc_pal_thread_params.html#ac7426f48be885f66ad98c90f342f653b">platform_data</a>;</div>
 <div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="group__etcpal__thread.html#ga155403bfefdfc7c6494fb64ef803a739">  157</a></span>&#160;} <a class="code" href="group__etcpal__thread.html#ga155403bfefdfc7c6494fb64ef803a739">EtcPalThreadParams</a>;</div>
 <div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
-<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="group__etcpal__thread.html#gacb54f3a06ea1b8ae0f45b8daaae37efe">  160</a></span>&#160;<span class="preprocessor">#define ETCPAL_THREAD_SET_DEFAULT_PARAMS(threadparamsptr)         \</span></div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">  do                                                              \</span></div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">  {                                                               \</span></div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">    (threadparamsptr)-&gt;priority = ETCPAL_THREAD_DEFAULT_PRIORITY; \</span></div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">    (threadparamsptr)-&gt;stack_size = ETCPAL_THREAD_DEFAULT_STACK;  \</span></div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">    (threadparamsptr)-&gt;thread_name = ETCPAL_THREAD_DEFAULT_NAME;  \</span></div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">    (threadparamsptr)-&gt;platform_data = NULL;                      \</span></div>
+<div class="line"><a name="l00160"></a><span class="lineno"><a class="line" href="group__etcpal__thread.html#gacb54f3a06ea1b8ae0f45b8daaae37efe">  160</a></span>&#160;<span class="preprocessor">#define ETCPAL_THREAD_SET_DEFAULT_PARAMS(threadparamsptr)              \</span></div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;<span class="preprocessor">  do                                                                   \</span></div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">  {                                                                    \</span></div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;<span class="preprocessor">    (threadparamsptr)-&gt;priority      = ETCPAL_THREAD_DEFAULT_PRIORITY; \</span></div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;<span class="preprocessor">    (threadparamsptr)-&gt;stack_size    = ETCPAL_THREAD_DEFAULT_STACK;    \</span></div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">    (threadparamsptr)-&gt;thread_name   = ETCPAL_THREAD_DEFAULT_NAME;     \</span></div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;<span class="preprocessor">    (threadparamsptr)-&gt;platform_data = NULL;                           \</span></div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="preprocessor">  } while (0)</span></div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
 <div class="line"><a name="l00177"></a><span class="lineno"><a class="line" href="group__etcpal__thread.html#gacbaaaa3fb12075714725a11874b6b4ad">  177</a></span>&#160;<span class="preprocessor">#define ETCPAL_THREAD_PARAMS_INIT_VALUES \</span></div>

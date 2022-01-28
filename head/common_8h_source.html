@@ -19,10 +19,10 @@
 <script type="text/javascript" src="search/search.js"></script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
-<link href="etclibtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
 <link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
-<!-- BEGIN ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () {
     $.get('/EtcPalDocs/versions.txt', function (data) {
@@ -53,7 +53,7 @@
     }, 'text');
   });
 </script>
-<!-- END ETCLIBTOOL VERSION SELECTOR SCRIPT -->
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
   $(function () { selectAllC() });
 </script>
@@ -138,7 +138,7 @@
    </div>
    <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
-  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
     <div id="otherversions">
       View other versions:
@@ -146,7 +146,7 @@
       </select>
     </div>
   </td>
-  <!-- END VERSION SELECTOR INSERTED BY ETCLIBTOOL -->
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
  </tr>
  </tbody>
 </table>
@@ -244,7 +244,7 @@ $(document).ready(function(){initNavTree('common_8h_source.html',''); initResiza
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_NO_DEP_WRN __pragma(warning(suppress : 4996))</span></div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_BEGIN_NO_DEP_WARNINGS() __pragma(warning(push)) __pragma(warning(disable : 4996))</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_END_NO_DEP_WARNINGS() __pragma(warning(pop))</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_END_NO_DEP_WARNINGS()   __pragma(warning(pop))</span></div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#else </span><span class="comment">/* _MSC_VER */</span><span class="preprocessor"></span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
@@ -263,9 +263,9 @@ $(document).ready(function(){initNavTree('common_8h_source.html',''); initResiza
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
 <div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga09f99422deaa7bb5d2625c317d1a66a6">  127</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_SOCKETS ((etcpal_features_t)(1u &lt;&lt; 0)) </span></div>
 <div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="group__etcpal.html#gaf5b3a81b975bbae1f6f54f43bfc0c6a7">  128</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_NETINTS ((etcpal_features_t)(1u &lt;&lt; 1)) </span></div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="group__etcpal.html#gaffb285a8108a672c01c33d921ee8be83">  129</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_TIMERS ((etcpal_features_t)(1u &lt;&lt; 2)) </span></div>
+<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="group__etcpal.html#gaffb285a8108a672c01c33d921ee8be83">  129</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_TIMERS  ((etcpal_features_t)(1u &lt;&lt; 2)) </span></div>
 <div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga8c7c1f9430362540e56af3a2742a25d4">  130</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_LOGGING ((etcpal_features_t)(1u &lt;&lt; 3)) </span></div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga740dd7c89f16ff20992cf21970d1c521">  131</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURES_ALL 0xffffffffu </span></div>
+<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga740dd7c89f16ff20992cf21970d1c521">  131</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURES_ALL    0xffffffffu                    </span></div>
 <div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga15560671c4e732ed46dc03a0e522d160">  138</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURES_ALL_BUT(mask) (((uint32_t)ETCPAL_FEATURES_ALL) &amp; ((uint32_t)(~((uint32_t)(mask)))))</span></div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<a class="code" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a> <a class="code" href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843">etcpal_init</a>(<a class="code" href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">etcpal_features_t</a> features);</div>
