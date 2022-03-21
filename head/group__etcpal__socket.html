@@ -228,6 +228,15 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_etc_pal_group_req.html">EtcPalGroupReq</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option value for <a class="el" href="group__etcpal__socket.html#gacde51cd51d94c43625b96196d7b80f50" title="Set only, value is EtcPalGroupReq.">ETCPAL_MCAST_JOIN_GROUP</a> and <a class="el" href="group__etcpal__socket.html#ga747194309fa23fa0e092e8bd010f1a2c" title="Set only, value is EtcPalGroupReq.">ETCPAL_MCAST_LEAVE_GROUP</a>.  <a href="struct_etc_pal_group_req.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_etc_pal_msg_hdr.html">EtcPalMsgHdr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message data received from etcpal_recvmsg.  <a href="struct_etc_pal_msg_hdr.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_etc_pal_c_msg_hdr.html">EtcPalCMsgHdr</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ancillary data received from etcpal_recvmsg.  <a href="struct_etc_pal_c_msg_hdr.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_etc_pal_pkt_info.html">EtcPalPktInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about a datagram packet received with etcpal_recvmsg.  <a href="struct_etc_pal_pkt_info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_etc_pal_poll_event.html">EtcPalPollEvent</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A description of an event that occurred on a socket, for usage with <a class="el" href="group__etcpal__socket.html#gae5017e2346be12e91c6450fe9860614b" title="Wait for an event on a set of sockets defined by an EtcPalPollContext.">etcpal_poll_wait()</a>.  <a href="struct_etc_pal_poll_event.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -237,6 +246,10 @@ Data Structures</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga298c5185e03d838d54667cdcdf5107a9"><td class="memItemLeft" align="right" valign="top"><a id="ga298c5185e03d838d54667cdcdf5107a9"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga298c5185e03d838d54667cdcdf5107a9">ETCPAL_CMSG_IS_VALID</a>(cmsg)&#160;&#160;&#160;((cmsg)-&gt;valid)</td></tr>
+<tr class="memdesc:ga298c5185e03d838d54667cdcdf5107a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">This takes a pointer to a control (ancillary) message and determines if it's valid or not. <br /></td></tr>
+<tr class="separator:ga298c5185e03d838d54667cdcdf5107a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga05f5bfa7ea20aa326aa97b2424481d99"><td class="memItemLeft" align="right" valign="top"><a id="ga05f5bfa7ea20aa326aa97b2424481d99"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga05f5bfa7ea20aa326aa97b2424481d99">ETCPAL_POLL_VALID_INPUT_EVENT_MASK</a>&#160;&#160;&#160;0x0fu</td></tr>
 <tr class="memdesc:ga05f5bfa7ea20aa326aa97b2424481d99"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mask of valid events for use with <a class="el" href="group__etcpal__socket.html#gab901f9cf32e98e0d99369366f2e1ffa4" title="Add a new socket to an EtcPalPollContext.">etcpal_poll_add_socket()</a>. <br /></td></tr>
@@ -267,6 +280,18 @@ typedef struct <a class="el" href="struct_etc_pal_mreq.html">EtcPalMreq</a>&#160
 typedef struct <a class="el" href="struct_etc_pal_group_req.html">EtcPalGroupReq</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga0786ad1e373f47ea4d5b457af141a9d9">EtcPalGroupReq</a></td></tr>
 <tr class="memdesc:ga0786ad1e373f47ea4d5b457af141a9d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Option value for <a class="el" href="group__etcpal__socket.html#gacde51cd51d94c43625b96196d7b80f50" title="Set only, value is EtcPalGroupReq.">ETCPAL_MCAST_JOIN_GROUP</a> and <a class="el" href="group__etcpal__socket.html#ga747194309fa23fa0e092e8bd010f1a2c" title="Set only, value is EtcPalGroupReq.">ETCPAL_MCAST_LEAVE_GROUP</a>. <br /></td></tr>
 <tr class="separator:ga0786ad1e373f47ea4d5b457af141a9d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9295148c2f3663878686150db627b70e"><td class="memItemLeft" align="right" valign="top"><a id="ga9295148c2f3663878686150db627b70e"></a>
+typedef struct <a class="el" href="struct_etc_pal_msg_hdr.html">EtcPalMsgHdr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga9295148c2f3663878686150db627b70e">EtcPalMsgHdr</a></td></tr>
+<tr class="memdesc:ga9295148c2f3663878686150db627b70e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Message data received from etcpal_recvmsg. <br /></td></tr>
+<tr class="separator:ga9295148c2f3663878686150db627b70e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1f2cdcdfee1277e02077a06b650af971"><td class="memItemLeft" align="right" valign="top"><a id="ga1f2cdcdfee1277e02077a06b650af971"></a>
+typedef struct <a class="el" href="struct_etc_pal_c_msg_hdr.html">EtcPalCMsgHdr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga1f2cdcdfee1277e02077a06b650af971">EtcPalCMsgHdr</a></td></tr>
+<tr class="memdesc:ga1f2cdcdfee1277e02077a06b650af971"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ancillary data received from etcpal_recvmsg. <br /></td></tr>
+<tr class="separator:ga1f2cdcdfee1277e02077a06b650af971"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga540373669bd8205bc75095dfb5fe5d37"><td class="memItemLeft" align="right" valign="top"><a id="ga540373669bd8205bc75095dfb5fe5d37"></a>
+typedef struct <a class="el" href="struct_etc_pal_pkt_info.html">EtcPalPktInfo</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga540373669bd8205bc75095dfb5fe5d37">EtcPalPktInfo</a></td></tr>
+<tr class="memdesc:ga540373669bd8205bc75095dfb5fe5d37"><td class="mdescLeft">&#160;</td><td class="mdescRight">Information about a datagram packet received with etcpal_recvmsg. <br /></td></tr>
+<tr class="separator:ga540373669bd8205bc75095dfb5fe5d37"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac6851f10b8d27962e1a1fcba560cef4a"><td class="memItemLeft" align="right" valign="top"><a id="gac6851f10b8d27962e1a1fcba560cef4a"></a>
 typedef struct <a class="el" href="struct_etc_pal_poll_event.html">EtcPalPollEvent</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#gac6851f10b8d27962e1a1fcba560cef4a">EtcPalPollEvent</a></td></tr>
 <tr class="memdesc:gac6851f10b8d27962e1a1fcba560cef4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A description of an event that occurred on a socket, for usage with <a class="el" href="group__etcpal__socket.html#gae5017e2346be12e91c6450fe9860614b" title="Wait for an event on a set of sockets defined by an EtcPalPollContext.">etcpal_poll_wait()</a>. <br /></td></tr>
@@ -310,6 +335,18 @@ Functions</h2></td></tr>
 <tr class="memitem:ga305e1fb78f8ad29e562fff5762d9c3c0"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga305e1fb78f8ad29e562fff5762d9c3c0">etcpal_recvfrom</a> (<a class="el" href="group__etcpal__socket.html#gaf08a63353f05072ee3b28fd754985b66">etcpal_socket_t</a> id, void *buffer, size_t length, int flags, <a class="el" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a> *address)</td></tr>
 <tr class="memdesc:ga305e1fb78f8ad29e562fff5762d9c3c0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive data on a socket.  <a href="group__etcpal__socket.html#ga305e1fb78f8ad29e562fff5762d9c3c0">More...</a><br /></td></tr>
 <tr class="separator:ga305e1fb78f8ad29e562fff5762d9c3c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf50f17abe3ff16804bb7c19ad446a2f7"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#gaf50f17abe3ff16804bb7c19ad446a2f7">etcpal_recvmsg</a> (<a class="el" href="group__etcpal__socket.html#gaf08a63353f05072ee3b28fd754985b66">etcpal_socket_t</a> id, <a class="el" href="struct_etc_pal_msg_hdr.html">EtcPalMsgHdr</a> *msg, int flags)</td></tr>
+<tr class="memdesc:gaf50f17abe3ff16804bb7c19ad446a2f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Receive both datagram and ancillary data on a socket.  <a href="group__etcpal__socket.html#gaf50f17abe3ff16804bb7c19ad446a2f7">More...</a><br /></td></tr>
+<tr class="separator:gaf50f17abe3ff16804bb7c19ad446a2f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga058ce15ed24faff319a2aeda9f1c5e26"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga058ce15ed24faff319a2aeda9f1c5e26">etcpal_cmsg_firsthdr</a> (<a class="el" href="struct_etc_pal_msg_hdr.html">EtcPalMsgHdr</a> *msgh, <a class="el" href="struct_etc_pal_c_msg_hdr.html">EtcPalCMsgHdr</a> *firsthdr)</td></tr>
+<tr class="memdesc:ga058ce15ed24faff319a2aeda9f1c5e26"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the first control (ancillary) message associated with the passed in message.  <a href="group__etcpal__socket.html#ga058ce15ed24faff319a2aeda9f1c5e26">More...</a><br /></td></tr>
+<tr class="separator:ga058ce15ed24faff319a2aeda9f1c5e26"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1d70e00bf7f5c7200af788f5f411c081"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga1d70e00bf7f5c7200af788f5f411c081">etcpal_cmsg_nxthdr</a> (<a class="el" href="struct_etc_pal_msg_hdr.html">EtcPalMsgHdr</a> *msgh, const <a class="el" href="struct_etc_pal_c_msg_hdr.html">EtcPalCMsgHdr</a> *cmsg, <a class="el" href="struct_etc_pal_c_msg_hdr.html">EtcPalCMsgHdr</a> *nxthdr)</td></tr>
+<tr class="memdesc:ga1d70e00bf7f5c7200af788f5f411c081"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the next valid control (ancillary) message after the passed in control message.  <a href="group__etcpal__socket.html#ga1d70e00bf7f5c7200af788f5f411c081">More...</a><br /></td></tr>
+<tr class="separator:ga1d70e00bf7f5c7200af788f5f411c081"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad6950118cae7dda00b6edba4d56cf6a1"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#gad6950118cae7dda00b6edba4d56cf6a1">etcpal_cmsg_to_pktinfo</a> (const <a class="el" href="struct_etc_pal_c_msg_hdr.html">EtcPalCMsgHdr</a> *cmsg, <a class="el" href="struct_etc_pal_pkt_info.html">EtcPalPktInfo</a> *pktinfo)</td></tr>
+<tr class="memdesc:gad6950118cae7dda00b6edba4d56cf6a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert a control (ancillary) message to <a class="el" href="struct_etc_pal_pkt_info.html" title="Information about a datagram packet received with etcpal_recvmsg.">EtcPalPktInfo</a>.  <a href="group__etcpal__socket.html#gad6950118cae7dda00b6edba4d56cf6a1">More...</a><br /></td></tr>
+<tr class="separator:gad6950118cae7dda00b6edba4d56cf6a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga52ba67993412de6dc69a582ca07f50d5"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga52ba67993412de6dc69a582ca07f50d5">etcpal_send</a> (<a class="el" href="group__etcpal__socket.html#gaf08a63353f05072ee3b28fd754985b66">etcpal_socket_t</a> id, const void *message, size_t length, int flags)</td></tr>
 <tr class="memdesc:ga52ba67993412de6dc69a582ca07f50d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Send data on a connected socket.  <a href="group__etcpal__socket.html#ga52ba67993412de6dc69a582ca07f50d5">More...</a><br /></td></tr>
 <tr class="separator:ga52ba67993412de6dc69a582ca07f50d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -366,9 +403,10 @@ Functions</h2></td></tr>
 <tr class="memdesc:gae5017e2346be12e91c6450fe9860614b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for an event on a set of sockets defined by an EtcPalPollContext.  <a href="group__etcpal__socket.html#gae5017e2346be12e91c6450fe9860614b">More...</a><br /></td></tr>
 <tr class="separator:gae5017e2346be12e91c6450fe9860614b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader">Flags for etcpal_recvfrom()</h2></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Flags for etcpal_recvfrom() and etcpal_recvmsg()</h2></td></tr>
 <tr class="memitem:gac7ce230ebe4248728c597a66a2676fbf"><td class="memItemLeft" align="right" valign="top"><a id="gac7ce230ebe4248728c597a66a2676fbf"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><b>ETCPAL_MSG_PEEK</b>&#160;&#160;&#160;0x1</td></tr>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#gac7ce230ebe4248728c597a66a2676fbf">ETCPAL_MSG_PEEK</a>&#160;&#160;&#160;0x1</td></tr>
+<tr class="memdesc:gac7ce230ebe4248728c597a66a2676fbf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Input flag to cause the packet to remain in the input queue when received. <br /></td></tr>
 <tr class="separator:gac7ce230ebe4248728c597a66a2676fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Level values for etcpal_setsockopt() and etcpal_getsockopt()</h2></td></tr>
@@ -486,6 +524,14 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga6a502de1f396117da63bde901d88e434">ETCPAL_IPV6_V6ONLY</a>&#160;&#160;&#160;19</td></tr>
 <tr class="memdesc:ga6a502de1f396117da63bde901d88e434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set, value is boolean int. <br /></td></tr>
 <tr class="separator:ga6a502de1f396117da63bde901d88e434"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8938dd142044493926a158d1f9d1b9f7"><td class="memItemLeft" align="right" valign="top"><a id="ga8938dd142044493926a158d1f9d1b9f7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga8938dd142044493926a158d1f9d1b9f7">ETCPAL_IP_PKTINFO</a>&#160;&#160;&#160;20</td></tr>
+<tr class="memdesc:ga8938dd142044493926a158d1f9d1b9f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set, value is boolean int. <br /></td></tr>
+<tr class="separator:ga8938dd142044493926a158d1f9d1b9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2562de7737708e3f0e59c6324d4d61a7"><td class="memItemLeft" align="right" valign="top"><a id="ga2562de7737708e3f0e59c6324d4d61a7"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga2562de7737708e3f0e59c6324d4d61a7">ETCPAL_IPV6_PKTINFO</a>&#160;&#160;&#160;21</td></tr>
+<tr class="memdesc:ga2562de7737708e3f0e59c6324d4d61a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set, value is boolean int (note that this equates to IPV6_RECVPKTINFO on Mac and Linux) <br /></td></tr>
+<tr class="separator:ga2562de7737708e3f0e59c6324d4d61a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">'how' values for etcpal_shutdown()</h2></td></tr>
 <tr class="memitem:ga47594988ecb0db51ba4f1dedaf48f812"><td class="memItemLeft" align="right" valign="top"><a id="ga47594988ecb0db51ba4f1dedaf48f812"></a>
@@ -516,6 +562,25 @@ Functions</h2></td></tr>
 <tr class="memitem:gad0c802539044d95ce2ab3ecfa63f5f12"><td class="memItemLeft" align="right" valign="top"><a id="gad0c802539044d95ce2ab3ecfa63f5f12"></a>
 #define&#160;</td><td class="memItemRight" valign="bottom"><b>ETCPAL_SOCK_DGRAM</b>&#160;&#160;&#160;1u</td></tr>
 <tr class="separator:gad0c802539044d95ce2ab3ecfa63f5f12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Output 'flags' values for etcpal_recvmsg()</h2></td></tr>
+<tr class="memitem:gad0eff24cfe41882f3561ccccf89039b6"><td class="memItemLeft" align="right" valign="top"><a id="gad0eff24cfe41882f3561ccccf89039b6"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#gad0eff24cfe41882f3561ccccf89039b6">ETCPAL_MSG_TRUNC</a>&#160;&#160;&#160;0x2</td></tr>
+<tr class="memdesc:gad0eff24cfe41882f3561ccccf89039b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Packet data was truncated due to insufficient space in the buffer. <br /></td></tr>
+<tr class="separator:gad0eff24cfe41882f3561ccccf89039b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga773007bd1f44e32244d6836bcfa3b014"><td class="memItemLeft" align="right" valign="top"><a id="ga773007bd1f44e32244d6836bcfa3b014"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga773007bd1f44e32244d6836bcfa3b014">ETCPAL_MSG_CTRUNC</a>&#160;&#160;&#160;0x4</td></tr>
+<tr class="memdesc:ga773007bd1f44e32244d6836bcfa3b014"><td class="mdescLeft">&#160;</td><td class="mdescRight">Ancillary data was truncated due to insufficient space in the buffer. <br /></td></tr>
+<tr class="separator:ga773007bd1f44e32244d6836bcfa3b014"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader">Defines for CMSG buffer sizes required for various CMSG types</h2></td></tr>
+<tr class="memitem:ga429acaba81a4d0624137e2f4dd04bbce"><td class="memItemLeft" align="right" valign="top"><a id="ga429acaba81a4d0624137e2f4dd04bbce"></a>
+#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga429acaba81a4d0624137e2f4dd04bbce">ETCPAL_CONTROL_SIZE_IP_PKTINFO</a>&#160;&#160;&#160;ETCPAL_PLATFORM_IN_PKTINFO_SPACE</td></tr>
+<tr class="memdesc:ga429acaba81a4d0624137e2f4dd04bbce"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum size a CMSG buffer needs to store one IPv4 PKTINFO message. <br /></td></tr>
+<tr class="separator:ga429acaba81a4d0624137e2f4dd04bbce"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga420847f9e10d92c25463c093f576ed02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</a>&#160;&#160;&#160;ETCPAL_PLATFORM_IN6_PKTINFO_SPACE</td></tr>
+<tr class="memdesc:ga420847f9e10d92c25463c093f576ed02"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum size a CMSG buffer needs to store one IPv6 PKTINFO message.  <a href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">More...</a><br /></td></tr>
+<tr class="separator:ga420847f9e10d92c25463c093f576ed02"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Flag values to use with etcpal_poll_events_t.</h2></td></tr>
 <tr class="memitem:ga4e4bec5c7c2860538445ebdba2dd4283"><td class="memItemLeft" align="right" valign="top"><a id="ga4e4bec5c7c2860538445ebdba2dd4283"></a>
@@ -553,6 +618,23 @@ Functions</h2></td></tr>
 <tr class="separator:gaebc86dae796550d111061ba3de030942"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga420847f9e10d92c25463c093f576ed02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga420847f9e10d92c25463c093f576ed02">&#9670;&nbsp;</a></span>ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_CONTROL_SIZE_IPV6_PKTINFO&#160;&#160;&#160;ETCPAL_PLATFORM_IN6_PKTINFO_SPACE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The minimum size a CMSG buffer needs to store one IPv6 PKTINFO message. </p>
+<p>In order for this to be used on Linux, the application must define _GNU_SOURCE. In order for this to be used on Mac, the application must define _GNU_SOURCE and __APPLE_USE_RFC_3542. </p>
+
+</div>
+</div>
 <a id="ga53c1ba7904c7917177dea985809b12c4"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga53c1ba7904c7917177dea985809b12c4">&#9670;&nbsp;</a></span>ETCPAL_IP_MULTICAST_TTL</h2>
 
@@ -773,6 +855,131 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga058ce15ed24faff319a2aeda9f1c5e26"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga058ce15ed24faff319a2aeda9f1c5e26">&#9670;&nbsp;</a></span>etcpal_cmsg_firsthdr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool etcpal_cmsg_firsthdr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_etc_pal_msg_hdr.html">EtcPalMsgHdr</a> *&#160;</td>
+          <td class="paramname"><em>msgh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_etc_pal_c_msg_hdr.html">EtcPalCMsgHdr</a> *&#160;</td>
+          <td class="paramname"><em>firsthdr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the first control (ancillary) message associated with the passed in message. </p>
+<p>This function is used in place of the OS standard CMSG_FIRSTHDR macro. Refer to your favorite recvmsg() man page for more information.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">msgh</td><td>Message containing the desired control message. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">firsthdr</td><td>The first control message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the first CMSG header was found and outputted, or false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="ga1d70e00bf7f5c7200af788f5f411c081"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1d70e00bf7f5c7200af788f5f411c081">&#9670;&nbsp;</a></span>etcpal_cmsg_nxthdr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool etcpal_cmsg_nxthdr </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_etc_pal_msg_hdr.html">EtcPalMsgHdr</a> *&#160;</td>
+          <td class="paramname"><em>msgh</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_etc_pal_c_msg_hdr.html">EtcPalCMsgHdr</a> *&#160;</td>
+          <td class="paramname"><em>cmsg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_etc_pal_c_msg_hdr.html">EtcPalCMsgHdr</a> *&#160;</td>
+          <td class="paramname"><em>nxthdr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the next valid control (ancillary) message after the passed in control message. </p>
+<p>This function is used in place of the OS standard CMSG_NXTHDR macro. Refer to your favorite recvmsg() man page for more information.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">msgh</td><td>Message containing the desired control message. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmsg</td><td>The control message preceding the desired control message. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">nxthdr</td><td>The next control message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the next CMSG header was found and outputted, or false otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="gad6950118cae7dda00b6edba4d56cf6a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad6950118cae7dda00b6edba4d56cf6a1">&#9670;&nbsp;</a></span>etcpal_cmsg_to_pktinfo()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool etcpal_cmsg_to_pktinfo </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_etc_pal_c_msg_hdr.html">EtcPalCMsgHdr</a> *&#160;</td>
+          <td class="paramname"><em>cmsg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_etc_pal_pkt_info.html">EtcPalPktInfo</a> *&#160;</td>
+          <td class="paramname"><em>pktinfo</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Convert a control (ancillary) message to <a class="el" href="struct_etc_pal_pkt_info.html" title="Information about a datagram packet received with etcpal_recvmsg.">EtcPalPktInfo</a>. </p>
+<p>The application must check the cmsg level and type.</p>
+<p>This function is used in place of the OS standard CMSG_DATA macro. Refer to your favorite recvmsg() man page for more information.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmsg</td><td>The control message. The level should be <a class="el" href="group__etcpal__socket.html#gaba74f8fca47e034d676049bd8eb61488" title="IPv4 protocol level.">ETCPAL_IPPROTO_IP</a> or <a class="el" href="group__etcpal__socket.html#ga7db66bcfc3f239baf6a5fef9058192de" title="IPv6 protocol level.">ETCPAL_IPPROTO_IPV6</a>. If it's <a class="el" href="group__etcpal__socket.html#gaba74f8fca47e034d676049bd8eb61488" title="IPv4 protocol level.">ETCPAL_IPPROTO_IP</a>, the type should be <a class="el" href="group__etcpal__socket.html#ga8938dd142044493926a158d1f9d1b9f7" title="Get/Set, value is boolean int.">ETCPAL_IP_PKTINFO</a>. Otherwise if it's <a class="el" href="group__etcpal__socket.html#ga7db66bcfc3f239baf6a5fef9058192de" title="IPv6 protocol level.">ETCPAL_IPPROTO_IPV6</a>, the type should be <a class="el" href="group__etcpal__socket.html#ga2562de7737708e3f0e59c6324d4d61a7" title="Get/Set, value is boolean int (note that this equates to IPV6_RECVPKTINFO on Mac and Linux)">ETCPAL_IPV6_PKTINFO</a>. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">pktinfo</td><td>A <a class="el" href="struct_etc_pal_pkt_info.html" title="Information about a datagram packet received with etcpal_recvmsg.">EtcPalPktInfo</a> struct filled in from the given control message. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>True if the <a class="el" href="struct_etc_pal_pkt_info.html" title="Information about a datagram packet received with etcpal_recvmsg.">EtcPalPktInfo</a> struct was successfully filled in, or false otherwise. </dd></dl>
+
+</div>
+</div>
 <a id="gac5de9387d7aab2a7aa0e6c4e1d4fee3b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gac5de9387d7aab2a7aa0e6c4e1d4fee3b">&#9670;&nbsp;</a></span>etcpal_connect()</h2>
 
@@ -904,8 +1111,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="agroup__etcpal__socket_html_ga5e63f5fa7b1b4310a4bb317aa4873997"><div class="ttname"><a href="group__etcpal__socket.html#ga5e63f5fa7b1b4310a4bb317aa4873997">etcpal_getaddrinfo</a></div><div class="ttdeci">etcpal_error_t etcpal_getaddrinfo(const char *hostname, const char *service, const EtcPalAddrinfo *hints, EtcPalAddrinfo *result)</div><div class="ttdoc">Get address information for a named internet host and/or service.</div></div>
 <div class="ttc" id="agroup__etcpal__socket_html_ga669185d01901034d700f167fa23f3eb1"><div class="ttname"><a href="group__etcpal__socket.html#ga669185d01901034d700f167fa23f3eb1">etcpal_nextaddr</a></div><div class="ttdeci">bool etcpal_nextaddr(EtcPalAddrinfo *ai)</div><div class="ttdoc">Get the next address from the list returned by etcpal_getaddrinfo().</div></div>
 <div class="ttc" id="agroup__etcpal__socket_html_ga8cc1d9b7b5e8e2b88a337fc727b44535"><div class="ttname"><a href="group__etcpal__socket.html#ga8cc1d9b7b5e8e2b88a337fc727b44535">etcpal_freeaddrinfo</a></div><div class="ttdeci">void etcpal_freeaddrinfo(EtcPalAddrinfo *ai)</div><div class="ttdoc">Free an addrinfo list returned by etcpal_getaddrinfo().</div></div>
-<div class="ttc" id="astruct_etc_pal_addrinfo_html"><div class="ttname"><a href="struct_etc_pal_addrinfo.html">EtcPalAddrinfo</a></div><div class="ttdoc">A structure containing name and address information about an internet host.</div><div class="ttdef"><b>Definition:</b> socket.h:295</div></div>
-<div class="ttc" id="astruct_etc_pal_addrinfo_html_a2000f4ebfae33b230309b0344354031d"><div class="ttname"><a href="struct_etc_pal_addrinfo.html#a2000f4ebfae33b230309b0344354031d">EtcPalAddrinfo::ai_addr</a></div><div class="ttdeci">EtcPalSockAddr ai_addr</div><div class="ttdoc">Address of host.</div><div class="ttdef"><b>Definition:</b> socket.h:301</div></div>
+<div class="ttc" id="astruct_etc_pal_addrinfo_html"><div class="ttname"><a href="struct_etc_pal_addrinfo.html">EtcPalAddrinfo</a></div><div class="ttdoc">A structure containing name and address information about an internet host.</div><div class="ttdef"><b>Definition:</b> socket.h:358</div></div>
+<div class="ttc" id="astruct_etc_pal_addrinfo_html_a2000f4ebfae33b230309b0344354031d"><div class="ttname"><a href="struct_etc_pal_addrinfo.html#a2000f4ebfae33b230309b0344354031d">EtcPalAddrinfo::ai_addr</a></div><div class="ttdeci">EtcPalSockAddr ai_addr</div><div class="ttdoc">Address of host.</div><div class="ttdef"><b>Definition:</b> socket.h:364</div></div>
 <div class="ttc" id="astruct_etc_pal_sock_addr_html_a19cc8016f534a565f984438cfe911a9e"><div class="ttname"><a href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">EtcPalSockAddr::ip</a></div><div class="ttdeci">EtcPalIpAddr ip</div><div class="ttdoc">IP address.</div><div class="ttdef"><b>Definition:</b> inet.h:313</div></div>
 </div><!-- fragment --><p>On an internet-connected machine with DNS resolution capability, the above code should print something like: </p><div class="fragment"><div class="line">Address: 172.217.4.196</div>
 <div class="line">Address: 172.217.4.196</div>
@@ -1569,6 +1776,52 @@ Other <a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6
     <tr><td class="paramdir">[in]</td><td class="paramname">length</td><td>Size in bytes of buffer. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>Receive flags. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">address</td><td>If provided, filled in on success with peer address from which the data was received. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Number of bytes received (success) or <a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af" title="A set of error codes that can be returned by library functions.">etcpal_error_t</a> code from system (error occurred). </dd></dl>
+
+</div>
+</div>
+<a id="gaf50f17abe3ff16804bb7c19ad446a2f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf50f17abe3ff16804bb7c19ad446a2f7">&#9670;&nbsp;</a></span>etcpal_recvmsg()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int etcpal_recvmsg </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__etcpal__socket.html#gaf08a63353f05072ee3b28fd754985b66">etcpal_socket_t</a>&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_etc_pal_msg_hdr.html">EtcPalMsgHdr</a> *&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>flags</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Receive both datagram and ancillary data on a socket. </p>
+<p>Refer to your favorite recvmsg() man page for more information, but also note that the etcpal_cmsg_[...] functions must be used instead of the OS standard CMSG_[...] macros.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Socket on which to receive. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">msg</td><td>Message data filled in when a message is received. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">flags</td><td>Receive flags. </td></tr>
   </table>
   </dd>
 </dl>

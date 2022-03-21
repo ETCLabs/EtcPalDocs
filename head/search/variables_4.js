@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['facility_1271',['facility',['../struct_etc_pal_syslog_params.html#a213afa2e73e0c2102f43d4067e41b90f',1,'EtcPalSyslogParams']]],
-  ['friendly_5fname_1272',['friendly_name',['../struct_etc_pal_netint_info.html#a3fa69022d71df27910811117d3e232fd',1,'EtcPalNetintInfo']]]
+  ['err_1304',['err',['../struct_etc_pal_poll_event.html#a13b5fda068afcd9c79a54263a9fe7b07',1,'EtcPalPollEvent']]],
+  ['events_1305',['events',['../struct_etc_pal_poll_event.html#a8c1a86a9a616989de3fcced4b0c0e1f7',1,'EtcPalPollEvent']]]
 ];

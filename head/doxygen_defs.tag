@@ -439,6 +439,45 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>EtcPalCMsgHdr</name>
+    <filename>struct_etc_pal_c_msg_hdr.html</filename>
+    <member kind="variable">
+      <type>bool</type>
+      <name>valid</name>
+      <anchorfile>struct_etc_pal_c_msg_hdr.html</anchorfile>
+      <anchor>a28e3c179a86f337095088b3ca02a2b2a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>size_t</type>
+      <name>len</name>
+      <anchorfile>struct_etc_pal_c_msg_hdr.html</anchorfile>
+      <anchor>a7360b55975153b822efc5217b7734e6a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>level</name>
+      <anchorfile>struct_etc_pal_c_msg_hdr.html</anchorfile>
+      <anchor>acf4d33ee4cff36f69b924471174dcb11</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>type</name>
+      <anchorfile>struct_etc_pal_c_msg_hdr.html</anchorfile>
+      <anchor>ac765329451135abec74c45e1897abf26</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>void *</type>
+      <name>pd</name>
+      <anchorfile>struct_etc_pal_c_msg_hdr.html</anchorfile>
+      <anchor>a75bb2d2d40cdd00158ea9fccfbecb679</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>EtcPalGroupReq</name>
     <filename>struct_etc_pal_group_req.html</filename>
     <member kind="variable">
@@ -706,6 +745,52 @@
     </member>
   </compound>
   <compound kind="struct">
+    <name>EtcPalMsgHdr</name>
+    <filename>struct_etc_pal_msg_hdr.html</filename>
+    <member kind="variable">
+      <type>EtcPalSockAddr</type>
+      <name>name</name>
+      <anchorfile>struct_etc_pal_msg_hdr.html</anchorfile>
+      <anchor>a2e87da1b84ce314e36037f0f9cdc8b85</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>void *</type>
+      <name>buf</name>
+      <anchorfile>struct_etc_pal_msg_hdr.html</anchorfile>
+      <anchor>a5bc5fa69bee375df074734a2c4858604</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>size_t</type>
+      <name>buflen</name>
+      <anchorfile>struct_etc_pal_msg_hdr.html</anchorfile>
+      <anchor>ad6994903b3c19997ffcfdccb4431d308</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>void *</type>
+      <name>control</name>
+      <anchorfile>struct_etc_pal_msg_hdr.html</anchorfile>
+      <anchor>a83d33c81b6b4efbd7ae30c2a707a07d8</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>size_t</type>
+      <name>controllen</name>
+      <anchorfile>struct_etc_pal_msg_hdr.html</anchorfile>
+      <anchor>acdd06a55b7828a591a99290e94a282ab</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>int</type>
+      <name>flags</name>
+      <anchorfile>struct_etc_pal_msg_hdr.html</anchorfile>
+      <anchor>ac8bf36fe0577cba66bccda3a6f7e80a4</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
     <name>EtcPalNetintInfo</name>
     <filename>struct_etc_pal_netint_info.html</filename>
     <member kind="variable">
@@ -755,6 +840,24 @@
       <name>is_default</name>
       <anchorfile>struct_etc_pal_netint_info.html</anchorfile>
       <anchor>a0c9f19a7b68ad0dad836ee153d3a230a</anchor>
+      <arglist></arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>EtcPalPktInfo</name>
+    <filename>struct_etc_pal_pkt_info.html</filename>
+    <member kind="variable">
+      <type>EtcPalIpAddr</type>
+      <name>addr</name>
+      <anchorfile>struct_etc_pal_pkt_info.html</anchorfile>
+      <anchor>ac10a4235b585003054f76871bad3fd85</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="variable">
+      <type>unsigned int</type>
+      <name>ifindex</name>
+      <anchorfile>struct_etc_pal_pkt_info.html</anchorfile>
+      <anchor>a452f46bf9904a02408a12d9e406b4de7</anchor>
       <arglist></arglist>
     </member>
   </compound>
@@ -5525,8 +5628,18 @@
     <class kind="struct">EtcPalLinger</class>
     <class kind="struct">EtcPalMreq</class>
     <class kind="struct">EtcPalGroupReq</class>
+    <class kind="struct">EtcPalMsgHdr</class>
+    <class kind="struct">EtcPalCMsgHdr</class>
+    <class kind="struct">EtcPalPktInfo</class>
     <class kind="struct">EtcPalPollEvent</class>
     <class kind="struct">EtcPalAddrinfo</class>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_CMSG_IS_VALID</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga298c5185e03d838d54667cdcdf5107a9</anchor>
+      <arglist>(cmsg)</arglist>
+    </member>
     <member kind="define">
       <type>#define</type>
       <name>ETCPAL_POLL_VALID_INPUT_EVENT_MASK</name>
@@ -5574,6 +5687,27 @@
       <name>EtcPalGroupReq</name>
       <anchorfile>group__etcpal__socket.html</anchorfile>
       <anchor>ga0786ad1e373f47ea4d5b457af141a9d9</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct EtcPalMsgHdr</type>
+      <name>EtcPalMsgHdr</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga9295148c2f3663878686150db627b70e</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct EtcPalCMsgHdr</type>
+      <name>EtcPalCMsgHdr</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga1f2cdcdfee1277e02077a06b650af971</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="typedef">
+      <type>struct EtcPalPktInfo</type>
+      <name>EtcPalPktInfo</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga540373669bd8205bc75095dfb5fe5d37</anchor>
       <arglist></arglist>
     </member>
     <member kind="typedef">
@@ -5666,6 +5800,34 @@
       <anchorfile>group__etcpal__socket.html</anchorfile>
       <anchor>ga305e1fb78f8ad29e562fff5762d9c3c0</anchor>
       <arglist>(etcpal_socket_t id, void *buffer, size_t length, int flags, EtcPalSockAddr *address)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>etcpal_recvmsg</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>gaf50f17abe3ff16804bb7c19ad446a2f7</anchor>
+      <arglist>(etcpal_socket_t id, EtcPalMsgHdr *msg, int flags)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>etcpal_cmsg_firsthdr</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga058ce15ed24faff319a2aeda9f1c5e26</anchor>
+      <arglist>(EtcPalMsgHdr *msgh, EtcPalCMsgHdr *firsthdr)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>etcpal_cmsg_nxthdr</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga1d70e00bf7f5c7200af788f5f411c081</anchor>
+      <arglist>(EtcPalMsgHdr *msgh, const EtcPalCMsgHdr *cmsg, EtcPalCMsgHdr *nxthdr)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>etcpal_cmsg_to_pktinfo</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>gad6950118cae7dda00b6edba4d56cf6a1</anchor>
+      <arglist>(const EtcPalCMsgHdr *cmsg, EtcPalPktInfo *pktinfo)</arglist>
     </member>
     <member kind="function">
       <type>int</type>
@@ -5785,6 +5947,13 @@
       <anchorfile>group__etcpal__socket.html</anchorfile>
       <anchor>gae5017e2346be12e91c6450fe9860614b</anchor>
       <arglist>(EtcPalPollContext *context, EtcPalPollEvent *event, int timeout_ms)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_MSG_PEEK</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>gac7ce230ebe4248728c597a66a2676fbf</anchor>
+      <arglist></arglist>
     </member>
     <member kind="define">
       <type>#define</type>
@@ -5966,6 +6135,48 @@
       <name>ETCPAL_IPV6_V6ONLY</name>
       <anchorfile>group__etcpal__socket.html</anchorfile>
       <anchor>ga6a502de1f396117da63bde901d88e434</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_IP_PKTINFO</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga8938dd142044493926a158d1f9d1b9f7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_IPV6_PKTINFO</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga2562de7737708e3f0e59c6324d4d61a7</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_MSG_TRUNC</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>gad0eff24cfe41882f3561ccccf89039b6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_MSG_CTRUNC</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga773007bd1f44e32244d6836bcfa3b014</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_CONTROL_SIZE_IP_PKTINFO</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga429acaba81a4d0624137e2f4dd04bbce</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga420847f9e10d92c25463c093f576ed02</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
