@@ -581,6 +581,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga420847f9e10d92c25463c093f576ed02"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</a>&#160;&#160;&#160;ETCPAL_PLATFORM_IN6_PKTINFO_SPACE</td></tr>
 <tr class="memdesc:ga420847f9e10d92c25463c093f576ed02"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum size a CMSG buffer needs to store one IPv6 PKTINFO message.  <a href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">More...</a><br /></td></tr>
 <tr class="separator:ga420847f9e10d92c25463c093f576ed02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga579cf63488600b0e9a70a1d3c2640a25"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga579cf63488600b0e9a70a1d3c2640a25">ETCPAL_MAX_CONTROL_SIZE_PKTINFO</a></td></tr>
+<tr class="memdesc:ga579cf63488600b0e9a70a1d3c2640a25"><td class="mdescLeft">&#160;</td><td class="mdescRight">The minimum size a CMSG buffer needs to store one PKTINFO message (IPv4 or IPv6).  <a href="group__etcpal__socket.html#ga579cf63488600b0e9a70a1d3c2640a25">More...</a><br /></td></tr>
+<tr class="separator:ga579cf63488600b0e9a70a1d3c2640a25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Flag values to use with etcpal_poll_events_t.</h2></td></tr>
 <tr class="memitem:ga4e4bec5c7c2860538445ebdba2dd4283"><td class="memItemLeft" align="right" valign="top"><a id="ga4e4bec5c7c2860538445ebdba2dd4283"></a>
@@ -666,6 +669,27 @@ Functions</h2></td></tr>
 
 <p>Get/Set, value is int. </p>
 <p>Value indicates TTL for IPv4 or hop limit for IPv6. </p>
+
+</div>
+</div>
+<a id="ga579cf63488600b0e9a70a1d3c2640a25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga579cf63488600b0e9a70a1d3c2640a25">&#9670;&nbsp;</a></span>ETCPAL_MAX_CONTROL_SIZE_PKTINFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_MAX_CONTROL_SIZE_PKTINFO</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">  (<a class="code" href="group__etcpal__socket.html#ga429acaba81a4d0624137e2f4dd04bbce">ETCPAL_CONTROL_SIZE_IP_PKTINFO</a> &gt; <a class="code" href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</a> ? <a class="code" href="group__etcpal__socket.html#ga429acaba81a4d0624137e2f4dd04bbce">ETCPAL_CONTROL_SIZE_IP_PKTINFO</a> \</div>
+<div class="line">                                                                     : <a class="code" href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</a>)</div>
+<div class="ttc" id="agroup__etcpal__socket_html_ga420847f9e10d92c25463c093f576ed02"><div class="ttname"><a href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</a></div><div class="ttdeci">#define ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</div><div class="ttdoc">The minimum size a CMSG buffer needs to store one IPv6 PKTINFO message.</div><div class="ttdef"><b>Definition:</b> socket.h:255</div></div>
+<div class="ttc" id="agroup__etcpal__socket_html_ga429acaba81a4d0624137e2f4dd04bbce"><div class="ttname"><a href="group__etcpal__socket.html#ga429acaba81a4d0624137e2f4dd04bbce">ETCPAL_CONTROL_SIZE_IP_PKTINFO</a></div><div class="ttdeci">#define ETCPAL_CONTROL_SIZE_IP_PKTINFO</div><div class="ttdoc">The minimum size a CMSG buffer needs to store one IPv4 PKTINFO message.</div><div class="ttdef"><b>Definition:</b> socket.h:248</div></div>
+</div><!-- fragment -->
+<p>The minimum size a CMSG buffer needs to store one PKTINFO message (IPv4 or IPv6). </p>
+<p>In order for this to be used on Linux, the application must define _GNU_SOURCE. In order for this to be used on Mac, the application must define _GNU_SOURCE and __APPLE_USE_RFC_3542. </p>
 
 </div>
 </div>
@@ -1111,8 +1135,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="agroup__etcpal__socket_html_ga5e63f5fa7b1b4310a4bb317aa4873997"><div class="ttname"><a href="group__etcpal__socket.html#ga5e63f5fa7b1b4310a4bb317aa4873997">etcpal_getaddrinfo</a></div><div class="ttdeci">etcpal_error_t etcpal_getaddrinfo(const char *hostname, const char *service, const EtcPalAddrinfo *hints, EtcPalAddrinfo *result)</div><div class="ttdoc">Get address information for a named internet host and/or service.</div></div>
 <div class="ttc" id="agroup__etcpal__socket_html_ga669185d01901034d700f167fa23f3eb1"><div class="ttname"><a href="group__etcpal__socket.html#ga669185d01901034d700f167fa23f3eb1">etcpal_nextaddr</a></div><div class="ttdeci">bool etcpal_nextaddr(EtcPalAddrinfo *ai)</div><div class="ttdoc">Get the next address from the list returned by etcpal_getaddrinfo().</div></div>
 <div class="ttc" id="agroup__etcpal__socket_html_ga8cc1d9b7b5e8e2b88a337fc727b44535"><div class="ttname"><a href="group__etcpal__socket.html#ga8cc1d9b7b5e8e2b88a337fc727b44535">etcpal_freeaddrinfo</a></div><div class="ttdeci">void etcpal_freeaddrinfo(EtcPalAddrinfo *ai)</div><div class="ttdoc">Free an addrinfo list returned by etcpal_getaddrinfo().</div></div>
-<div class="ttc" id="astruct_etc_pal_addrinfo_html"><div class="ttname"><a href="struct_etc_pal_addrinfo.html">EtcPalAddrinfo</a></div><div class="ttdoc">A structure containing name and address information about an internet host.</div><div class="ttdef"><b>Definition:</b> socket.h:358</div></div>
-<div class="ttc" id="astruct_etc_pal_addrinfo_html_a2000f4ebfae33b230309b0344354031d"><div class="ttname"><a href="struct_etc_pal_addrinfo.html#a2000f4ebfae33b230309b0344354031d">EtcPalAddrinfo::ai_addr</a></div><div class="ttdeci">EtcPalSockAddr ai_addr</div><div class="ttdoc">Address of host.</div><div class="ttdef"><b>Definition:</b> socket.h:364</div></div>
+<div class="ttc" id="astruct_etc_pal_addrinfo_html"><div class="ttname"><a href="struct_etc_pal_addrinfo.html">EtcPalAddrinfo</a></div><div class="ttdoc">A structure containing name and address information about an internet host.</div><div class="ttdef"><b>Definition:</b> socket.h:368</div></div>
+<div class="ttc" id="astruct_etc_pal_addrinfo_html_a2000f4ebfae33b230309b0344354031d"><div class="ttname"><a href="struct_etc_pal_addrinfo.html#a2000f4ebfae33b230309b0344354031d">EtcPalAddrinfo::ai_addr</a></div><div class="ttdeci">EtcPalSockAddr ai_addr</div><div class="ttdoc">Address of host.</div><div class="ttdef"><b>Definition:</b> socket.h:374</div></div>
 <div class="ttc" id="astruct_etc_pal_sock_addr_html_a19cc8016f534a565f984438cfe911a9e"><div class="ttname"><a href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">EtcPalSockAddr::ip</a></div><div class="ttdeci">EtcPalIpAddr ip</div><div class="ttdoc">IP address.</div><div class="ttdef"><b>Definition:</b> inet.h:313</div></div>
 </div><!-- fragment --><p>On an internet-connected machine with DNS resolution capability, the above code should print something like: </p><div class="fragment"><div class="line">Address: 172.217.4.196</div>
 <div class="line">Address: 172.217.4.196</div>

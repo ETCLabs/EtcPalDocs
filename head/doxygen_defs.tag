@@ -6181,6 +6181,13 @@
     </member>
     <member kind="define">
       <type>#define</type>
+      <name>ETCPAL_MAX_CONTROL_SIZE_PKTINFO</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga579cf63488600b0e9a70a1d3c2640a25</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>ETCPAL_POLL_IN</name>
       <anchorfile>group__etcpal__socket.html</anchorfile>
       <anchor>ga4e4bec5c7c2860538445ebdba2dd4283</anchor>

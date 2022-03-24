@@ -63,6 +63,7 @@ var group__etcpal__socket =
     [ "ETCPAL_IPPROTO_UDP", "group__etcpal__socket.html#ga19bf0e5a8ce939ea6c4ea034f4839bcc", null ],
     [ "ETCPAL_IPV6_PKTINFO", "group__etcpal__socket.html#ga2562de7737708e3f0e59c6324d4d61a7", null ],
     [ "ETCPAL_IPV6_V6ONLY", "group__etcpal__socket.html#ga6a502de1f396117da63bde901d88e434", null ],
+    [ "ETCPAL_MAX_CONTROL_SIZE_PKTINFO", "group__etcpal__socket.html#ga579cf63488600b0e9a70a1d3c2640a25", null ],
     [ "ETCPAL_MCAST_JOIN_GROUP", "group__etcpal__socket.html#gacde51cd51d94c43625b96196d7b80f50", null ],
     [ "ETCPAL_MCAST_LEAVE_GROUP", "group__etcpal__socket.html#ga747194309fa23fa0e092e8bd010f1a2c", null ],
     [ "ETCPAL_MSG_CTRUNC", "group__etcpal__socket.html#ga773007bd1f44e32244d6836bcfa3b014", null ],
