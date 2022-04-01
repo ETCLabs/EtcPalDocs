@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>lwpa: LwpaLinger Struct Reference</title>
+<title>EtcPal: include/etcpal/cpp/hash.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,6 +20,7 @@
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
 <!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
@@ -132,10 +133,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">lwpa
-   &#160;<span id="projectnumber">0.1.0</span>
+   <div id="projectname">EtcPal
+   &#160;<span id="projectnumber">HEAD (unstable)</span>
    </div>
-   <div id="projectbrief">LightWeight Platform Abstraction (lwpa)</div>
+   <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
   <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
@@ -180,7 +181,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('struct_lwpa_linger.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('hash_8h_source.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -199,35 +200,56 @@ $(document).ready(function(){initNavTree('struct_lwpa_linger.html',''); initResi
 </div>
 
 <div class="header">
-  <div class="summary">
-<a href="#pub-attribs">Data Fields</a>  </div>
   <div class="headertitle">
-<div class="title">LwpaLinger Struct Reference<div class="ingroups"><a class="el" href="group__lwpa.html">lwpa</a> &raquo; <a class="el" href="group__lwpa__socket.html">lwpa_socket</a></div></div>  </div>
+<div class="title">hash.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<a name="details" id="details"></a><h2 class="groupheader">Overview</h2>
-<div class="textblock"><p>Option value for <a class="el" href="group__lwpa__socket.html#ga55a81e9ec4a9aba857524b726ec75256" title="Get/Set, value is LwpaLinger.">LWPA_SO_LINGER</a>. </p>
-</div><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Data Fields</h2></td></tr>
-<tr class="memitem:a7730494d5c90b034d5937c758f354997"><td class="memItemLeft" align="right" valign="top"><a id="a7730494d5c90b034d5937c758f354997"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_lwpa_linger.html#a7730494d5c90b034d5937c758f354997">onoff</a></td></tr>
-<tr class="memdesc:a7730494d5c90b034d5937c758f354997"><td class="mdescLeft">&#160;</td><td class="mdescRight">0 = off, nonzero = on <br /></td></tr>
-<tr class="separator:a7730494d5c90b034d5937c758f354997"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a21667e862207c7c116b20764fcb8f931"><td class="memItemLeft" align="right" valign="top"><a id="a21667e862207c7c116b20764fcb8f931"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_lwpa_linger.html#a21667e862207c7c116b20764fcb8f931">linger</a></td></tr>
-<tr class="memdesc:a21667e862207c7c116b20764fcb8f931"><td class="mdescLeft">&#160;</td><td class="mdescRight">Linger time in seconds. <br /></td></tr>
-<tr class="separator:a21667e862207c7c116b20764fcb8f931"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table>
-<hr/>The documentation for this struct was generated from the following file:<ul>
-<li>/tmp/tmpbhoaigyn/etcpal/include/<a class="el" href="lwpa__socket_8h_source.html">lwpa_socket.h</a></li>
-</ul>
-</div><!-- contents -->
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright 2022 ETC Inc.</span></div>
+<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * you may not use this file except in compliance with the License.</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * You may obtain a copy of the License at</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *    http://www.apache.org/licenses/LICENSE-2.0</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Unless required by applicable law or agreed to in writing, software</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * See the License for the specific language governing permissions and</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * limitations under the License.</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *******************************************************************************</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This file is a part of EtcPal. For more information, go to:</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * https://github.com/ETCLabs/EtcPal</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#ifndef ETCPAL_CPP_HASH_H_</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define ETCPAL_CPP_HASH_H_</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;cstddef&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;functional&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="keyword">namespace </span>etcpal</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;{</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;<span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a name="l00052"></a><span class="lineno"><a class="line" href="group__etcpal__cpp__hash.html#ga1690e689f7f630e30404209962a59158">   52</a></span>&#160;<span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code" href="group__etcpal__cpp__hash.html#ga1690e689f7f630e30404209962a59158">HashCombine</a>(<span class="keywordtype">size_t</span>&amp; seed, <span class="keyword">const</span> T&amp; val)</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;{</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;  std::hash&lt;T&gt; hasher;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;  seed ^= hasher(val) + 0x9e3779b9 + (seed &lt;&lt; 6) + (seed &gt;&gt; 2);</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;}</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;};  <span class="comment">// namespace etcpal</span></div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ETCPAL_CPP_HASH_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="agroup__etcpal__cpp__hash_html_ga1690e689f7f630e30404209962a59158"><div class="ttname"><a href="group__etcpal__cpp__hash.html#ga1690e689f7f630e30404209962a59158">etcpal::HashCombine</a></div><div class="ttdeci">void HashCombine(size_t &amp;seed, const T &amp;val)</div><div class="ttdoc">A function that combines the hash of a new value into an existing seed, based on boost::hash_combine.</div><div class="ttdef"><b>Definition:</b> hash.h:52</div></div>
+</div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="struct_lwpa_linger.html">LwpaLinger</a></li>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_81a3fb26cc06c42d281987e41831a70b.html">etcpal</a></li><li class="navelem"><a class="el" href="dir_fa86f7c0f1af55176d8f05dc5aff685f.html">cpp</a></li><li class="navelem"><b>hash.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

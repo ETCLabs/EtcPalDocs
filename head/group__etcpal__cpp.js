@@ -2,6 +2,7 @@ var group__etcpal__cpp =
 [
     [ "error (Error Handling)", "group__etcpal__cpp__error.html", "group__etcpal__cpp__error" ],
     [ "event_group (Event Groups)", "group__etcpal__cpp__event__group.html", "group__etcpal__cpp__event__group" ],
+    [ "hash (Hashing Utilities)", "group__etcpal__cpp__hash.html", "group__etcpal__cpp__hash" ],
     [ "inet (Internet Addressing)", "group__etcpal__cpp__inet.html", "group__etcpal__cpp__inet" ],
     [ "log (Logging)", "group__etcpal__cpp__log.html", "group__etcpal__cpp__log" ],
     [ "mutex (Mutexes)", "group__etcpal__cpp__mutex.html", "group__etcpal__cpp__mutex" ],

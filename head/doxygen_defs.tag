@@ -6540,6 +6540,7 @@
     <filename>group__etcpal__cpp.html</filename>
     <subgroup>etcpal_cpp_error</subgroup>
     <subgroup>etcpal_cpp_event_group</subgroup>
+    <subgroup>etcpal_cpp_hash</subgroup>
     <subgroup>etcpal_cpp_inet</subgroup>
     <subgroup>etcpal_cpp_log</subgroup>
     <subgroup>etcpal_cpp_mutex</subgroup>
@@ -6587,6 +6588,18 @@
     <title>event_group (Event Groups)</title>
     <filename>group__etcpal__cpp__event__group.html</filename>
     <class kind="class">etcpal::EventGroup</class>
+  </compound>
+  <compound kind="group">
+    <name>etcpal_cpp_hash</name>
+    <title>hash (Hashing Utilities)</title>
+    <filename>group__etcpal__cpp__hash.html</filename>
+    <member kind="function">
+      <type>void</type>
+      <name>HashCombine</name>
+      <anchorfile>group__etcpal__cpp__hash.html</anchorfile>
+      <anchor>ga1690e689f7f630e30404209962a59158</anchor>
+      <arglist>(size_t &amp;seed, const T &amp;val)</arglist>
+    </member>
   </compound>
   <compound kind="group">
     <name>etcpal_cpp_inet</name>
