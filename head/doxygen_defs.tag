@@ -5247,8 +5247,8 @@
       <type>etcpal_error_t</type>
       <name>etcpal_netint_refresh_interfaces</name>
       <anchorfile>group__etcpal__netint.html</anchorfile>
-      <anchor>ga4708e2c4209e3a74e6c22d2c02c52f62</anchor>
-      <arglist>(bool *list_changed)</arglist>
+      <anchor>ga405ce9db4d646ab28bfc5287596577a3</anchor>
+      <arglist>()</arglist>
     </member>
     <member kind="function">
       <type>bool</type>

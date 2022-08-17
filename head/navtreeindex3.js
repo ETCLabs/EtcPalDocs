@@ -57,7 +57,7 @@ var NAVTREEINDEX3 =
 "group__etcpal__netint.html":[1,0,2,1],
 "group__etcpal__netint.html#ga1a58dc251d9f952f0927719bae19cd07":[1,0,2,1,5],
 "group__etcpal__netint.html#ga32d2c099254727efd5a2d8208a7a88e4":[1,0,2,1,2],
-"group__etcpal__netint.html#ga4708e2c4209e3a74e6c22d2c02c52f62":[1,0,2,1,6],
+"group__etcpal__netint.html#ga405ce9db4d646ab28bfc5287596577a3":[1,0,2,1,6],
 "group__etcpal__netint.html#ga4b952bf9d2c5c21e62c691c722730a39":[1,0,2,1,4],
 "group__etcpal__netint.html#ga78f5df18395e14e959ed0c4dc26580dc":[1,0,2,1,3],
 "group__etcpal__netint.html#gae0297aaa85a237ffd910644cb414750a":[1,0,2,1,1],

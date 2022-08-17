@@ -6,5 +6,5 @@ var group__etcpal__netint =
     [ "etcpal_netint_get_interfaces_by_index", "group__etcpal__netint.html#ga78f5df18395e14e959ed0c4dc26580dc", null ],
     [ "etcpal_netint_get_num_interfaces", "group__etcpal__netint.html#ga4b952bf9d2c5c21e62c691c722730a39", null ],
     [ "etcpal_netint_is_up", "group__etcpal__netint.html#ga1a58dc251d9f952f0927719bae19cd07", null ],
-    [ "etcpal_netint_refresh_interfaces", "group__etcpal__netint.html#ga4708e2c4209e3a74e6c22d2c02c52f62", null ]
+    [ "etcpal_netint_refresh_interfaces", "group__etcpal__netint.html#ga405ce9db4d646ab28bfc5287596577a3", null ]
 ];
