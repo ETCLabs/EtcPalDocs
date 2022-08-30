@@ -212,15 +212,22 @@ $(document).ready(function(){initNavTree('group__etcpal__netint.html',''); initR
 </div><!-- fragment --><p><b>WARNING:</b> This module must be explicitly initialized before use. Initialize the module by calling <a class="el" href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843" title="Initialize the EtcPal library.">etcpal_init()</a> with the relevant feature mask: </p><div class="fragment"><div class="line"><a class="code" href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843">etcpal_init</a>(<a class="code" href="group__etcpal.html#gaf5b3a81b975bbae1f6f54f43bfc0c6a7">ETCPAL_FEATURE_NETINTS</a>);</div>
 <div class="ttc" id="agroup__etcpal_html_ga163b95dfe5ef6c68f2fb4d5b58a63843"><div class="ttname"><a href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843">etcpal_init</a></div><div class="ttdeci">etcpal_error_t etcpal_init(etcpal_features_t features)</div><div class="ttdoc">Initialize the EtcPal library.</div><div class="ttdef"><b>Definition:</b> common.c:89</div></div>
 <div class="ttc" id="agroup__etcpal_html_gaf5b3a81b975bbae1f6f54f43bfc0c6a7"><div class="ttname"><a href="group__etcpal.html#gaf5b3a81b975bbae1f6f54f43bfc0c6a7">ETCPAL_FEATURE_NETINTS</a></div><div class="ttdeci">#define ETCPAL_FEATURE_NETINTS</div><div class="ttdoc">Use the etcpal/netint module.</div><div class="ttdef"><b>Definition:</b> common.h:128</div></div>
-</div><!-- fragment --><p>After initialization, an array of the set of network interfaces which were present on the system at initialization time is kept internally. This array can be retrieved using <a class="el" href="group__etcpal__netint.html#ga4b952bf9d2c5c21e62c691c722730a39" title="Get the number of network interfaces present on the system.">etcpal_netint_get_num_interfaces()</a> and <a class="el" href="group__etcpal__netint.html#ga32d2c099254727efd5a2d8208a7a88e4" title="Get a list of network interfaces on the system.">etcpal_netint_get_interfaces()</a>:</p>
-<div class="fragment"><div class="line"><span class="keywordtype">size_t</span> num_netints = <a class="code" href="group__etcpal__netint.html#ga4b952bf9d2c5c21e62c691c722730a39">etcpal_netint_get_num_interfaces</a>();</div>
-<div class="line"><span class="keyword">const</span> <a class="code" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a>* netint_array = <a class="code" href="group__etcpal__netint.html#ga32d2c099254727efd5a2d8208a7a88e4">etcpal_netint_get_interfaces</a>();</div>
-<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a>* netint = netint_array; netint &lt; netint_array + num_netints; ++netint)</div>
+</div><!-- fragment --><p>After initialization, an array of the set of network interfaces which were present on the system at initialization time is kept internally. This array can be retrieved using <a class="el" href="group__etcpal__netint.html#gaeb7d47f39f1e2b3679724d531b397d42" title="Get a list of network interfaces on the system (or just the number of interfaces).">etcpal_netint_get_interfaces()</a> and refreshed using <a class="el" href="group__etcpal__netint.html#ga405ce9db4d646ab28bfc5287596577a3" title="Refresh the list of network interfaces.">etcpal_netint_refresh_interfaces()</a>. Here is the best way to retrieve the interfaces if a refresh could happen on a different thread at any time:</p>
+<div class="fragment"><div class="line"><span class="keywordtype">size_t</span> num_netints = 4;  <span class="comment">// Start with estimate which eventually has the actual number written to it</span></div>
+<div class="line"><a class="code" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a>* netints = calloc(num_netints, <span class="keyword">sizeof</span>(<a class="code" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a>));</div>
+<div class="line"><span class="keywordflow">while</span>(<a class="code" href="group__etcpal__netint.html#gaeb7d47f39f1e2b3679724d531b397d42">etcpal_netint_get_interfaces</a>(netints, &amp;num_netints) == <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afaefe61c95876a3a7faba0f5da4ec03f37">kEtcPalErrBufSize</a>)</div>
+<div class="line">{</div>
+<div class="line">  netints = realloc(netints, num_netints * <span class="keyword">sizeof</span>(<a class="code" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a>));</div>
+<div class="line">}</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordflow">for</span> (<span class="keyword">const</span> <a class="code" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a>* netint = netints; netint &lt; netints + num_netints; ++netint)</div>
 <div class="line">{</div>
 <div class="line">  <span class="comment">// Record information or do something with each network interface in turn</span></div>
 <div class="line">}</div>
-<div class="ttc" id="agroup__etcpal__netint_html_ga32d2c099254727efd5a2d8208a7a88e4"><div class="ttname"><a href="group__etcpal__netint.html#ga32d2c099254727efd5a2d8208a7a88e4">etcpal_netint_get_interfaces</a></div><div class="ttdeci">const EtcPalNetintInfo * etcpal_netint_get_interfaces(void)</div><div class="ttdoc">Get a list of network interfaces on the system.</div><div class="ttdef"><b>Definition:</b> netint.c:92</div></div>
-<div class="ttc" id="agroup__etcpal__netint_html_ga4b952bf9d2c5c21e62c691c722730a39"><div class="ttname"><a href="group__etcpal__netint.html#ga4b952bf9d2c5c21e62c691c722730a39">etcpal_netint_get_num_interfaces</a></div><div class="ttdeci">size_t etcpal_netint_get_num_interfaces(void)</div><div class="ttdoc">Get the number of network interfaces present on the system.</div><div class="ttdef"><b>Definition:</b> netint.c:67</div></div>
+<div class="line"> </div>
+<div class="line">free(netints);</div>
+<div class="ttc" id="agroup__etcpal__error_html_gga743b0648f0ca798ef29c9f69c6e255afaefe61c95876a3a7faba0f5da4ec03f37"><div class="ttname"><a href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afaefe61c95876a3a7faba0f5da4ec03f37">kEtcPalErrBufSize</a></div><div class="ttdeci">@ kEtcPalErrBufSize</div><div class="ttdoc">A buffer provided to a function was not big enough to hold the data that needed to be packed into it.</div><div class="ttdef"><b>Definition:</b> error.h:103</div></div>
+<div class="ttc" id="agroup__etcpal__netint_html_gaeb7d47f39f1e2b3679724d531b397d42"><div class="ttname"><a href="group__etcpal__netint.html#gaeb7d47f39f1e2b3679724d531b397d42">etcpal_netint_get_interfaces</a></div><div class="ttdeci">etcpal_error_t etcpal_netint_get_interfaces(EtcPalNetintInfo *netints, size_t *num_netints)</div><div class="ttdoc">Get a list of network interfaces on the system (or just the number of interfaces).</div><div class="ttdef"><b>Definition:</b> netint.c:86</div></div>
 <div class="ttc" id="astruct_etc_pal_netint_info_html"><div class="ttname"><a href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a></div><div class="ttdoc">A description of a single address assigned to a network interface.</div><div class="ttdef"><b>Definition:</b> inet.h:355</div></div>
 </div><!-- fragment --><p>The network interface array is sorted by interface index (see <a class="el" href="interface_indexes.html">Network Interface Indexes</a>); multiple IP addresses assigned to the same physical interface are separated into different entries. This means multiple entries in the array can have the same index.</p>
 <p>The module also attempts to determine the interface used for the system's default route (the route used to get to an arbitrary internet destination) and calls that the "default interface", which can be retrieved using <a class="el" href="group__etcpal__netint.html#gae5cfdf3d1aa1edf3b6f3729491241911" title="Get information about the default network interface.">etcpal_netint_get_default_interface()</a>.</p>
@@ -232,21 +239,18 @@ $(document).ready(function(){initNavTree('group__etcpal__netint.html',''); initR
 <div class="line"><a class="code" href="group__etcpal__netint.html#gae0297aaa85a237ffd910644cb414750a">etcpal_netint_get_interface_for_dest</a>(&amp;dest, &amp;index); <span class="comment">// Index now holds the interface that will be used</span></div>
 <div class="ttc" id="agroup__etcpal__inet_html_ga92ba01cb2c81a8a97b9555ecf0ab2fe5"><div class="ttname"><a href="group__etcpal__inet.html#ga92ba01cb2c81a8a97b9555ecf0ab2fe5">etcpal_string_to_ip</a></div><div class="ttdeci">etcpal_error_t etcpal_string_to_ip(etcpal_iptype_t type, const char *src, EtcPalIpAddr *dest)</div><div class="ttdoc">Convert IPv4 and IPv6 addresses from text to binary form.</div></div>
 <div class="ttc" id="agroup__etcpal__inet_html_gga847282e3fd17bf75ec83292326c455eea73ea615eceba61f26d92a63f3738f635"><div class="ttname"><a href="group__etcpal__inet.html#gga847282e3fd17bf75ec83292326c455eea73ea615eceba61f26d92a63f3738f635">kEtcPalIpTypeV4</a></div><div class="ttdeci">@ kEtcPalIpTypeV4</div><div class="ttdoc">This EtcPalIpAddr contains an IPv4 address.</div><div class="ttdef"><b>Definition:</b> inet.h:57</div></div>
-<div class="ttc" id="agroup__etcpal__netint_html_gae0297aaa85a237ffd910644cb414750a"><div class="ttname"><a href="group__etcpal__netint.html#gae0297aaa85a237ffd910644cb414750a">etcpal_netint_get_interface_for_dest</a></div><div class="ttdeci">etcpal_error_t etcpal_netint_get_interface_for_dest(const EtcPalIpAddr *dest, unsigned int *netint_index)</div><div class="ttdoc">Get the network interface that the system will choose when routing an IP packet to the specified dest...</div><div class="ttdef"><b>Definition:</b> netint.c:227</div></div>
+<div class="ttc" id="agroup__etcpal__netint_html_gae0297aaa85a237ffd910644cb414750a"><div class="ttname"><a href="group__etcpal__netint.html#gae0297aaa85a237ffd910644cb414750a">etcpal_netint_get_interface_for_dest</a></div><div class="ttdeci">etcpal_error_t etcpal_netint_get_interface_for_dest(const EtcPalIpAddr *dest, unsigned int *netint_index)</div><div class="ttdoc">Get the network interface that the system will choose when routing an IP packet to the specified dest...</div><div class="ttdef"><b>Definition:</b> netint.c:180</div></div>
 <div class="ttc" id="astruct_etc_pal_ip_addr_html"><div class="ttname"><a href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a></div><div class="ttdoc">An IP address.</div><div class="ttdef"><b>Definition:</b> inet.h:75</div></div>
-</div><!-- fragment --><p>The list of network interfaces is cached and does not change at runtime, unless the <a class="el" href="group__etcpal__netint.html#ga405ce9db4d646ab28bfc5287596577a3" title="Refresh the list of network interfaces.">etcpal_netint_refresh_interfaces()</a> function is called. </p>
+</div><!-- fragment --><p>The list of network interfaces is cached and will only change if the <a class="el" href="group__etcpal__netint.html#ga405ce9db4d646ab28bfc5287596577a3" title="Refresh the list of network interfaces.">etcpal_netint_refresh_interfaces()</a> function is called. These functions are all thread-safe, so the interfaces can be refreshed on one thread while other queries are made on another thread. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga4b952bf9d2c5c21e62c691c722730a39"><td class="memItemLeft" align="right" valign="top">size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__netint.html#ga4b952bf9d2c5c21e62c691c722730a39">etcpal_netint_get_num_interfaces</a> (void)</td></tr>
-<tr class="memdesc:ga4b952bf9d2c5c21e62c691c722730a39"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the number of network interfaces present on the system.  <a href="group__etcpal__netint.html#ga4b952bf9d2c5c21e62c691c722730a39">More...</a><br /></td></tr>
-<tr class="separator:ga4b952bf9d2c5c21e62c691c722730a39"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga32d2c099254727efd5a2d8208a7a88e4"><td class="memItemLeft" align="right" valign="top">const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__netint.html#ga32d2c099254727efd5a2d8208a7a88e4">etcpal_netint_get_interfaces</a> (void)</td></tr>
-<tr class="memdesc:ga32d2c099254727efd5a2d8208a7a88e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of network interfaces on the system.  <a href="group__etcpal__netint.html#ga32d2c099254727efd5a2d8208a7a88e4">More...</a><br /></td></tr>
-<tr class="separator:ga32d2c099254727efd5a2d8208a7a88e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga78f5df18395e14e959ed0c4dc26580dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__netint.html#ga78f5df18395e14e959ed0c4dc26580dc">etcpal_netint_get_interfaces_by_index</a> (unsigned int index, const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> **netint_arr, size_t *netint_arr_size)</td></tr>
-<tr class="memdesc:ga78f5df18395e14e959ed0c4dc26580dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a set of network interface addresses that have the index specified.  <a href="group__etcpal__netint.html#ga78f5df18395e14e959ed0c4dc26580dc">More...</a><br /></td></tr>
-<tr class="separator:ga78f5df18395e14e959ed0c4dc26580dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeb7d47f39f1e2b3679724d531b397d42"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__netint.html#gaeb7d47f39f1e2b3679724d531b397d42">etcpal_netint_get_interfaces</a> (<a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> *netints, size_t *num_netints)</td></tr>
+<tr class="memdesc:gaeb7d47f39f1e2b3679724d531b397d42"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of network interfaces on the system (or just the number of interfaces).  <a href="group__etcpal__netint.html#gaeb7d47f39f1e2b3679724d531b397d42">More...</a><br /></td></tr>
+<tr class="separator:gaeb7d47f39f1e2b3679724d531b397d42"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaff19f390d931ceaaacf20796ccaa57e5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__netint.html#gaff19f390d931ceaaacf20796ccaa57e5">etcpal_netint_get_interfaces_for_index</a> (unsigned int netint_index, <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> *netints, size_t *num_netints)</td></tr>
+<tr class="memdesc:gaff19f390d931ceaaacf20796ccaa57e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a list of network interfaces (or just the number of interfaces) that have the index specified.  <a href="group__etcpal__netint.html#gaff19f390d931ceaaacf20796ccaa57e5">More...</a><br /></td></tr>
+<tr class="separator:gaff19f390d931ceaaacf20796ccaa57e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae5cfdf3d1aa1edf3b6f3729491241911"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__netint.html#gae5cfdf3d1aa1edf3b6f3729491241911">etcpal_netint_get_default_interface</a> (<a class="el" href="group__etcpal__inet.html#ga847282e3fd17bf75ec83292326c455ee">etcpal_iptype_t</a> type, unsigned int *netint_index)</td></tr>
 <tr class="memdesc:gae5cfdf3d1aa1edf3b6f3729491241911"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get information about the default network interface.  <a href="group__etcpal__netint.html#gae5cfdf3d1aa1edf3b6f3729491241911">More...</a><br /></td></tr>
 <tr class="separator:gae5cfdf3d1aa1edf3b6f3729491241911"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -288,7 +292,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Get information about the default network interface. </p>
-<p>For our purposes, the 'default' network interface is defined as the interface that is chosen for the default IP route. The default interface is given as an OS network interface index - see <a class="el" href="interface_indexes.html">Network Interface Indexes</a> for more information. Note that since network interfaces can have multiple IP addresses assigned, this index may be shared by many entries returned by <a class="el" href="group__etcpal__netint.html#ga32d2c099254727efd5a2d8208a7a88e4" title="Get a list of network interfaces on the system.">etcpal_netint_get_interfaces()</a>.</p>
+<p>For our purposes, the 'default' network interface is defined as the interface that is chosen for the default IP route. The default interface is given as an OS network interface index - see <a class="el" href="interface_indexes.html">Network Interface Indexes</a> for more information. Note that since network interfaces can have multiple IP addresses assigned, this index may be shared by many entries returned by <a class="el" href="group__etcpal__netint.html#gaeb7d47f39f1e2b3679724d531b397d42" title="Get a list of network interfaces on the system (or just the number of interfaces).">etcpal_netint_get_interfaces()</a>.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">type</td><td>The IP protocol for which to get the default network interface, either <a class="el" href="group__etcpal__inet.html#gga847282e3fd17bf75ec83292326c455eea73ea615eceba61f26d92a63f3738f635" title="This EtcPalIpAddr contains an IPv4 address.">kEtcPalIpTypeV4</a> or <a class="el" href="group__etcpal__inet.html#gga847282e3fd17bf75ec83292326c455eead480ed8d686b23bdb2e5bfc06b93d7ae" title="This EtcPalIpAddr contains an IPv6 address.">kEtcPalIpTypeV6</a>. A separate default interface is maintained for each. </td></tr>
@@ -352,51 +356,23 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="ga32d2c099254727efd5a2d8208a7a88e4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga32d2c099254727efd5a2d8208a7a88e4">&#9670;&nbsp;</a></span>etcpal_netint_get_interfaces()</h2>
+<a id="gaeb7d47f39f1e2b3679724d531b397d42"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeb7d47f39f1e2b3679724d531b397d42">&#9670;&nbsp;</a></span>etcpal_netint_get_interfaces()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a>* etcpal_netint_get_interfaces </td>
+          <td class="memname"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a> etcpal_netint_get_interfaces </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Get a list of network interfaces on the system. </p>
-<p>For NICs with multiple IP addresses assigned, this module separates each address into its own entry in the netint array. Because of this, multiple array entries could have the same value for the index, mac and id parameters.</p>
-<dl class="section return"><dt>Returns</dt><dd>Pointer to an array of network interfaces of length <a class="el" href="group__etcpal__netint.html#ga4b952bf9d2c5c21e62c691c722730a39" title="Get the number of network interfaces present on the system.">etcpal_netint_get_num_interfaces()</a>, or NULL if there are no interfaces present or the module is not initialized. </dd></dl>
-
-</div>
-</div>
-<a id="ga78f5df18395e14e959ed0c4dc26580dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga78f5df18395e14e959ed0c4dc26580dc">&#9670;&nbsp;</a></span>etcpal_netint_get_interfaces_by_index()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a> etcpal_netint_get_interfaces_by_index </td>
-          <td>(</td>
-          <td class="paramtype">unsigned int&#160;</td>
-          <td class="paramname"><em>index</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> **&#160;</td>
-          <td class="paramname"><em>netint_arr</em>, </td>
+          <td class="paramtype"><a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> *&#160;</td>
+          <td class="paramname"><em>netints</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">size_t *&#160;</td>
-          <td class="paramname"><em>netint_arr_size</em>&#160;</td>
+          <td class="paramname"><em>num_netints</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -406,44 +382,78 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get a set of network interface addresses that have the index specified. </p>
-<p>See <a class="el" href="interface_indexes.html">Network Interface Indexes</a> for more information.</p>
+<p>Get a list of network interfaces on the system (or just the number of interfaces). </p>
+<p>For NICs with multiple IP addresses assigned, this module separates each address into its own entry in the netint array. Because of this, multiple array entries could have the same value for the index, mac and id parameters.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index for which to get interfaces. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">netint_arr</td><td>Filled in on success with the array of matching interfaces. </td></tr>
-    <tr><td class="paramdir">[out]</td><td class="paramname">netint_arr_size</td><td>Filled in on success with the size of the matching interface array. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">netints</td><td>Application-provided array to be filled in on success with the array of network interfaces. This can be set to NULL if only interested in the number of interfaces. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">num_netints</td><td>Initialize this with the size of the netints array (0 if it's NULL). Filled in on success with the number of network interfaces on the system (reallocate the netints array if this ends up being larger). Cannot be a NULL pointer. </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d" title="The call was successful, no error occurred.">kEtcPalErrOk</a>: netint_arr and netint_arr_size were filled in. </dd>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d" title="The call was successful, no error occurred.">kEtcPalErrOk</a>: netints and num_netints were filled in with all system interfaces. </dd>
 <dd>
 <a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afadb17bb2ec24e7755170e8afbd5b10bc2" title="An invalid argument was provided to an API function.">kEtcPalErrInvalid</a>: Invalid argument provided. </dd>
 <dd>
 <a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afadfb4ade13d03ed30f6309d2f130f05f7" title="An API function was called from a module that was not previously initialized.">kEtcPalErrNotInit</a>: Module not initialized. </dd>
 <dd>
-<a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afa62c704cfc2d72f1fa91c04efe508c60f" title="An identifier or handle passed to a function was not valid or not previously initialized.">kEtcPalErrNotFound</a>: No interfaces found for this index. </dd></dl>
+<a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afaefe61c95876a3a7faba0f5da4ec03f37" title="A buffer provided to a function was not big enough to hold the data that needed to be packed into it.">kEtcPalErrBufSize</a>: The netints array was not large enough to hold all of the network interfaces. See the value of num_netints to determine how large the array needs to be. </dd>
+<dd>
+<a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afa62c704cfc2d72f1fa91c04efe508c60f" title="An identifier or handle passed to a function was not valid or not previously initialized.">kEtcPalErrNotFound</a>: No system interfaces were found. </dd></dl>
 
 </div>
 </div>
-<a id="ga4b952bf9d2c5c21e62c691c722730a39"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga4b952bf9d2c5c21e62c691c722730a39">&#9670;&nbsp;</a></span>etcpal_netint_get_num_interfaces()</h2>
+<a id="gaff19f390d931ceaaacf20796ccaa57e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaff19f390d931ceaaacf20796ccaa57e5">&#9670;&nbsp;</a></span>etcpal_netint_get_interfaces_for_index()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">size_t etcpal_netint_get_num_interfaces </td>
+          <td class="memname"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a> etcpal_netint_get_interfaces_for_index </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
-          <td class="paramname"></td><td>)</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>netint_index</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype"><a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> *&#160;</td>
+          <td class="paramname"><em>netints</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t *&#160;</td>
+          <td class="paramname"><em>num_netints</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Get the number of network interfaces present on the system. </p>
-<dl class="section return"><dt>Returns</dt><dd>Number of interfaces present. </dd></dl>
+<p>Get a list of network interfaces (or just the number of interfaces) that have the index specified. </p>
+<p>See <a class="el" href="interface_indexes.html">Network Interface Indexes</a> for more information.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">index</td><td>Index for which to get interfaces. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">netints</td><td>Application-provided array to be filled in on success with the array of network interfaces. This can be set to NULL if only interested in the number of interfaces. </td></tr>
+    <tr><td class="paramdir">[in,out]</td><td class="paramname">num_netints</td><td>Initialize this with the size of the netints array (0 if it's NULL). Filled in on success with the number of network interfaces that match the index (reallocate the netints array if this ends up being larger). Cannot be NULL. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d" title="The call was successful, no error occurred.">kEtcPalErrOk</a>: netints and num_netints were filled in with all matching interfaces. </dd>
+<dd>
+<a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afadb17bb2ec24e7755170e8afbd5b10bc2" title="An invalid argument was provided to an API function.">kEtcPalErrInvalid</a>: Invalid argument provided. </dd>
+<dd>
+<a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afadfb4ade13d03ed30f6309d2f130f05f7" title="An API function was called from a module that was not previously initialized.">kEtcPalErrNotInit</a>: Module not initialized. </dd>
+<dd>
+<a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afaefe61c95876a3a7faba0f5da4ec03f37" title="A buffer provided to a function was not big enough to hold the data that needed to be packed into it.">kEtcPalErrBufSize</a>: The netints array was not large enough to hold all of the network interfaces. See the value of num_netints to determine how large the array needs to be. </dd>
+<dd>
+<a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afa62c704cfc2d72f1fa91c04efe508c60f" title="An identifier or handle passed to a function was not valid or not previously initialized.">kEtcPalErrNotFound</a>: No interfaces found for this index. </dd></dl>
 
 </div>
 </div>
@@ -493,7 +503,7 @@ false: The interface indicated by netint_index is down, or netint_index is inval
 </div><div class="memdoc">
 
 <p>Refresh the list of network interfaces. </p>
-<p>Rebuilds the cached array of network interfaces that is returned via the <a class="el" href="group__etcpal__netint.html#ga32d2c099254727efd5a2d8208a7a88e4" title="Get a list of network interfaces on the system.">etcpal_netint_get_interfaces()</a> function.</p>
+<p>Rebuilds the cached array of network interfaces that is returned via the <a class="el" href="group__etcpal__netint.html#gaeb7d47f39f1e2b3679724d531b397d42" title="Get a list of network interfaces on the system (or just the number of interfaces).">etcpal_netint_get_interfaces()</a> function.</p>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d" title="The call was successful, no error occurred.">kEtcPalErrOk</a>: Interfaces refreshed. </dd>
 <dd>
 Other error codes from the underlying platform are possible here. </dd></dl>

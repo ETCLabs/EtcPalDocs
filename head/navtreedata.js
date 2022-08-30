@@ -56,7 +56,7 @@ var NAVTREEINDEX =
 "classetcpal_1_1_semaphore.html#ae8eb9255ebee517187eaa5d88b3edf45",
 "functions_func_p.html",
 "group__etcpal__log.html#ga6463250841fd9f0b87d84574d5ed561f",
-"group__etcpal__socket.html#gac6851f10b8d27962e1a1fcba560cef4a"
+"group__etcpal__socket.html#gac7ce230ebe4248728c597a66a2676fbf"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

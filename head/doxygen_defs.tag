@@ -5209,25 +5209,18 @@
     <title>netint (Network Interfaces)</title>
     <filename>group__etcpal__netint.html</filename>
     <member kind="function">
-      <type>size_t</type>
-      <name>etcpal_netint_get_num_interfaces</name>
-      <anchorfile>group__etcpal__netint.html</anchorfile>
-      <anchor>ga4b952bf9d2c5c21e62c691c722730a39</anchor>
-      <arglist>(void)</arglist>
-    </member>
-    <member kind="function">
-      <type>const EtcPalNetintInfo *</type>
+      <type>etcpal_error_t</type>
       <name>etcpal_netint_get_interfaces</name>
       <anchorfile>group__etcpal__netint.html</anchorfile>
-      <anchor>ga32d2c099254727efd5a2d8208a7a88e4</anchor>
-      <arglist>(void)</arglist>
+      <anchor>gaeb7d47f39f1e2b3679724d531b397d42</anchor>
+      <arglist>(EtcPalNetintInfo *netints, size_t *num_netints)</arglist>
     </member>
     <member kind="function">
       <type>etcpal_error_t</type>
-      <name>etcpal_netint_get_interfaces_by_index</name>
+      <name>etcpal_netint_get_interfaces_for_index</name>
       <anchorfile>group__etcpal__netint.html</anchorfile>
-      <anchor>ga78f5df18395e14e959ed0c4dc26580dc</anchor>
-      <arglist>(unsigned int index, const EtcPalNetintInfo **netint_arr, size_t *netint_arr_size)</arglist>
+      <anchor>gaff19f390d931ceaaacf20796ccaa57e5</anchor>
+      <arglist>(unsigned int netint_index, EtcPalNetintInfo *netints, size_t *num_netints)</arglist>
     </member>
     <member kind="function">
       <type>etcpal_error_t</type>
