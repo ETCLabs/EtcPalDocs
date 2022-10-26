@@ -213,8 +213,8 @@ $(document).ready(function(){initNavTree('group__etcpal__socket.html',''); initR
 <p>Platform-neutral BSD-modeled network socket implementation. </p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;etcpal/socket.h&quot;</span></div>
 </div><!-- fragment --><p><b>WARNING:</b> This module must be explicitly initialized before use. Initialize the module by calling <a class="el" href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843" title="Initialize the EtcPal library.">etcpal_init()</a> with the relevant feature mask: </p><div class="fragment"><div class="line"><a class="code" href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843">etcpal_init</a>(<a class="code" href="group__etcpal.html#ga09f99422deaa7bb5d2625c317d1a66a6">ETCPAL_FEATURE_SOCKETS</a>);</div>
-<div class="ttc" id="agroup__etcpal_html_ga09f99422deaa7bb5d2625c317d1a66a6"><div class="ttname"><a href="group__etcpal.html#ga09f99422deaa7bb5d2625c317d1a66a6">ETCPAL_FEATURE_SOCKETS</a></div><div class="ttdeci">#define ETCPAL_FEATURE_SOCKETS</div><div class="ttdoc">Use the etcpal/socket module.</div><div class="ttdef"><b>Definition:</b> common.h:127</div></div>
-<div class="ttc" id="agroup__etcpal_html_ga163b95dfe5ef6c68f2fb4d5b58a63843"><div class="ttname"><a href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843">etcpal_init</a></div><div class="ttdeci">etcpal_error_t etcpal_init(etcpal_features_t features)</div><div class="ttdoc">Initialize the EtcPal library.</div><div class="ttdef"><b>Definition:</b> common.c:89</div></div>
+<div class="ttc" id="agroup__etcpal_html_ga09f99422deaa7bb5d2625c317d1a66a6"><div class="ttname"><a href="group__etcpal.html#ga09f99422deaa7bb5d2625c317d1a66a6">ETCPAL_FEATURE_SOCKETS</a></div><div class="ttdeci">#define ETCPAL_FEATURE_SOCKETS</div><div class="ttdoc">Use the etcpal/socket module.</div><div class="ttdef"><b>Definition:</b> common.h:134</div></div>
+<div class="ttc" id="agroup__etcpal_html_ga163b95dfe5ef6c68f2fb4d5b58a63843"><div class="ttname"><a href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843">etcpal_init</a></div><div class="ttdeci">etcpal_error_t etcpal_init(etcpal_features_t features)</div><div class="ttdoc">Initialize the EtcPal library.</div><div class="ttdef"><b>Definition:</b> common.c:112</div></div>
 </div><!-- fragment --><p>This module attempts to abstract the network socket interface from various platforms into one platform-neutral interface. The functions and flags are modeled after the BSD sockets interface. This API is too large and complex to provide a concise how-to here; users of this module are assumed to already be familiar with some version of the BSD interface. If not, <em>UNIX Network Programming: The Sockets Networking API</em> by Stevens, Fenner, and Rudoff is highly recommended reading. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -524,13 +524,11 @@ Functions</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga6a502de1f396117da63bde901d88e434">ETCPAL_IPV6_V6ONLY</a>&#160;&#160;&#160;19</td></tr>
 <tr class="memdesc:ga6a502de1f396117da63bde901d88e434"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set, value is boolean int. <br /></td></tr>
 <tr class="separator:ga6a502de1f396117da63bde901d88e434"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8938dd142044493926a158d1f9d1b9f7"><td class="memItemLeft" align="right" valign="top"><a id="ga8938dd142044493926a158d1f9d1b9f7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga8938dd142044493926a158d1f9d1b9f7">ETCPAL_IP_PKTINFO</a>&#160;&#160;&#160;20</td></tr>
-<tr class="memdesc:ga8938dd142044493926a158d1f9d1b9f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set, value is boolean int. <br /></td></tr>
+<tr class="memitem:ga8938dd142044493926a158d1f9d1b9f7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga8938dd142044493926a158d1f9d1b9f7">ETCPAL_IP_PKTINFO</a>&#160;&#160;&#160;20</td></tr>
+<tr class="memdesc:ga8938dd142044493926a158d1f9d1b9f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set, value is boolean int.  <a href="group__etcpal__socket.html#ga8938dd142044493926a158d1f9d1b9f7">More...</a><br /></td></tr>
 <tr class="separator:ga8938dd142044493926a158d1f9d1b9f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2562de7737708e3f0e59c6324d4d61a7"><td class="memItemLeft" align="right" valign="top"><a id="ga2562de7737708e3f0e59c6324d4d61a7"></a>
-#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga2562de7737708e3f0e59c6324d4d61a7">ETCPAL_IPV6_PKTINFO</a>&#160;&#160;&#160;21</td></tr>
-<tr class="memdesc:ga2562de7737708e3f0e59c6324d4d61a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set, value is boolean int (note that this equates to IPV6_RECVPKTINFO on Mac and Linux) <br /></td></tr>
+<tr class="memitem:ga2562de7737708e3f0e59c6324d4d61a7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga2562de7737708e3f0e59c6324d4d61a7">ETCPAL_IPV6_PKTINFO</a>&#160;&#160;&#160;21</td></tr>
+<tr class="memdesc:ga2562de7737708e3f0e59c6324d4d61a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get/Set, value is boolean int (note that this equates to IPV6_RECVPKTINFO on Mac and Linux).  <a href="group__etcpal__socket.html#ga2562de7737708e3f0e59c6324d4d61a7">More...</a><br /></td></tr>
 <tr class="separator:ga2562de7737708e3f0e59c6324d4d61a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">'how' values for etcpal_shutdown()</h2></td></tr>
@@ -655,6 +653,23 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga8938dd142044493926a158d1f9d1b9f7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8938dd142044493926a158d1f9d1b9f7">&#9670;&nbsp;</a></span>ETCPAL_IP_PKTINFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_IP_PKTINFO&#160;&#160;&#160;20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get/Set, value is boolean int. </p>
+<p>On lwIP, this option will not be supported unless the LWIP_NETBUF_RECVINFO compiler definition is set to 1. </p>
+
+</div>
+</div>
 <a id="gaa8067f3bea534148c077f2dd720a6d51"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gaa8067f3bea534148c077f2dd720a6d51">&#9670;&nbsp;</a></span>ETCPAL_IP_TTL</h2>
 
@@ -672,6 +687,23 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="ga2562de7737708e3f0e59c6324d4d61a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2562de7737708e3f0e59c6324d4d61a7">&#9670;&nbsp;</a></span>ETCPAL_IPV6_PKTINFO</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_IPV6_PKTINFO&#160;&#160;&#160;21</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get/Set, value is boolean int (note that this equates to IPV6_RECVPKTINFO on Mac and Linux). </p>
+<p>This option is not currently supported on lwIP. </p>
+
+</div>
+</div>
 <a id="ga579cf63488600b0e9a70a1d3c2640a25"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga579cf63488600b0e9a70a1d3c2640a25">&#9670;&nbsp;</a></span>ETCPAL_MAX_CONTROL_SIZE_PKTINFO</h2>
 
@@ -685,8 +717,8 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">  (<a class="code" href="group__etcpal__socket.html#ga429acaba81a4d0624137e2f4dd04bbce">ETCPAL_CONTROL_SIZE_IP_PKTINFO</a> &gt; <a class="code" href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</a> ? <a class="code" href="group__etcpal__socket.html#ga429acaba81a4d0624137e2f4dd04bbce">ETCPAL_CONTROL_SIZE_IP_PKTINFO</a> \</div>
 <div class="line">                                                                     : <a class="code" href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</a>)</div>
-<div class="ttc" id="agroup__etcpal__socket_html_ga420847f9e10d92c25463c093f576ed02"><div class="ttname"><a href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</a></div><div class="ttdeci">#define ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</div><div class="ttdoc">The minimum size a CMSG buffer needs to store one IPv6 PKTINFO message.</div><div class="ttdef"><b>Definition:</b> socket.h:255</div></div>
-<div class="ttc" id="agroup__etcpal__socket_html_ga429acaba81a4d0624137e2f4dd04bbce"><div class="ttname"><a href="group__etcpal__socket.html#ga429acaba81a4d0624137e2f4dd04bbce">ETCPAL_CONTROL_SIZE_IP_PKTINFO</a></div><div class="ttdeci">#define ETCPAL_CONTROL_SIZE_IP_PKTINFO</div><div class="ttdoc">The minimum size a CMSG buffer needs to store one IPv4 PKTINFO message.</div><div class="ttdef"><b>Definition:</b> socket.h:248</div></div>
+<div class="ttc" id="agroup__etcpal__socket_html_ga420847f9e10d92c25463c093f576ed02"><div class="ttname"><a href="group__etcpal__socket.html#ga420847f9e10d92c25463c093f576ed02">ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</a></div><div class="ttdeci">#define ETCPAL_CONTROL_SIZE_IPV6_PKTINFO</div><div class="ttdoc">The minimum size a CMSG buffer needs to store one IPv6 PKTINFO message.</div><div class="ttdef"><b>Definition:</b> socket.h:265</div></div>
+<div class="ttc" id="agroup__etcpal__socket_html_ga429acaba81a4d0624137e2f4dd04bbce"><div class="ttname"><a href="group__etcpal__socket.html#ga429acaba81a4d0624137e2f4dd04bbce">ETCPAL_CONTROL_SIZE_IP_PKTINFO</a></div><div class="ttdeci">#define ETCPAL_CONTROL_SIZE_IP_PKTINFO</div><div class="ttdoc">The minimum size a CMSG buffer needs to store one IPv4 PKTINFO message.</div><div class="ttdef"><b>Definition:</b> socket.h:258</div></div>
 </div><!-- fragment -->
 <p>The minimum size a CMSG buffer needs to store one PKTINFO message (IPv4 or IPv6). </p>
 <p>In order for this to be used on Linux, the application must define _GNU_SOURCE. In order for this to be used on Mac, the application must define _GNU_SOURCE and __APPLE_USE_RFC_3542. </p>
@@ -907,6 +939,7 @@ Functions</h2></td></tr>
 
 <p>Get the first control (ancillary) message associated with the passed in message. </p>
 <p>This function is used in place of the OS standard CMSG_FIRSTHDR macro. Refer to your favorite recvmsg() man page for more information.</p>
+<p>On lwIP, in order to receive ancillary data (e.g. PKTINFO), make sure to enable the LWIP_NETBUF_RECVINFO compiler definition to enable setting the relevant socket options (e.g. ETCPAL_IP_PKTINFO).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">msgh</td><td>Message containing the desired control message. </td></tr>
@@ -952,6 +985,7 @@ Functions</h2></td></tr>
 
 <p>Get the next valid control (ancillary) message after the passed in control message. </p>
 <p>This function is used in place of the OS standard CMSG_NXTHDR macro. Refer to your favorite recvmsg() man page for more information.</p>
+<p>On lwIP, in order to receive ancillary data (e.g. PKTINFO), make sure to enable the LWIP_NETBUF_RECVINFO compiler definition to enable setting the relevant socket options (e.g. ETCPAL_IP_PKTINFO).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in,out]</td><td class="paramname">msgh</td><td>Message containing the desired control message. </td></tr>
@@ -993,9 +1027,10 @@ Functions</h2></td></tr>
 <p>Convert a control (ancillary) message to <a class="el" href="struct_etc_pal_pkt_info.html" title="Information about a datagram packet received with etcpal_recvmsg.">EtcPalPktInfo</a>. </p>
 <p>The application must check the cmsg level and type.</p>
 <p>This function is used in place of the OS standard CMSG_DATA macro. Refer to your favorite recvmsg() man page for more information.</p>
+<p>On lwIP, in order to receive ancillary data (e.g. PKTINFO), make sure to enable the LWIP_NETBUF_RECVINFO compiler definition to enable setting the relevant socket options (e.g. ETCPAL_IP_PKTINFO).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">cmsg</td><td>The control message. The level should be <a class="el" href="group__etcpal__socket.html#gaba74f8fca47e034d676049bd8eb61488" title="IPv4 protocol level.">ETCPAL_IPPROTO_IP</a> or <a class="el" href="group__etcpal__socket.html#ga7db66bcfc3f239baf6a5fef9058192de" title="IPv6 protocol level.">ETCPAL_IPPROTO_IPV6</a>. If it's <a class="el" href="group__etcpal__socket.html#gaba74f8fca47e034d676049bd8eb61488" title="IPv4 protocol level.">ETCPAL_IPPROTO_IP</a>, the type should be <a class="el" href="group__etcpal__socket.html#ga8938dd142044493926a158d1f9d1b9f7" title="Get/Set, value is boolean int.">ETCPAL_IP_PKTINFO</a>. Otherwise if it's <a class="el" href="group__etcpal__socket.html#ga7db66bcfc3f239baf6a5fef9058192de" title="IPv6 protocol level.">ETCPAL_IPPROTO_IPV6</a>, the type should be <a class="el" href="group__etcpal__socket.html#ga2562de7737708e3f0e59c6324d4d61a7" title="Get/Set, value is boolean int (note that this equates to IPV6_RECVPKTINFO on Mac and Linux)">ETCPAL_IPV6_PKTINFO</a>. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">cmsg</td><td>The control message. The level should be <a class="el" href="group__etcpal__socket.html#gaba74f8fca47e034d676049bd8eb61488" title="IPv4 protocol level.">ETCPAL_IPPROTO_IP</a> or <a class="el" href="group__etcpal__socket.html#ga7db66bcfc3f239baf6a5fef9058192de" title="IPv6 protocol level.">ETCPAL_IPPROTO_IPV6</a>. If it's <a class="el" href="group__etcpal__socket.html#gaba74f8fca47e034d676049bd8eb61488" title="IPv4 protocol level.">ETCPAL_IPPROTO_IP</a>, the type should be <a class="el" href="group__etcpal__socket.html#ga8938dd142044493926a158d1f9d1b9f7" title="Get/Set, value is boolean int.">ETCPAL_IP_PKTINFO</a>. Otherwise if it's <a class="el" href="group__etcpal__socket.html#ga7db66bcfc3f239baf6a5fef9058192de" title="IPv6 protocol level.">ETCPAL_IPPROTO_IPV6</a>, the type should be <a class="el" href="group__etcpal__socket.html#ga2562de7737708e3f0e59c6324d4d61a7" title="Get/Set, value is boolean int (note that this equates to IPV6_RECVPKTINFO on Mac and Linux).">ETCPAL_IPV6_PKTINFO</a>. </td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">pktinfo</td><td>A <a class="el" href="struct_etc_pal_pkt_info.html" title="Information about a datagram packet received with etcpal_recvmsg.">EtcPalPktInfo</a> struct filled in from the given control message. </td></tr>
   </table>
   </dd>
@@ -1135,8 +1170,8 @@ Functions</h2></td></tr>
 <div class="ttc" id="agroup__etcpal__socket_html_ga5e63f5fa7b1b4310a4bb317aa4873997"><div class="ttname"><a href="group__etcpal__socket.html#ga5e63f5fa7b1b4310a4bb317aa4873997">etcpal_getaddrinfo</a></div><div class="ttdeci">etcpal_error_t etcpal_getaddrinfo(const char *hostname, const char *service, const EtcPalAddrinfo *hints, EtcPalAddrinfo *result)</div><div class="ttdoc">Get address information for a named internet host and/or service.</div></div>
 <div class="ttc" id="agroup__etcpal__socket_html_ga669185d01901034d700f167fa23f3eb1"><div class="ttname"><a href="group__etcpal__socket.html#ga669185d01901034d700f167fa23f3eb1">etcpal_nextaddr</a></div><div class="ttdeci">bool etcpal_nextaddr(EtcPalAddrinfo *ai)</div><div class="ttdoc">Get the next address from the list returned by etcpal_getaddrinfo().</div></div>
 <div class="ttc" id="agroup__etcpal__socket_html_ga8cc1d9b7b5e8e2b88a337fc727b44535"><div class="ttname"><a href="group__etcpal__socket.html#ga8cc1d9b7b5e8e2b88a337fc727b44535">etcpal_freeaddrinfo</a></div><div class="ttdeci">void etcpal_freeaddrinfo(EtcPalAddrinfo *ai)</div><div class="ttdoc">Free an addrinfo list returned by etcpal_getaddrinfo().</div></div>
-<div class="ttc" id="astruct_etc_pal_addrinfo_html"><div class="ttname"><a href="struct_etc_pal_addrinfo.html">EtcPalAddrinfo</a></div><div class="ttdoc">A structure containing name and address information about an internet host.</div><div class="ttdef"><b>Definition:</b> socket.h:368</div></div>
-<div class="ttc" id="astruct_etc_pal_addrinfo_html_a2000f4ebfae33b230309b0344354031d"><div class="ttname"><a href="struct_etc_pal_addrinfo.html#a2000f4ebfae33b230309b0344354031d">EtcPalAddrinfo::ai_addr</a></div><div class="ttdeci">EtcPalSockAddr ai_addr</div><div class="ttdoc">Address of host.</div><div class="ttdef"><b>Definition:</b> socket.h:374</div></div>
+<div class="ttc" id="astruct_etc_pal_addrinfo_html"><div class="ttname"><a href="struct_etc_pal_addrinfo.html">EtcPalAddrinfo</a></div><div class="ttdoc">A structure containing name and address information about an internet host.</div><div class="ttdef"><b>Definition:</b> socket.h:378</div></div>
+<div class="ttc" id="astruct_etc_pal_addrinfo_html_a2000f4ebfae33b230309b0344354031d"><div class="ttname"><a href="struct_etc_pal_addrinfo.html#a2000f4ebfae33b230309b0344354031d">EtcPalAddrinfo::ai_addr</a></div><div class="ttdeci">EtcPalSockAddr ai_addr</div><div class="ttdoc">Address of host.</div><div class="ttdef"><b>Definition:</b> socket.h:384</div></div>
 <div class="ttc" id="astruct_etc_pal_sock_addr_html_a19cc8016f534a565f984438cfe911a9e"><div class="ttname"><a href="struct_etc_pal_sock_addr.html#a19cc8016f534a565f984438cfe911a9e">EtcPalSockAddr::ip</a></div><div class="ttdeci">EtcPalIpAddr ip</div><div class="ttdoc">IP address.</div><div class="ttdef"><b>Definition:</b> inet.h:313</div></div>
 </div><!-- fragment --><p>On an internet-connected machine with DNS resolution capability, the above code should print something like: </p><div class="fragment"><div class="line">Address: 172.217.4.196</div>
 <div class="line">Address: 172.217.4.196</div>
@@ -1841,6 +1876,7 @@ Other <a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6
 
 <p>Receive both datagram and ancillary data on a socket. </p>
 <p>Refer to your favorite recvmsg() man page for more information, but also note that the etcpal_cmsg_[...] functions must be used instead of the OS standard CMSG_[...] macros.</p>
+<p>On lwIP, in order to receive ancillary data (e.g. PKTINFO), make sure to enable the LWIP_NETBUF_RECVINFO compiler definition to enable setting the relevant socket options (e.g. ETCPAL_IP_PKTINFO).</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramdir">[in]</td><td class="paramname">id</td><td>Socket on which to receive. </td></tr>

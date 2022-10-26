@@ -90,6 +90,7 @@ var group__etcpal__log =
     [ "etcpal_create_legacy_syslog_str", "group__etcpal__log.html#ga614043c892a15eb55d8695da85db36ca", null ],
     [ "etcpal_create_log_str", "group__etcpal__log.html#gacf54b7ce272d89f2a35a83c4cd3bda4f", null ],
     [ "etcpal_create_syslog_str", "group__etcpal__log.html#gaac4f27cd13defcb0fbd39516b5d5844d", null ],
+    [ "etcpal_init_log_handler", "group__etcpal__log.html#ga60e1574c954dffdc08da52bbc15ac69c", null ],
     [ "etcpal_log", "group__etcpal__log.html#gab05a59d52b560561ce33a937f73aae5e", null ],
     [ "etcpal_sanitize_syslog_params", "group__etcpal__log.html#ga895ff8dd5230b10b4ab6d955e556d318", null ],
     [ "etcpal_validate_log_params", "group__etcpal__log.html#ga949455773a4ecdd6a499940a19ec6080", null ],

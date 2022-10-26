@@ -4863,6 +4863,13 @@
       <arglist></arglist>
     </member>
     <member kind="function">
+      <type>etcpal_error_t</type>
+      <name>etcpal_init_log_handler</name>
+      <anchorfile>group__etcpal__log.html</anchorfile>
+      <anchor>ga60e1574c954dffdc08da52bbc15ac69c</anchor>
+      <arglist>(const EtcPalLogParams *log_params)</arglist>
+    </member>
+    <member kind="function">
       <type>bool</type>
       <name>etcpal_create_log_str</name>
       <anchorfile>group__etcpal__log.html</anchorfile>
@@ -7362,6 +7369,34 @@
       <anchorfile>group__etcpal__opts.html</anchorfile>
       <anchor>gaf5e80b2cbceca9bbe4e918610021a5ba</anchor>
       <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_LOGGING_ENABLED</name>
+      <anchorfile>group__etcpal__opts.html</anchorfile>
+      <anchor>ga7617503366a138a1c7497ca6374092b3</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_LOG_MSG_PREFIX</name>
+      <anchorfile>group__etcpal__opts.html</anchorfile>
+      <anchor>ga8f37d3284e7aa54a5b8159c5f37977ba</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_ASSERT_VERIFY</name>
+      <anchorfile>group__etcpal__opts.html</anchorfile>
+      <anchor>gab8caeebfc5cf4baf8aa6533685e8b815</anchor>
+      <arglist>(exp)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_ASSERT</name>
+      <anchorfile>group__etcpal__opts.html</anchorfile>
+      <anchor>gaf8027014b521894b28f8ba2aabe33a4e</anchor>
+      <arglist>(expr)</arglist>
     </member>
   </compound>
   <compound kind="page">

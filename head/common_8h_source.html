@@ -231,55 +231,55 @@ $(document).ready(function(){initNavTree('common_8h_source.html',''); initResiza
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;etcpal/error.h&quot;</span></div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="comment">/* Suppress deprecated function warnings on Windows/MSVC. This is mostly used in situations where</span></div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="comment"> * Microsoft warns us that a function like strncpy() could be unsafe, but we want to be portable</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="comment"> * and have made sure that we&#39;re using it in a safe way (e.g. by manually inserting null</span></div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="comment"> * terminators). */</span></div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;<span class="preprocessor">#ifdef _MSC_VER</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160; </div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_NO_DEP_WRN __pragma(warning(suppress : 4996))</span></div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_BEGIN_NO_DEP_WARNINGS() __pragma(warning(push)) __pragma(warning(disable : 4996))</span></div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_END_NO_DEP_WARNINGS()   __pragma(warning(pop))</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#else </span><span class="comment">/* _MSC_VER */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> {</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160; </div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="comment">/* Suppress deprecated function warnings on Windows/MSVC. This is mostly used in situations where</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;<span class="comment"> * Microsoft warns us that a function like strncpy() could be unsafe, but we want to be portable</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment"> * and have made sure that we&#39;re using it in a safe way (e.g. by manually inserting null</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="comment"> * terminators). */</span></div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;<span class="preprocessor">#ifdef _MSC_VER</span></div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_NO_DEP_WRN</span></div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_BEGIN_NO_DEP_WARNINGS()</span></div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_END_NO_DEP_WARNINGS()</span></div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160; </div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _MSC_VER */</span><span class="preprocessor"></span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">/* Meaningful macro to suppress warnings on unused arguments */</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#define ETCPAL_UNUSED_ARG(arg) ((void)arg)</span></div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00111"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga1cfb33811295439bc08ce2e8b74c1d13">  111</a></span>&#160;<span class="preprocessor">#define ETCPAL_WAIT_FOREVER -1</span></div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno"><a class="line" href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">  114</a></span>&#160;<span class="keyword">typedef</span> uint32_t <a class="code" href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">etcpal_features_t</a>;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga09f99422deaa7bb5d2625c317d1a66a6">  127</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_SOCKETS ((etcpal_features_t)(1u &lt;&lt; 0)) </span></div>
-<div class="line"><a name="l00128"></a><span class="lineno"><a class="line" href="group__etcpal.html#gaf5b3a81b975bbae1f6f54f43bfc0c6a7">  128</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_NETINTS ((etcpal_features_t)(1u &lt;&lt; 1)) </span></div>
-<div class="line"><a name="l00129"></a><span class="lineno"><a class="line" href="group__etcpal.html#gaffb285a8108a672c01c33d921ee8be83">  129</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_TIMERS  ((etcpal_features_t)(1u &lt;&lt; 2)) </span></div>
-<div class="line"><a name="l00130"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga8c7c1f9430362540e56af3a2742a25d4">  130</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_LOGGING ((etcpal_features_t)(1u &lt;&lt; 3)) </span></div>
-<div class="line"><a name="l00131"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga740dd7c89f16ff20992cf21970d1c521">  131</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURES_ALL    0xffffffffu                    </span></div>
-<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga15560671c4e732ed46dc03a0e522d160">  138</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURES_ALL_BUT(mask) (((uint32_t)ETCPAL_FEATURES_ALL) &amp; ((uint32_t)(~((uint32_t)(mask)))))</span></div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<a class="code" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a> <a class="code" href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843">etcpal_init</a>(<a class="code" href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">etcpal_features_t</a> features);</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;<span class="keywordtype">void</span>           <a class="code" href="group__etcpal.html#ga0792bdcd2f824009584744db01d7a352">etcpal_deinit</a>(<a class="code" href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">etcpal_features_t</a> features);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_NO_DEP_WRN __pragma(warning(suppress : 4996))</span></div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160; </div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_BEGIN_NO_DEP_WARNINGS() __pragma(warning(push)) __pragma(warning(disable : 4996))</span></div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_END_NO_DEP_WARNINGS()   __pragma(warning(pop))</span></div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#else </span><span class="comment">/* _MSC_VER */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_NO_DEP_WRN</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_BEGIN_NO_DEP_WARNINGS()</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;<span class="preprocessor">#define ETCPAL_MSVC_END_NO_DEP_WARNINGS()</span></div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _MSC_VER */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="comment">/* Meaningful macro to suppress warnings on unused arguments */</span></div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;<span class="preprocessor">#define ETCPAL_UNUSED_ARG(arg) ((void)arg)</span></div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga1cfb33811295439bc08ce2e8b74c1d13">  118</a></span>&#160;<span class="preprocessor">#define ETCPAL_WAIT_FOREVER -1</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160; </div>
+<div class="line"><a name="l00121"></a><span class="lineno"><a class="line" href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">  121</a></span>&#160;<span class="keyword">typedef</span> uint32_t <a class="code" href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">etcpal_features_t</a>;</div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00134"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga09f99422deaa7bb5d2625c317d1a66a6">  134</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_SOCKETS ((etcpal_features_t)(1u &lt;&lt; 0)) </span></div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="group__etcpal.html#gaf5b3a81b975bbae1f6f54f43bfc0c6a7">  135</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_NETINTS ((etcpal_features_t)(1u &lt;&lt; 1)) </span></div>
+<div class="line"><a name="l00136"></a><span class="lineno"><a class="line" href="group__etcpal.html#gaffb285a8108a672c01c33d921ee8be83">  136</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_TIMERS  ((etcpal_features_t)(1u &lt;&lt; 2)) </span></div>
+<div class="line"><a name="l00137"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga8c7c1f9430362540e56af3a2742a25d4">  137</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURE_LOGGING ((etcpal_features_t)(1u &lt;&lt; 3)) </span></div>
+<div class="line"><a name="l00138"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga740dd7c89f16ff20992cf21970d1c521">  138</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURES_ALL    0xffffffffu                    </span></div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="group__etcpal.html#ga15560671c4e732ed46dc03a0e522d160">  145</a></span>&#160;<span class="preprocessor">#define ETCPAL_FEATURES_ALL_BUT(mask) (((uint32_t)ETCPAL_FEATURES_ALL) &amp; ((uint32_t)(~((uint32_t)(mask)))))</span></div>
 <div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;}</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160; </div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ETCPAL_COMMON_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;<a class="code" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a> <a class="code" href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843">etcpal_init</a>(<a class="code" href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">etcpal_features_t</a> features);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;<span class="keywordtype">void</span>           <a class="code" href="group__etcpal.html#ga0792bdcd2f824009584744db01d7a352">etcpal_deinit</a>(<a class="code" href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">etcpal_features_t</a> features);</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160; </div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;<span class="preprocessor">#ifdef __cplusplus</span></div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;}</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ETCPAL_COMMON_H_ */</span><span class="preprocessor"></span></div>
 <div class="ttc" id="agroup__etcpal__error_html_ga743b0648f0ca798ef29c9f69c6e255af"><div class="ttname"><a href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a></div><div class="ttdeci">etcpal_error_t</div><div class="ttdoc">A set of error codes that can be returned by library functions.</div><div class="ttdef"><b>Definition:</b> error.h:49</div></div>
-<div class="ttc" id="agroup__etcpal_html_ga0792bdcd2f824009584744db01d7a352"><div class="ttname"><a href="group__etcpal.html#ga0792bdcd2f824009584744db01d7a352">etcpal_deinit</a></div><div class="ttdeci">void etcpal_deinit(etcpal_features_t features)</div><div class="ttdoc">Deinitialize the EtcPal library.</div><div class="ttdef"><b>Definition:</b> common.c:149</div></div>
-<div class="ttc" id="agroup__etcpal_html_ga163b95dfe5ef6c68f2fb4d5b58a63843"><div class="ttname"><a href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843">etcpal_init</a></div><div class="ttdeci">etcpal_error_t etcpal_init(etcpal_features_t features)</div><div class="ttdoc">Initialize the EtcPal library.</div><div class="ttdef"><b>Definition:</b> common.c:89</div></div>
-<div class="ttc" id="agroup__etcpal_html_gae77772998c26f45618c26de1e1fc8305"><div class="ttname"><a href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">etcpal_features_t</a></div><div class="ttdeci">uint32_t etcpal_features_t</div><div class="ttdoc">A mask of desired EtcPal features.</div><div class="ttdef"><b>Definition:</b> common.h:114</div></div>
+<div class="ttc" id="agroup__etcpal_html_ga0792bdcd2f824009584744db01d7a352"><div class="ttname"><a href="group__etcpal.html#ga0792bdcd2f824009584744db01d7a352">etcpal_deinit</a></div><div class="ttdeci">void etcpal_deinit(etcpal_features_t features)</div><div class="ttdoc">Deinitialize the EtcPal library.</div><div class="ttdef"><b>Definition:</b> common.c:193</div></div>
+<div class="ttc" id="agroup__etcpal_html_ga163b95dfe5ef6c68f2fb4d5b58a63843"><div class="ttname"><a href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843">etcpal_init</a></div><div class="ttdeci">etcpal_error_t etcpal_init(etcpal_features_t features)</div><div class="ttdoc">Initialize the EtcPal library.</div><div class="ttdef"><b>Definition:</b> common.c:112</div></div>
+<div class="ttc" id="agroup__etcpal_html_gae77772998c26f45618c26de1e1fc8305"><div class="ttname"><a href="group__etcpal.html#gae77772998c26f45618c26de1e1fc8305">etcpal_features_t</a></div><div class="ttdeci">uint32_t etcpal_features_t</div><div class="ttdoc">A mask of desired EtcPal features.</div><div class="ttdef"><b>Definition:</b> common.h:121</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

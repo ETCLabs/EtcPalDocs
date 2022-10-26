@@ -226,23 +226,46 @@ $(document).ready(function(){initNavTree('opts_8h_source.html',''); initResizabl
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef ETCPAL_PRIVATE_OPTS_H_</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define ETCPAL_PRIVATE_OPTS_H_</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#if ETCPAL_HAVE_CONFIG_H</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;etcpal_config.h&quot;</span></div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;<span class="preprocessor">#ifndef ETCPAL_INCLUDE_PACK_64</span></div>
-<div class="line"><a name="l00051"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#ga5ababb448dd9ec260738821bd16d06cd">   51</a></span>&#160;<span class="preprocessor">#define ETCPAL_INCLUDE_PACK_64 1</span></div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;<span class="preprocessor">#ifndef ETCPAL_EMBOS_USE_MALLOC</span></div>
-<div class="line"><a name="l00060"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#gaab67221f3adba4ea2b638e55341f8074">   60</a></span>&#160;<span class="preprocessor">#define ETCPAL_EMBOS_USE_MALLOC 0</span></div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;<span class="preprocessor">#ifndef ETCPAL_EMBOS_MAX_NETINTS</span></div>
-<div class="line"><a name="l00069"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#gaf5e80b2cbceca9bbe4e918610021a5ba">   69</a></span>&#160;<span class="preprocessor">#define ETCPAL_EMBOS_MAX_NETINTS 5</span></div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#endif</span></div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ETCPAL_PRIVATE_OPTS_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;stdbool.h&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#if ETCPAL_HAVE_CONFIG_H</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &quot;etcpal_config.h&quot;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160; </div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="preprocessor">#ifndef ETCPAL_INCLUDE_PACK_64</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#ga5ababb448dd9ec260738821bd16d06cd">   53</a></span>&#160;<span class="preprocessor">#define ETCPAL_INCLUDE_PACK_64 1</span></div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="preprocessor">#ifndef ETCPAL_EMBOS_USE_MALLOC</span></div>
+<div class="line"><a name="l00062"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#gaab67221f3adba4ea2b638e55341f8074">   62</a></span>&#160;<span class="preprocessor">#define ETCPAL_EMBOS_USE_MALLOC 0</span></div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="preprocessor">#ifndef ETCPAL_EMBOS_MAX_NETINTS</span></div>
+<div class="line"><a name="l00071"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#gaf5e80b2cbceca9bbe4e918610021a5ba">   71</a></span>&#160;<span class="preprocessor">#define ETCPAL_EMBOS_MAX_NETINTS 5</span></div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#ifndef ETCPAL_LOGGING_ENABLED</span></div>
+<div class="line"><a name="l00085"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#ga7617503366a138a1c7497ca6374092b3">   85</a></span>&#160;<span class="preprocessor">#define ETCPAL_LOGGING_ENABLED 1</span></div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160; </div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;<span class="preprocessor">#ifndef ETCPAL_LOG_MSG_PREFIX</span></div>
+<div class="line"><a name="l00092"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#ga8f37d3284e7aa54a5b8159c5f37977ba">   92</a></span>&#160;<span class="preprocessor">#define ETCPAL_LOG_MSG_PREFIX &quot;EtcPal: &quot;</span></div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/* Assertion failure handler */</span></div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;<span class="keywordtype">bool</span> etcpal_assert_verify_fail(<span class="keyword">const</span> <span class="keywordtype">char</span>* exp, <span class="keyword">const</span> <span class="keywordtype">char</span>* file, <span class="keyword">const</span> <span class="keywordtype">char</span>* func, <span class="keywordtype">int</span> line);</div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="preprocessor">#ifndef ETCPAL_ASSERT_VERIFY</span></div>
+<div class="line"><a name="l00105"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#gab8caeebfc5cf4baf8aa6533685e8b815">  105</a></span>&#160;<span class="preprocessor">#define ETCPAL_ASSERT_VERIFY(exp) \</span></div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;<span class="preprocessor">  ((exp) ? true : (etcpal_assert_verify_fail(#exp, __FILE__, __func__, __LINE__) &amp;&amp; false))</span></div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;<span class="preprocessor">#ifndef ETCPAL_ASSERT</span></div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;<span class="preprocessor">#include &lt;assert.h&gt;</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#gaf8027014b521894b28f8ba2aabe33a4e">  120</a></span>&#160;<span class="preprocessor">#define ETCPAL_ASSERT(expr) assert(expr)</span></div>
+<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ETCPAL_PRIVATE_OPTS_H_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

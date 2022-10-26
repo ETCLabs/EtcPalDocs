@@ -1,5 +1,10 @@
 var NAVTREEINDEX4 =
 {
+"group__etcpal__socket.html#gaba74f8fca47e034d676049bd8eb61488":[1,0,2,2,19],
+"group__etcpal__socket.html#gabbd670e11bf27a8a815b2d7985b9a364":[1,0,2,2,31],
+"group__etcpal__socket.html#gac2fc9cd09dce99bb5681df96f65c31b8":[1,0,2,2,43],
+"group__etcpal__socket.html#gac5de9387d7aab2a7aa0e6c4e1d4fee3b":[1,0,2,2,68],
+"group__etcpal__socket.html#gac6851f10b8d27962e1a1fcba560cef4a":[1,0,2,2,61],
 "group__etcpal__socket.html#gac7ce230ebe4248728c597a66a2676fbf":[1,0,2,2,29],
 "group__etcpal__socket.html#gacbe3547d777f101aaa432e602c4b8e69":[1,0,2,2,12],
 "group__etcpal__socket.html#gaccdfd06b91ca1632a59c68e819270825":[1,0,2,2,64],
@@ -244,8 +249,5 @@ var NAVTREEINDEX4 =
 "version_8h.html#a71d3f0edb45966581728010bf9367bfd":[3,0,0,0,25,1],
 "version_8h.html#a78e3fffcc3ba37c3080a4df782d7a371":[3,0,0,0,25,5],
 "version_8h.html#a7cc15a6bf906cf55e694163eeddbd194":[3,0,0,0,25,2],
-"version_8h.html#a84fb4c7e51722f9142f1e4f9b280205a":[3,0,0,0,25,4],
-"version_8h.html#aa307a7f69296ca000ed52ae06bd2087c":[3,0,0,0,25,6],
-"version_8h.html#aa6b0f9dd6a270e78919e00960ee13d10":[3,0,0,0,25,0],
-"version_8h_source.html":[3,0,0,0,25]
+"version_8h.html#a84fb4c7e51722f9142f1e4f9b280205a":[3,0,0,0,25,4]
 };
