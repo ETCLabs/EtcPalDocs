@@ -512,7 +512,7 @@ $(document).ready(function(){initNavTree('cpp_2uuid_8h_source.html',''); initRes
 <div class="line"><a name="l00419"></a><span class="lineno">  419</span>&#160;  std::size_t operator()(const ::etcpal::Uuid&amp; uuid) <span class="keyword">const</span> noexcept</div>
 <div class="line"><a name="l00420"></a><span class="lineno">  420</span>&#160;  {</div>
 <div class="line"><a name="l00421"></a><span class="lineno">  421</span>&#160;    <span class="keywordtype">size_t</span> seed = 0u;</div>
-<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; <a class="code" href="group__etcpal__uuid.html#gadfd6e6a51b681c03b6422d1454ddc954">ETCPAL_UUID_BYTES</a>; ++i)</div>
+<div class="line"><a name="l00422"></a><span class="lineno">  422</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0; i &lt; <a class="code" href="group__etcpal__uuid.html#gadfd6e6a51b681c03b6422d1454ddc954">ETCPAL_UUID_BYTES</a>; ++i)</div>
 <div class="line"><a name="l00423"></a><span class="lineno">  423</span>&#160;      ::<a class="code" href="group__etcpal__cpp__hash.html#ga1690e689f7f630e30404209962a59158">etcpal::HashCombine</a>(seed, uuid.data()[i]);</div>
 <div class="line"><a name="l00424"></a><span class="lineno">  424</span>&#160; </div>
 <div class="line"><a name="l00425"></a><span class="lineno">  425</span>&#160;    <span class="keywordflow">return</span> seed;</div>
