@@ -35,7 +35,7 @@ var searchData=
   ['signal_20_28signals_29_734',['signal (Signals)',['../group__etcpal__signal.html',1,'']]],
   ['signal_2eh_735',['signal.h',['../cpp_2signal_8h.html',1,'']]],
   ['size_736',['size',['../struct_etc_pal_rb_tree.html#a854352f53b148adc24983a58a1866d66',1,'EtcPalRbTree']]],
-  ['sleep_737',['Sleep',['../classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d',1,'etcpal::Thread::Sleep(unsigned int ms) noexcept'],['../classetcpal_1_1_thread.html#a0e7e603ebed62b739065a10cd090213b',1,'etcpal::Thread::Sleep(const std::chrono::duration&lt; Rep, Period &gt; &amp;sleep_duration) noexcept']]],
+  ['sleep_737',['Sleep',['../classetcpal_1_1_thread.html#a3ed1d29af04c9980ea5d82f038766449',1,'etcpal::Thread::Sleep(unsigned int ms) noexcept'],['../classetcpal_1_1_thread.html#a24b5e335da98e47de0ef7be3dd390e9a',1,'etcpal::Thread::Sleep(const std::chrono::duration&lt; Rep, Period &gt; &amp;sleep_duration) noexcept']]],
   ['slotsavailable_738',['SlotsAvailable',['../classetcpal_1_1_queue.html#aeecede9e1bc1a6e7394c5bf09b59b3f1',1,'etcpal::Queue']]],
   ['slotsused_739',['SlotsUsed',['../classetcpal_1_1_queue.html#ae99315f221f70d76e0ee29ae08ee59b0',1,'etcpal::Queue']]],
   ['slotsusedfromisr_740',['SlotsUsedFromIsr',['../classetcpal_1_1_queue.html#ae855857d6bf35a221bff10549405453b',1,'etcpal::Queue']]],

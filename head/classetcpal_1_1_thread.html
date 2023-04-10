@@ -307,14 +307,13 @@ const <a class="el" href="struct_etc_pal_thread_params.html">EtcPalThreadParams<
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:abc8bb8ec9948b769e1189506ed635c9d"><td class="memItemLeft" align="right" valign="top"><a id="abc8bb8ec9948b769e1189506ed635c9d"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_thread.html#abc8bb8ec9948b769e1189506ed635c9d">Sleep</a> (unsigned int ms) noexcept</td></tr>
-<tr class="memdesc:abc8bb8ec9948b769e1189506ed635c9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread for the specified number of milliseconds. <br /></td></tr>
-<tr class="separator:abc8bb8ec9948b769e1189506ed635c9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e7e603ebed62b739065a10cd090213b"><td class="memTemplParams" colspan="2">template&lt;typename Rep , typename Period &gt; </td></tr>
-<tr class="memitem:a0e7e603ebed62b739065a10cd090213b"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_thread.html#a0e7e603ebed62b739065a10cd090213b">Sleep</a> (const std::chrono::duration&lt; Rep, Period &gt; &amp;sleep_duration) noexcept</td></tr>
-<tr class="memdesc:a0e7e603ebed62b739065a10cd090213b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread for the specified duration.  <a href="classetcpal_1_1_thread.html#a0e7e603ebed62b739065a10cd090213b">More...</a><br /></td></tr>
-<tr class="separator:a0e7e603ebed62b739065a10cd090213b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3ed1d29af04c9980ea5d82f038766449"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classetcpal_1_1_error.html">Error</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_thread.html#a3ed1d29af04c9980ea5d82f038766449">Sleep</a> (unsigned int ms) noexcept</td></tr>
+<tr class="memdesc:a3ed1d29af04c9980ea5d82f038766449"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread for the specified number of milliseconds.  <a href="classetcpal_1_1_thread.html#a3ed1d29af04c9980ea5d82f038766449">More...</a><br /></td></tr>
+<tr class="separator:a3ed1d29af04c9980ea5d82f038766449"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a24b5e335da98e47de0ef7be3dd390e9a"><td class="memTemplParams" colspan="2">template&lt;typename Rep , typename Period &gt; </td></tr>
+<tr class="memitem:a24b5e335da98e47de0ef7be3dd390e9a"><td class="memTemplItemLeft" align="right" valign="top">static <a class="el" href="classetcpal_1_1_error.html">Error</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_thread.html#a24b5e335da98e47de0ef7be3dd390e9a">Sleep</a> (const std::chrono::duration&lt; Rep, Period &gt; &amp;sleep_duration) noexcept</td></tr>
+<tr class="memdesc:a24b5e335da98e47de0ef7be3dd390e9a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Blocks the current thread for the specified duration.  <a href="classetcpal_1_1_thread.html#a24b5e335da98e47de0ef7be3dd390e9a">More...</a><br /></td></tr>
+<tr class="separator:a24b5e335da98e47de0ef7be3dd390e9a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a067ac5cb170257e16b8f2ba7d1f8780d"></a>
@@ -795,8 +794,8 @@ Other codes translated from system error codes are possible. </dd></dl>
 
 </div>
 </div>
-<a id="a0e7e603ebed62b739065a10cd090213b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e7e603ebed62b739065a10cd090213b">&#9670;&nbsp;</a></span>Sleep()</h2>
+<a id="a24b5e335da98e47de0ef7be3dd390e9a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a24b5e335da98e47de0ef7be3dd390e9a">&#9670;&nbsp;</a></span>Sleep() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -805,7 +804,7 @@ Other codes translated from system error codes are possible. </dd></dl>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void Sleep </td>
+          <td class="memname"><a class="el" href="classetcpal_1_1_error.html">Error</a> Sleep </td>
           <td>(</td>
           <td class="paramtype">const std::chrono::duration&lt; Rep, Period &gt; &amp;&#160;</td>
           <td class="paramname"><em>sleep_duration</em></td><td>)</td>
@@ -821,6 +820,37 @@ Other codes translated from system error codes are possible. </dd></dl>
 
 <p>Blocks the current thread for the specified duration. </p>
 <p>Note: Duration will be clamped to [0, UINT_MAX] milliseconds. </p>
+
+</div>
+</div>
+<a id="a3ed1d29af04c9980ea5d82f038766449"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3ed1d29af04c9980ea5d82f038766449">&#9670;&nbsp;</a></span>Sleep() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classetcpal_1_1_error.html">Error</a> Sleep </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Blocks the current thread for the specified number of milliseconds. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d" title="The call was successful, no error occurred.">kEtcPalErrOk</a>: The sleep completed. </dd>
+<dd>
+<a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afa38404e113508a0e291dbcc6c73743ae8" title="A system call or C library call failed in a way not covered by other errors.">kEtcPalErrSys</a>: The system call may have been interrupted and awoke early. </dd></dl>
 
 </div>
 </div>

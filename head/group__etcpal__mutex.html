@@ -240,7 +240,7 @@ $(document).ready(function(){initNavTree('group__etcpal__mutex.html',''); initRe
 <div class="line">  }</div>
 <div class="line"> </div>
 <div class="line">  <span class="comment">// Wait for the threads to finish</span></div>
-<div class="line">  <a class="code" href="group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08">etcpal_thread_sleep</a>(1000);</div>
+<div class="line">  <a class="code" href="group__etcpal__thread.html#gaafb424d729ccb88b26e8389c0a5b5347">etcpal_thread_sleep</a>(1000);</div>
 <div class="line">  <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; 5; ++i)</div>
 <div class="line">  {</div>
 <div class="line">    <a class="code" href="group__etcpal__thread.html#ga711be33696701513f19239cf22dc3792">etcpal_thread_join</a>(&amp;thread_handles[i]);</div>
@@ -260,7 +260,7 @@ $(document).ready(function(){initNavTree('group__etcpal__mutex.html',''); initRe
 <div class="ttc" id="agroup__etcpal__thread_html_ga6ea2bb55f405380e3ea296e3b6164ae8"><div class="ttname"><a href="group__etcpal__thread.html#ga6ea2bb55f405380e3ea296e3b6164ae8">etcpal_thread_t</a></div><div class="ttdeci">PLATFORM_DEFINED etcpal_thread_t</div><div class="ttdoc">The thread handle.</div><div class="ttdef"><b>Definition:</b> thread.dox:35</div></div>
 <div class="ttc" id="agroup__etcpal__thread_html_ga711be33696701513f19239cf22dc3792"><div class="ttname"><a href="group__etcpal__thread.html#ga711be33696701513f19239cf22dc3792">etcpal_thread_join</a></div><div class="ttdeci">etcpal_error_t etcpal_thread_join(etcpal_thread_t *id)</div><div class="ttdoc">Wait for a thread to finish execution.</div></div>
 <div class="ttc" id="agroup__etcpal__thread_html_ga7f21ced82782c355a30a8ad011aa5b91"><div class="ttname"><a href="group__etcpal__thread.html#ga7f21ced82782c355a30a8ad011aa5b91">ETCPAL_THREAD_PARAMS_INIT</a></div><div class="ttdeci">#define ETCPAL_THREAD_PARAMS_INIT</div><div class="ttdoc">A default initializer value for an EtcPalThreadParams structure.</div><div class="ttdef"><b>Definition:</b> thread.h:188</div></div>
-<div class="ttc" id="agroup__etcpal__thread_html_gaf5d7c5aec312d172e617fd653ade3b08"><div class="ttname"><a href="group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08">etcpal_thread_sleep</a></div><div class="ttdeci">void etcpal_thread_sleep(unsigned int sleep_ms)</div><div class="ttdoc">Provides a platform-neutral sleep.</div></div>
+<div class="ttc" id="agroup__etcpal__thread_html_gaafb424d729ccb88b26e8389c0a5b5347"><div class="ttname"><a href="group__etcpal__thread.html#gaafb424d729ccb88b26e8389c0a5b5347">etcpal_thread_sleep</a></div><div class="ttdeci">etcpal_error_t etcpal_thread_sleep(unsigned int sleep_ms)</div><div class="ttdoc">Provides a platform-neutral sleep.</div></div>
 <div class="ttc" id="astruct_etc_pal_thread_params_html"><div class="ttname"><a href="struct_etc_pal_thread_params.html">EtcPalThreadParams</a></div><div class="ttdoc">A set of parameters for an etcpal_thread.</div><div class="ttdef"><b>Definition:</b> thread.h:127</div></div>
 </div><!-- fragment --><p>Mutexes are not recursive; if the same mutex object is locked twice from the same thread before being unlocked, a deadlock will result.</p>
 <p>etcpal_mutex implementations use different constructs under the hood on various platforms. Also, different platforms affect the behavior of certain functions.</p>

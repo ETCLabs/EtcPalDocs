@@ -217,7 +217,7 @@ $(document).ready(function(){initNavTree('group__etcpal__thread.html',''); initR
 <div class="line">{</div>
 <div class="line">  <span class="keywordtype">int</span> val = *(<span class="keywordtype">int</span>*)arg;</div>
 <div class="line">  printf(<span class="stringliteral">&quot;Hello from a thread! The value is %d.\n&quot;</span>, val);</div>
-<div class="line">  <a class="code" href="group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08">etcpal_thread_sleep</a>(10); <span class="comment">// Sleep for 10 milliseconds</span></div>
+<div class="line">  <a class="code" href="group__etcpal__thread.html#gaafb424d729ccb88b26e8389c0a5b5347">etcpal_thread_sleep</a>(10); <span class="comment">// Sleep for 10 milliseconds</span></div>
 <div class="line">}</div>
 <div class="line"> </div>
 <div class="line"><a class="code" href="struct_etc_pal_thread_params.html">EtcPalThreadParams</a> params = <a class="code" href="group__etcpal__thread.html#ga7f21ced82782c355a30a8ad011aa5b91">ETCPAL_THREAD_PARAMS_INIT</a>;</div>
@@ -236,7 +236,7 @@ $(document).ready(function(){initNavTree('group__etcpal__thread.html',''); initR
 <div class="ttc" id="agroup__etcpal__thread_html_ga6ea2bb55f405380e3ea296e3b6164ae8"><div class="ttname"><a href="group__etcpal__thread.html#ga6ea2bb55f405380e3ea296e3b6164ae8">etcpal_thread_t</a></div><div class="ttdeci">PLATFORM_DEFINED etcpal_thread_t</div><div class="ttdoc">The thread handle.</div><div class="ttdef"><b>Definition:</b> thread.dox:35</div></div>
 <div class="ttc" id="agroup__etcpal__thread_html_ga711be33696701513f19239cf22dc3792"><div class="ttname"><a href="group__etcpal__thread.html#ga711be33696701513f19239cf22dc3792">etcpal_thread_join</a></div><div class="ttdeci">etcpal_error_t etcpal_thread_join(etcpal_thread_t *id)</div><div class="ttdoc">Wait for a thread to finish execution.</div></div>
 <div class="ttc" id="agroup__etcpal__thread_html_ga7f21ced82782c355a30a8ad011aa5b91"><div class="ttname"><a href="group__etcpal__thread.html#ga7f21ced82782c355a30a8ad011aa5b91">ETCPAL_THREAD_PARAMS_INIT</a></div><div class="ttdeci">#define ETCPAL_THREAD_PARAMS_INIT</div><div class="ttdoc">A default initializer value for an EtcPalThreadParams structure.</div><div class="ttdef"><b>Definition:</b> thread.h:188</div></div>
-<div class="ttc" id="agroup__etcpal__thread_html_gaf5d7c5aec312d172e617fd653ade3b08"><div class="ttname"><a href="group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08">etcpal_thread_sleep</a></div><div class="ttdeci">void etcpal_thread_sleep(unsigned int sleep_ms)</div><div class="ttdoc">Provides a platform-neutral sleep.</div></div>
+<div class="ttc" id="agroup__etcpal__thread_html_gaafb424d729ccb88b26e8389c0a5b5347"><div class="ttname"><a href="group__etcpal__thread.html#gaafb424d729ccb88b26e8389c0a5b5347">etcpal_thread_sleep</a></div><div class="ttdeci">etcpal_error_t etcpal_thread_sleep(unsigned int sleep_ms)</div><div class="ttdoc">Provides a platform-neutral sleep.</div></div>
 <div class="ttc" id="astruct_etc_pal_thread_params_html"><div class="ttname"><a href="struct_etc_pal_thread_params.html">EtcPalThreadParams</a></div><div class="ttdoc">A set of parameters for an etcpal_thread.</div><div class="ttdef"><b>Definition:</b> thread.h:127</div></div>
 </div><!-- fragment --><p>On some platforms you can wait a finite time for a thread to exit:</p>
 <div class="fragment"><div class="line"><span class="keywordflow">if</span> (<a class="code" href="group__etcpal__thread.html#ga37eccd4b250f7b697bd366922d081f13">etcpal_thread_timed_join</a>(&amp;handle, 1000) == <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d">kEtcPalErrOk</a>)</div>
@@ -276,8 +276,8 @@ $(document).ready(function(){initNavTree('group__etcpal__thread.html',''); initR
 <div class="ttc" id="astruct_etc_pal_thread_params_html_a1e440af9e86f7a3c2784c3e2bd687d25"><div class="ttname"><a href="struct_etc_pal_thread_params.html#a1e440af9e86f7a3c2784c3e2bd687d25">EtcPalThreadParams::priority</a></div><div class="ttdeci">unsigned int priority</div><div class="ttdoc">The priority of the thread.</div><div class="ttdef"><b>Definition:</b> thread.h:129</div></div>
 <div class="ttc" id="astruct_etc_pal_thread_params_html_adde5266300e9cdd7ca1134daba9adf24"><div class="ttname"><a href="struct_etc_pal_thread_params.html#adde5266300e9cdd7ca1134daba9adf24">EtcPalThreadParams::stack_size</a></div><div class="ttdeci">unsigned int stack_size</div><div class="ttdoc">The stack size of the thread in bytes.</div><div class="ttdef"><b>Definition:</b> thread.h:138</div></div>
 <div class="ttc" id="astruct_etc_pal_thread_params_html_af081a07b0c5074db7c1896da8fb72e81"><div class="ttname"><a href="struct_etc_pal_thread_params.html#af081a07b0c5074db7c1896da8fb72e81">EtcPalThreadParams::thread_name</a></div><div class="ttdeci">const char * thread_name</div><div class="ttdoc">A name for the thread, maximum length ETCPAL_THREAD_NAME_MAX_LENGTH.</div><div class="ttdef"><b>Definition:</b> thread.h:140</div></div>
-</div><!-- fragment --><p>You can also use the <a class="el" href="group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08" title="Provides a platform-neutral sleep.">etcpal_thread_sleep()</a> function to sleep for a given number of milliseconds from any valid thread context:</p>
-<div class="fragment"><div class="line"><a class="code" href="group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08">etcpal_thread_sleep</a>(200); <span class="comment">// Sleep for 200 milliseconds</span></div>
+</div><!-- fragment --><p>You can also use the <a class="el" href="group__etcpal__thread.html#gaafb424d729ccb88b26e8389c0a5b5347" title="Provides a platform-neutral sleep.">etcpal_thread_sleep()</a> function to sleep for a given number of milliseconds from any valid thread context:</p>
+<div class="fragment"><div class="line"><a class="code" href="group__etcpal__thread.html#gaafb424d729ccb88b26e8389c0a5b5347">etcpal_thread_sleep</a>(200); <span class="comment">// Sleep for 200 milliseconds</span></div>
 </div><!-- fragment --><p><b>IMPORTANT NOTE FOR RTOS USERS:</b> The EtcPal threading API does not initialize the scheduler on real-time systems (e.g. it does not call vTaskStartScheduler() on FreeRTOS or _mqx() on MQX). The application writer is responsible for managing the interaction between starting the scheduler and starting EtcPal threads, just like when starting native RTOS tasks. </p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
@@ -335,6 +335,9 @@ Functions</h2></td></tr>
 <tr class="memitem:ga16f3116e3a533530d44c0d47b263f8e9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#ga16f3116e3a533530d44c0d47b263f8e9">etcpal_thread_create</a> (<a class="el" href="group__etcpal__thread.html#ga6ea2bb55f405380e3ea296e3b6164ae8">etcpal_thread_t</a> *id, const <a class="el" href="struct_etc_pal_thread_params.html">EtcPalThreadParams</a> *params, void(*thread_fn)(void *), void *thread_arg)</td></tr>
 <tr class="memdesc:ga16f3116e3a533530d44c0d47b263f8e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new thread.  <a href="group__etcpal__thread.html#ga16f3116e3a533530d44c0d47b263f8e9">More...</a><br /></td></tr>
 <tr class="separator:ga16f3116e3a533530d44c0d47b263f8e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaafb424d729ccb88b26e8389c0a5b5347"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#gaafb424d729ccb88b26e8389c0a5b5347">etcpal_thread_sleep</a> (unsigned int sleep_ms)</td></tr>
+<tr class="memdesc:gaafb424d729ccb88b26e8389c0a5b5347"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a platform-neutral sleep.  <a href="group__etcpal__thread.html#gaafb424d729ccb88b26e8389c0a5b5347">More...</a><br /></td></tr>
+<tr class="separator:gaafb424d729ccb88b26e8389c0a5b5347"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga711be33696701513f19239cf22dc3792"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#ga711be33696701513f19239cf22dc3792">etcpal_thread_join</a> (<a class="el" href="group__etcpal__thread.html#ga6ea2bb55f405380e3ea296e3b6164ae8">etcpal_thread_t</a> *id)</td></tr>
 <tr class="memdesc:ga711be33696701513f19239cf22dc3792"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for a thread to finish execution.  <a href="group__etcpal__thread.html#ga711be33696701513f19239cf22dc3792">More...</a><br /></td></tr>
 <tr class="separator:ga711be33696701513f19239cf22dc3792"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -347,9 +350,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf6711b2ff2eee44104ec5f472b2701b1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__etcpal__thread.html#gad25eb672dee4e360d79cf5988d0b6071">etcpal_thread_os_handle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#gaf6711b2ff2eee44104ec5f472b2701b1">etcpal_thread_get_os_handle</a> (<a class="el" href="group__etcpal__thread.html#ga6ea2bb55f405380e3ea296e3b6164ae8">etcpal_thread_t</a> *id)</td></tr>
 <tr class="memdesc:gaf6711b2ff2eee44104ec5f472b2701b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the native OS handle of an EtcPal thread.  <a href="group__etcpal__thread.html#gaf6711b2ff2eee44104ec5f472b2701b1">More...</a><br /></td></tr>
 <tr class="separator:gaf6711b2ff2eee44104ec5f472b2701b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf5d7c5aec312d172e617fd653ade3b08"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08">etcpal_thread_sleep</a> (unsigned int sleep_ms)</td></tr>
-<tr class="memdesc:gaf5d7c5aec312d172e617fd653ade3b08"><td class="mdescLeft">&#160;</td><td class="mdescRight">Provides a platform-neutral sleep.  <a href="group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08">More...</a><br /></td></tr>
-<tr class="separator:gaf5d7c5aec312d172e617fd653ade3b08"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae66dc24d979de981d2e2a0475d320be2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__etcpal__thread.html#gad25eb672dee4e360d79cf5988d0b6071">etcpal_thread_os_handle_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#gae66dc24d979de981d2e2a0475d320be2">etcpal_thread_get_current_os_handle</a> (void)</td></tr>
 <tr class="memdesc:gae66dc24d979de981d2e2a0475d320be2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the native OS handle of the currently executing thread.  <a href="group__etcpal__thread.html#gae66dc24d979de981d2e2a0475d320be2">More...</a><br /></td></tr>
 <tr class="separator:gae66dc24d979de981d2e2a0475d320be2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -695,14 +695,14 @@ Other codes translated from system error codes are possible. </dd></dl>
 
 </div>
 </div>
-<a id="gaf5d7c5aec312d172e617fd653ade3b08"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaf5d7c5aec312d172e617fd653ade3b08">&#9670;&nbsp;</a></span>etcpal_thread_sleep()</h2>
+<a id="gaafb424d729ccb88b26e8389c0a5b5347"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaafb424d729ccb88b26e8389c0a5b5347">&#9670;&nbsp;</a></span>etcpal_thread_sleep()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void etcpal_thread_sleep </td>
+          <td class="memname"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a> etcpal_thread_sleep </td>
           <td>(</td>
           <td class="paramtype">unsigned int&#160;</td>
           <td class="paramname"><em>sleep_ms</em></td><td>)</td>
@@ -718,6 +718,9 @@ Other codes translated from system error codes are possible. </dd></dl>
   </table>
   </dd>
 </dl>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d" title="The call was successful, no error occurred.">kEtcPalErrOk</a>: The sleep completed. </dd>
+<dd>
+<a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afa38404e113508a0e291dbcc6c73743ae8" title="A system call or C library call failed in a way not covered by other errors.">kEtcPalErrSys</a>: The system call may have been interrupted and awoke early. </dd></dl>
 
 </div>
 </div>

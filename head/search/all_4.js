@@ -358,7 +358,7 @@ var searchData=
   ['etcpal_5fthread_5fparams_5finit_429',['ETCPAL_THREAD_PARAMS_INIT',['../group__etcpal__thread.html#ga7f21ced82782c355a30a8ad011aa5b91',1,'thread.h']]],
   ['etcpal_5fthread_5fparams_5finit_5fvalues_430',['ETCPAL_THREAD_PARAMS_INIT_VALUES',['../group__etcpal__thread.html#gacbaaaa3fb12075714725a11874b6b4ad',1,'thread.h']]],
   ['etcpal_5fthread_5fset_5fdefault_5fparams_431',['ETCPAL_THREAD_SET_DEFAULT_PARAMS',['../group__etcpal__thread.html#gacb54f3a06ea1b8ae0f45b8daaae37efe',1,'thread.h']]],
-  ['etcpal_5fthread_5fsleep_432',['etcpal_thread_sleep',['../group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08',1,'thread.h']]],
+  ['etcpal_5fthread_5fsleep_432',['etcpal_thread_sleep',['../group__etcpal__thread.html#gaafb424d729ccb88b26e8389c0a5b5347',1,'thread.h']]],
   ['etcpal_5fthread_5ft_433',['etcpal_thread_t',['../group__etcpal__thread.html#ga6ea2bb55f405380e3ea296e3b6164ae8',1,'thread.dox']]],
   ['etcpal_5fthread_5fterminate_434',['etcpal_thread_terminate',['../group__etcpal__thread.html#ga9906049c7d559046052fa9509aedb705',1,'thread.h']]],
   ['etcpal_5fthread_5ftimed_5fjoin_435',['etcpal_thread_timed_join',['../group__etcpal__thread.html#ga37eccd4b250f7b697bd366922d081f13',1,'thread.h']]],

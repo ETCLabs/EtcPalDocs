@@ -22,7 +22,7 @@ var group__etcpal__thread =
     [ "etcpal_thread_get_current_os_handle", "group__etcpal__thread.html#gae66dc24d979de981d2e2a0475d320be2", null ],
     [ "etcpal_thread_get_os_handle", "group__etcpal__thread.html#gaf6711b2ff2eee44104ec5f472b2701b1", null ],
     [ "etcpal_thread_join", "group__etcpal__thread.html#ga711be33696701513f19239cf22dc3792", null ],
-    [ "etcpal_thread_sleep", "group__etcpal__thread.html#gaf5d7c5aec312d172e617fd653ade3b08", null ],
+    [ "etcpal_thread_sleep", "group__etcpal__thread.html#gaafb424d729ccb88b26e8389c0a5b5347", null ],
     [ "etcpal_thread_terminate", "group__etcpal__thread.html#ga9906049c7d559046052fa9509aedb705", null ],
     [ "etcpal_thread_timed_join", "group__etcpal__thread.html#ga37eccd4b250f7b697bd366922d081f13", null ]
 ];

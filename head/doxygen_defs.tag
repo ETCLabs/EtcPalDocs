@@ -3201,17 +3201,17 @@
       <arglist>(const EtcPalThreadParams &amp;params) noexcept</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static void</type>
+      <type>static Error</type>
       <name>Sleep</name>
       <anchorfile>classetcpal_1_1_thread.html</anchorfile>
-      <anchor>abc8bb8ec9948b769e1189506ed635c9d</anchor>
+      <anchor>a3ed1d29af04c9980ea5d82f038766449</anchor>
       <arglist>(unsigned int ms) noexcept</arglist>
     </member>
     <member kind="function" static="yes">
-      <type>static void</type>
+      <type>static Error</type>
       <name>Sleep</name>
       <anchorfile>classetcpal_1_1_thread.html</anchorfile>
-      <anchor>a0e7e603ebed62b739065a10cd090213b</anchor>
+      <anchor>a24b5e335da98e47de0ef7be3dd390e9a</anchor>
       <arglist>(const std::chrono::duration&lt; Rep, Period &gt; &amp;sleep_duration) noexcept</arglist>
     </member>
     <member kind="function">
@@ -6320,6 +6320,13 @@
     </member>
     <member kind="function">
       <type>etcpal_error_t</type>
+      <name>etcpal_thread_sleep</name>
+      <anchorfile>group__etcpal__thread.html</anchorfile>
+      <anchor>gaafb424d729ccb88b26e8389c0a5b5347</anchor>
+      <arglist>(unsigned int sleep_ms)</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal_error_t</type>
       <name>etcpal_thread_join</name>
       <anchorfile>group__etcpal__thread.html</anchorfile>
       <anchor>ga711be33696701513f19239cf22dc3792</anchor>
@@ -6345,13 +6352,6 @@
       <anchorfile>group__etcpal__thread.html</anchorfile>
       <anchor>gaf6711b2ff2eee44104ec5f472b2701b1</anchor>
       <arglist>(etcpal_thread_t *id)</arglist>
-    </member>
-    <member kind="function">
-      <type>void</type>
-      <name>etcpal_thread_sleep</name>
-      <anchorfile>group__etcpal__thread.html</anchorfile>
-      <anchor>gaf5d7c5aec312d172e617fd653ade3b08</anchor>
-      <arglist>(unsigned int sleep_ms)</arglist>
     </member>
     <member kind="function">
       <type>etcpal_thread_os_handle_t</type>
