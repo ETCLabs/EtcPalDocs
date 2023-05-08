@@ -240,6 +240,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gaf8027014b521894b28f8ba2aabe33a4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__opts.html#gaf8027014b521894b28f8ba2aabe33a4e">ETCPAL_ASSERT</a>(expr)&#160;&#160;&#160;assert(expr)</td></tr>
 <tr class="memdesc:gaf8027014b521894b28f8ba2aabe33a4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The lower-level debug assert used by the EtcPal library.  <a href="group__etcpal__opts.html#gaf8027014b521894b28f8ba2aabe33a4e">More...</a><br /></td></tr>
 <tr class="separator:gaf8027014b521894b28f8ba2aabe33a4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0bfae1cf06f68fbea9a9421d0002e848"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__opts.html#ga0bfae1cf06f68fbea9a9421d0002e848">ETCPAL_TARGETING_FREERTOS</a>&#160;&#160;&#160;0</td></tr>
+<tr class="memdesc:ga0bfae1cf06f68fbea9a9421d0002e848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Indicates whether certain sources should be built based on if the target OS is FreeRTOS.  <a href="group__etcpal__opts.html#ga0bfae1cf06f68fbea9a9421d0002e848">More...</a><br /></td></tr>
+<tr class="separator:ga0bfae1cf06f68fbea9a9421d0002e848"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
@@ -357,6 +360,25 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>etcpal_assert_verify_
 <p>Enable message logging from the EtcPal library. </p>
 <p>If defined nonzero, the <a class="el" href="group__etcpal__log.html#ga60e1574c954dffdc08da52bbc15ac69c" title="Register the handler for log messages from EtcPal.">etcpal_init_log_handler()</a> function can be used to register the application for logging messages from EtcPal. These messages typically indicate critical assertion failures that may not otherwise be visible in a release environment.</p>
 <p>Note that this only toggles logging from the EtcPal library and does not control if the logging API is enabled as a feature (that is determined by the features passed to <a class="el" href="group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843" title="Initialize the EtcPal library.">etcpal_init()</a>). </p>
+
+</div>
+</div>
+<a id="ga0bfae1cf06f68fbea9a9421d0002e848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0bfae1cf06f68fbea9a9421d0002e848">&#9670;&nbsp;</a></span>ETCPAL_TARGETING_FREERTOS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_TARGETING_FREERTOS&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Indicates whether certain sources should be built based on if the target OS is FreeRTOS. </p>
+<p>Set this to 1 to indicate that the target OS is FreeRTOS. Otherwise, set to 0.</p>
+<p>Only useful when not using CMake. CMake sets this automatically, and already handles selection of correct sources.</p>
+<p>If SDK_OS_FREE_RTOS is defined, EtcPal will automatically define this to 1. </p>
 
 </div>
 </div>

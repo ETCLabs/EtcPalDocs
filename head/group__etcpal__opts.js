@@ -6,5 +6,6 @@ var group__etcpal__opts =
     [ "ETCPAL_EMBOS_USE_MALLOC", "group__etcpal__opts.html#gaab67221f3adba4ea2b638e55341f8074", null ],
     [ "ETCPAL_INCLUDE_PACK_64", "group__etcpal__opts.html#ga5ababb448dd9ec260738821bd16d06cd", null ],
     [ "ETCPAL_LOG_MSG_PREFIX", "group__etcpal__opts.html#ga8f37d3284e7aa54a5b8159c5f37977ba", null ],
-    [ "ETCPAL_LOGGING_ENABLED", "group__etcpal__opts.html#ga7617503366a138a1c7497ca6374092b3", null ]
+    [ "ETCPAL_LOGGING_ENABLED", "group__etcpal__opts.html#ga7617503366a138a1c7497ca6374092b3", null ],
+    [ "ETCPAL_TARGETING_FREERTOS", "group__etcpal__opts.html#ga0bfae1cf06f68fbea9a9421d0002e848", null ]
 ];

@@ -265,7 +265,11 @@ $(document).ready(function(){initNavTree('opts_8h_source.html',''); initResizabl
 <div class="line"><a name="l00120"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#gaf8027014b521894b28f8ba2aabe33a4e">  120</a></span>&#160;<span class="preprocessor">#define ETCPAL_ASSERT(expr) assert(expr)</span></div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;<span class="preprocessor">#endif</span></div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ETCPAL_PRIVATE_OPTS_H_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;<span class="preprocessor">#ifndef ETCPAL_TARGETING_FREERTOS</span></div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="group__etcpal__opts.html#ga0bfae1cf06f68fbea9a9421d0002e848">  133</a></span>&#160;<span class="preprocessor">#define ETCPAL_TARGETING_FREERTOS 0</span></div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;<span class="preprocessor">#endif</span></div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ETCPAL_PRIVATE_OPTS_H_ */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

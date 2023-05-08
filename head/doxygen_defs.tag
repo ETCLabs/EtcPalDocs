@@ -7398,6 +7398,13 @@
       <anchor>gaf8027014b521894b28f8ba2aabe33a4e</anchor>
       <arglist>(expr)</arglist>
     </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_TARGETING_FREERTOS</name>
+      <anchorfile>group__etcpal__opts.html</anchorfile>
+      <anchor>ga0bfae1cf06f68fbea9a9421d0002e848</anchor>
+      <arglist></arglist>
+    </member>
   </compound>
   <compound kind="page">
     <name>additional_docs</name>

@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"group__etcpal__socket.html#gab90f6d9eeabe39a57db6b808d24d9bd2":[1,0,2,2,37],
 "group__etcpal__socket.html#gaba74f8fca47e034d676049bd8eb61488":[1,0,2,2,19],
 "group__etcpal__socket.html#gabbd670e11bf27a8a815b2d7985b9a364":[1,0,2,2,31],
 "group__etcpal__socket.html#gac2fc9cd09dce99bb5681df96f65c31b8":[1,0,2,2,43],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "version_8h.html#a618eb6d3de60f0993f1950bbe4cc69ff":[3,0,0,0,25,3],
 "version_8h.html#a71d3f0edb45966581728010bf9367bfd":[3,0,0,0,25,1],
 "version_8h.html#a78e3fffcc3ba37c3080a4df782d7a371":[3,0,0,0,25,5],
-"version_8h.html#a7cc15a6bf906cf55e694163eeddbd194":[3,0,0,0,25,2],
-"version_8h.html#a84fb4c7e51722f9142f1e4f9b280205a":[3,0,0,0,25,4]
+"version_8h.html#a7cc15a6bf906cf55e694163eeddbd194":[3,0,0,0,25,2]
 };
