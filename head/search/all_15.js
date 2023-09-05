@@ -2,8 +2,8 @@ var searchData=
 [
   ['v1_790',['V1',['../classetcpal_1_1_uuid.html#a05ce6a071ffc17d19fbc7818614af8d0',1,'etcpal::Uuid']]],
   ['v3_791',['V3',['../classetcpal_1_1_uuid.html#acf48b871ad6aa14afc1a80cf688ae6f8',1,'etcpal::Uuid::V3(const Uuid &amp;ns, const void *name, size_t name_len) noexcept'],['../classetcpal_1_1_uuid.html#a654bace3b7b14715143dd4a955f477c5',1,'etcpal::Uuid::V3(const Uuid &amp;ns, const char *name) noexcept'],['../classetcpal_1_1_uuid.html#a637aba4ac439b6c6845f6ff8e3411186',1,'etcpal::Uuid::V3(const Uuid &amp;ns, const std::string &amp;name) noexcept']]],
-  ['v4_792',['v4',['../struct_etc_pal_ip_addr.html#a654069046d83e652d54cae5e353051c5',1,'EtcPalIpAddr']]],
-  ['v4_793',['V4',['../classetcpal_1_1_uuid.html#a3bcee74617519b972666b57ff986bf43',1,'etcpal::Uuid']]],
+  ['v4_792',['V4',['../classetcpal_1_1_uuid.html#a3bcee74617519b972666b57ff986bf43',1,'etcpal::Uuid']]],
+  ['v4_793',['v4',['../struct_etc_pal_ip_addr.html#a654069046d83e652d54cae5e353051c5',1,'EtcPalIpAddr']]],
   ['v4_5fdata_794',['v4_data',['../classetcpal_1_1_ip_addr.html#acde4ca75e6e22c1a6899c84d923273db',1,'etcpal::IpAddr::v4_data()'],['../classetcpal_1_1_sock_addr.html#acde4ca75e6e22c1a6899c84d923273db',1,'etcpal::SockAddr::v4_data()']]],
   ['v5_795',['V5',['../classetcpal_1_1_uuid.html#ae4e59b0f73518f92ed7c3c6d1b65bd3c',1,'etcpal::Uuid::V5(const Uuid &amp;ns, const void *name, size_t name_len) noexcept'],['../classetcpal_1_1_uuid.html#a729621c06a6d1bd895a9c82b30141c9a',1,'etcpal::Uuid::V5(const Uuid &amp;ns, const char *name) noexcept'],['../classetcpal_1_1_uuid.html#acaa3b4ab280e85d5c18c2749018c6153',1,'etcpal::Uuid::V5(const Uuid &amp;ns, const std::string &amp;name) noexcept']]],
   ['v6_5fdata_796',['v6_data',['../classetcpal_1_1_ip_addr.html#af7af815dfdf62cfaa17f98743a769028',1,'etcpal::IpAddr::v6_data()'],['../classetcpal_1_1_sock_addr.html#af7af815dfdf62cfaa17f98743a769028',1,'etcpal::SockAddr::v6_data()']]],
