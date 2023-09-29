@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['logger_862',['Logger',['../classetcpal_1_1_logger.html',1,'etcpal']]],
-  ['logmessagehandler_863',['LogMessageHandler',['../classetcpal_1_1_log_message_handler.html',1,'etcpal']]],
-  ['logtimestamp_864',['LogTimestamp',['../classetcpal_1_1_log_timestamp.html',1,'etcpal']]]
+  ['logger_863',['Logger',['../classetcpal_1_1_logger.html',1,'etcpal']]],
+  ['logmessagehandler_864',['LogMessageHandler',['../classetcpal_1_1_log_message_handler.html',1,'etcpal']]],
+  ['logtimestamp_865',['LogTimestamp',['../classetcpal_1_1_log_timestamp.html',1,'etcpal']]]
 ];

@@ -1544,6 +1544,13 @@
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">
+      <type>constexpr etcpal_iptype_t</type>
+      <name>raw_type</name>
+      <anchorfile>classetcpal_1_1_ip_addr.html</anchorfile>
+      <anchor>ac584d69341673bcf7371fbdfbc644f22</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
       <type>constexpr bool</type>
       <name>IsV4</name>
       <anchorfile>classetcpal_1_1_ip_addr.html</anchorfile>
@@ -2949,6 +2956,13 @@
       <name>type</name>
       <anchorfile>classetcpal_1_1_sock_addr.html</anchorfile>
       <anchor>a6408a893e29a2fcb75d7c6c842db5902</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr etcpal_iptype_t</type>
+      <name>raw_type</name>
+      <anchorfile>classetcpal_1_1_sock_addr.html</anchorfile>
+      <anchor>ac584d69341673bcf7371fbdfbc644f22</anchor>
       <arglist>() const noexcept</arglist>
     </member>
     <member kind="function">

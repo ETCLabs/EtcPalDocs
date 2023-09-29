@@ -18,6 +18,7 @@ var classetcpal_1_1_sock_addr =
     [ "IsWildcard", "classetcpal_1_1_sock_addr.html#ac384adc1cbf470fe6672659bdef8358c", null ],
     [ "operator=", "classetcpal_1_1_sock_addr.html#aa75677e1db37e94003d6f82a25934b0f", null ],
     [ "port", "classetcpal_1_1_sock_addr.html#abab82fa2b4ca400b38cb9691a2c3fb8a", null ],
+    [ "raw_type", "classetcpal_1_1_sock_addr.html#ac584d69341673bcf7371fbdfbc644f22", null ],
     [ "scope_id", "classetcpal_1_1_sock_addr.html#a14185dd1b4566147495318504a551034", null ],
     [ "SetAddress", "classetcpal_1_1_sock_addr.html#a297607ac00a2f71ea955edfbaa43875f", null ],
     [ "SetAddress", "classetcpal_1_1_sock_addr.html#a5b87e44914b8e5d6acc662c0e7ada452", null ],

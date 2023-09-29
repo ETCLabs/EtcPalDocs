@@ -1,5 +1,7 @@
 var NAVTREEINDEX2 =
 {
+"functions_func_n.html":[2,3,1,12],
+"functions_func_o.html":[2,3,1,13],
 "functions_func_p.html":[2,3,1,14],
 "functions_func_q.html":[2,3,1,15],
 "functions_func_r.html":[2,3,1,16],
@@ -247,7 +249,5 @@ var NAVTREEINDEX2 =
 "group__etcpal__log.html#ga589d05713f16b04a0337399d5064e7c3":[1,0,0,4,43],
 "group__etcpal__log.html#ga5f7e222e2b3359ca02363b27f38e97b2":[1,0,0,4,41],
 "group__etcpal__log.html#ga60e1574c954dffdc08da52bbc15ac69c":[1,0,0,4,63],
-"group__etcpal__log.html#ga614043c892a15eb55d8695da85db36ca":[1,0,0,4,60],
-"group__etcpal__log.html#ga62757cfe0dd5a61600cbeed6777480d1":[1,0,0,4,38],
-"group__etcpal__log.html#ga63d8dfda4efb8cc33f805e1681cfde0f":[1,0,0,4,58]
+"group__etcpal__log.html#ga614043c892a15eb55d8695da85db36ca":[1,0,0,4,60]
 };
