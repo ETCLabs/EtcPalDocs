@@ -74,6 +74,7 @@ var group__etcpal__inet =
     [ "etcpal_ip_set_wildcard", "group__etcpal__inet.html#ga5d91044202026978c99000b6da2d226e", null ],
     [ "etcpal_ip_to_string", "group__etcpal__inet.html#gaf98da0ae21f7960b5e046c55b8d79c4a", null ],
     [ "etcpal_mac_to_string", "group__etcpal__inet.html#gaf1e26c55e9ece4a8a17bd9953eca0886", null ],
+    [ "etcpal_netint_info_cmp", "group__etcpal__inet.html#ga14d63e534e6e6d2616ce868dfda2cbe1", null ],
     [ "etcpal_string_to_ip", "group__etcpal__inet.html#ga92ba01cb2c81a8a97b9555ecf0ab2fe5", null ],
     [ "etcpal_string_to_mac", "group__etcpal__inet.html#gac2175076e5d4834fccf76e17a29bbbfe", null ],
     [ "ip_etcpal_to_os", "group__etcpal__inet.html#gafe364c911711c469e0574821e30600e3", null ],

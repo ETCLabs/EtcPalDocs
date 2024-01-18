@@ -8,6 +8,7 @@ var annotated_dup =
       [ "IpAddr", "classetcpal_1_1_ip_addr.html", "classetcpal_1_1_ip_addr" ],
       [ "SockAddr", "classetcpal_1_1_sock_addr.html", "classetcpal_1_1_sock_addr" ],
       [ "MacAddr", "classetcpal_1_1_mac_addr.html", "classetcpal_1_1_mac_addr" ],
+      [ "NetintInfo", "classetcpal_1_1_netint_info.html", "classetcpal_1_1_netint_info" ],
       [ "LogTimestamp", "classetcpal_1_1_log_timestamp.html", "classetcpal_1_1_log_timestamp" ],
       [ "LogMessageHandler", "classetcpal_1_1_log_message_handler.html", "classetcpal_1_1_log_message_handler" ],
       [ "Logger", "classetcpal_1_1_logger.html", "classetcpal_1_1_logger" ],

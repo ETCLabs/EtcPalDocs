@@ -319,6 +319,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaf897a891bcf59ccb447845628c2a04c2"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__inet.html#gaf897a891bcf59ccb447845628c2a04c2">etcpal_ip_and_port_equal</a> (const <a class="el" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a> *sock1, const <a class="el" href="struct_etc_pal_sock_addr.html">EtcPalSockAddr</a> *sock2)</td></tr>
 <tr class="memdesc:gaf897a891bcf59ccb447845628c2a04c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Determine whether two instances of <a class="el" href="struct_etc_pal_sock_addr.html" title="An IP address with associated interface and port.">EtcPalSockAddr</a> contain identical IP addresses and ports.  <a href="group__etcpal__inet.html#gaf897a891bcf59ccb447845628c2a04c2">More...</a><br /></td></tr>
 <tr class="separator:gaf897a891bcf59ccb447845628c2a04c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga14d63e534e6e6d2616ce868dfda2cbe1"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__inet.html#ga14d63e534e6e6d2616ce868dfda2cbe1">etcpal_netint_info_cmp</a> (const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> *i1, const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> *i2)</td></tr>
+<tr class="memdesc:ga14d63e534e6e6d2616ce868dfda2cbe1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compare two EtcPalNetintInfos.  <a href="group__etcpal__inet.html#ga14d63e534e6e6d2616ce868dfda2cbe1">More...</a><br /></td></tr>
+<tr class="separator:ga14d63e534e6e6d2616ce868dfda2cbe1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9a86a44681bc856e5919578bbf652e38"><td class="memItemLeft" align="right" valign="top">unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__inet.html#ga9a86a44681bc856e5919578bbf652e38">etcpal_ip_mask_length</a> (const <a class="el" href="struct_etc_pal_ip_addr.html">EtcPalIpAddr</a> *netmask)</td></tr>
 <tr class="memdesc:ga9a86a44681bc856e5919578bbf652e38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the length in bits of a netmask.  <a href="group__etcpal__inet.html#ga9a86a44681bc856e5919578bbf652e38">More...</a><br /></td></tr>
 <tr class="separator:ga9a86a44681bc856e5919578bbf652e38"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1484,6 +1487,48 @@ false: The network portions are not equal. </dd></dl>
 <dl class="section return"><dt>Returns</dt><dd><a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d" title="The call was successful, no error occurred.">kEtcPalErrOk</a>: Conversion successful. </dd>
 <dd>
 <a class="el" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afadb17bb2ec24e7755170e8afbd5b10bc2" title="An invalid argument was provided to an API function.">kEtcPalErrInvalid</a>: Invalid argument. </dd></dl>
+
+</div>
+</div>
+<a id="ga14d63e534e6e6d2616ce868dfda2cbe1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga14d63e534e6e6d2616ce868dfda2cbe1">&#9670;&nbsp;</a></span>etcpal_netint_info_cmp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int etcpal_netint_info_cmp </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> *&#160;</td>
+          <td class="paramname"><em>i1</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> *&#160;</td>
+          <td class="paramname"><em>i2</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Compare two EtcPalNetintInfos. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">i1</td><td>First <a class="el" href="struct_etc_pal_netint_info.html" title="A description of a single address assigned to a network interface.">EtcPalNetintInfo</a> to compare. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">i2</td><td>Second <a class="el" href="struct_etc_pal_netint_info.html" title="A description of a single address assigned to a network interface.">EtcPalNetintInfo</a> to compare. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>&lt; 0: i1 &lt; i2 </dd>
+<dd>
+0: i1 == i2 </dd>
+<dd>
+&gt; 0: i1 &gt; i2 </dd></dl>
 
 </div>
 </div>

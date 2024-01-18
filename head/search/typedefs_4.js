@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['valuetype_1440',['ValueType',['../classetcpal_1_1_expected.html#aecaeabaa9da616ae42bb20787878260d',1,'etcpal::Expected']]]
+  ['netintindex_1473',['NetintIndex',['../group__etcpal__cpp__inet.html#gac116682d7a5133e27ea84255f000fc54',1,'etcpal']]]
 ];

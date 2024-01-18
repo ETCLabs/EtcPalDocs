@@ -7,6 +7,7 @@ var dir_fa86f7c0f1af55176d8f05dc5aff685f =
     [ "inet.h", "cpp_2inet_8h.html", "cpp_2inet_8h" ],
     [ "log.h", "cpp_2log_8h.html", "cpp_2log_8h" ],
     [ "mutex.h", "cpp_2mutex_8h.html", null ],
+    [ "netint.h", "cpp_2netint_8h.html", "cpp_2netint_8h" ],
     [ "opaque_id.h", "opaque__id_8h.html", "opaque__id_8h" ],
     [ "queue.h", "cpp_2queue_8h.html", null ],
     [ "recursive_mutex.h", "cpp_2recursive__mutex_8h.html", null ],

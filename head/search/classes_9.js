@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['semaphore_875',['Semaphore',['../classetcpal_1_1_semaphore.html',1,'etcpal']]],
-  ['signal_876',['Signal',['../classetcpal_1_1_signal.html',1,'etcpal']]],
-  ['sockaddr_877',['SockAddr',['../classetcpal_1_1_sock_addr.html',1,'etcpal']]]
+  ['readguard_885',['ReadGuard',['../classetcpal_1_1_read_guard.html',1,'etcpal']]],
+  ['recursivemutex_886',['RecursiveMutex',['../classetcpal_1_1_recursive_mutex.html',1,'etcpal']]],
+  ['recursivemutexguard_887',['RecursiveMutexGuard',['../classetcpal_1_1_recursive_mutex_guard.html',1,'etcpal']]],
+  ['rwlock_888',['RwLock',['../classetcpal_1_1_rw_lock.html',1,'etcpal']]]
 ];

@@ -42,6 +42,7 @@ var hierarchy =
     [ "MacAddr", "classetcpal_1_1_mac_addr.html", null ],
     [ "Mutex", "classetcpal_1_1_mutex.html", null ],
     [ "MutexGuard", "classetcpal_1_1_mutex_guard.html", null ],
+    [ "NetintInfo", "classetcpal_1_1_netint_info.html", null ],
     [ "OpaqueId< IdType, ValueType, InvalidValue >", "classetcpal_1_1_opaque_id.html", null ],
     [ "Queue< T >", "classetcpal_1_1_queue.html", null ],
     [ "ReadGuard", "classetcpal_1_1_read_guard.html", null ],

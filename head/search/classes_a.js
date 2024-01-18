@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['thread_878',['Thread',['../classetcpal_1_1_thread.html',1,'etcpal']]],
-  ['timepoint_879',['TimePoint',['../classetcpal_1_1_time_point.html',1,'etcpal']]],
-  ['timer_880',['Timer',['../classetcpal_1_1_timer.html',1,'etcpal']]]
+  ['semaphore_889',['Semaphore',['../classetcpal_1_1_semaphore.html',1,'etcpal']]],
+  ['signal_890',['Signal',['../classetcpal_1_1_signal.html',1,'etcpal']]],
+  ['sockaddr_891',['SockAddr',['../classetcpal_1_1_sock_addr.html',1,'etcpal']]]
 ];

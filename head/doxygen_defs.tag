@@ -61,9 +61,18 @@
     <path>/builds/etc/common-tech/general/etcpal/include/etcpal/cpp/</path>
     <filename>cpp_2inet_8h.html</filename>
     <includes id="cpp_2common_8h" name="common.h" local="yes" imported="no">etcpal/cpp/common.h</includes>
+    <includes id="opaque__id_8h" name="opaque_id.h" local="yes" imported="no">etcpal/cpp/opaque_id.h</includes>
     <class kind="class">etcpal::IpAddr</class>
     <class kind="class">etcpal::SockAddr</class>
     <class kind="class">etcpal::MacAddr</class>
+    <class kind="class">etcpal::NetintInfo</class>
+    <member kind="typedef">
+      <type>etcpal::OpaqueId&lt; detail::NetintIndexType, unsigned int, 0 &gt;</type>
+      <name>NetintIndex</name>
+      <anchorfile>group__etcpal__cpp__inet.html</anchorfile>
+      <anchor>gac116682d7a5133e27ea84255f000fc54</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="enumeration">
       <type></type>
       <name>IpAddrType</name>
@@ -103,6 +112,63 @@
     <includes id="cpp_2common_8h" name="common.h" local="yes" imported="no">etcpal/cpp/common.h</includes>
     <class kind="class">etcpal::Mutex</class>
     <class kind="class">etcpal::MutexGuard</class>
+  </compound>
+  <compound kind="file">
+    <name>netint.h</name>
+    <path>/builds/etc/common-tech/general/etcpal/include/etcpal/cpp/</path>
+    <filename>cpp_2netint_8h.html</filename>
+    <includes id="cpp_2common_8h" name="common.h" local="yes" imported="no">etcpal/cpp/common.h</includes>
+    <includes id="cpp_2error_8h" name="error.h" local="yes" imported="no">etcpal/cpp/error.h</includes>
+    <includes id="cpp_2inet_8h" name="inet.h" local="yes" imported="no">etcpal/cpp/inet.h</includes>
+    <member kind="function">
+      <type>etcpal::Expected&lt; std::vector&lt; etcpal::NetintInfo &gt; &gt;</type>
+      <name>GetInterfaces</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga91bd4e05629efb799872ab8792306527</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal::Expected&lt; std::vector&lt; etcpal::NetintInfo &gt; &gt;</type>
+      <name>GetInterfacesForIndex</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga8a2c5d19b5a78642ce8f7d1fa2bebec4</anchor>
+      <arglist>(NetintIndex index) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal::Expected&lt; etcpal::NetintInfo &gt;</type>
+      <name>GetInterfaceWithIp</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga2a13903398cd8cb20129a32bce4a9a5e</anchor>
+      <arglist>(const IpAddr &amp;ip) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal::Expected&lt; NetintIndex &gt;</type>
+      <name>GetDefaultInterface</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>gaa9c8a21f418c83d8998a95174f7cec5f</anchor>
+      <arglist>(etcpal::IpAddrType type) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal::Expected&lt; NetintIndex &gt;</type>
+      <name>GetInterfaceForDest</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga5e7e0d44bb6552aa1426fbbb0ecebf3f</anchor>
+      <arglist>(const etcpal::IpAddr &amp;dest) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal::Error</type>
+      <name>RefreshInterfaces</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga8ed70cc693d0ad3c5b58aa49d4a6a282</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsUp</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga62efa057a14df26d3830b16b52f713af</anchor>
+      <arglist>(NetintIndex index) noexcept</arglist>
+    </member>
   </compound>
   <compound kind="file">
     <name>queue.h</name>
@@ -2381,6 +2447,94 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>etcpal::NetintInfo</name>
+    <filename>classetcpal_1_1_netint_info.html</filename>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>NetintInfo</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>afb73d33ad056cc53ae1b01032ebc05c3</anchor>
+      <arglist>(const EtcPalNetintInfo &amp;c_info) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>NetintInfo &amp;</type>
+      <name>operator=</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>af403ef5eed177f90f89baf5c733262d2</anchor>
+      <arglist>(const EtcPalNetintInfo &amp;c_info) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr const EtcPalNetintInfo &amp;</type>
+      <name>get</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>a4f6e5072c151df6444be6c4dee3a07f0</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr NetintIndex</type>
+      <name>index</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>aa15b243cca57463f0313aa6d59d381eb</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr IpAddr</type>
+      <name>addr</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>a7db2b2173555565b272e2dca0b0ceca2</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr IpAddr</type>
+      <name>mask</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>a2458b3a12f9946f8bc5972000885eb4a</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr MacAddr</type>
+      <name>mac</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>afea15f38ce025b78eea4bdf08dd351d9</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>id</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>ae58de6b09f99e4435b7a0b389cc7db6e</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>std::string</type>
+      <name>friendly_name</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>aa281fe09d5cbce4d97904d48fe54d1fd</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>is_default</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>a2f6f7eba791dfd65ffd00a6797225078</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr bool</type>
+      <name>IsValid</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>a6d02bb05c3ab899ab6752bbab4e3dbcf</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>constexpr</type>
+      <name>operator NetintIndex</name>
+      <anchorfile>classetcpal_1_1_netint_info.html</anchorfile>
+      <anchor>a8e2a12515d997e85cacf3d8ce171f070</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>etcpal::OpaqueId</name>
     <filename>classetcpal_1_1_opaque_id.html</filename>
     <templarg></templarg>
@@ -4061,6 +4215,7 @@
     <subgroup>etcpal_inet</subgroup>
     <subgroup>etcpal_netint</subgroup>
     <subgroup>etcpal_socket</subgroup>
+    <subgroup>etcpal_cpp_netint</subgroup>
   </compound>
   <compound kind="group">
     <name>etcpal_error</name>
@@ -4481,6 +4636,13 @@
       <anchorfile>group__etcpal__inet.html</anchorfile>
       <anchor>gaf897a891bcf59ccb447845628c2a04c2</anchor>
       <arglist>(const EtcPalSockAddr *sock1, const EtcPalSockAddr *sock2)</arglist>
+    </member>
+    <member kind="function">
+      <type>int</type>
+      <name>etcpal_netint_info_cmp</name>
+      <anchorfile>group__etcpal__inet.html</anchorfile>
+      <anchor>ga14d63e534e6e6d2616ce868dfda2cbe1</anchor>
+      <arglist>(const EtcPalNetintInfo *i1, const EtcPalNetintInfo *i2)</arglist>
     </member>
     <member kind="function">
       <type>unsigned int</type>
@@ -5242,6 +5404,13 @@
       <anchorfile>group__etcpal__netint.html</anchorfile>
       <anchor>gaff19f390d931ceaaacf20796ccaa57e5</anchor>
       <arglist>(unsigned int netint_index, EtcPalNetintInfo *netints, size_t *num_netints)</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal_error_t</type>
+      <name>etcpal_netint_get_interface_with_ip</name>
+      <anchorfile>group__etcpal__netint.html</anchorfile>
+      <anchor>gab03816393bde4d058d6fd72496275a45</anchor>
+      <arglist>(const EtcPalIpAddr *ip, EtcPalNetintInfo *netint)</arglist>
     </member>
     <member kind="function">
       <type>etcpal_error_t</type>
@@ -6622,6 +6791,14 @@
     <class kind="class">etcpal::IpAddr</class>
     <class kind="class">etcpal::SockAddr</class>
     <class kind="class">etcpal::MacAddr</class>
+    <class kind="class">etcpal::NetintInfo</class>
+    <member kind="typedef">
+      <type>etcpal::OpaqueId&lt; detail::NetintIndexType, unsigned int, 0 &gt;</type>
+      <name>NetintIndex</name>
+      <anchorfile>group__etcpal__cpp__inet.html</anchorfile>
+      <anchor>gac116682d7a5133e27ea84255f000fc54</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="enumeration">
       <type></type>
       <name>IpAddrType</name>
@@ -6656,6 +6833,60 @@
     <filename>group__etcpal__cpp__mutex.html</filename>
     <class kind="class">etcpal::Mutex</class>
     <class kind="class">etcpal::MutexGuard</class>
+  </compound>
+  <compound kind="group">
+    <name>etcpal_cpp_netint</name>
+    <title>netint (Network Interfaces)</title>
+    <filename>group__etcpal__cpp__netint.html</filename>
+    <member kind="function">
+      <type>etcpal::Expected&lt; std::vector&lt; etcpal::NetintInfo &gt; &gt;</type>
+      <name>GetInterfaces</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga91bd4e05629efb799872ab8792306527</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal::Expected&lt; std::vector&lt; etcpal::NetintInfo &gt; &gt;</type>
+      <name>GetInterfacesForIndex</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga8a2c5d19b5a78642ce8f7d1fa2bebec4</anchor>
+      <arglist>(NetintIndex index) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal::Expected&lt; etcpal::NetintInfo &gt;</type>
+      <name>GetInterfaceWithIp</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga2a13903398cd8cb20129a32bce4a9a5e</anchor>
+      <arglist>(const IpAddr &amp;ip) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal::Expected&lt; NetintIndex &gt;</type>
+      <name>GetDefaultInterface</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>gaa9c8a21f418c83d8998a95174f7cec5f</anchor>
+      <arglist>(etcpal::IpAddrType type) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal::Expected&lt; NetintIndex &gt;</type>
+      <name>GetInterfaceForDest</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga5e7e0d44bb6552aa1426fbbb0ecebf3f</anchor>
+      <arglist>(const etcpal::IpAddr &amp;dest) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>etcpal::Error</type>
+      <name>RefreshInterfaces</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga8ed70cc693d0ad3c5b58aa49d4a6a282</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsUp</name>
+      <anchorfile>group__etcpal__cpp__netint.html</anchorfile>
+      <anchor>ga62efa057a14df26d3830b16b52f713af</anchor>
+      <arglist>(NetintIndex index) noexcept</arglist>
+    </member>
   </compound>
   <compound kind="group">
     <name>etcpal_cpp_opaque_id</name>

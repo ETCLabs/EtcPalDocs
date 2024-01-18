@@ -202,6 +202,7 @@ $(document).ready(function(){initNavTree('group__etcpal__cpp__inet.html',''); in
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Data Structures</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a>  </div>
   <div class="headertitle">
 <div class="title">inet (Internet Addressing)<div class="ingroups"><a class="el" href="group__etcpal.html">EtcPal</a> &raquo; <a class="el" href="group__etcpal__cpp.html">C++ Wrappers</a></div></div>  </div>
@@ -222,6 +223,15 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_mac_addr.html">MacAddr</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper for the EtcPal MAC address type.  <a href="classetcpal_1_1_mac_addr.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper class for the EtcPal netint info type.  <a href="classetcpal_1_1_netint_info.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:gac116682d7a5133e27ea84255f000fc54"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__cpp__inet.html#gac116682d7a5133e27ea84255f000fc54">NetintIndex</a> = <a class="el" href="classetcpal_1_1_opaque_id.html">etcpal::OpaqueId</a>&lt; detail::NetintIndexType, unsigned int, 0 &gt;</td></tr>
+<tr class="memdesc:gac116682d7a5133e27ea84255f000fc54"><td class="mdescLeft">&#160;</td><td class="mdescRight">A handle that represents a network interface index.  <a href="group__etcpal__cpp__inet.html#gac116682d7a5133e27ea84255f000fc54">More...</a><br /></td></tr>
+<tr class="separator:gac116682d7a5133e27ea84255f000fc54"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -269,6 +279,18 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const
 <tr class="memitem:ga3a061400cc587498d7fb1439cd0a3e15"><td class="memItemLeft" align="right" valign="top"><a id="ga3a061400cc587498d7fb1439cd0a3e15"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classetcpal_1_1_mac_addr.html">MacAddr</a> &amp;mac, const <a class="el" href="struct_etc_pal_mac_addr.html">EtcPalMacAddr</a> &amp;c_mac) noexcept</td></tr>
 <tr class="separator:ga3a061400cc587498d7fb1439cd0a3e15"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga72b918d86f4671628a4946ff4b23a690"><td class="memItemLeft" align="right" valign="top"><a id="ga72b918d86f4671628a4946ff4b23a690"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> &amp;c_info, const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;info) noexcept</td></tr>
+<tr class="separator:ga72b918d86f4671628a4946ff4b23a690"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadc7cf9485b02c0acc1fc8e56998a94d8"><td class="memItemLeft" align="right" valign="top"><a id="gadc7cf9485b02c0acc1fc8e56998a94d8"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> &amp;c_info, const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;info) noexcept</td></tr>
+<tr class="separator:gadc7cf9485b02c0acc1fc8e56998a94d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf612ca8d336d73f7ac7ff41a095d2383"><td class="memItemLeft" align="right" valign="top"><a id="gaf612ca8d336d73f7ac7ff41a095d2383"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;info, const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> &amp;c_info) noexcept</td></tr>
+<tr class="separator:gaf612ca8d336d73f7ac7ff41a095d2383"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae32445602b368cecf4054c26c2d297ac"><td class="memItemLeft" align="right" valign="top"><a id="gae32445602b368cecf4054c26c2d297ac"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;info, const <a class="el" href="struct_etc_pal_netint_info.html">EtcPalNetintInfo</a> &amp;c_info) noexcept</td></tr>
+<tr class="separator:gae32445602b368cecf4054c26c2d297ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab47ef1692ca67de322f2a7a073690373"><td class="memItemLeft" align="right" valign="top"><a id="gab47ef1692ca67de322f2a7a073690373"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classetcpal_1_1_ip_addr.html">IpAddr</a> &amp;a, const <a class="el" href="classetcpal_1_1_ip_addr.html">IpAddr</a> &amp;b) noexcept</td></tr>
 <tr class="separator:gab47ef1692ca67de322f2a7a073690373"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -323,7 +345,43 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;=</b> (co
 <tr class="memitem:ga0ef94345645fff32f0af7482b738a7d9"><td class="memItemLeft" align="right" valign="top"><a id="ga0ef94345645fff32f0af7482b738a7d9"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;=</b> (const <a class="el" href="classetcpal_1_1_mac_addr.html">MacAddr</a> &amp;a, const <a class="el" href="classetcpal_1_1_mac_addr.html">MacAddr</a> &amp;b) noexcept</td></tr>
 <tr class="separator:ga0ef94345645fff32f0af7482b738a7d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga43f6a0d399f99d231c8a66ee9858f477"><td class="memItemLeft" align="right" valign="top"><a id="ga43f6a0d399f99d231c8a66ee9858f477"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator==</b> (const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;a, const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;b) noexcept</td></tr>
+<tr class="separator:ga43f6a0d399f99d231c8a66ee9858f477"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4610fad167b8313a2ef34f92f3389cea"><td class="memItemLeft" align="right" valign="top"><a id="ga4610fad167b8313a2ef34f92f3389cea"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator!=</b> (const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;a, const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;b) noexcept</td></tr>
+<tr class="separator:ga4610fad167b8313a2ef34f92f3389cea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2eb6111310014c90621b613f74e322e7"><td class="memItemLeft" align="right" valign="top"><a id="ga2eb6111310014c90621b613f74e322e7"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;</b> (const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;a, const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;b) noexcept</td></tr>
+<tr class="separator:ga2eb6111310014c90621b613f74e322e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gafa3039f0fa1d4b77e56beecd05d3b316"><td class="memItemLeft" align="right" valign="top"><a id="gafa3039f0fa1d4b77e56beecd05d3b316"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;</b> (const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;a, const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;b) noexcept</td></tr>
+<tr class="separator:gafa3039f0fa1d4b77e56beecd05d3b316"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7a1ac33decf9b47befe2b4e84f1c3746"><td class="memItemLeft" align="right" valign="top"><a id="ga7a1ac33decf9b47befe2b4e84f1c3746"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt;=</b> (const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;a, const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;b) noexcept</td></tr>
+<tr class="separator:ga7a1ac33decf9b47befe2b4e84f1c3746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae1704050dfa9520dd1852d7e371d283d"><td class="memItemLeft" align="right" valign="top"><a id="gae1704050dfa9520dd1852d7e371d283d"></a>
+bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;=</b> (const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;a, const <a class="el" href="classetcpal_1_1_netint_info.html">NetintInfo</a> &amp;b) noexcept</td></tr>
+<tr class="separator:gae1704050dfa9520dd1852d7e371d283d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="gac116682d7a5133e27ea84255f000fc54"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac116682d7a5133e27ea84255f000fc54">&#9670;&nbsp;</a></span>NetintIndex</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="group__etcpal__cpp__inet.html#gac116682d7a5133e27ea84255f000fc54">NetintIndex</a> =  <a class="el" href="classetcpal_1_1_opaque_id.html">etcpal::OpaqueId</a>&lt;detail::NetintIndexType, unsigned int, 0&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A handle that represents a network interface index. </p>
+<p>You can get the raw integer by calling value() on the handle, assuming it's valid. </p>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
