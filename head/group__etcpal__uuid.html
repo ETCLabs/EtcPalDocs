@@ -223,7 +223,7 @@ $(document).ready(function(){initNavTree('group__etcpal__uuid.html',''); initRes
 <div class="line">}</div>
 <div class="ttc" id="agroup__etcpal__error_html_gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d"><div class="ttname"><a href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d">kEtcPalErrOk</a></div><div class="ttdeci">@ kEtcPalErrOk</div><div class="ttdoc">The call was successful, no error occurred.</div><div class="ttdef"><b>Definition:</b> error.h:51</div></div>
 <div class="ttc" id="agroup__etcpal__uuid_html_ga7a2029b259cc4270fb721b976f21972a"><div class="ttname"><a href="group__etcpal__uuid.html#ga7a2029b259cc4270fb721b976f21972a">etcpal_generate_v1_uuid</a></div><div class="ttdeci">etcpal_error_t etcpal_generate_v1_uuid(EtcPalUuid *uuid)</div><div class="ttdoc">Generate a Version 1 UUID.</div><div class="ttdef"><b>Definition:</b> uuid.c:152</div></div>
-<div class="ttc" id="astruct_etc_pal_uuid_html"><div class="ttname"><a href="struct_etc_pal_uuid.html">EtcPalUuid</a></div><div class="ttdoc">The UUID type.</div><div class="ttdef"><b>Definition:</b> uuid.h:93</div></div>
+<div class="ttc" id="astruct_etc_pal_uuid_html"><div class="ttname"><a href="struct_etc_pal_uuid.html">EtcPalUuid</a></div><div class="ttdoc">The UUID type.</div><div class="ttdef"><b>Definition:</b> uuid.h:94</div></div>
 </div><!-- fragment --><p><b>Note:</b> Not all UUID types are available on all systems. V3, V5 and Device UUIDs are guaranteed to be available in all ports of EtcPal, but V1, V4 and os_preferred UUIDs are generally not available on embedded systems:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
@@ -237,7 +237,9 @@ $(document).ready(function(){initNavTree('group__etcpal__uuid.html',''); initRes
 <tr class="markdownTableRowEven">
 <td class="markdownTableBodyNone">MQX   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Yes    </td></tr>
 <tr class="markdownTableRowOdd">
-<td class="markdownTableBodyNone">Windows   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes   </td></tr>
+<td class="markdownTableBodyNone">Windows   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes    </td></tr>
+<tr class="markdownTableRowEven">
+<td class="markdownTableBodyNone">Zephyr   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Yes   </td></tr>
 </table>
 <p>You can also convert UUIDs to and from strings: </p><div class="fragment"><div class="line"><a class="code" href="struct_etc_pal_uuid.html">EtcPalUuid</a> uuid;</div>
 <div class="line"><a class="code" href="group__etcpal__uuid.html#ga8da6cbed139b61853a98f41120e73b29">etcpal_string_to_uuid</a>(<span class="stringliteral">&quot;39713ce1-2320-46aa-b602-4977be36e155&quot;</span>, &amp;uuid);</div>
@@ -246,7 +248,7 @@ $(document).ready(function(){initNavTree('group__etcpal__uuid.html',''); initRes
 <div class="line"><a class="code" href="group__etcpal__uuid.html#ga479b00b02ab33cf757e9476ad3286336">etcpal_uuid_to_string</a>(&amp;uuid, str_buf);</div>
 <div class="ttc" id="agroup__etcpal__uuid_html_ga479b00b02ab33cf757e9476ad3286336"><div class="ttname"><a href="group__etcpal__uuid.html#ga479b00b02ab33cf757e9476ad3286336">etcpal_uuid_to_string</a></div><div class="ttdeci">bool etcpal_uuid_to_string(const EtcPalUuid *uuid, char *buf)</div><div class="ttdoc">Create a string representation of a UUID.</div><div class="ttdef"><b>Definition:</b> uuid.c:61</div></div>
 <div class="ttc" id="agroup__etcpal__uuid_html_ga8da6cbed139b61853a98f41120e73b29"><div class="ttname"><a href="group__etcpal__uuid.html#ga8da6cbed139b61853a98f41120e73b29">etcpal_string_to_uuid</a></div><div class="ttdeci">bool etcpal_string_to_uuid(const char *str, EtcPalUuid *uuid)</div><div class="ttdoc">Create a UUID from a string representation.</div><div class="ttdef"><b>Definition:</b> uuid.c:85</div></div>
-<div class="ttc" id="agroup__etcpal__uuid_html_gabab14207e273082491f7be2a21275092"><div class="ttname"><a href="group__etcpal__uuid.html#gabab14207e273082491f7be2a21275092">ETCPAL_UUID_STRING_BYTES</a></div><div class="ttdeci">#define ETCPAL_UUID_STRING_BYTES</div><div class="ttdoc">The maximum number of bytes required to hold an ASCII string representation of a UUID.</div><div class="ttdef"><b>Definition:</b> uuid.h:121</div></div>
+<div class="ttc" id="agroup__etcpal__uuid_html_gabab14207e273082491f7be2a21275092"><div class="ttname"><a href="group__etcpal__uuid.html#gabab14207e273082491f7be2a21275092">ETCPAL_UUID_STRING_BYTES</a></div><div class="ttdeci">#define ETCPAL_UUID_STRING_BYTES</div><div class="ttdoc">The maximum number of bytes required to hold an ASCII string representation of a UUID.</div><div class="ttdef"><b>Definition:</b> uuid.h:122</div></div>
 </div><!-- fragment --> <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Data Structures</h2></td></tr>

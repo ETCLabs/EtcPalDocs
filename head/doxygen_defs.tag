@@ -4116,6 +4116,13 @@
       <anchor>ga1cfb33811295439bc08ce2e8b74c1d13</anchor>
       <arglist></arglist>
     </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_NO_WAIT</name>
+      <anchorfile>group__etcpal.html</anchorfile>
+      <anchor>gaaa9ce243bfba2333238a31d59cce119a</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="typedef">
       <type>uint32_t</type>
       <name>etcpal_features_t</name>
@@ -7692,6 +7699,12 @@
     <title>Targeting MQX</title>
     <filename>targeting_mqx.html</filename>
     <docanchor file="targeting_mqx.html">md_docs_pages_targeting_mqx</docanchor>
+  </compound>
+  <compound kind="page">
+    <name>targeting_zephyr</name>
+    <title>Targeting Zephyr</title>
+    <filename>targeting_zephyr.html</filename>
+    <docanchor file="targeting_zephyr.html">md_docs_pages_targeting_zephyr</docanchor>
   </compound>
   <compound kind="page">
     <name>index</name>

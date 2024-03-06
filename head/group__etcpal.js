@@ -11,6 +11,7 @@ var group__etcpal =
     [ "ETCPAL_FEATURE_TIMERS", "group__etcpal.html#gaffb285a8108a672c01c33d921ee8be83", null ],
     [ "ETCPAL_FEATURES_ALL", "group__etcpal.html#ga740dd7c89f16ff20992cf21970d1c521", null ],
     [ "ETCPAL_FEATURES_ALL_BUT", "group__etcpal.html#ga15560671c4e732ed46dc03a0e522d160", null ],
+    [ "ETCPAL_NO_WAIT", "group__etcpal.html#gaaa9ce243bfba2333238a31d59cce119a", null ],
     [ "ETCPAL_WAIT_FOREVER", "group__etcpal.html#ga1cfb33811295439bc08ce2e8b74c1d13", null ],
     [ "etcpal_features_t", "group__etcpal.html#gae77772998c26f45618c26de1e1fc8305", null ],
     [ "etcpal_deinit", "group__etcpal.html#ga0792bdcd2f824009584744db01d7a352", null ],

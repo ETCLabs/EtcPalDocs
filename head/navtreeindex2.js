@@ -69,14 +69,15 @@ var NAVTREEINDEX2 =
 "globals.html":[3,1,0],
 "globals_defs.html":[3,1,1],
 "group__etcpal.html":[1,0],
-"group__etcpal.html#ga0792bdcd2f824009584744db01d7a352":[1,0,13],
+"group__etcpal.html#ga0792bdcd2f824009584744db01d7a352":[1,0,14],
 "group__etcpal.html#ga09f99422deaa7bb5d2625c317d1a66a6":[1,0,7],
 "group__etcpal.html#ga15560671c4e732ed46dc03a0e522d160":[1,0,10],
-"group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843":[1,0,14],
-"group__etcpal.html#ga1cfb33811295439bc08ce2e8b74c1d13":[1,0,11],
+"group__etcpal.html#ga163b95dfe5ef6c68f2fb4d5b58a63843":[1,0,15],
+"group__etcpal.html#ga1cfb33811295439bc08ce2e8b74c1d13":[1,0,12],
 "group__etcpal.html#ga740dd7c89f16ff20992cf21970d1c521":[1,0,9],
 "group__etcpal.html#ga8c7c1f9430362540e56af3a2742a25d4":[1,0,5],
-"group__etcpal.html#gae77772998c26f45618c26de1e1fc8305":[1,0,12],
+"group__etcpal.html#gaaa9ce243bfba2333238a31d59cce119a":[1,0,11],
+"group__etcpal.html#gae77772998c26f45618c26de1e1fc8305":[1,0,13],
 "group__etcpal.html#gaf5b3a81b975bbae1f6f54f43bfc0c6a7":[1,0,6],
 "group__etcpal.html#gaffb285a8108a672c01c33d921ee8be83":[1,0,8],
 "group__etcpal__acn__pdu.html":[1,0,0,0],
@@ -248,6 +249,5 @@ var NAVTREEINDEX2 =
 "group__etcpal__inet.html#gacd7ec0d81e171166483c7629669bf05d":[1,0,2,0,14],
 "group__etcpal__inet.html#gad3a164fa82579c3047f6053f7266e6a8":[1,0,2,0,51],
 "group__etcpal__inet.html#gad5f18940857b50304b956505fb77df20":[1,0,2,0,20],
-"group__etcpal__inet.html#gad8ef4406c72bd87baad2ce085fb29daf":[1,0,2,0,5],
-"group__etcpal__inet.html#gae0d14b2f44b81a6687390839e0aea869":[1,0,2,0,12]
+"group__etcpal__inet.html#gad8ef4406c72bd87baad2ce085fb29daf":[1,0,2,0,5]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX4 =
 {
+"group__etcpal__socket.html#ga19bf0e5a8ce939ea6c4ea034f4839bcc":[1,0,2,2,22],
 "group__etcpal__socket.html#ga1d70e00bf7f5c7200af788f5f411c081":[1,0,2,2,66],
 "group__etcpal__socket.html#ga1da970a4c0bd353ec963e4bb70c0f8b8":[1,0,2,2,34],
 "group__etcpal__socket.html#ga1f2cdcdfee1277e02077a06b650af971":[1,0,2,2,54],
@@ -120,8 +121,8 @@ var NAVTREEINDEX4 =
 "handle__manager_8h_source.html":[3,0,0,0,7],
 "hash_8h_source.html":[3,0,0,0,0,3],
 "hierarchy.html":[2,2],
-"index.html":[0],
 "index.html":[],
+"index.html":[0],
 "inet_8h_source.html":[3,0,0,0,8],
 "interface_indexes.html":[4,0],
 "log_8h_source.html":[3,0,0,0,9],
@@ -248,6 +249,5 @@ var NAVTREEINDEX4 =
 "struct_etc_pal_rb_iter.html#a3dc7beb088200d742f70c0c895b376c4":[1,0,0,7,2,4],
 "struct_etc_pal_rb_iter.html#a46745baa1082347489f1dd6dd68c7afa":[1,0,0,7,2,1],
 "struct_etc_pal_rb_iter.html#a6d248403d379988dac19bf98cfeb84b9":[1,0,0,7,2,2],
-"struct_etc_pal_rb_iter.html#ab9332a87d0af5aa12cac847eff68b7af":[1,0,0,7,2,3],
-"struct_etc_pal_rb_iter.html#acb1df3a0f703b05bc4971f79cabe2597":[1,0,0,7,2,0]
+"struct_etc_pal_rb_iter.html#ab9332a87d0af5aa12cac847eff68b7af":[1,0,0,7,2,3]
 };
