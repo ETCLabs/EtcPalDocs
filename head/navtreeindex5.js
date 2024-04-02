@@ -1,5 +1,7 @@
 var NAVTREEINDEX5 =
 {
+"struct_etc_pal_msg_hdr.html#ac8bf36fe0577cba66bccda3a6f7e80a4":[1,0,2,2,3,4],
+"struct_etc_pal_msg_hdr.html#acdd06a55b7828a591a99290e94a282ab":[1,0,2,2,3,3],
 "struct_etc_pal_msg_hdr.html#ad6994903b3c19997ffcfdccb4431d308":[1,0,2,2,3,1],
 "struct_etc_pal_netint_info.html":[1,0,2,0,3],
 "struct_etc_pal_netint_info.html#a0c9f19a7b68ad0dad836ee153d3a230a":[1,0,2,0,3,4],

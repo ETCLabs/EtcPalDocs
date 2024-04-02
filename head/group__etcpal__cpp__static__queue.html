@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>EtcPal: Static Queue (RTOS queues)</title>
+<title>EtcPal: static_queue (RTOS queues)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -200,12 +200,15 @@ $(document).ready(function(){initNavTree('group__etcpal__cpp__static__queue.html
 </div>
 
 <div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
   <div class="headertitle">
-<div class="title">Static Queue (RTOS queues)<div class="ingroups"><a class="el" href="group__etcpal.html">EtcPal</a> &raquo; <a class="el" href="group__etcpal__cpp.html">C++ Wrappers</a></div></div>  </div>
+<div class="title">static_queue (RTOS queues)<div class="ingroups"><a class="el" href="group__etcpal.html">EtcPal</a> &raquo; <a class="el" href="group__etcpal__cpp.html">C++ Wrappers</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<p>C++ utilities for the etcpal_static_queue module. </p>
-<p>Provides a template class Static <a class="el" href="classetcpal_1_1_queue.html" title="An RTOS queue class.">Queue</a> which can be used to create blocking OS queues of arbitrary objects. 'Static' queues are queues for which the underlying memory is allocated statically.</p>
+<a name="details" id="details"></a><h2 class="groupheader">Overview</h2>
+<p>Static C++ utilities for the <a class="el" href="group__etcpal__queue.html">queue (RTOS queues)</a> module. </p>
+<p>Provides a template class <a class="el" href="classetcpal_1_1_static_queue.html" title="An RTOS queue class.">StaticQueue</a> which can be used to create blocking OS queues of arbitrary objects. 'Static' queues are queues for which the underlying memory is allocated statically.</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &quot;etcpal/cpp/static_queue.h&quot;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">struct </span>Foo</div>
@@ -240,6 +243,13 @@ $(document).ready(function(){initNavTree('group__etcpal__cpp__static__queue.html
 <div class="ttc" id="agroup__etcpal_html_ga1cfb33811295439bc08ce2e8b74c1d13"><div class="ttname"><a href="group__etcpal.html#ga1cfb33811295439bc08ce2e8b74c1d13">ETCPAL_WAIT_FOREVER</a></div><div class="ttdeci">#define ETCPAL_WAIT_FOREVER</div><div class="ttdoc">For etcpal_ functions that take a millisecond timeout, this means to wait indefinitely.</div><div class="ttdef"><b>Definition:</b> common.h:118</div></div>
 </div><!-- fragment --><p>In these cases, the Send() and Receive() functions will return false if the timeout was reached while waiting.</p>
 <p>OS queues are only available on RTOS platforms. See the <a class="el" href="group__etcpal__queue.html">queue (RTOS queues)</a> module for details on what platforms this class is available on. </p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_static_queue.html">StaticQueue&lt; T, N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An RTOS queue class.  <a href="classetcpal_1_1_static_queue.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

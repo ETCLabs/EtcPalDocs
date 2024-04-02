@@ -7011,7 +7011,6 @@
     <title>queue (RTOS queues)</title>
     <filename>group__etcpal__cpp__queue.html</filename>
     <class kind="class">etcpal::Queue</class>
-    <class kind="class">etcpal::StaticQueue</class>
   </compound>
   <compound kind="group">
     <name>etcpal_cpp_recursive_mutex</name>
@@ -7042,8 +7041,9 @@
   </compound>
   <compound kind="group">
     <name>etcpal_cpp_static_queue</name>
-    <title>Static Queue (RTOS queues)</title>
+    <title>static_queue (RTOS queues)</title>
     <filename>group__etcpal__cpp__static__queue.html</filename>
+    <class kind="class">etcpal::StaticQueue</class>
   </compound>
   <compound kind="group">
     <name>etcpal_cpp_thread</name>
@@ -7262,6 +7262,13 @@
     <filename>group__etcpal__queue.html</filename>
     <member kind="define">
       <type>#define</type>
+      <name>ETCPAL_QUEUE_HAS_STATIC</name>
+      <anchorfile>group__etcpal__queue.html</anchorfile>
+      <anchor>gaa13dabe0aaa84c5b454dc5d136baac32</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>ETCPAL_QUEUE_HAS_TIMED_FUNCTIONS</name>
       <anchorfile>group__etcpal__queue.html</anchorfile>
       <anchor>gaa25ffa8296a48784e8c6476677635d3f</anchor>
@@ -7287,6 +7294,13 @@
       <anchorfile>group__etcpal__queue.html</anchorfile>
       <anchor>gaefbd1625abdb0e502024b9c9749c2b17</anchor>
       <arglist>(etcpal_queue_t *id, size_t size, size_t item_size)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>etcpal_queue_create_static</name>
+      <anchorfile>group__etcpal__queue.html</anchorfile>
+      <anchor>ga2f229107b31f579ea317f14d664e4c81</anchor>
+      <arglist>(etcpal_queue_t *id, size_t size, size_t item_size, uint8_t *buffer)</arglist>
     </member>
     <member kind="function">
       <type>void</type>

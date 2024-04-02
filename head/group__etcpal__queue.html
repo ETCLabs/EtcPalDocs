@@ -265,7 +265,7 @@ $(document).ready(function(){initNavTree('group__etcpal__queue.html',''); initRe
 <p>Queues are implemented using native constructs on RTOS platforms, and using other EtcPal constructs such as semaphores on full OS platforms. The current availability is as follows:</p>
 <table class="markdownTable">
 <tr class="markdownTableHead">
-<th class="markdownTableHeadNone">Platform   </th><th class="markdownTableHeadNone">Queues Available   </th><th class="markdownTableHeadNone">Static Queues Available   </th><th class="markdownTableHeadNone"><a class="el" href="group__etcpal__queue.html#gaa25ffa8296a48784e8c6476677635d3f" title="Whether etcpal_queue_timed_send() and etcpal_queue_timed_receive() are meaningful on this platform.">ETCPAL_QUEUE_HAS_TIMED_FUNCTIONS</a>   </th><th class="markdownTableHeadNone"><a class="el" href="group__etcpal__queue.html#ga3271674e79d57d41434b803d2180de56" title="Whether etcpal_queue_send_from_isr() and etcpal_queue_receive_from_isr() are meaningful on this platf...">ETCPAL_QUEUE_HAS_ISR_FUNCTIONS</a>    </th></tr>
+<th class="markdownTableHeadNone">Platform   </th><th class="markdownTableHeadNone">Queues Available   </th><th class="markdownTableHeadNone"><a class="el" href="group__etcpal__queue.html#gaa13dabe0aaa84c5b454dc5d136baac32" title="Whether etcpal_queue_create_static() is meaningful on this platform.">ETCPAL_QUEUE_HAS_STATIC</a>   </th><th class="markdownTableHeadNone"><a class="el" href="group__etcpal__queue.html#gaa25ffa8296a48784e8c6476677635d3f" title="Whether etcpal_queue_timed_send() and etcpal_queue_timed_receive() are meaningful on this platform.">ETCPAL_QUEUE_HAS_TIMED_FUNCTIONS</a>   </th><th class="markdownTableHeadNone"><a class="el" href="group__etcpal__queue.html#ga3271674e79d57d41434b803d2180de56" title="Whether etcpal_queue_send_from_isr() and etcpal_queue_receive_from_isr() are meaningful on this platf...">ETCPAL_QUEUE_HAS_ISR_FUNCTIONS</a>    </th></tr>
 <tr class="markdownTableRowOdd">
 <td class="markdownTableBodyNone">FreeRTOS   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">No   </td><td class="markdownTableBodyNone">Yes   </td><td class="markdownTableBodyNone">Yes    </td></tr>
 <tr class="markdownTableRowEven">
@@ -283,6 +283,9 @@ $(document).ready(function(){initNavTree('group__etcpal__queue.html',''); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:gaa13dabe0aaa84c5b454dc5d136baac32"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__queue.html#gaa13dabe0aaa84c5b454dc5d136baac32">ETCPAL_QUEUE_HAS_STATIC</a>&#160;&#160;&#160;/* platform-defined */</td></tr>
+<tr class="memdesc:gaa13dabe0aaa84c5b454dc5d136baac32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="group__etcpal__queue.html#ga2f229107b31f579ea317f14d664e4c81" title="Create a new queue with a buffer provided by the user.">etcpal_queue_create_static()</a> is meaningful on this platform.  <a href="group__etcpal__queue.html#gaa13dabe0aaa84c5b454dc5d136baac32">More...</a><br /></td></tr>
+<tr class="separator:gaa13dabe0aaa84c5b454dc5d136baac32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa25ffa8296a48784e8c6476677635d3f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__queue.html#gaa25ffa8296a48784e8c6476677635d3f">ETCPAL_QUEUE_HAS_TIMED_FUNCTIONS</a>&#160;&#160;&#160;/* platform-defined */</td></tr>
 <tr class="memdesc:gaa25ffa8296a48784e8c6476677635d3f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="group__etcpal__queue.html#gae0c1e587408884bfdf7e9502cac7ffa7" title="Add an item to a queue, giving up after a timeout.">etcpal_queue_timed_send()</a> and <a class="el" href="group__etcpal__queue.html#ga13c3c4ca6b7b2ace00da407f52bba261" title="Retrieve the first item from a queue, giving up after a timeout.">etcpal_queue_timed_receive()</a> are meaningful on this platform.  <a href="group__etcpal__queue.html#gaa25ffa8296a48784e8c6476677635d3f">More...</a><br /></td></tr>
 <tr class="separator:gaa25ffa8296a48784e8c6476677635d3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -301,6 +304,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gaefbd1625abdb0e502024b9c9749c2b17"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__queue.html#gaefbd1625abdb0e502024b9c9749c2b17">etcpal_queue_create</a> (<a class="el" href="group__etcpal__queue.html#ga4f8a861cb4940f182992e38401855a2b">etcpal_queue_t</a> *id, size_t size, size_t item_size)</td></tr>
 <tr class="memdesc:gaefbd1625abdb0e502024b9c9749c2b17"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new queue.  <a href="group__etcpal__queue.html#gaefbd1625abdb0e502024b9c9749c2b17">More...</a><br /></td></tr>
 <tr class="separator:gaefbd1625abdb0e502024b9c9749c2b17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga2f229107b31f579ea317f14d664e4c81"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__queue.html#ga2f229107b31f579ea317f14d664e4c81">etcpal_queue_create_static</a> (<a class="el" href="group__etcpal__queue.html#ga4f8a861cb4940f182992e38401855a2b">etcpal_queue_t</a> *id, size_t size, size_t item_size, uint8_t *buffer)</td></tr>
+<tr class="memdesc:ga2f229107b31f579ea317f14d664e4c81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create a new queue with a buffer provided by the user.  <a href="group__etcpal__queue.html#ga2f229107b31f579ea317f14d664e4c81">More...</a><br /></td></tr>
+<tr class="separator:ga2f229107b31f579ea317f14d664e4c81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga89749b4899a165bb461570e8a91d470c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__queue.html#ga89749b4899a165bb461570e8a91d470c">etcpal_queue_destroy</a> (<a class="el" href="group__etcpal__queue.html#ga4f8a861cb4940f182992e38401855a2b">etcpal_queue_t</a> *id)</td></tr>
 <tr class="memdesc:ga89749b4899a165bb461570e8a91d470c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy a queue.  <a href="group__etcpal__queue.html#ga89749b4899a165bb461570e8a91d470c">More...</a><br /></td></tr>
 <tr class="separator:ga89749b4899a165bb461570e8a91d470c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -362,6 +368,23 @@ Functions</h2></td></tr>
 
 <p>Whether <a class="el" href="group__etcpal__queue.html#ga19c542b25dd6f5884c4d69ec8c891bb2" title="Add an item to a queue from an interrupt context.">etcpal_queue_send_from_isr()</a> and <a class="el" href="group__etcpal__queue.html#ga7e17d87946f3241b16c03d86a0b426c3" title="Retrieve the first item from a queue from an interrupt context.">etcpal_queue_receive_from_isr()</a> are meaningful on this platform. </p>
 <p>Some platforms have a different method for interacting with a queue from an interrupt context. If defined to 0, <a class="el" href="group__etcpal__queue.html#ga19c542b25dd6f5884c4d69ec8c891bb2" title="Add an item to a queue from an interrupt context.">etcpal_queue_send_from_isr()</a> and <a class="el" href="group__etcpal__queue.html#ga7e17d87946f3241b16c03d86a0b426c3" title="Retrieve the first item from a queue from an interrupt context.">etcpal_queue_receive_from_isr()</a> execute the equivalent of <a class="el" href="group__etcpal__queue.html#gad11692ddc849a8c049c1f15da818957d" title="Add an item to a queue.">etcpal_queue_send()</a> and <a class="el" href="group__etcpal__queue.html#ga6606a64800aeb535bc2fea3317e6fd44" title="Retrieve the first item from a queue.">etcpal_queue_receive()</a>, respectively. </p>
+
+</div>
+</div>
+<a id="gaa13dabe0aaa84c5b454dc5d136baac32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa13dabe0aaa84c5b454dc5d136baac32">&#9670;&nbsp;</a></span>ETCPAL_QUEUE_HAS_STATIC</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_QUEUE_HAS_STATIC&#160;&#160;&#160;/* platform-defined */</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether <a class="el" href="group__etcpal__queue.html#ga2f229107b31f579ea317f14d664e4c81" title="Create a new queue with a buffer provided by the user.">etcpal_queue_create_static()</a> is meaningful on this platform. </p>
+<p>If defined to 0, <a class="el" href="group__etcpal__queue.html#ga2f229107b31f579ea317f14d664e4c81" title="Create a new queue with a buffer provided by the user.">etcpal_queue_create_static()</a> does nothing and returns false. </p>
 
 </div>
 </div>
@@ -439,6 +462,60 @@ Functions</h2></td></tr>
     <tr><td class="paramdir">[out]</td><td class="paramname">id</td><td>Queue identifier on which to create a queue. If this function returns true, id becomes valid for calls to other etcpal_queue API functions. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The maximum number of items that can be held in the queue. </td></tr>
     <tr><td class="paramdir">[in]</td><td class="paramname">item_size</td><td>The size in bytes of the item type to be held in the queue. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true: The queue was created. </dd>
+<dd>
+false: The queue was not created. </dd></dl>
+
+</div>
+</div>
+<a id="ga2f229107b31f579ea317f14d664e4c81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga2f229107b31f579ea317f14d664e4c81">&#9670;&nbsp;</a></span>etcpal_queue_create_static()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool etcpal_queue_create_static </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group__etcpal__queue.html#ga4f8a861cb4940f182992e38401855a2b">etcpal_queue_t</a> *&#160;</td>
+          <td class="paramname"><em>id</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>item_size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *&#160;</td>
+          <td class="paramname"><em>buffer</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Create a new queue with a buffer provided by the user. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[out]</td><td class="paramname">id</td><td>Queue identifier on which to create a queue. If this function returns true, id becomes valid for calls to other etcpal_queue API functions. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>The maximum number of items that can be held in the queue. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">item_size</td><td>The size in bytes of the item type to be held in the queue. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">buffer</td><td>The buffer to use for the queue. </td></tr>
   </table>
   </dd>
 </dl>

@@ -1,5 +1,7 @@
 var NAVTREEINDEX4 =
 {
+"group__etcpal__signal.html":[1,0,1,8],
+"group__etcpal__signal.html#ga10e2d2cc15e6a30f38ba65f02c0905d7":[1,0,1,8,9],
 "group__etcpal__signal.html#ga29bf79c6470cde2c5bdc45ab90f4d826":[1,0,1,8,0],
 "group__etcpal__signal.html#ga4082ebadfba33b125930d5c5067139f0":[1,0,1,8,3],
 "group__etcpal__signal.html#ga4ecc28a0f67939859d91c8e9e75701e4":[1,0,1,8,4],
@@ -142,8 +144,8 @@ var NAVTREEINDEX4 =
 "handle__manager_8h_source.html":[3,0,0,0,7],
 "hash_8h_source.html":[3,0,0,0,0,3],
 "hierarchy.html":[2,2],
-"index.html":[],
 "index.html":[0],
+"index.html":[],
 "inet_8h_source.html":[3,0,0,0,8],
 "interface_indexes.html":[4,0],
 "log_8h_source.html":[3,0,0,0,9],
@@ -247,7 +249,5 @@ var NAVTREEINDEX4 =
 "struct_etc_pal_msg_hdr.html":[1,0,2,2,3],
 "struct_etc_pal_msg_hdr.html#a2e87da1b84ce314e36037f0f9cdc8b85":[1,0,2,2,3,5],
 "struct_etc_pal_msg_hdr.html#a5bc5fa69bee375df074734a2c4858604":[1,0,2,2,3,0],
-"struct_etc_pal_msg_hdr.html#a83d33c81b6b4efbd7ae30c2a707a07d8":[1,0,2,2,3,2],
-"struct_etc_pal_msg_hdr.html#ac8bf36fe0577cba66bccda3a6f7e80a4":[1,0,2,2,3,4],
-"struct_etc_pal_msg_hdr.html#acdd06a55b7828a591a99290e94a282ab":[1,0,2,2,3,3]
+"struct_etc_pal_msg_hdr.html#a83d33c81b6b4efbd7ae30c2a707a07d8":[1,0,2,2,3,2]
 };

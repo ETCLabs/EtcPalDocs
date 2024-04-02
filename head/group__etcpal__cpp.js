@@ -12,7 +12,7 @@ var group__etcpal__cpp =
     [ "rwlock (Read-Write Locks)", "group__etcpal__cpp__rwlock.html", "group__etcpal__cpp__rwlock" ],
     [ "sem (Counting Semaphores)", "group__etcpal__cpp__sem.html", "group__etcpal__cpp__sem" ],
     [ "signal (Signal Objects)", "group__etcpal__cpp__signal.html", "group__etcpal__cpp__signal" ],
-    [ "Static Queue (RTOS queues)", "group__etcpal__cpp__static__queue.html", null ],
+    [ "static_queue (RTOS queues)", "group__etcpal__cpp__static__queue.html", "group__etcpal__cpp__static__queue" ],
     [ "thread (Threading)", "group__etcpal__cpp__thread.html", "group__etcpal__cpp__thread" ],
     [ "timer (Timers)", "group__etcpal__cpp__timer.html", "group__etcpal__cpp__timer" ],
     [ "uuid (UUIDs)", "group__etcpal__cpp__uuid.html", "group__etcpal__cpp__uuid" ],
