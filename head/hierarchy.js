@@ -52,6 +52,7 @@ var hierarchy =
     [ "Semaphore", "classetcpal_1_1_semaphore.html", null ],
     [ "Signal", "classetcpal_1_1_signal.html", null ],
     [ "SockAddr", "classetcpal_1_1_sock_addr.html", null ],
+    [ "StaticQueue< T, N >", "classetcpal_1_1_static_queue.html", null ],
     [ "Thread", "classetcpal_1_1_thread.html", null ],
     [ "TimePoint", "classetcpal_1_1_time_point.html", null ],
     [ "Timer", "classetcpal_1_1_timer.html", null ],

@@ -14,6 +14,7 @@ var dir_fa86f7c0f1af55176d8f05dc5aff685f =
     [ "rwlock.h", "cpp_2rwlock_8h.html", null ],
     [ "sem.h", "cpp_2sem_8h.html", null ],
     [ "signal.h", "cpp_2signal_8h.html", null ],
+    [ "static_queue.h", "static__queue_8h_source.html", null ],
     [ "thread.h", "cpp_2thread_8h.html", null ],
     [ "timer.h", "cpp_2timer_8h.html", "cpp_2timer_8h" ],
     [ "uuid.h", "cpp_2uuid_8h.html", "cpp_2uuid_8h" ]

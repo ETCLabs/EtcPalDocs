@@ -3198,6 +3198,110 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>etcpal::StaticQueue</name>
+    <filename>classetcpal_1_1_static_queue.html</filename>
+    <templarg></templarg>
+    <templarg>N</templarg>
+    <member kind="function">
+      <type></type>
+      <name>~StaticQueue</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>a4eaf647673eefc466f45b69443220516</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Send</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>ad23735bc801c21635a277a31ac31b267</anchor>
+      <arglist>(const T &amp;data, int timeout_ms=ETCPAL_WAIT_FOREVER)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>SendFromIsr</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>a4a645b7a56c142bd9b04f703893a5879</anchor>
+      <arglist>(const T &amp;data)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Receive</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>ae2bd22bccd067e5b8558810eb878f7bf</anchor>
+      <arglist>(T &amp;data, int timeout_ms=ETCPAL_WAIT_FOREVER)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Receive</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>a2e1a4a59421e30ad677c4aab766a6683</anchor>
+      <arglist>(T &amp;data, const std::chrono::duration&lt; Rep, Period &gt; &amp;timeout)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>ReceiveFromIsr</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>a6d23c1b53807ebce980dce934789a4e4</anchor>
+      <arglist>(T &amp;data)</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>Reset</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>a65e181fc77234e509cf5fa9aa9575839</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsEmpty</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>a8e12342fc420701fbffd97025421575a</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsEmptyFromIsr</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>a9cc49246382de0eeb66f493207fb4dbc</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsFull</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>af5d30d3dd704e8e683b98a6ed6c5d9ca</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>IsFullFromIsr</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>acf599d4a90f1b8f8c7892fe84789f6ac</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>SlotsUsed</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>ae99315f221f70d76e0ee29ae08ee59b0</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>SlotsUsedFromIsr</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>ae855857d6bf35a221bff10549405453b</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>size_t</type>
+      <name>SlotsAvailable</name>
+      <anchorfile>classetcpal_1_1_static_queue.html</anchorfile>
+      <anchor>aeecede9e1bc1a6e7394c5bf09b59b3f1</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>etcpal::Thread</name>
     <filename>classetcpal_1_1_thread.html</filename>
     <member kind="function">
@@ -6740,6 +6844,7 @@
     <subgroup>etcpal_cpp_rwlock</subgroup>
     <subgroup>etcpal_cpp_sem</subgroup>
     <subgroup>etcpal_cpp_signal</subgroup>
+    <subgroup>etcpal_cpp_static_queue</subgroup>
     <subgroup>etcpal_cpp_thread</subgroup>
     <subgroup>etcpal_cpp_timer</subgroup>
     <subgroup>etcpal_cpp_uuid</subgroup>
@@ -6906,6 +7011,7 @@
     <title>queue (RTOS queues)</title>
     <filename>group__etcpal__cpp__queue.html</filename>
     <class kind="class">etcpal::Queue</class>
+    <class kind="class">etcpal::StaticQueue</class>
   </compound>
   <compound kind="group">
     <name>etcpal_cpp_recursive_mutex</name>
@@ -6933,6 +7039,11 @@
     <title>signal (Signal Objects)</title>
     <filename>group__etcpal__cpp__signal.html</filename>
     <class kind="class">etcpal::Signal</class>
+  </compound>
+  <compound kind="group">
+    <name>etcpal_cpp_static_queue</name>
+    <title>Static Queue (RTOS queues)</title>
+    <filename>group__etcpal__cpp__static__queue.html</filename>
   </compound>
   <compound kind="group">
     <name>etcpal_cpp_thread</name>

@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.9.1"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>lwpa: /tmp/tmp1e1677gg/etcpal/include/acn_prot.h Source File</title>
+<title>EtcPal: Static Queue (RTOS queues)</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -20,6 +20,7 @@
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
 <link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
 <link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
 <!-- BEGIN CUSTOM SCRIPTS -->
 <!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
 <script type="text/javascript">
@@ -132,10 +133,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">lwpa
-   &#160;<span id="projectnumber">0.1.0</span>
+   <div id="projectname">EtcPal
+   &#160;<span id="projectnumber">HEAD (unstable)</span>
    </div>
-   <div id="projectbrief">LightWeight Platform Abstraction (lwpa)</div>
+   <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
   </td>
   <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
   <td style="text-align: right; padding-right: 0.5em">
@@ -180,7 +181,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
-$(document).ready(function(){initNavTree('acn__prot_8h_source.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('group__etcpal__cpp__static__queue.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -200,51 +201,50 @@ $(document).ready(function(){initNavTree('acn__prot_8h_source.html',''); initRes
 
 <div class="header">
   <div class="headertitle">
-<div class="title">acn_prot.h</div>  </div>
+<div class="title">Static Queue (RTOS queues)<div class="ingroups"><a class="el" href="group__etcpal.html">EtcPal</a> &raquo; <a class="el" href="group__etcpal__cpp.html">C++ Wrappers</a></div></div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/******************************************************************************</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Copyright 2018 ETC Inc.</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> * Licensed under the Apache License, Version 2.0 (the &quot;License&quot;);</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * you may not use this file except in compliance with the License.</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="comment"> * You may obtain a copy of the License at</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="comment"> *    http://www.apache.org/licenses/LICENSE-2.0</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="comment"> *</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="comment"> * Unless required by applicable law or agreed to in writing, software</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="comment"> * distributed under the License is distributed on an &quot;AS IS&quot; BASIS,</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="comment"> * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="comment"> * See the License for the specific language governing permissions and</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="comment"> * limitations under the License.</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="comment"> *******************************************************************************</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="comment"> * This file is a part of lwpa. For more information, go to:</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="comment"> * https://github.com/ETCLabs/lwpa</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="comment"> ******************************************************************************/</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#ifndef _ACN_PROT_H_</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define _ACN_PROT_H_</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#include &quot;lwpa_int.h&quot;</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">typedef</span> uint32_t acn_protocol_t;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define ACN_PROTOCOL_SDT 0x00000001u</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define ACN_PROTOCOL_DMP 0x00000002u</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define ACN_PROTOCOL_DRAFT_E131_DATA 0x00000003u</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define ACN_PROTOCOL_E131_DATA 0x00000004u</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define ACN_PROTOCOL_E131_EXTENDED 0x00000008u</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define ACN_PROTOCOL_LLRP 0x0000000Au</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define ACN_PROTOCOL_BROKER 0x00000009u</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define ACN_PROTOCOL_RPT 0x00000005u</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define ACN_PROTOCOL_EPT 0x0000000Bu</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* _ACN_PROT_H_ */</span><span class="preprocessor"></span></div>
-</div><!-- fragment --></div><!-- contents -->
+<p>C++ utilities for the etcpal_static_queue module. </p>
+<p>Provides a template class Static <a class="el" href="classetcpal_1_1_queue.html" title="An RTOS queue class.">Queue</a> which can be used to create blocking OS queues of arbitrary objects. 'Static' queues are queues for which the underlying memory is allocated statically.</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &quot;etcpal/cpp/static_queue.h&quot;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">struct </span>Foo</div>
+<div class="line">{</div>
+<div class="line">  Foo(<span class="keywordtype">int</span> new_value) : value(new_value) {}</div>
+<div class="line"> </div>
+<div class="line">  <span class="keywordtype">int</span> value{0};</div>
+<div class="line">};</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// Create a queue big enough to hold 15 Foo instances.</span></div>
+<div class="line"><a class="code" href="classetcpal_1_1_queue.html">etcpal::Queue&lt;Foo, 15&gt;</a> queue;</div>
+<div class="ttc" id="aclassetcpal_1_1_queue_html"><div class="ttname"><a href="classetcpal_1_1_queue.html">etcpal::Queue</a></div><div class="ttdoc">An RTOS queue class.</div><div class="ttdef"><b>Definition:</b> queue.h:94</div></div>
+</div><!-- fragment --><p>Use the Send() and Receive() functions to add items to and remove items from the queue.</p>
+<div class="fragment"><div class="line">queue.<a class="code" href="classetcpal_1_1_queue.html#ad23735bc801c21635a277a31ac31b267">Send</a>(Foo(42));</div>
+<div class="line"> </div>
+<div class="line">Foo received_foo;</div>
+<div class="line">queue.<a class="code" href="classetcpal_1_1_queue.html#ae2bd22bccd067e5b8558810eb878f7bf">Receive</a>(received_foo);</div>
+<div class="line">EXPECT_EQ(received_foo.value, 42);</div>
+<div class="ttc" id="aclassetcpal_1_1_queue_html_ad23735bc801c21635a277a31ac31b267"><div class="ttname"><a href="classetcpal_1_1_queue.html#ad23735bc801c21635a277a31ac31b267">etcpal::Queue::Send</a></div><div class="ttdeci">bool Send(const T &amp;data, int timeout_ms=ETCPAL_WAIT_FOREVER)</div><div class="ttdoc">Add some data to the queue.</div><div class="ttdef"><b>Definition:</b> queue.h:151</div></div>
+<div class="ttc" id="aclassetcpal_1_1_queue_html_ae2bd22bccd067e5b8558810eb878f7bf"><div class="ttname"><a href="classetcpal_1_1_queue.html#ae2bd22bccd067e5b8558810eb878f7bf">etcpal::Queue::Receive</a></div><div class="ttdeci">bool Receive(T &amp;data, int timeout_ms=ETCPAL_WAIT_FOREVER)</div><div class="ttdoc">Get an item from the queue.</div><div class="ttdef"><b>Definition:</b> queue.h:170</div></div>
+</div><!-- fragment --><p>By default, the Send() and Receive() functions will block indefinitely. You can also specify timeouts to these functions:</p>
+<div class="fragment"><div class="line">Foo received_foo;</div>
+<div class="line">queue.<a class="code" href="classetcpal_1_1_queue.html#ae2bd22bccd067e5b8558810eb878f7bf">Receive</a>(received_foo, 50); <span class="comment">// Block up to 50 milliseconds waiting for</span></div>
+<div class="line">a Foo queue.<a class="code" href="classetcpal_1_1_queue.html#ae2bd22bccd067e5b8558810eb878f7bf">Receive</a>(received_foo, 0); <span class="comment">// Return immediately if a Foo is not</span></div>
+<div class="line">available queue.<a class="code" href="classetcpal_1_1_queue.html#ae2bd22bccd067e5b8558810eb878f7bf">Receive</a>(received_foo, <a class="code" href="group__etcpal.html#ga1cfb33811295439bc08ce2e8b74c1d13">ETCPAL_WAIT_FOREVER</a>); <span class="comment">// Block</span></div>
+<div class="line">indefinitely waiting <span class="keywordflow">for</span> a Foo</div>
+<div class="line"> </div>
+<div class="line"><span class="comment">// In a C++14 or greater environment...</span></div>
+<div class="line"><span class="keyword">using namespace </span>std::chrono_literals;</div>
+<div class="line"> </div>
+<div class="line">queue.<a class="code" href="classetcpal_1_1_queue.html#ae2bd22bccd067e5b8558810eb878f7bf">Receive</a>(received_foo, 2s); <span class="comment">// Block up to 2 seconds waiting for a Foo</span></div>
+<div class="ttc" id="agroup__etcpal_html_ga1cfb33811295439bc08ce2e8b74c1d13"><div class="ttname"><a href="group__etcpal.html#ga1cfb33811295439bc08ce2e8b74c1d13">ETCPAL_WAIT_FOREVER</a></div><div class="ttdeci">#define ETCPAL_WAIT_FOREVER</div><div class="ttdoc">For etcpal_ functions that take a millisecond timeout, this means to wait indefinitely.</div><div class="ttdef"><b>Definition:</b> common.h:118</div></div>
+</div><!-- fragment --><p>In these cases, the Send() and Receive() functions will return false if the timeout was reached while waiting.</p>
+<p>OS queues are only available on RTOS platforms. See the <a class="el" href="group__etcpal__queue.html">queue (RTOS queues)</a> module for details on what platforms this class is available on. </p>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><b>acn_prot.h</b></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
   </ul>
 </div>

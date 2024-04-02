@@ -23,6 +23,7 @@ var annotated_dup =
       [ "WriteGuard", "classetcpal_1_1_write_guard.html", "classetcpal_1_1_write_guard" ],
       [ "Semaphore", "classetcpal_1_1_semaphore.html", "classetcpal_1_1_semaphore" ],
       [ "Signal", "classetcpal_1_1_signal.html", "classetcpal_1_1_signal" ],
+      [ "StaticQueue", "classetcpal_1_1_static_queue.html", "classetcpal_1_1_static_queue" ],
       [ "Thread", "classetcpal_1_1_thread.html", "classetcpal_1_1_thread" ],
       [ "TimePoint", "classetcpal_1_1_time_point.html", "classetcpal_1_1_time_point" ],
       [ "Timer", "classetcpal_1_1_timer.html", "classetcpal_1_1_timer" ],
