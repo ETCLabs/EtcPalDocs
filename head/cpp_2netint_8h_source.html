@@ -265,7 +265,7 @@ $(document).ready(function(){initNavTree('cpp_2netint_8h_source.html',''); initR
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;  <span class="keywordflow">if</span> (err == <a class="code" href="group__etcpal__error.html#gga743b0648f0ca798ef29c9f69c6e255afae403d046b4ba4e81dce121266c2cca8d">kEtcPalErrOk</a>)</div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  {</div>
 <div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;    std::vector&lt;etcpal::NetintInfo&gt; netints(num_netints);</div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i = 0; i &lt; num_netints; ++i)</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0u; i &lt; num_netints; ++i)</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;      netints[i] = <a class="code" href="classetcpal_1_1_netint_info.html">etcpal::NetintInfo</a>(c_netints[i]);</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160; </div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;    <span class="keywordflow">return</span> netints;</div>
