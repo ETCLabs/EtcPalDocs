@@ -23,5 +23,6 @@ var group__etcpal__cpp__timer =
       [ "Reset", "classetcpal_1_1_timer.html#a77ebf418c2f554f19db18aa5adcd0366", null ],
       [ "Start", "classetcpal_1_1_timer.html#a5128bf0001713abf0599593ac6eba81d", null ],
       [ "Start", "classetcpal_1_1_timer.html#ac3e8095b413fff42c74287c5b8fcf17d", null ]
-    ] ]
+    ] ],
+    [ "DurationToString", "group__etcpal__cpp__timer.html#gad22b24333b9bb5bff1866e33df7a7d32", null ]
 ];

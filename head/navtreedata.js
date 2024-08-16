@@ -55,9 +55,9 @@ var NAVTREEINDEX =
 "acn__pdu_8h_source.html",
 "classetcpal_1_1_rw_lock.html#ac46abb95ae4ab3f37da632ea31f01535",
 "cpp_2timer_8h.html#ga4c6e53652aa1514c5a81a4b723494498",
-"group__etcpal__inet.html#ga73f73b31cc309024d3284ebcf4b66b45",
-"group__etcpal__signal.html",
-"struct_etc_pal_msg_hdr.html#ac8bf36fe0577cba66bccda3a6f7e80a4"
+"group__etcpal__inet.html#ga713cdab9d717aa8f0d45797c97a9df90",
+"group__etcpal__sem.html#gad2f3af8fc26a2d028edd4c1341304061",
+"struct_etc_pal_msg_hdr.html#a5bc5fa69bee375df074734a2c4858604"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

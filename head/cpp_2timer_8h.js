@@ -1,5 +1,6 @@
 var cpp_2timer_8h =
 [
+    [ "DurationToString", "cpp_2timer_8h.html#gad22b24333b9bb5bff1866e33df7a7d32", null ],
     [ "operator!=", "cpp_2timer_8h.html#ga94d4e9d391ace2cfc6ed0b6a74b54519", null ],
     [ "operator-", "cpp_2timer_8h.html#ga2382ef1b68967e502919b5ee7b2ec833", null ],
     [ "operator<", "cpp_2timer_8h.html#gadf9056e745821f19e6dcd2d2a0f6b305", null ],

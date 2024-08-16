@@ -201,7 +201,8 @@ $(document).ready(function(){initNavTree('group__etcpal__cpp__timer.html',''); i
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Data Structures</a>  </div>
+<a href="#nested-classes">Data Structures</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">timer (Timers)<div class="ingroups"><a class="el" href="group__etcpal.html">EtcPal</a> &raquo; <a class="el" href="group__etcpal__cpp.html">C++ Wrappers</a></div></div>  </div>
 </div><!--header-->
@@ -222,6 +223,12 @@ Data Structures</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_timer.html">Timer</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A wrapper class for the EtcPal timer type.  <a href="classetcpal_1_1_timer.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:gad22b24333b9bb5bff1866e33df7a7d32"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__cpp__timer.html#gad22b24333b9bb5bff1866e33df7a7d32">DurationToString</a> (int32_t duration_ms) noexcept</td></tr>
+<tr class="memdesc:gad22b24333b9bb5bff1866e33df7a7d32"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get a string represention of a millisecond duration.  <a href="group__etcpal__cpp__timer.html#gad22b24333b9bb5bff1866e33df7a7d32">More...</a><br /></td></tr>
+<tr class="separator:gad22b24333b9bb5bff1866e33df7a7d32"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">TimePoint operators</h2></td></tr>
 <tr class="memitem:ga2382ef1b68967e502919b5ee7b2ec833"><td class="memItemLeft" align="right" valign="top"><a id="ga2382ef1b68967e502919b5ee7b2ec833"></a>
@@ -246,6 +253,42 @@ constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&lt
 constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><b>operator&gt;=</b> (const <a class="el" href="classetcpal_1_1_time_point.html">TimePoint</a> &amp;a, const <a class="el" href="classetcpal_1_1_time_point.html">TimePoint</a> &amp;b) noexcept</td></tr>
 <tr class="separator:ga4c6e53652aa1514c5a81a4b723494498"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="gad22b24333b9bb5bff1866e33df7a7d32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad22b24333b9bb5bff1866e33df7a7d32">&#9670;&nbsp;</a></span>DurationToString()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string etcpal::DurationToString </td>
+          <td>(</td>
+          <td class="paramtype">int32_t&#160;</td>
+          <td class="paramname"><em>duration_ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get a string represention of a millisecond duration. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">duration_ms</td><td>The millisecond duration (can be obtained by substracting two TimePoints, e.g. <a class="el" href="classetcpal_1_1_time_point.html#ac59e08d917c73620c51f17923428da50" title="Get a TimePoint representing the current time.">etcpal::TimePoint::Now()</a> - tp). </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>A string representing the duration, in the format of "_ hr _ min _ sec _ ms" (with zeroes being omitted up to the first non-zero value or 0 ms). </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

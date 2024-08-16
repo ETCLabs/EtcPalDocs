@@ -223,6 +223,13 @@
     <includes id="cpp_2common_8h" name="common.h" local="yes" imported="no">etcpal/cpp/common.h</includes>
     <class kind="class">etcpal::TimePoint</class>
     <class kind="class">etcpal::Timer</class>
+    <member kind="function">
+      <type>std::string</type>
+      <name>DurationToString</name>
+      <anchorfile>group__etcpal__cpp__timer.html</anchorfile>
+      <anchor>gad22b24333b9bb5bff1866e33df7a7d32</anchor>
+      <arglist>(int32_t duration_ms) noexcept</arglist>
+    </member>
   </compound>
   <compound kind="file">
     <name>uuid.h</name>
@@ -7057,6 +7064,13 @@
     <filename>group__etcpal__cpp__timer.html</filename>
     <class kind="class">etcpal::TimePoint</class>
     <class kind="class">etcpal::Timer</class>
+    <member kind="function">
+      <type>std::string</type>
+      <name>DurationToString</name>
+      <anchorfile>group__etcpal__cpp__timer.html</anchorfile>
+      <anchor>gad22b24333b9bb5bff1866e33df7a7d32</anchor>
+      <arglist>(int32_t duration_ms) noexcept</arglist>
+    </member>
   </compound>
   <compound kind="group">
     <name>etcpal_cpp_uuid</name>
