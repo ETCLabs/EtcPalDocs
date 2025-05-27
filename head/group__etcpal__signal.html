@@ -287,6 +287,9 @@ $(document).ready(function(){initNavTree('group__etcpal__signal.html',''); initR
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga0eca515e5eb60bdb804b88f15509b52a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__signal.html#ga0eca515e5eb60bdb804b88f15509b52a">ETCPAL_SIGNAL_INIT</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
+<tr class="memdesc:ga0eca515e5eb60bdb804b88f15509b52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_signal_t.  <a href="group__etcpal__signal.html#ga0eca515e5eb60bdb804b88f15509b52a">More...</a><br /></td></tr>
+<tr class="separator:ga0eca515e5eb60bdb804b88f15509b52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae27ec551b3bcdeb4c72e6ecea9ba3ca8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__signal.html#gae27ec551b3bcdeb4c72e6ecea9ba3ca8">ETCPAL_SIGNAL_HAS_TIMED_WAIT</a>&#160;&#160;&#160;/* platform-defined */</td></tr>
 <tr class="memdesc:gae27ec551b3bcdeb4c72e6ecea9ba3ca8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="group__etcpal__signal.html#ga770f7b128af027172c866a765f50f4fb" title="Wait for a signal, giving up after a timeout.">etcpal_signal_timed_wait()</a> is meaningful on this platform.  <a href="group__etcpal__signal.html#gae27ec551b3bcdeb4c72e6ecea9ba3ca8">More...</a><br /></td></tr>
 <tr class="separator:gae27ec551b3bcdeb4c72e6ecea9ba3ca8"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -356,6 +359,23 @@ Functions</h2></td></tr>
 
 <p>Whether <a class="el" href="group__etcpal__signal.html#ga770f7b128af027172c866a765f50f4fb" title="Wait for a signal, giving up after a timeout.">etcpal_signal_timed_wait()</a> is meaningful on this platform. </p>
 <p>If defined to 0, <a class="el" href="group__etcpal__signal.html#ga770f7b128af027172c866a765f50f4fb" title="Wait for a signal, giving up after a timeout.">etcpal_signal_timed_wait()</a> executes the equivalent of <a class="el" href="group__etcpal__signal.html#gaae6c46b47ab125aeac18bf0a27bc6f9d" title="Try to wait for a signal.">etcpal_signal_try_wait()</a> if given a timeout of 0, or <a class="el" href="group__etcpal__signal.html#ga10e2d2cc15e6a30f38ba65f02c0905d7" title="Wait for a signal.">etcpal_signal_wait()</a> otherwise. </p>
+
+</div>
+</div>
+<a id="ga0eca515e5eb60bdb804b88f15509b52a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0eca515e5eb60bdb804b88f15509b52a">&#9670;&nbsp;</a></span>ETCPAL_SIGNAL_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_SIGNAL_INIT&#160;&#160;&#160;[PLATFORM_DEFINED]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_signal_t. </p>
+<p>e.g. etcpal_signal_t signal = ETCPAL_SIGNAL_INIT; </p>
 
 </div>
 </div>

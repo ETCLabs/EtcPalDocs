@@ -1,6 +1,7 @@
 var group__etcpal__recursive__mutex =
 [
     [ "ETCPAL_RECURSIVE_MUTEX_HAS_TIMED_LOCK", "group__etcpal__recursive__mutex.html#ga752b7f9693eb78835fccb80beac59eb2", null ],
+    [ "ETCPAL_RECURSIVE_MUTEX_INIT", "group__etcpal__recursive__mutex.html#gaf41be6c628693dabc802d9d7c2528538", null ],
     [ "etcpal_recursive_mutex_t", "group__etcpal__recursive__mutex.html#gab023065e9028d318e1c559e6c7493e6b", null ],
     [ "etcpal_recursive_mutex_create", "group__etcpal__recursive__mutex.html#ga694158054907acac552eccb8e88d020a", null ],
     [ "etcpal_recursive_mutex_destroy", "group__etcpal__recursive__mutex.html#ga1a42ba95ca28f89502795b71f59cb060", null ],

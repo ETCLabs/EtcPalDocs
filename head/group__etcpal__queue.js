@@ -3,6 +3,7 @@ var group__etcpal__queue =
     [ "ETCPAL_QUEUE_HAS_ISR_FUNCTIONS", "group__etcpal__queue.html#ga3271674e79d57d41434b803d2180de56", null ],
     [ "ETCPAL_QUEUE_HAS_STATIC", "group__etcpal__queue.html#gaa13dabe0aaa84c5b454dc5d136baac32", null ],
     [ "ETCPAL_QUEUE_HAS_TIMED_FUNCTIONS", "group__etcpal__queue.html#gaa25ffa8296a48784e8c6476677635d3f", null ],
+    [ "ETCPAL_QUEUE_INIT", "group__etcpal__queue.html#ga28d33a1ed279c791ceeea4342bbcc3e4", null ],
     [ "etcpal_queue_t", "group__etcpal__queue.html#ga4f8a861cb4940f182992e38401855a2b", null ],
     [ "etcpal_queue_create", "group__etcpal__queue.html#gaefbd1625abdb0e502024b9c9749c2b17", null ],
     [ "etcpal_queue_create_static", "group__etcpal__queue.html#ga2f229107b31f579ea317f14d664e4c81", null ],

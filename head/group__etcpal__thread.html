@@ -314,9 +314,15 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#ga5a0a37d186ac57231b94c287a58b54a0">ETCPAL_THREAD_NAME_MAX_LENGTH</a></td></tr>
 <tr class="memdesc:ga5a0a37d186ac57231b94c287a58b54a0"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum length of an etcpal_thread name C-string. <br /></td></tr>
 <tr class="separator:ga5a0a37d186ac57231b94c287a58b54a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4c85448002ecdcd9aaf19fec8714ad10"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#ga4c85448002ecdcd9aaf19fec8714ad10">ETCPAL_THREAD_INIT</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
+<tr class="memdesc:ga4c85448002ecdcd9aaf19fec8714ad10"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_thread_t.  <a href="group__etcpal__thread.html#ga4c85448002ecdcd9aaf19fec8714ad10">More...</a><br /></td></tr>
+<tr class="separator:ga4c85448002ecdcd9aaf19fec8714ad10"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga72620094cf45f5335fc4f9c338b17207"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#ga72620094cf45f5335fc4f9c338b17207">ETCPAL_THREAD_OS_HANDLE_INVALID</a>&#160;&#160;&#160;/* platform-defined */</td></tr>
 <tr class="memdesc:ga72620094cf45f5335fc4f9c338b17207"><td class="mdescLeft">&#160;</td><td class="mdescRight">An invalid value for the native OS thread handle type.  <a href="group__etcpal__thread.html#ga72620094cf45f5335fc4f9c338b17207">More...</a><br /></td></tr>
 <tr class="separator:ga72620094cf45f5335fc4f9c338b17207"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab622f7f91349c12a5f3c9f6dcfdbca29"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#gab622f7f91349c12a5f3c9f6dcfdbca29">ETCPAL_THREAD_OS_HANDLE_INIT</a>&#160;&#160;&#160;<a class="el" href="group__etcpal__thread.html#ga72620094cf45f5335fc4f9c338b17207">ETCPAL_THREAD_OS_HANDLE_INVALID</a></td></tr>
+<tr class="memdesc:gab622f7f91349c12a5f3c9f6dcfdbca29"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_thread_os_handle_t.  <a href="group__etcpal__thread.html#gab622f7f91349c12a5f3c9f6dcfdbca29">More...</a><br /></td></tr>
+<tr class="separator:gab622f7f91349c12a5f3c9f6dcfdbca29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf382d29335eeeb4ed5c8d295bb8a380b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__thread.html#gaf382d29335eeeb4ed5c8d295bb8a380b">ETCPAL_THREAD_HAS_TIMED_JOIN</a>&#160;&#160;&#160;/* platform-defined */</td></tr>
 <tr class="memdesc:gaf382d29335eeeb4ed5c8d295bb8a380b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="group__etcpal__thread.html#ga37eccd4b250f7b697bd366922d081f13" title="Wait for a thread to finish execution, giving up after a timeout.">etcpal_thread_timed_join()</a> is meaningful on this platform.  <a href="group__etcpal__thread.html#gaf382d29335eeeb4ed5c8d295bb8a380b">More...</a><br /></td></tr>
 <tr class="separator:gaf382d29335eeeb4ed5c8d295bb8a380b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -406,6 +412,40 @@ Functions</h2></td></tr>
 
 <p>Whether <a class="el" href="group__etcpal__thread.html#ga37eccd4b250f7b697bd366922d081f13" title="Wait for a thread to finish execution, giving up after a timeout.">etcpal_thread_timed_join()</a> is meaningful on this platform. </p>
 <p>If defined to 0, <a class="el" href="group__etcpal__thread.html#ga37eccd4b250f7b697bd366922d081f13" title="Wait for a thread to finish execution, giving up after a timeout.">etcpal_thread_timed_join()</a> executes the equivalent of <a class="el" href="group__etcpal__thread.html#ga711be33696701513f19239cf22dc3792" title="Wait for a thread to finish execution.">etcpal_thread_join()</a>, and the timeout_ms argument is ignored. </p>
+
+</div>
+</div>
+<a id="ga4c85448002ecdcd9aaf19fec8714ad10"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4c85448002ecdcd9aaf19fec8714ad10">&#9670;&nbsp;</a></span>ETCPAL_THREAD_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_THREAD_INIT&#160;&#160;&#160;[PLATFORM_DEFINED]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_thread_t. </p>
+<p>e.g. etcpal_thread_t thread = ETCPAL_THREAD_INIT; </p>
+
+</div>
+</div>
+<a id="gab622f7f91349c12a5f3c9f6dcfdbca29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab622f7f91349c12a5f3c9f6dcfdbca29">&#9670;&nbsp;</a></span>ETCPAL_THREAD_OS_HANDLE_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_THREAD_OS_HANDLE_INIT&#160;&#160;&#160;<a class="el" href="group__etcpal__thread.html#ga72620094cf45f5335fc4f9c338b17207">ETCPAL_THREAD_OS_HANDLE_INVALID</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_thread_os_handle_t. </p>
+<p>e.g. etcpal_thread_os_handle_t handle = ETCPAL_THREAD_OS_HANDLE_INIT; </p>
 
 </div>
 </div>

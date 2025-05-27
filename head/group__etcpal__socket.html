@@ -258,6 +258,12 @@ Macros</h2></td></tr>
 #define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga304e26b30c36b6c33319b9602c9fe276">ETCPAL_SOCKET_INVALID</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
 <tr class="memdesc:ga304e26b30c36b6c33319b9602c9fe276"><td class="mdescLeft">&#160;</td><td class="mdescRight">An identifier for an invalid socket handle. <br /></td></tr>
 <tr class="separator:ga304e26b30c36b6c33319b9602c9fe276"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9b6fbaa085a98fc6622d70c138da7fe6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga9b6fbaa085a98fc6622d70c138da7fe6">ETCPAL_SOCKET_INIT</a>&#160;&#160;&#160;<a class="el" href="group__etcpal__socket.html#ga304e26b30c36b6c33319b9602c9fe276">ETCPAL_SOCKET_INVALID</a></td></tr>
+<tr class="memdesc:ga9b6fbaa085a98fc6622d70c138da7fe6"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_socket_t.  <a href="group__etcpal__socket.html#ga9b6fbaa085a98fc6622d70c138da7fe6">More...</a><br /></td></tr>
+<tr class="separator:ga9b6fbaa085a98fc6622d70c138da7fe6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0eca515e5eb60bdb804b88f15509b52a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga0eca515e5eb60bdb804b88f15509b52a">ETCPAL_SIGNAL_INIT</a>&#160;&#160;&#160;PLATFORM_DEFINED</td></tr>
+<tr class="memdesc:ga0eca515e5eb60bdb804b88f15509b52a"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_signal_t.  <a href="group__etcpal__socket.html#ga0eca515e5eb60bdb804b88f15509b52a">More...</a><br /></td></tr>
+<tr class="separator:ga0eca515e5eb60bdb804b88f15509b52a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga06b68eaa9d0e50e624659ed1b9c7f05a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga06b68eaa9d0e50e624659ed1b9c7f05a">ETCPAL_SOCKET_MAX_POLL_SIZE</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
 <tr class="memdesc:ga06b68eaa9d0e50e624659ed1b9c7f05a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The maximum number of sockets that can be simultaneously monitored by <a class="el" href="group__etcpal__socket.html#gae5017e2346be12e91c6450fe9860614b" title="Wait for an event on a set of sockets defined by an EtcPalPollContext.">etcpal_poll_wait()</a>.  <a href="group__etcpal__socket.html#ga06b68eaa9d0e50e624659ed1b9c7f05a">More...</a><br /></td></tr>
 <tr class="separator:ga06b68eaa9d0e50e624659ed1b9c7f05a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -402,6 +408,9 @@ Functions</h2></td></tr>
 <tr class="memitem:gae5017e2346be12e91c6450fe9860614b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__etcpal__error.html#ga743b0648f0ca798ef29c9f69c6e255af">etcpal_error_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#gae5017e2346be12e91c6450fe9860614b">etcpal_poll_wait</a> (<a class="el" href="group__etcpal__socket.html#ga906fd2bcb17663f4de3fefd0b335656e">EtcPalPollContext</a> *context, <a class="el" href="struct_etc_pal_poll_event.html">EtcPalPollEvent</a> *event, int timeout_ms)</td></tr>
 <tr class="memdesc:gae5017e2346be12e91c6450fe9860614b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait for an event on a set of sockets defined by an EtcPalPollContext.  <a href="group__etcpal__socket.html#gae5017e2346be12e91c6450fe9860614b">More...</a><br /></td></tr>
 <tr class="separator:gae5017e2346be12e91c6450fe9860614b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga21ccf7a7261cfdbe1f8fe01573bbdbf3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__socket.html#ga21ccf7a7261cfdbe1f8fe01573bbdbf3">ETCPAL_POLL_CONTEXT_INIT</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
+<tr class="memdesc:ga21ccf7a7261cfdbe1f8fe01573bbdbf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for EtcPalPollContext.  <a href="group__etcpal__socket.html#ga21ccf7a7261cfdbe1f8fe01573bbdbf3">More...</a><br /></td></tr>
+<tr class="separator:ga21ccf7a7261cfdbe1f8fe01573bbdbf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader">Flags for etcpal_recvfrom() and etcpal_recvmsg()</h2></td></tr>
 <tr class="memitem:gac7ce230ebe4248728c597a66a2676fbf"><td class="memItemLeft" align="right" valign="top"><a id="gac7ce230ebe4248728c597a66a2676fbf"></a>
@@ -722,6 +731,57 @@ Functions</h2></td></tr>
 </div><!-- fragment -->
 <p>The minimum size a CMSG buffer needs to store one PKTINFO message (IPv4 or IPv6). </p>
 <p>In order for this to be used on Linux, the application must define _GNU_SOURCE. In order for this to be used on Mac, the application must define _GNU_SOURCE and __APPLE_USE_RFC_3542. </p>
+
+</div>
+</div>
+<a id="ga21ccf7a7261cfdbe1f8fe01573bbdbf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga21ccf7a7261cfdbe1f8fe01573bbdbf3">&#9670;&nbsp;</a></span>ETCPAL_POLL_CONTEXT_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_POLL_CONTEXT_INIT&#160;&#160;&#160;[PLATFORM_DEFINED]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for EtcPalPollContext. </p>
+<p>e.g. EtcPalPollContext context = ETCPAL_POLL_CONTEXT_INIT; </p>
+
+</div>
+</div>
+<a id="ga0eca515e5eb60bdb804b88f15509b52a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0eca515e5eb60bdb804b88f15509b52a">&#9670;&nbsp;</a></span>ETCPAL_SIGNAL_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_SIGNAL_INIT&#160;&#160;&#160;PLATFORM_DEFINED</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_signal_t. </p>
+<p>e.g. etcpal_signal_t signal = ETCPAL_SIGNAL_INIT; </p>
+
+</div>
+</div>
+<a id="ga9b6fbaa085a98fc6622d70c138da7fe6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9b6fbaa085a98fc6622d70c138da7fe6">&#9670;&nbsp;</a></span>ETCPAL_SOCKET_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_SOCKET_INIT&#160;&#160;&#160;<a class="el" href="group__etcpal__socket.html#ga304e26b30c36b6c33319b9602c9fe276">ETCPAL_SOCKET_INVALID</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_socket_t. </p>
+<p>e.g. etcpal_socket_t sock = ETCPAL_SOCKET_INIT; </p>
 
 </div>
 </div>

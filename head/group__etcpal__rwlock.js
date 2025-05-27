@@ -1,6 +1,7 @@
 var group__etcpal__rwlock =
 [
     [ "ETCPAL_RWLOCK_HAS_TIMED_LOCK", "group__etcpal__rwlock.html#ga076630adff898bb71a4aaca77a73aefc", null ],
+    [ "ETCPAL_RWLOCK_INIT", "group__etcpal__rwlock.html#ga6692c11bc1ec0283447e6b57d26df3b5", null ],
     [ "etcpal_rwlock_t", "group__etcpal__rwlock.html#ga5949678b1acff7d9829e257a9bee8d8e", null ],
     [ "etcpal_rwlock_create", "group__etcpal__rwlock.html#ga694477ee8932b83784f2d7a70ac856e3", null ],
     [ "etcpal_rwlock_destroy", "group__etcpal__rwlock.html#ga2d4feb63613ff8dfb1f106f5ed63dee5", null ],

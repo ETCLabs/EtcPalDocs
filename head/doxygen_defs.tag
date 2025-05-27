@@ -5957,6 +5957,20 @@
     </member>
     <member kind="define">
       <type>#define</type>
+      <name>ETCPAL_SOCKET_INIT</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga9b6fbaa085a98fc6622d70c138da7fe6</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_SIGNAL_INIT</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga0eca515e5eb60bdb804b88f15509b52a</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>ETCPAL_SOCKET_MAX_POLL_SIZE</name>
       <anchorfile>group__etcpal__socket.html</anchorfile>
       <anchor>ga06b68eaa9d0e50e624659ed1b9c7f05a</anchor>
@@ -6248,6 +6262,13 @@
       <anchorfile>group__etcpal__socket.html</anchorfile>
       <anchor>gae5017e2346be12e91c6450fe9860614b</anchor>
       <arglist>(EtcPalPollContext *context, EtcPalPollEvent *event, int timeout_ms)</arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_POLL_CONTEXT_INIT</name>
+      <anchorfile>group__etcpal__socket.html</anchorfile>
+      <anchor>ga21ccf7a7261cfdbe1f8fe01573bbdbf3</anchor>
+      <arglist></arglist>
     </member>
     <member kind="define">
       <type>#define</type>
@@ -6579,9 +6600,23 @@
     </member>
     <member kind="define">
       <type>#define</type>
+      <name>ETCPAL_THREAD_INIT</name>
+      <anchorfile>group__etcpal__thread.html</anchorfile>
+      <anchor>ga4c85448002ecdcd9aaf19fec8714ad10</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>ETCPAL_THREAD_OS_HANDLE_INVALID</name>
       <anchorfile>group__etcpal__thread.html</anchorfile>
       <anchor>ga72620094cf45f5335fc4f9c338b17207</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_THREAD_OS_HANDLE_INIT</name>
+      <anchorfile>group__etcpal__thread.html</anchorfile>
+      <anchor>gab622f7f91349c12a5f3c9f6dcfdbca29</anchor>
       <arglist></arglist>
     </member>
     <member kind="define">
@@ -7084,6 +7119,20 @@
     <filename>group__etcpal__event__group.html</filename>
     <member kind="define">
       <type>#define</type>
+      <name>ETCPAL_EVENT_GROUP_INIT</name>
+      <anchorfile>group__etcpal__event__group.html</anchorfile>
+      <anchor>ga36609fa7b8902e82cf7e8c9f6100e209</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_EVENT_BITS_INIT</name>
+      <anchorfile>group__etcpal__event__group.html</anchorfile>
+      <anchor>ga652803e26d48958fb5be6bfa0bed7033</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>ETCPAL_EVENT_GROUP_HAS_TIMED_WAIT</name>
       <anchorfile>group__etcpal__event__group.html</anchorfile>
       <anchor>ga4227d5a45f092ff04e17cd6809eadd19</anchor>
@@ -7215,6 +7264,13 @@
     <filename>group__etcpal__mutex.html</filename>
     <member kind="define">
       <type>#define</type>
+      <name>ETCPAL_MUTEX_INIT</name>
+      <anchorfile>group__etcpal__mutex.html</anchorfile>
+      <anchor>gaef317a0819e7be59d847005b67f2a090</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>ETCPAL_MUTEX_HAS_TIMED_LOCK</name>
       <anchorfile>group__etcpal__mutex.html</anchorfile>
       <anchor>ga8c452b6fbbfffb5071cbb62c2011cd68</anchor>
@@ -7274,6 +7330,13 @@
     <name>etcpal_queue</name>
     <title>queue (RTOS queues)</title>
     <filename>group__etcpal__queue.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_QUEUE_INIT</name>
+      <anchorfile>group__etcpal__queue.html</anchorfile>
+      <anchor>ga28d33a1ed279c791ceeea4342bbcc3e4</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="define">
       <type>#define</type>
       <name>ETCPAL_QUEUE_HAS_STATIC</name>
@@ -7428,6 +7491,13 @@
     <filename>group__etcpal__recursive__mutex.html</filename>
     <member kind="define">
       <type>#define</type>
+      <name>ETCPAL_RECURSIVE_MUTEX_INIT</name>
+      <anchorfile>group__etcpal__recursive__mutex.html</anchorfile>
+      <anchor>gaf41be6c628693dabc802d9d7c2528538</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>ETCPAL_RECURSIVE_MUTEX_HAS_TIMED_LOCK</name>
       <anchorfile>group__etcpal__recursive__mutex.html</anchorfile>
       <anchor>ga752b7f9693eb78835fccb80beac59eb2</anchor>
@@ -7487,6 +7557,13 @@
     <name>etcpal_rwlock</name>
     <title>rwlock (Read-Write Locks)</title>
     <filename>group__etcpal__rwlock.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_RWLOCK_INIT</name>
+      <anchorfile>group__etcpal__rwlock.html</anchorfile>
+      <anchor>ga6692c11bc1ec0283447e6b57d26df3b5</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="define">
       <type>#define</type>
       <name>ETCPAL_RWLOCK_HAS_TIMED_LOCK</name>
@@ -7578,6 +7655,13 @@
     <filename>group__etcpal__sem.html</filename>
     <member kind="define">
       <type>#define</type>
+      <name>ETCPAL_SEM_INIT</name>
+      <anchorfile>group__etcpal__sem.html</anchorfile>
+      <anchor>ga5caa035ffea2df54cadb3e609f76a805</anchor>
+      <arglist></arglist>
+    </member>
+    <member kind="define">
+      <type>#define</type>
       <name>ETCPAL_SEM_HAS_TIMED_WAIT</name>
       <anchorfile>group__etcpal__sem.html</anchorfile>
       <anchor>gaada2b485228c5c702f240abd8d42c836</anchor>
@@ -7665,6 +7749,13 @@
     <name>etcpal_signal</name>
     <title>signal (Signals)</title>
     <filename>group__etcpal__signal.html</filename>
+    <member kind="define">
+      <type>#define</type>
+      <name>ETCPAL_SIGNAL_INIT</name>
+      <anchorfile>group__etcpal__signal.html</anchorfile>
+      <anchor>ga0eca515e5eb60bdb804b88f15509b52a</anchor>
+      <arglist></arglist>
+    </member>
     <member kind="define">
       <type>#define</type>
       <name>ETCPAL_SIGNAL_HAS_TIMED_WAIT</name>

@@ -272,6 +272,9 @@ $(document).ready(function(){initNavTree('group__etcpal__rwlock.html',''); initR
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga6692c11bc1ec0283447e6b57d26df3b5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__rwlock.html#ga6692c11bc1ec0283447e6b57d26df3b5">ETCPAL_RWLOCK_INIT</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
+<tr class="memdesc:ga6692c11bc1ec0283447e6b57d26df3b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_rwlock_t.  <a href="group__etcpal__rwlock.html#ga6692c11bc1ec0283447e6b57d26df3b5">More...</a><br /></td></tr>
+<tr class="separator:ga6692c11bc1ec0283447e6b57d26df3b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga076630adff898bb71a4aaca77a73aefc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__rwlock.html#ga076630adff898bb71a4aaca77a73aefc">ETCPAL_RWLOCK_HAS_TIMED_LOCK</a>&#160;&#160;&#160;/* platform-defined */</td></tr>
 <tr class="memdesc:ga076630adff898bb71a4aaca77a73aefc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="group__etcpal__rwlock.html#gafa8f15715dac3b6f54bd7dcafe62da10" title="Try to access a read-write lock for reading, giving up after a timeout.">etcpal_rwlock_timed_readlock()</a> and <a class="el" href="group__etcpal__rwlock.html#ga0f848288a067dbfd5348c089c1dbb76b" title="Try to access a read-write lock for writing, giving up after a timeout.">etcpal_rwlock_timed_writelock()</a> are meaningful on this platform.  <a href="group__etcpal__rwlock.html#ga076630adff898bb71a4aaca77a73aefc">More...</a><br /></td></tr>
 <tr class="separator:ga076630adff898bb71a4aaca77a73aefc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -330,6 +333,23 @@ Functions</h2></td></tr>
 
 <p>Whether <a class="el" href="group__etcpal__rwlock.html#gafa8f15715dac3b6f54bd7dcafe62da10" title="Try to access a read-write lock for reading, giving up after a timeout.">etcpal_rwlock_timed_readlock()</a> and <a class="el" href="group__etcpal__rwlock.html#ga0f848288a067dbfd5348c089c1dbb76b" title="Try to access a read-write lock for writing, giving up after a timeout.">etcpal_rwlock_timed_writelock()</a> are meaningful on this platform. </p>
 <p>If defined to 0, the etcpal_rwlock_timed_*lock() functions execute the equivalent of etcpal_rwlock_try_*lock() if given a timeout of 0, or etcpal_rwlock_*lock() otherwise. </p>
+
+</div>
+</div>
+<a id="ga6692c11bc1ec0283447e6b57d26df3b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6692c11bc1ec0283447e6b57d26df3b5">&#9670;&nbsp;</a></span>ETCPAL_RWLOCK_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_RWLOCK_INIT&#160;&#160;&#160;[PLATFORM_DEFINED]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_rwlock_t. </p>
+<p>e.g. etcpal_rwlock_t lock = ETCPAL_RWLOCK_INIT; </p>
 
 </div>
 </div>

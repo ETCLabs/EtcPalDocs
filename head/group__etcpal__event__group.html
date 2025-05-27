@@ -264,7 +264,7 @@ $(document).ready(function(){initNavTree('group__etcpal__event__group.html','');
 <div class="line">}</div>
 <div class="ttc" id="agroup__etcpal__event__group_html_ga2ce63fdddde875fda44575076de44925"><div class="ttname"><a href="group__etcpal__event__group.html#ga2ce63fdddde875fda44575076de44925">etcpal_event_group_wait</a></div><div class="ttdeci">etcpal_event_bits_t etcpal_event_group_wait(etcpal_event_group_t *id, etcpal_event_bits_t bits, int flags)</div><div class="ttdoc">Wait for one or more bits in an event group.</div></div>
 <div class="ttc" id="agroup__etcpal__event__group_html_ga39ba56549fc91c52ee5719fdc95853bd"><div class="ttname"><a href="group__etcpal__event__group.html#ga39ba56549fc91c52ee5719fdc95853bd">etcpal_event_group_set_bits_from_isr</a></div><div class="ttdeci">void etcpal_event_group_set_bits_from_isr(etcpal_event_group_t *id, etcpal_event_bits_t bits_to_set)</div><div class="ttdoc">Set one or more bits in an event group from an interrupt context.</div></div>
-<div class="ttc" id="agroup__etcpal__event__group_html_ga70de7127d1f9721ed1b012b5aebd1f98"><div class="ttname"><a href="group__etcpal__event__group.html#ga70de7127d1f9721ed1b012b5aebd1f98">etcpal_event_bits_t</a></div><div class="ttdeci">PLATFORM_DEFINED etcpal_event_bits_t</div><div class="ttdoc">The type that holds the event bitfield.</div><div class="ttdef"><b>Definition:</b> event_group.dox:105</div></div>
+<div class="ttc" id="agroup__etcpal__event__group_html_ga70de7127d1f9721ed1b012b5aebd1f98"><div class="ttname"><a href="group__etcpal__event__group.html#ga70de7127d1f9721ed1b012b5aebd1f98">etcpal_event_bits_t</a></div><div class="ttdeci">PLATFORM_DEFINED etcpal_event_bits_t</div><div class="ttdoc">The type that holds the event bitfield.</div><div class="ttdef"><b>Definition:</b> event_group.dox:112</div></div>
 <div class="ttc" id="agroup__etcpal__event__group_html_ga73ba468847773eeef9f820727f9c4a66"><div class="ttname"><a href="group__etcpal__event__group.html#ga73ba468847773eeef9f820727f9c4a66">etcpal_event_group_create</a></div><div class="ttdeci">bool etcpal_event_group_create(etcpal_event_group_t *id)</div><div class="ttdoc">Create a new event group.</div></div>
 <div class="ttc" id="agroup__etcpal__event__group_html_gad366db88a3a26f1ff9451f8ed3333c4e"><div class="ttname"><a href="group__etcpal__event__group.html#gad366db88a3a26f1ff9451f8ed3333c4e">etcpal_event_group_t</a></div><div class="ttdeci">PLATFORM_DEFINED etcpal_event_group_t</div><div class="ttdoc">The event group identifier.</div><div class="ttdef"><b>Definition:</b> event_group.dox:96</div></div>
 <div class="ttc" id="agroup__etcpal__event__group_html_gae7f8a36d6d226e95f2c7d4fa9474e1e1"><div class="ttname"><a href="group__etcpal__event__group.html#gae7f8a36d6d226e95f2c7d4fa9474e1e1">ETCPAL_EVENT_GROUP_AUTO_CLEAR</a></div><div class="ttdeci">#define ETCPAL_EVENT_GROUP_AUTO_CLEAR</div><div class="ttdoc">Clear bits automatically when they are returned from a wait function.</div><div class="ttdef"><b>Definition:</b> event_group.h:40</div></div>
@@ -293,6 +293,12 @@ $(document).ready(function(){initNavTree('group__etcpal__event__group.html','');
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga36609fa7b8902e82cf7e8c9f6100e209"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__event__group.html#ga36609fa7b8902e82cf7e8c9f6100e209">ETCPAL_EVENT_GROUP_INIT</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
+<tr class="memdesc:ga36609fa7b8902e82cf7e8c9f6100e209"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_event_group_t.  <a href="group__etcpal__event__group.html#ga36609fa7b8902e82cf7e8c9f6100e209">More...</a><br /></td></tr>
+<tr class="separator:ga36609fa7b8902e82cf7e8c9f6100e209"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga652803e26d48958fb5be6bfa0bed7033"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__event__group.html#ga652803e26d48958fb5be6bfa0bed7033">ETCPAL_EVENT_BITS_INIT</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
+<tr class="memdesc:ga652803e26d48958fb5be6bfa0bed7033"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_event_bits_t.  <a href="group__etcpal__event__group.html#ga652803e26d48958fb5be6bfa0bed7033">More...</a><br /></td></tr>
+<tr class="separator:ga652803e26d48958fb5be6bfa0bed7033"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4227d5a45f092ff04e17cd6809eadd19"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__event__group.html#ga4227d5a45f092ff04e17cd6809eadd19">ETCPAL_EVENT_GROUP_HAS_TIMED_WAIT</a>&#160;&#160;&#160;/* platform-defined */</td></tr>
 <tr class="memdesc:ga4227d5a45f092ff04e17cd6809eadd19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="group__etcpal__event__group.html#gafca908241967793b21bb2e259ea51824" title="Wait for one or more bits in an event group, giving up after a timeout.">etcpal_event_group_timed_wait()</a> is meaningful on this platform.  <a href="group__etcpal__event__group.html#ga4227d5a45f092ff04e17cd6809eadd19">More...</a><br /></td></tr>
 <tr class="separator:ga4227d5a45f092ff04e17cd6809eadd19"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -357,6 +363,23 @@ Functions</h2></td></tr>
 <tr class="separator:ga9a2eea55a13fd20a3b3a8e15efef1016"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga652803e26d48958fb5be6bfa0bed7033"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga652803e26d48958fb5be6bfa0bed7033">&#9670;&nbsp;</a></span>ETCPAL_EVENT_BITS_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_EVENT_BITS_INIT&#160;&#160;&#160;[PLATFORM_DEFINED]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_event_bits_t. </p>
+<p>e.g. etcpal_event_bits_t bits = ETCPAL_EVENT_BITS_INIT; </p>
+
+</div>
+</div>
 <a id="gae7f8a36d6d226e95f2c7d4fa9474e1e1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gae7f8a36d6d226e95f2c7d4fa9474e1e1">&#9670;&nbsp;</a></span>ETCPAL_EVENT_GROUP_AUTO_CLEAR</h2>
 
@@ -405,6 +428,23 @@ Functions</h2></td></tr>
 
 <p>Whether <a class="el" href="group__etcpal__event__group.html#gafca908241967793b21bb2e259ea51824" title="Wait for one or more bits in an event group, giving up after a timeout.">etcpal_event_group_timed_wait()</a> is meaningful on this platform. </p>
 <p>If defined to 0, <a class="el" href="group__etcpal__event__group.html#gafca908241967793b21bb2e259ea51824" title="Wait for one or more bits in an event group, giving up after a timeout.">etcpal_event_group_timed_wait()</a> executes the equivalent of <a class="el" href="group__etcpal__event__group.html#ga2ce63fdddde875fda44575076de44925" title="Wait for one or more bits in an event group.">etcpal_event_group_wait()</a> if given a nonzero timeout, or returns immediately with the status of the event group if given a timeout of 0. </p>
+
+</div>
+</div>
+<a id="ga36609fa7b8902e82cf7e8c9f6100e209"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga36609fa7b8902e82cf7e8c9f6100e209">&#9670;&nbsp;</a></span>ETCPAL_EVENT_GROUP_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_EVENT_GROUP_INIT&#160;&#160;&#160;[PLATFORM_DEFINED]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_event_group_t. </p>
+<p>e.g. etcpal_event_group_t group = ETCPAL_EVENT_GROUP_INIT; </p>
 
 </div>
 </div>

@@ -283,6 +283,9 @@ $(document).ready(function(){initNavTree('group__etcpal__mutex.html',''); initRe
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:gaef317a0819e7be59d847005b67f2a090"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__mutex.html#gaef317a0819e7be59d847005b67f2a090">ETCPAL_MUTEX_INIT</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
+<tr class="memdesc:gaef317a0819e7be59d847005b67f2a090"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_mutex_t.  <a href="group__etcpal__mutex.html#gaef317a0819e7be59d847005b67f2a090">More...</a><br /></td></tr>
+<tr class="separator:gaef317a0819e7be59d847005b67f2a090"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8c452b6fbbfffb5071cbb62c2011cd68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__mutex.html#ga8c452b6fbbfffb5071cbb62c2011cd68">ETCPAL_MUTEX_HAS_TIMED_LOCK</a>&#160;&#160;&#160;/* platform-defined */</td></tr>
 <tr class="memdesc:ga8c452b6fbbfffb5071cbb62c2011cd68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="group__etcpal__mutex.html#ga94809c21d2ddd2ab62bbb7c7d3f7f576" title="Try to lock a mutex, giving up after a timeout.">etcpal_mutex_timed_lock()</a> is meaningful on this platform.  <a href="group__etcpal__mutex.html#ga8c452b6fbbfffb5071cbb62c2011cd68">More...</a><br /></td></tr>
 <tr class="separator:ga8c452b6fbbfffb5071cbb62c2011cd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -329,6 +332,23 @@ Functions</h2></td></tr>
 
 <p>Whether <a class="el" href="group__etcpal__mutex.html#ga94809c21d2ddd2ab62bbb7c7d3f7f576" title="Try to lock a mutex, giving up after a timeout.">etcpal_mutex_timed_lock()</a> is meaningful on this platform. </p>
 <p>If defined to 0, <a class="el" href="group__etcpal__mutex.html#ga94809c21d2ddd2ab62bbb7c7d3f7f576" title="Try to lock a mutex, giving up after a timeout.">etcpal_mutex_timed_lock()</a> executes the equivalent of <a class="el" href="group__etcpal__mutex.html#gac3095a52d1afa4b44ffa066a9dde05a5" title="Try to lock a mutex.">etcpal_mutex_try_lock()</a> if given a timeout of 0, or <a class="el" href="group__etcpal__mutex.html#gab53dcdc649c23fb797228f414bb67e34" title="Lock a mutex.">etcpal_mutex_lock()</a> otherwise. </p>
+
+</div>
+</div>
+<a id="gaef317a0819e7be59d847005b67f2a090"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaef317a0819e7be59d847005b67f2a090">&#9670;&nbsp;</a></span>ETCPAL_MUTEX_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_MUTEX_INIT&#160;&#160;&#160;[PLATFORM_DEFINED]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_mutex_t. </p>
+<p>e.g. etcpal_mutex_t mutex = ETCPAL_MUTEX_INIT; </p>
 
 </div>
 </div>

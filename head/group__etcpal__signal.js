@@ -2,6 +2,7 @@ var group__etcpal__signal =
 [
     [ "ETCPAL_SIGNAL_HAS_POST_FROM_ISR", "group__etcpal__signal.html#ga29bf79c6470cde2c5bdc45ab90f4d826", null ],
     [ "ETCPAL_SIGNAL_HAS_TIMED_WAIT", "group__etcpal__signal.html#gae27ec551b3bcdeb4c72e6ecea9ba3ca8", null ],
+    [ "ETCPAL_SIGNAL_INIT", "group__etcpal__signal.html#ga0eca515e5eb60bdb804b88f15509b52a", null ],
     [ "etcpal_signal_t", "group__etcpal__signal.html#gab450fff060bfcede49357b2e00357669", null ],
     [ "etcpal_signal_create", "group__etcpal__signal.html#ga4082ebadfba33b125930d5c5067139f0", null ],
     [ "etcpal_signal_destroy", "group__etcpal__signal.html#ga4ecc28a0f67939859d91c8e9e75701e4", null ],

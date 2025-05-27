@@ -1,8 +1,10 @@
 var group__etcpal__event__group =
 [
+    [ "ETCPAL_EVENT_BITS_INIT", "group__etcpal__event__group.html#ga652803e26d48958fb5be6bfa0bed7033", null ],
     [ "ETCPAL_EVENT_GROUP_AUTO_CLEAR", "group__etcpal__event__group.html#gae7f8a36d6d226e95f2c7d4fa9474e1e1", null ],
     [ "ETCPAL_EVENT_GROUP_HAS_ISR_FUNCTIONS", "group__etcpal__event__group.html#ga5fdd69b602a2b614d80575067d135459", null ],
     [ "ETCPAL_EVENT_GROUP_HAS_TIMED_WAIT", "group__etcpal__event__group.html#ga4227d5a45f092ff04e17cd6809eadd19", null ],
+    [ "ETCPAL_EVENT_GROUP_INIT", "group__etcpal__event__group.html#ga36609fa7b8902e82cf7e8c9f6100e209", null ],
     [ "ETCPAL_EVENT_GROUP_NUM_USABLE_BITS", "group__etcpal__event__group.html#ga13812920e0d661b38e9aeb6020eac678", null ],
     [ "ETCPAL_EVENT_GROUP_WAIT_FOR_ALL", "group__etcpal__event__group.html#ga9a2eea55a13fd20a3b3a8e15efef1016", null ],
     [ "ETCPAL_EVENT_GROUP_WAKES_MULTIPLE_THREADS", "group__etcpal__event__group.html#ga299add3138230c9999f63d38dc7964b0", null ],

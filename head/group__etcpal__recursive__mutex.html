@@ -239,6 +239,9 @@ $(document).ready(function(){initNavTree('group__etcpal__recursive__mutex.html',
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:gaf41be6c628693dabc802d9d7c2528538"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__recursive__mutex.html#gaf41be6c628693dabc802d9d7c2528538">ETCPAL_RECURSIVE_MUTEX_INIT</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
+<tr class="memdesc:gaf41be6c628693dabc802d9d7c2528538"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_recursive_mutex_t.  <a href="group__etcpal__recursive__mutex.html#gaf41be6c628693dabc802d9d7c2528538">More...</a><br /></td></tr>
+<tr class="separator:gaf41be6c628693dabc802d9d7c2528538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga752b7f9693eb78835fccb80beac59eb2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__recursive__mutex.html#ga752b7f9693eb78835fccb80beac59eb2">ETCPAL_RECURSIVE_MUTEX_HAS_TIMED_LOCK</a>&#160;&#160;&#160;/* platform-defined */</td></tr>
 <tr class="memdesc:ga752b7f9693eb78835fccb80beac59eb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="group__etcpal__recursive__mutex.html#gafb88fc7f6b18d47218220198d588f322" title="Try to lock a mutex, giving up after a timeout.">etcpal_recursive_mutex_timed_lock()</a> is meaningful on this platform.  <a href="group__etcpal__recursive__mutex.html#ga752b7f9693eb78835fccb80beac59eb2">More...</a><br /></td></tr>
 <tr class="separator:ga752b7f9693eb78835fccb80beac59eb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,6 +288,23 @@ Functions</h2></td></tr>
 
 <p>Whether <a class="el" href="group__etcpal__recursive__mutex.html#gafb88fc7f6b18d47218220198d588f322" title="Try to lock a mutex, giving up after a timeout.">etcpal_recursive_mutex_timed_lock()</a> is meaningful on this platform. </p>
 <p>If defined to 0, <a class="el" href="group__etcpal__recursive__mutex.html#gafb88fc7f6b18d47218220198d588f322" title="Try to lock a mutex, giving up after a timeout.">etcpal_recursive_mutex_timed_lock()</a> executes the equivalent of <a class="el" href="group__etcpal__recursive__mutex.html#ga616eae5bd1a7f76b82be8c01c64e39ad" title="Try to lock a mutex.">etcpal_recursive_mutex_try_lock()</a> if given a timeout of 0, or <a class="el" href="group__etcpal__recursive__mutex.html#ga3b0a40808f7c27f4a5f90754ef9fcf53" title="Lock a mutex.">etcpal_recursive_mutex_lock()</a> otherwise. </p>
+
+</div>
+</div>
+<a id="gaf41be6c628693dabc802d9d7c2528538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf41be6c628693dabc802d9d7c2528538">&#9670;&nbsp;</a></span>ETCPAL_RECURSIVE_MUTEX_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_RECURSIVE_MUTEX_INIT&#160;&#160;&#160;[PLATFORM_DEFINED]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_recursive_mutex_t. </p>
+<p>e.g. etcpal_recursive_mutex_t mutex = ETCPAL_RECURSIVE_MUTEX_INIT; </p>
 
 </div>
 </div>

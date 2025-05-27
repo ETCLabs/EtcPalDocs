@@ -266,6 +266,9 @@ $(document).ready(function(){initNavTree('group__etcpal__sem.html',''); initResi
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga5caa035ffea2df54cadb3e609f76a805"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__sem.html#ga5caa035ffea2df54cadb3e609f76a805">ETCPAL_SEM_INIT</a>&#160;&#160;&#160;[PLATFORM_DEFINED]</td></tr>
+<tr class="memdesc:ga5caa035ffea2df54cadb3e609f76a805"><td class="mdescLeft">&#160;</td><td class="mdescRight">A default initializer for etcpal_sem_t.  <a href="group__etcpal__sem.html#ga5caa035ffea2df54cadb3e609f76a805">More...</a><br /></td></tr>
+<tr class="separator:ga5caa035ffea2df54cadb3e609f76a805"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaada2b485228c5c702f240abd8d42c836"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__etcpal__sem.html#gaada2b485228c5c702f240abd8d42c836">ETCPAL_SEM_HAS_TIMED_WAIT</a>&#160;&#160;&#160;/* platform-defined */</td></tr>
 <tr class="memdesc:gaada2b485228c5c702f240abd8d42c836"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether <a class="el" href="group__etcpal__sem.html#gad2f3af8fc26a2d028edd4c1341304061" title="Wait for a semaphore, giving up after a timeout.">etcpal_sem_timed_wait()</a> is meaningful on this platform.  <a href="group__etcpal__sem.html#gaada2b485228c5c702f240abd8d42c836">More...</a><br /></td></tr>
 <tr class="separator:gaada2b485228c5c702f240abd8d42c836"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -358,6 +361,23 @@ Functions</h2></td></tr>
 
 <p>Whether <a class="el" href="group__etcpal__sem.html#gad2f3af8fc26a2d028edd4c1341304061" title="Wait for a semaphore, giving up after a timeout.">etcpal_sem_timed_wait()</a> is meaningful on this platform. </p>
 <p>If defined to 0, <a class="el" href="group__etcpal__sem.html#gad2f3af8fc26a2d028edd4c1341304061" title="Wait for a semaphore, giving up after a timeout.">etcpal_sem_timed_wait()</a> executes the equivalent of <a class="el" href="group__etcpal__sem.html#ga4e6901853d69d55f97717f14bb6eb290" title="Try to wait for a semaphore.">etcpal_sem_try_wait()</a> if given a timeout of 0, or <a class="el" href="group__etcpal__sem.html#gadf3cdb9d9d92dfde1b9933d6076e63aa" title="Wait for a semaphore.">etcpal_sem_wait()</a> otherwise. </p>
+
+</div>
+</div>
+<a id="ga5caa035ffea2df54cadb3e609f76a805"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5caa035ffea2df54cadb3e609f76a805">&#9670;&nbsp;</a></span>ETCPAL_SEM_INIT</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ETCPAL_SEM_INIT&#160;&#160;&#160;[PLATFORM_DEFINED]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>A default initializer for etcpal_sem_t. </p>
+<p>e.g. etcpal_sem_t sem = ETCPAL_SEM_INIT; </p>
 
 </div>
 </div>

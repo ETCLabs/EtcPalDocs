@@ -1,6 +1,7 @@
 var group__etcpal__mutex =
 [
     [ "ETCPAL_MUTEX_HAS_TIMED_LOCK", "group__etcpal__mutex.html#ga8c452b6fbbfffb5071cbb62c2011cd68", null ],
+    [ "ETCPAL_MUTEX_INIT", "group__etcpal__mutex.html#gaef317a0819e7be59d847005b67f2a090", null ],
     [ "etcpal_mutex_t", "group__etcpal__mutex.html#ga7360372b14b0feb1ad9f22d2a42734a9", null ],
     [ "etcpal_mutex_create", "group__etcpal__mutex.html#ga848f261552bf8c981590eb784ee5b3b8", null ],
     [ "etcpal_mutex_destroy", "group__etcpal__mutex.html#ga4b71ed71a637a07c0fe5cd55222a209c", null ],
