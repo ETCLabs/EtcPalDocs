@@ -1,6 +1,29 @@
 var searchData=
 [
-  ['logger_897',['Logger',['../classetcpal_1_1_logger.html',1,'etcpal']]],
-  ['logmessagehandler_898',['LogMessageHandler',['../classetcpal_1_1_log_message_handler.html',1,'etcpal']]],
-  ['logtimestamp_899',['LogTimestamp',['../classetcpal_1_1_log_timestamp.html',1,'etcpal']]]
+  ['error_899',['Error',['../classetcpal_1_1_error.html',1,'etcpal']]],
+  ['etcpaladdrinfo_900',['EtcPalAddrinfo',['../struct_etc_pal_addrinfo.html',1,'']]],
+  ['etcpalcmsghdr_901',['EtcPalCMsgHdr',['../struct_etc_pal_c_msg_hdr.html',1,'']]],
+  ['etcpalgroupreq_902',['EtcPalGroupReq',['../struct_etc_pal_group_req.html',1,'']]],
+  ['etcpalipaddr_903',['EtcPalIpAddr',['../struct_etc_pal_ip_addr.html',1,'']]],
+  ['etcpallinger_904',['EtcPalLinger',['../struct_etc_pal_linger.html',1,'']]],
+  ['etcpallogparams_905',['EtcPalLogParams',['../struct_etc_pal_log_params.html',1,'']]],
+  ['etcpallogstrings_906',['EtcPalLogStrings',['../struct_etc_pal_log_strings.html',1,'']]],
+  ['etcpallogtimestamp_907',['EtcPalLogTimestamp',['../struct_etc_pal_log_timestamp.html',1,'']]],
+  ['etcpalmacaddr_908',['EtcPalMacAddr',['../struct_etc_pal_mac_addr.html',1,'']]],
+  ['etcpalmcastnetintid_909',['EtcPalMcastNetintId',['../struct_etc_pal_mcast_netint_id.html',1,'']]],
+  ['etcpalmreq_910',['EtcPalMreq',['../struct_etc_pal_mreq.html',1,'']]],
+  ['etcpalmsghdr_911',['EtcPalMsgHdr',['../struct_etc_pal_msg_hdr.html',1,'']]],
+  ['etcpalnetintinfo_912',['EtcPalNetintInfo',['../struct_etc_pal_netint_info.html',1,'']]],
+  ['etcpalpktinfo_913',['EtcPalPktInfo',['../struct_etc_pal_pkt_info.html',1,'']]],
+  ['etcpalpollevent_914',['EtcPalPollEvent',['../struct_etc_pal_poll_event.html',1,'']]],
+  ['etcpalrbiter_915',['EtcPalRbIter',['../struct_etc_pal_rb_iter.html',1,'']]],
+  ['etcpalrbnode_916',['EtcPalRbNode',['../struct_etc_pal_rb_node.html',1,'']]],
+  ['etcpalrbtree_917',['EtcPalRbTree',['../struct_etc_pal_rb_tree.html',1,'']]],
+  ['etcpalsockaddr_918',['EtcPalSockAddr',['../struct_etc_pal_sock_addr.html',1,'']]],
+  ['etcpalsyslogparams_919',['EtcPalSyslogParams',['../struct_etc_pal_syslog_params.html',1,'']]],
+  ['etcpalthreadparams_920',['EtcPalThreadParams',['../struct_etc_pal_thread_params.html',1,'']]],
+  ['etcpaltimer_921',['EtcPalTimer',['../struct_etc_pal_timer.html',1,'']]],
+  ['etcpaluuid_922',['EtcPalUuid',['../struct_etc_pal_uuid.html',1,'']]],
+  ['eventgroup_923',['EventGroup',['../classetcpal_1_1_event_group.html',1,'etcpal']]],
+  ['expected_924',['Expected',['../classetcpal_1_1_expected.html',1,'etcpal']]]
 ];

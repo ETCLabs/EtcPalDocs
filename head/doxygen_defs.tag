@@ -34,6 +34,27 @@
     <class kind="class">etcpal::OpaqueId</class>
   </compound>
   <compound kind="file">
+    <name>synchronized_value.h</name>
+    <path>/builds/etc/common-tech/general/etcpal/include/etcpal/cpp/</path>
+    <filename>synchronized__value_8h.html</filename>
+    <includes id="cpp_2common_8h" name="common.h" local="yes" imported="no">etcpal/cpp/common.h</includes>
+    <includes id="cpp_2mutex_8h" name="mutex.h" local="yes" imported="no">etcpal/cpp/mutex.h</includes>
+    <includes id="cpp_2recursive__mutex_8h" name="recursive_mutex.h" local="yes" imported="no">etcpal/cpp/recursive_mutex.h</includes>
+    <class kind="struct">etcpal::detail::FirstType</class>
+    <class kind="struct">etcpal::detail::FirstType&lt; First, Rest... &gt;</class>
+    <class kind="struct">etcpal::AdoptLockTag</class>
+    <class kind="struct">etcpal::DeferLockTag</class>
+    <class kind="struct">etcpal::TryToLockTag</class>
+    <class kind="struct">etcpal::SupportsTimedLock</class>
+    <class kind="struct">etcpal::SupportsTimedLock&lt; Mutex &gt;</class>
+    <class kind="struct">etcpal::SupportsTimedLock&lt; RecursiveMutex &gt;</class>
+    <class kind="class">etcpal::ConstStrictLockPtr</class>
+    <class kind="class">etcpal::StrictLockPtr</class>
+    <class kind="class">etcpal::ConstUniqueLockPtr</class>
+    <class kind="class">etcpal::UniqueLockPtr</class>
+    <class kind="class">etcpal::SynchronizedValue</class>
+  </compound>
+  <compound kind="file">
     <name>error.h</name>
     <path>/builds/etc/common-tech/general/etcpal/include/etcpal/cpp/</path>
     <filename>cpp_2error_8h.html</filename>
@@ -380,6 +401,10 @@
       <arglist></arglist>
     </member>
   </compound>
+  <compound kind="struct">
+    <name>etcpal::AdoptLockTag</name>
+    <filename>structetcpal_1_1_adopt_lock_tag.html</filename>
+  </compound>
   <compound kind="class">
     <name>etcpal::BadExpectedAccess</name>
     <filename>classetcpal_1_1_bad_expected_access.html</filename>
@@ -397,6 +422,222 @@
       <anchor>aa64e8d28a7a913372edd18c2d6a15ab7</anchor>
       <arglist>() const noexcept</arglist>
     </member>
+  </compound>
+  <compound kind="class">
+    <name>etcpal::ConstStrictLockPtr</name>
+    <filename>classetcpal_1_1_const_strict_lock_ptr.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type></type>
+      <name>ConstStrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>aaa75cdf99b33039cd24ad7e5717501a1</anchor>
+      <arglist>(const SynchronizedValue&lt; T, LockType &gt; &amp;sync)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstStrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a167f83c57d9ca760fe6be00e43d22925</anchor>
+      <arglist>(const SynchronizedValue&lt; T, LockType &gt; &amp;sync, AdoptLockTag) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstStrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a5e8f9daa6639a449c82f37d36b57398d</anchor>
+      <arglist>(ConstUniqueLockPtr&lt; T, LockType &gt; &amp;&amp;other)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstStrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a42cf441d3130952820566c139fcc3b49</anchor>
+      <arglist>(ConstStrictLockPtr &amp;&amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~ConstStrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a5a9127902e79ca8727ad4f1a0b589121</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>const T &amp;</type>
+      <name>operator*</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a907da3f5e7b107340832dd56f1b89a49</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>const T *</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a4672af4c2ef6bbe656c91f1ce413e1da</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>ConstStrictLockPtr&lt; T, Mutex &gt;</name>
+    <filename>classetcpal_1_1_const_strict_lock_ptr.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>ConstStrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>aaa75cdf99b33039cd24ad7e5717501a1</anchor>
+      <arglist>(const SynchronizedValue&lt; T, Mutex &gt; &amp;sync)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstStrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a167f83c57d9ca760fe6be00e43d22925</anchor>
+      <arglist>(const SynchronizedValue&lt; T, Mutex &gt; &amp;sync, AdoptLockTag) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstStrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a5e8f9daa6639a449c82f37d36b57398d</anchor>
+      <arglist>(ConstUniqueLockPtr&lt; T, Mutex &gt; &amp;&amp;other)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstStrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a42cf441d3130952820566c139fcc3b49</anchor>
+      <arglist>(ConstStrictLockPtr &amp;&amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~ConstStrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a5a9127902e79ca8727ad4f1a0b589121</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>const T &amp;</type>
+      <name>operator*</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a907da3f5e7b107340832dd56f1b89a49</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>const T *</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_const_strict_lock_ptr.html</anchorfile>
+      <anchor>a4672af4c2ef6bbe656c91f1ce413e1da</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>etcpal::ConstUniqueLockPtr</name>
+    <filename>classetcpal_1_1_const_unique_lock_ptr.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type></type>
+      <name>ConstUniqueLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>adb78f47d381f6ef7180add954e078870</anchor>
+      <arglist>(const SynchronizedValue&lt; T, LockType &gt; &amp;sync)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstUniqueLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>aa367ec2de6c216b2c36db5bbc65196af</anchor>
+      <arglist>(const SynchronizedValue&lt; T, LockType &gt; &amp;sync, AdoptLockTag) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstUniqueLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>a0af54018b781df493aabb62a5c9df8c7</anchor>
+      <arglist>(const SynchronizedValue&lt; T, LockType &gt; &amp;sync, DeferLockTag) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstUniqueLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>ae21986cb940c982d5d43e07a5d7c867e</anchor>
+      <arglist>(const SynchronizedValue&lt; T, LockType &gt; &amp;sync, TryToLockTag, int timeout_ms=0) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>ConstUniqueLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>a8ae1dae3ec269b2d05724d11de306571</anchor>
+      <arglist>(ConstUniqueLockPtr &amp;&amp;other) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>~ConstUniqueLockPtr</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>afeb7a6a40bcd74a13822c49195b122df</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>operator bool</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>a420e60e9788bfa3b52aa3aab72ea3a5e</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>OwnsLock</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>ae47b3848348ad63a7f2da75af2f9b7a0</anchor>
+      <arglist>() const noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Unlock</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>a6a4579168c0372df881202ff661a7b24</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Lock</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>a74d183962cfb39d8c50382b496c82703</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>bool</type>
+      <name>TryLock</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>a8ad93c25cdc665654314bba0797d37ef</anchor>
+      <arglist>(int timeout_ms=0)</arglist>
+    </member>
+    <member kind="function">
+      <type>void</type>
+      <name>Release</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>a08109187ed94bfbb7969398bb403fc1b</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>const T &amp;</type>
+      <name>operator*</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>a540e5588dffde890174a282451f73fb9</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>const T *</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_const_unique_lock_ptr.html</anchorfile>
+      <anchor>a61f986d1655444750449ed13c40c9184</anchor>
+      <arglist>() const</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>etcpal::DeferLockTag</name>
+    <filename>structetcpal_1_1_defer_lock_tag.html</filename>
   </compound>
   <compound kind="class">
     <name>etcpal::Error</name>
@@ -1468,6 +1709,17 @@
       <anchor>aa673d764741af614d297d71e984e592f</anchor>
       <arglist>(U &amp;&amp;def_val) &amp;&amp;</arglist>
     </member>
+  </compound>
+  <compound kind="struct">
+    <name>etcpal::detail::FirstType</name>
+    <filename>structetcpal_1_1detail_1_1_first_type.html</filename>
+    <templarg></templarg>
+  </compound>
+  <compound kind="struct">
+    <name>etcpal::detail::FirstType&lt; First, Rest... &gt;</name>
+    <filename>structetcpal_1_1detail_1_1_first_type_3_01_first_00_01_rest_8_8_8_01_4.html</filename>
+    <templarg></templarg>
+    <templarg>Rest</templarg>
   </compound>
   <compound kind="struct">
     <name>IntHandleManager</name>
@@ -3309,6 +3561,281 @@
     </member>
   </compound>
   <compound kind="class">
+    <name>etcpal::StrictLockPtr</name>
+    <filename>classetcpal_1_1_strict_lock_ptr.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <base>ConstStrictLockPtr&lt; T, Mutex &gt;</base>
+    <member kind="function">
+      <type></type>
+      <name>StrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_strict_lock_ptr.html</anchorfile>
+      <anchor>ad7984f11415cdcd01899f6e7392fff53</anchor>
+      <arglist>(SynchronizedValue&lt; T, LockType &gt; &amp;sync)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>StrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_strict_lock_ptr.html</anchorfile>
+      <anchor>aba1b509d02061470c9c518fe6d857271</anchor>
+      <arglist>(SynchronizedValue&lt; T, LockType &gt; &amp;sync, AdoptLockTag) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>StrictLockPtr</name>
+      <anchorfile>classetcpal_1_1_strict_lock_ptr.html</anchorfile>
+      <anchor>a8a696e12a9059594ac38ff25a42c6767</anchor>
+      <arglist>(UniqueLockPtr&lt; T, LockType &gt; &amp;&amp;other)</arglist>
+    </member>
+    <member kind="function">
+      <type>T &amp;</type>
+      <name>operator*</name>
+      <anchorfile>classetcpal_1_1_strict_lock_ptr.html</anchorfile>
+      <anchor>aa3d0d858d5f575eea729f08dbf899a0c</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>T *</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_strict_lock_ptr.html</anchorfile>
+      <anchor>ad88a9874027d44e9ec4007ef3ba55b25</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>etcpal::SupportsTimedLock</name>
+    <filename>structetcpal_1_1_supports_timed_lock.html</filename>
+    <templarg></templarg>
+  </compound>
+  <compound kind="struct">
+    <name>etcpal::SupportsTimedLock&lt; Mutex &gt;</name>
+    <filename>structetcpal_1_1_supports_timed_lock_3_01_mutex_01_4.html</filename>
+  </compound>
+  <compound kind="struct">
+    <name>etcpal::SupportsTimedLock&lt; RecursiveMutex &gt;</name>
+    <filename>structetcpal_1_1_supports_timed_lock_3_01_recursive_mutex_01_4.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>etcpal::SynchronizedValue</name>
+    <filename>classetcpal_1_1_synchronized_value.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <member kind="function">
+      <type></type>
+      <name>SynchronizedValue</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>ac05de0a6c8b29335d4bc88b10ae2fe23</anchor>
+      <arglist>(Args &amp;&amp;... args) noexcept(std::is_nothrow_constructible&lt; T, Args... &gt;::value)</arglist>
+    </member>
+    <member kind="function">
+      <type>StrictLockPtr&lt; T, LockType &gt;</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a4f976061427b4b000d39e163e5a35983</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ConstStrictLockPtr&lt; T, LockType &gt;</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>aa406838e1eb2a45cfd8467db9b3c07e3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>StrictLockPtr&lt; T, LockType &gt;</type>
+      <name>Synchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>ab5cf756a689667f75dbbe13b5231c5e4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ConstStrictLockPtr&lt; T, LockType &gt;</type>
+      <name>Synchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a5dee69698f6025f6d498c9c399485dff</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, LockType &gt;</type>
+      <name>UniqueSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a36172e756458cfbbb5193df88c80f50c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, LockType &gt;</type>
+      <name>DeferSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a2444a442286abaed0b9ddb34132d06b1</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, LockType &gt;</type>
+      <name>AdoptSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a75aeb705759768a2a9cdbe034ec1f5c8</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>StrictLockPtr&lt; T, LockType &gt;</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a4f976061427b4b000d39e163e5a35983</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ConstStrictLockPtr&lt; T, LockType &gt;</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>aa406838e1eb2a45cfd8467db9b3c07e3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>StrictLockPtr&lt; T, LockType &gt;</type>
+      <name>Synchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>ab5cf756a689667f75dbbe13b5231c5e4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ConstStrictLockPtr&lt; T, LockType &gt;</type>
+      <name>Synchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a5dee69698f6025f6d498c9c399485dff</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, LockType &gt;</type>
+      <name>UniqueSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a36172e756458cfbbb5193df88c80f50c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, LockType &gt;</type>
+      <name>DeferSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a2444a442286abaed0b9ddb34132d06b1</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, LockType &gt;</type>
+      <name>AdoptSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a75aeb705759768a2a9cdbe034ec1f5c8</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
+    <name>SynchronizedValue&lt; T, Mutex &gt;</name>
+    <filename>classetcpal_1_1_synchronized_value.html</filename>
+    <member kind="function">
+      <type></type>
+      <name>SynchronizedValue</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>ac05de0a6c8b29335d4bc88b10ae2fe23</anchor>
+      <arglist>(Args &amp;&amp;... args) noexcept(std::is_nothrow_constructible&lt; T, Args... &gt;::value)</arglist>
+    </member>
+    <member kind="function">
+      <type>StrictLockPtr&lt; T, Mutex &gt;</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a4f976061427b4b000d39e163e5a35983</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ConstStrictLockPtr&lt; T, Mutex &gt;</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>aa406838e1eb2a45cfd8467db9b3c07e3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>StrictLockPtr&lt; T, Mutex &gt;</type>
+      <name>Synchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>ab5cf756a689667f75dbbe13b5231c5e4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ConstStrictLockPtr&lt; T, Mutex &gt;</type>
+      <name>Synchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a5dee69698f6025f6d498c9c399485dff</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, Mutex &gt;</type>
+      <name>UniqueSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a36172e756458cfbbb5193df88c80f50c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, Mutex &gt;</type>
+      <name>DeferSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a2444a442286abaed0b9ddb34132d06b1</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, Mutex &gt;</type>
+      <name>AdoptSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a75aeb705759768a2a9cdbe034ec1f5c8</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>StrictLockPtr&lt; T, Mutex &gt;</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a4f976061427b4b000d39e163e5a35983</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ConstStrictLockPtr&lt; T, Mutex &gt;</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>aa406838e1eb2a45cfd8467db9b3c07e3</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>StrictLockPtr&lt; T, Mutex &gt;</type>
+      <name>Synchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>ab5cf756a689667f75dbbe13b5231c5e4</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>ConstStrictLockPtr&lt; T, Mutex &gt;</type>
+      <name>Synchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a5dee69698f6025f6d498c9c399485dff</anchor>
+      <arglist>() const</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, Mutex &gt;</type>
+      <name>UniqueSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a36172e756458cfbbb5193df88c80f50c</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, Mutex &gt;</type>
+      <name>DeferSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a2444a442286abaed0b9ddb34132d06b1</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>UniqueLockPtr&lt; T, Mutex &gt;</type>
+      <name>AdoptSynchronize</name>
+      <anchorfile>classetcpal_1_1_synchronized_value.html</anchorfile>
+      <anchor>a75aeb705759768a2a9cdbe034ec1f5c8</anchor>
+      <arglist>() noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="class">
     <name>etcpal::Thread</name>
     <filename>classetcpal_1_1_thread.html</filename>
     <member kind="function">
@@ -3731,6 +4258,59 @@
       <anchorfile>classetcpal_1_1_timer.html</anchorfile>
       <anchor>a77ebf418c2f554f19db18aa5adcd0366</anchor>
       <arglist>() noexcept</arglist>
+    </member>
+  </compound>
+  <compound kind="struct">
+    <name>etcpal::TryToLockTag</name>
+    <filename>structetcpal_1_1_try_to_lock_tag.html</filename>
+  </compound>
+  <compound kind="class">
+    <name>etcpal::UniqueLockPtr</name>
+    <filename>classetcpal_1_1_unique_lock_ptr.html</filename>
+    <templarg></templarg>
+    <templarg></templarg>
+    <base>etcpal::ConstUniqueLockPtr</base>
+    <member kind="function">
+      <type></type>
+      <name>UniqueLockPtr</name>
+      <anchorfile>classetcpal_1_1_unique_lock_ptr.html</anchorfile>
+      <anchor>a320d82bc127d33a68adfe7090b590f01</anchor>
+      <arglist>(SynchronizedValue&lt; T, LockType &gt; &amp;sync)</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>UniqueLockPtr</name>
+      <anchorfile>classetcpal_1_1_unique_lock_ptr.html</anchorfile>
+      <anchor>ae86f644a087d0225af610772641b15f7</anchor>
+      <arglist>(SynchronizedValue&lt; T, LockType &gt; &amp;sync, AdoptLockTag) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>UniqueLockPtr</name>
+      <anchorfile>classetcpal_1_1_unique_lock_ptr.html</anchorfile>
+      <anchor>acd02ac26fd348c31846cc81b70ad7e97</anchor>
+      <arglist>(SynchronizedValue&lt; T, LockType &gt; &amp;sync, DeferLockTag) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type></type>
+      <name>UniqueLockPtr</name>
+      <anchorfile>classetcpal_1_1_unique_lock_ptr.html</anchorfile>
+      <anchor>a09906bcfac121267f859bbd71036e081</anchor>
+      <arglist>(SynchronizedValue&lt; T, LockType &gt; &amp;sync, TryToLockTag, int timeout_ms=0) noexcept</arglist>
+    </member>
+    <member kind="function">
+      <type>T &amp;</type>
+      <name>operator*</name>
+      <anchorfile>classetcpal_1_1_unique_lock_ptr.html</anchorfile>
+      <anchor>af7f8c6b921dca2b94f6e7ee14e762770</anchor>
+      <arglist>()</arglist>
+    </member>
+    <member kind="function">
+      <type>T *</type>
+      <name>operator-&gt;</name>
+      <anchorfile>classetcpal_1_1_unique_lock_ptr.html</anchorfile>
+      <anchor>af6e485beee07fd401de29c8cdf898c69</anchor>
+      <arglist>()</arglist>
     </member>
   </compound>
   <compound kind="class">
@@ -6887,6 +7467,7 @@
     <subgroup>etcpal_cpp_sem</subgroup>
     <subgroup>etcpal_cpp_signal</subgroup>
     <subgroup>etcpal_cpp_static_queue</subgroup>
+    <subgroup>etcpal_cpp_synchronized_value</subgroup>
     <subgroup>etcpal_cpp_thread</subgroup>
     <subgroup>etcpal_cpp_timer</subgroup>
     <subgroup>etcpal_cpp_uuid</subgroup>
@@ -7086,6 +7667,20 @@
     <title>static_queue (RTOS queues)</title>
     <filename>group__etcpal__cpp__static__queue.html</filename>
     <class kind="class">etcpal::StaticQueue</class>
+  </compound>
+  <compound kind="group">
+    <name>etcpal_cpp_synchronized_value</name>
+    <title>synchronized_value (Synchronized Values)</title>
+    <filename>group__etcpal__cpp__synchronized__value.html</filename>
+    <class kind="struct">etcpal::AdoptLockTag</class>
+    <class kind="struct">etcpal::DeferLockTag</class>
+    <class kind="struct">etcpal::TryToLockTag</class>
+    <class kind="struct">etcpal::SupportsTimedLock</class>
+    <class kind="class">etcpal::ConstStrictLockPtr</class>
+    <class kind="class">etcpal::StrictLockPtr</class>
+    <class kind="class">etcpal::ConstUniqueLockPtr</class>
+    <class kind="class">etcpal::UniqueLockPtr</class>
+    <class kind="class">etcpal::SynchronizedValue</class>
   </compound>
   <compound kind="group">
     <name>etcpal_cpp_thread</name>

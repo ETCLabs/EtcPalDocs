@@ -1,0 +1,542 @@
+<!-- HTML header for doxygen 1.9.1-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EtcPal: SynchronizedValue&lt; T, LockType &gt; Class Template Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
+<!-- BEGIN CUSTOM SCRIPTS -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
+<script type="text/javascript">
+  $(function () {
+    $.get('/EtcPalDocs/versions.txt', function (data) {
+      if (data) {
+        var lines = data.split('\n');
+        if (lines.length > 0) {
+          var version_select = $("#version_select").empty();
+          lines.forEach(function (line) {
+            line = line.trim();
+            if (!line) {
+              return;
+            }
+            line = line.split(':');
+            var option_name = line[0].replace(/^v/, '');
+            if (line.length > 1) {
+              option_name += ' (' + line[1] + ')';
+            }
+            var option_val = '/EtcPalDocs/' + line[0];
+            var option = $('<option></option>').attr("value", option_val)
+              .text(option_name);
+            if (window.location.pathname.match(line[0])) {
+              option = option.attr("selected", "selected");
+            }
+            version_select.append(option);
+          });
+        }
+      }
+    }, 'text');
+  });
+</script>
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
+<script type="text/javascript">
+  $(function () { selectAllC() });
+</script>
+<script type="text/javascript">
+  function selectAllC() {
+    // Enable all C-language blocks
+    var tabcontent = document.getElementsByClassName("code-tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      if (tabcontent[i].id.endsWith("_c")) {
+        tabcontent[i].style.display = "block";
+      } else {
+        tabcontent[i].style.display = "none"
+      }
+    }
+    // Enable all C-language buttons
+    var tablinks = document.getElementsByClassName("code-tab-links");
+    for (i = 0; i < tablinks.length; i++) {
+      if (tablinks[i].id.endsWith("_c")) {
+        if (!tablinks[i].className.includes("active")) {
+          tablinks[i].className = tablinks[i].className += " active";
+        }
+      } else {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    }
+  }
+  function selectAllCpp() {
+    // Enable all C++-language blocks
+    var tabcontent = document.getElementsByClassName("code-tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      if (tabcontent[i].id.endsWith("_cpp")) {
+        tabcontent[i].style.display = "block";
+      } else {
+        tabcontent[i].style.display = "none"
+      }
+    }
+    // Enable all C++-language buttons
+    var tablinks = document.getElementsByClassName("code-tab-links");
+    for (i = 0; i < tablinks.length; i++) {
+      if (tablinks[i].id.endsWith("_cpp")) {
+        if (!tablinks[i].className.includes("active")) {
+          tablinks[i].className = tablinks[i].className += " active";
+        }
+      } else {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    }
+  }
+  function selectLanguage(evt, block_id, language) {
+    // Get all elements with class="tabcontent" and hide them
+    var tabcontent = document.getElementsByClassName("code-tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      if (tabcontent[i].id.startsWith("div_" + block_id)) {
+        tabcontent[i].style.display = "none";
+      }
+    }
+    // Get all elements with class="tablinks" and remove the class "active"
+    var tablinks = document.getElementsByClassName("code-tab-links");
+    for (i = 0; i < tablinks.length; i++) {
+      if (tablinks[i].id.startsWith("button_" + block_id)) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    }
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById("div_" + block_id + "_" + language).style.display = "block";
+    if (!evt.currentTarget.className.includes("active")) {
+      evt.currentTarget.className += " active";
+    }
+  }
+</script>
+<!-- END CUSTOM SCRIPTS -->
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EtcPal
+   &#160;<span id="projectnumber">HEAD (unstable)</span>
+   </div>
+   <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
+  </td>
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
+  <td style="text-align: right; padding-right: 0.5em">
+    <div id="otherversions">
+      View other versions:
+      <select id="version_select" onchange="location = this.value">
+      </select>
+    </div>
+  </td>
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('classetcpal_1_1_synchronized_value.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#friends">Friends</a>  </div>
+  <div class="headertitle">
+<div class="title">SynchronizedValue&lt; T, LockType &gt; Class Template Reference<div class="ingroups"><a class="el" href="group__etcpal.html">EtcPal</a> &raquo; <a class="el" href="group__etcpal__cpp.html">C++ Wrappers</a> &raquo; <a class="el" href="group__etcpal__cpp__synchronized__value.html">synchronized_value (Synchronized Values)</a></div></div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Overview</h2>
+<div class="textblock"><h3>template&lt;typename T, typename LockType&gt;<br />
+class etcpal::SynchronizedValue&lt; T, LockType &gt;</h3>
+
+<p>A value bundled with a lock that guards all access to it. </p>
+<p>The wrapped value can only be reached through an RAII handle that holds the lock, so it cannot be accessed without synchronization. See the <a class="el" href="group__etcpal__cpp__synchronized__value.html">synchronized_value (Synchronized Values)</a> module overview for an example. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>The type of the guarded value. </td></tr>
+    <tr><td class="paramname">LockType</td><td>The type of lock guarding the value. Must provide <code>bool Lock()</code>, <code>bool TryLock(int timeout_ms)</code>, and <code>Unlock()</code> (e.g. <a class="el" href="classetcpal_1_1_mutex.html" title="A wrapper class for the EtcPal mutex type.">etcpal::Mutex</a> or <a class="el" href="classetcpal_1_1_recursive_mutex.html" title="A wrapper class for the EtcPal recursive mutex type.">etcpal::RecursiveMutex</a>; defaults to <a class="el" href="classetcpal_1_1_mutex.html" title="A wrapper class for the EtcPal mutex type.">etcpal::Mutex</a>). <code>TryLock()</code> and <code>Unlock()</code> are called from noexcept contexts and must not throw; report failure by return value. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ac05de0a6c8b29335d4bc88b10ae2fe23"><td class="memTemplParams" colspan="2">template&lt;typename... Args, typename  = typename std::enable_if&lt;                std::is_constructible&lt;T, Args&amp;&amp;...&gt;::value &amp;&amp;                !std::is_same&lt;typename std::decay&lt;typename detail::FirstType&lt;Args...&gt;::type&gt;::type,                              SynchronizedValue&gt;::value&gt;::type&gt; </td></tr>
+<tr class="memitem:ac05de0a6c8b29335d4bc88b10ae2fe23"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_synchronized_value.html#ac05de0a6c8b29335d4bc88b10ae2fe23">SynchronizedValue</a> (Args &amp;&amp;... args) noexcept(std::is_nothrow_constructible&lt; T, Args... &gt;::value)</td></tr>
+<tr class="memdesc:ac05de0a6c8b29335d4bc88b10ae2fe23"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct the guarded value in place, forwarding the given arguments to its constructor.  <a href="classetcpal_1_1_synchronized_value.html#ac05de0a6c8b29335d4bc88b10ae2fe23">More...</a><br /></td></tr>
+<tr class="separator:ac05de0a6c8b29335d4bc88b10ae2fe23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Unsafe Access</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Access the value or lock directly, without locking.</p>
+<p>Use with care. </p>
+</div></td></tr>
+<tr class="memitem:a310262f8cffc4c32b0840d7facd6fb2f"><td class="memItemLeft" align="right" valign="top"><a id="a310262f8cffc4c32b0840d7facd6fb2f"></a>
+T &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetValueUnsafe</b> () noexcept</td></tr>
+<tr class="separator:a310262f8cffc4c32b0840d7facd6fb2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff17a20a002cbad6feeb51bd3ac7b5c3"><td class="memItemLeft" align="right" valign="top"><a id="aff17a20a002cbad6feeb51bd3ac7b5c3"></a>
+LockType &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>GetLockUnsafe</b> () noexcept</td></tr>
+<tr class="separator:aff17a20a002cbad6feeb51bd3ac7b5c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Locked Access</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Obtain an RAII handle that holds the lock for as long as the handle exists. </p>
+</div></td></tr>
+<tr class="memitem:a4f976061427b4b000d39e163e5a35983"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classetcpal_1_1_strict_lock_ptr.html">StrictLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_synchronized_value.html#a4f976061427b4b000d39e163e5a35983">operator-&gt;</a> ()</td></tr>
+<tr class="memdesc:a4f976061427b4b000d39e163e5a35983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the value and access a member of it for the duration of the enclosing expression.  <a href="classetcpal_1_1_synchronized_value.html#a4f976061427b4b000d39e163e5a35983">More...</a><br /></td></tr>
+<tr class="separator:a4f976061427b4b000d39e163e5a35983"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa406838e1eb2a45cfd8467db9b3c07e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classetcpal_1_1_const_strict_lock_ptr.html">ConstStrictLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_synchronized_value.html#aa406838e1eb2a45cfd8467db9b3c07e3">operator-&gt;</a> () const</td></tr>
+<tr class="memdesc:aa406838e1eb2a45cfd8467db9b3c07e3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the value and access a member of it for the duration of the enclosing expression.  <a href="classetcpal_1_1_synchronized_value.html#aa406838e1eb2a45cfd8467db9b3c07e3">More...</a><br /></td></tr>
+<tr class="separator:aa406838e1eb2a45cfd8467db9b3c07e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5cf756a689667f75dbbe13b5231c5e4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classetcpal_1_1_strict_lock_ptr.html">StrictLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_synchronized_value.html#ab5cf756a689667f75dbbe13b5231c5e4">Synchronize</a> ()</td></tr>
+<tr class="memdesc:ab5cf756a689667f75dbbe13b5231c5e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the value, returning a handle that holds the lock until it is destroyed.  <a href="classetcpal_1_1_synchronized_value.html#ab5cf756a689667f75dbbe13b5231c5e4">More...</a><br /></td></tr>
+<tr class="separator:ab5cf756a689667f75dbbe13b5231c5e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5dee69698f6025f6d498c9c399485dff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classetcpal_1_1_const_strict_lock_ptr.html">ConstStrictLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_synchronized_value.html#a5dee69698f6025f6d498c9c399485dff">Synchronize</a> () const</td></tr>
+<tr class="memdesc:a5dee69698f6025f6d498c9c399485dff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the value, returning a handle that holds the lock until it is destroyed.  <a href="classetcpal_1_1_synchronized_value.html#a5dee69698f6025f6d498c9c399485dff">More...</a><br /></td></tr>
+<tr class="separator:a5dee69698f6025f6d498c9c399485dff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Non-blocking Locked Access</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Try to acquire the lock, waiting up to <code>timeout_ms</code>.</p>
+<p>Check OwnsLock() (or <code>operator bool</code>) on the result.</p>
+<p><code>timeout_ms</code> follows EtcPal timeout semantics. Where the lock supports timed locking (see <a class="el" href="structetcpal_1_1_supports_timed_lock.html" title="Trait reporting whether SynchronizedValue::TryToSynchronize() honors its timeout for LockType on the ...">SupportsTimedLock</a>) it is passed straight to the underlying etcpal_*_timed_lock() call: 0 polls, a positive value waits up to that long, and a negative value (ETCPAL_WAIT_FOREVER) blocks until the lock is acquired. On platforms without timed-lock support, etcpal_*_timed_lock() ignores the timeout and blocks indefinitely for any nonzero value, so this always polls there instead. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout_ms</td><td>How long to wait for the lock, in milliseconds. Defaults to 0 (poll, return immediately). </td></tr>
+  </table>
+  </dd>
+</dl>
+</div></td></tr>
+<tr class="memitem:a360745dd64a694f4878f982bef1e4e4b"><td class="memItemLeft" align="right" valign="top"><a id="a360745dd64a694f4878f982bef1e4e4b"></a>
+<a class="el" href="classetcpal_1_1_unique_lock_ptr.html">UniqueLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TryToSynchronize</b> (int timeout_ms=0) noexcept</td></tr>
+<tr class="separator:a360745dd64a694f4878f982bef1e4e4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ec3dbe89a4754cb92a4cb46881bbfab"><td class="memItemLeft" align="right" valign="top"><a id="a2ec3dbe89a4754cb92a4cb46881bbfab"></a>
+<a class="el" href="classetcpal_1_1_const_unique_lock_ptr.html">ConstUniqueLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>TryToSynchronize</b> (int timeout_ms=0) const noexcept</td></tr>
+<tr class="separator:a2ec3dbe89a4754cb92a4cb46881bbfab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Unique Locked Access</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Obtain a <a class="el" href="classetcpal_1_1_unique_lock_ptr.html" title="An RAII handle for mutable access whose lock may or may not be held.">UniqueLockPtr</a> handle in a specific acquisition mode, mirroring Boost's unique_synchronize()/defer_synchronize()/adopt_synchronize(). </p>
+</div></td></tr>
+<tr class="memitem:a36172e756458cfbbb5193df88c80f50c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classetcpal_1_1_unique_lock_ptr.html">UniqueLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_synchronized_value.html#a36172e756458cfbbb5193df88c80f50c">UniqueSynchronize</a> ()</td></tr>
+<tr class="memdesc:a36172e756458cfbbb5193df88c80f50c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lock the value, returning a handle that can also Unlock(), re-Lock(), or Release() it.  <a href="classetcpal_1_1_synchronized_value.html#a36172e756458cfbbb5193df88c80f50c">More...</a><br /></td></tr>
+<tr class="separator:a36172e756458cfbbb5193df88c80f50c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0eb07627bd68a96d774e1d898a61d59"><td class="memItemLeft" align="right" valign="top"><a id="ad0eb07627bd68a96d774e1d898a61d59"></a>
+<a class="el" href="classetcpal_1_1_const_unique_lock_ptr.html">ConstUniqueLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>UniqueSynchronize</b> () const</td></tr>
+<tr class="separator:ad0eb07627bd68a96d774e1d898a61d59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2444a442286abaed0b9ddb34132d06b1"><td class="memItemLeft" align="right" valign="top"><a id="a2444a442286abaed0b9ddb34132d06b1"></a>
+<a class="el" href="classetcpal_1_1_unique_lock_ptr.html">UniqueLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_synchronized_value.html#a2444a442286abaed0b9ddb34132d06b1">DeferSynchronize</a> () noexcept</td></tr>
+<tr class="memdesc:a2444a442286abaed0b9ddb34132d06b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reference the value without locking; acquire later with Lock() or TryLock() on the handle. <br /></td></tr>
+<tr class="separator:a2444a442286abaed0b9ddb34132d06b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4f36e1066a8be1ef510cf09bee944173"><td class="memItemLeft" align="right" valign="top"><a id="a4f36e1066a8be1ef510cf09bee944173"></a>
+<a class="el" href="classetcpal_1_1_const_unique_lock_ptr.html">ConstUniqueLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>DeferSynchronize</b> () const noexcept</td></tr>
+<tr class="separator:a4f36e1066a8be1ef510cf09bee944173"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75aeb705759768a2a9cdbe034ec1f5c8"><td class="memItemLeft" align="right" valign="top"><a id="a75aeb705759768a2a9cdbe034ec1f5c8"></a>
+<a class="el" href="classetcpal_1_1_unique_lock_ptr.html">UniqueLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_synchronized_value.html#a75aeb705759768a2a9cdbe034ec1f5c8">AdoptSynchronize</a> () noexcept</td></tr>
+<tr class="memdesc:a75aeb705759768a2a9cdbe034ec1f5c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adopt the lock, which the calling thread must already hold, into a handle that will release it. <br /></td></tr>
+<tr class="separator:a75aeb705759768a2a9cdbe034ec1f5c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8706165a1567b7a4d60dbc9a1530afd"><td class="memItemLeft" align="right" valign="top"><a id="ab8706165a1567b7a4d60dbc9a1530afd"></a>
+<a class="el" href="classetcpal_1_1_const_unique_lock_ptr.html">ConstUniqueLockPtr</a>&lt; T, LockType &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>AdoptSynchronize</b> () const noexcept</td></tr>
+<tr class="separator:ab8706165a1567b7a4d60dbc9a1530afd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">Visitation</div></td></tr>
+<tr><td colspan="2"><div class="groupText"><p>Invoke a callable with the guarded value held under lock for the call's duration.</p>
+<p><code>func</code> must not return a reference (enforced at compile time): the lock is released when Apply returns, so a returned reference into the guarded value would escape it unguarded. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">func</td><td>A callable taking a reference to the guarded value. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Whatever <code>func</code> returns. </dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if lock could not be acquired. </td></tr>
+  </table>
+  </dd>
+</dl>
+</div></td></tr>
+<tr class="memitem:a6ae033e9d75d453503b05adad6a40df4"><td class="memTemplParams" colspan="2"><a id="a6ae033e9d75d453503b05adad6a40df4"></a>
+template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a6ae033e9d75d453503b05adad6a40df4"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Apply</b> (F &amp;&amp;func)</td></tr>
+<tr class="separator:a6ae033e9d75d453503b05adad6a40df4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8000fe9f9440816cbc0a65c46653ef25"><td class="memTemplParams" colspan="2"><a id="a8000fe9f9440816cbc0a65c46653ef25"></a>
+template&lt;typename F &gt; </td></tr>
+<tr class="memitem:a8000fe9f9440816cbc0a65c46653ef25"><td class="memTemplItemLeft" align="right" valign="top">decltype(auto)&#160;</td><td class="memTemplItemRight" valign="bottom"><b>Apply</b> (F &amp;&amp;func) const</td></tr>
+<tr class="separator:a8000fe9f9440816cbc0a65c46653ef25"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:a54b9df0386034d337975e90d87e25af3"><td class="memItemLeft" align="right" valign="top"><a id="a54b9df0386034d337975e90d87e25af3"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>ConstStrictLockPtr&lt; T, LockType &gt;</b></td></tr>
+<tr class="separator:a54b9df0386034d337975e90d87e25af3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3912778f3cdbfd1df38d93924ccb77d"><td class="memItemLeft" align="right" valign="top"><a id="ae3912778f3cdbfd1df38d93924ccb77d"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>StrictLockPtr&lt; T, LockType &gt;</b></td></tr>
+<tr class="separator:ae3912778f3cdbfd1df38d93924ccb77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57ba847a9390a42e886233b85cba687b"><td class="memItemLeft" align="right" valign="top"><a id="a57ba847a9390a42e886233b85cba687b"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>ConstUniqueLockPtr&lt; T, LockType &gt;</b></td></tr>
+<tr class="separator:a57ba847a9390a42e886233b85cba687b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5761d6a8141aca317d3144c62aa9051e"><td class="memItemLeft" align="right" valign="top"><a id="a5761d6a8141aca317d3144c62aa9051e"></a>
+class&#160;</td><td class="memItemRight" valign="bottom"><b>UniqueLockPtr&lt; T, LockType &gt;</b></td></tr>
+<tr class="separator:a5761d6a8141aca317d3144c62aa9051e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ac05de0a6c8b29335d4bc88b10ae2fe23"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac05de0a6c8b29335d4bc88b10ae2fe23">&#9670;&nbsp;</a></span>SynchronizedValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classetcpal_1_1_synchronized_value.html">SynchronizedValue</a> </td>
+          <td>(</td>
+          <td class="paramtype">Args &amp;&amp;...&#160;</td>
+          <td class="paramname"><em>args</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Construct the guarded value in place, forwarding the given arguments to its constructor. </p>
+<p>Excluded from overload resolution when T is not constructible from the arguments (so std::is_constructible reports accurately) and for a single <a class="el" href="classetcpal_1_1_synchronized_value.html" title="A value bundled with a lock that guards all access to it.">SynchronizedValue</a> argument, so that copy/move attempts select the implicitly-deleted copy constructor (and get a clear diagnostic) instead of trying to construct T from a <a class="el" href="classetcpal_1_1_synchronized_value.html" title="A value bundled with a lock that guards all access to it.">SynchronizedValue</a>. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a4f976061427b4b000d39e163e5a35983"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4f976061427b4b000d39e163e5a35983">&#9670;&nbsp;</a></span>operator-&gt;() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classetcpal_1_1_strict_lock_ptr.html">StrictLockPtr</a>&lt;T, LockType&gt; operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lock the value and access a member of it for the duration of the enclosing expression. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if lock could not be acquired. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aa406838e1eb2a45cfd8467db9b3c07e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa406838e1eb2a45cfd8467db9b3c07e3">&#9670;&nbsp;</a></span>operator-&gt;() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classetcpal_1_1_const_strict_lock_ptr.html">ConstStrictLockPtr</a>&lt;T, LockType&gt; operator-&gt; </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lock the value and access a member of it for the duration of the enclosing expression. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if lock could not be acquired. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="ab5cf756a689667f75dbbe13b5231c5e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5cf756a689667f75dbbe13b5231c5e4">&#9670;&nbsp;</a></span>Synchronize() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classetcpal_1_1_strict_lock_ptr.html">StrictLockPtr</a>&lt;T, LockType&gt; Synchronize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lock the value, returning a handle that holds the lock until it is destroyed. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if lock could not be acquired. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a5dee69698f6025f6d498c9c399485dff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5dee69698f6025f6d498c9c399485dff">&#9670;&nbsp;</a></span>Synchronize() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classetcpal_1_1_const_strict_lock_ptr.html">ConstStrictLockPtr</a>&lt;T, LockType&gt; Synchronize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lock the value, returning a handle that holds the lock until it is destroyed. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if lock could not be acquired. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a36172e756458cfbbb5193df88c80f50c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36172e756458cfbbb5193df88c80f50c">&#9670;&nbsp;</a></span>UniqueSynchronize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classetcpal_1_1_unique_lock_ptr.html">UniqueLockPtr</a>&lt;T, LockType&gt; UniqueSynchronize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Lock the value, returning a handle that can also Unlock(), re-Lock(), or Release() it. </p>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if lock could not be acquired. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li>include/etcpal/cpp/<a class="el" href="synchronized__value_8h_source.html">synchronized_value.h</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><b>etcpal</b></li><li class="navelem"><a class="el" href="classetcpal_1_1_synchronized_value.html">SynchronizedValue</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>

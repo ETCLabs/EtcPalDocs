@@ -1,6 +1,10 @@
 var annotated_dup =
 [
     [ "etcpal", null, [
+      [ "detail", null, [
+        [ "FirstType", "structetcpal_1_1detail_1_1_first_type.html", "structetcpal_1_1detail_1_1_first_type" ],
+        [ "FirstType< First, Rest... >", "structetcpal_1_1detail_1_1_first_type_3_01_first_00_01_rest_8_8_8_01_4.html", "structetcpal_1_1detail_1_1_first_type_3_01_first_00_01_rest_8_8_8_01_4" ]
+      ] ],
       [ "Error", "classetcpal_1_1_error.html", "classetcpal_1_1_error" ],
       [ "BadExpectedAccess", "classetcpal_1_1_bad_expected_access.html", "classetcpal_1_1_bad_expected_access" ],
       [ "Expected", "classetcpal_1_1_expected.html", "classetcpal_1_1_expected" ],
@@ -24,6 +28,17 @@ var annotated_dup =
       [ "Semaphore", "classetcpal_1_1_semaphore.html", "classetcpal_1_1_semaphore" ],
       [ "Signal", "classetcpal_1_1_signal.html", "classetcpal_1_1_signal" ],
       [ "StaticQueue", "classetcpal_1_1_static_queue.html", "classetcpal_1_1_static_queue" ],
+      [ "SynchronizedValue", "classetcpal_1_1_synchronized_value.html", "classetcpal_1_1_synchronized_value" ],
+      [ "ConstUniqueLockPtr", "classetcpal_1_1_const_unique_lock_ptr.html", "classetcpal_1_1_const_unique_lock_ptr" ],
+      [ "UniqueLockPtr", "classetcpal_1_1_unique_lock_ptr.html", "classetcpal_1_1_unique_lock_ptr" ],
+      [ "AdoptLockTag", "structetcpal_1_1_adopt_lock_tag.html", null ],
+      [ "DeferLockTag", "structetcpal_1_1_defer_lock_tag.html", null ],
+      [ "TryToLockTag", "structetcpal_1_1_try_to_lock_tag.html", null ],
+      [ "SupportsTimedLock", "structetcpal_1_1_supports_timed_lock.html", null ],
+      [ "SupportsTimedLock< Mutex >", "structetcpal_1_1_supports_timed_lock_3_01_mutex_01_4.html", null ],
+      [ "SupportsTimedLock< RecursiveMutex >", "structetcpal_1_1_supports_timed_lock_3_01_recursive_mutex_01_4.html", null ],
+      [ "ConstStrictLockPtr", "classetcpal_1_1_const_strict_lock_ptr.html", "classetcpal_1_1_const_strict_lock_ptr" ],
+      [ "StrictLockPtr", "classetcpal_1_1_strict_lock_ptr.html", "classetcpal_1_1_strict_lock_ptr" ],
       [ "Thread", "classetcpal_1_1_thread.html", "classetcpal_1_1_thread" ],
       [ "TimePoint", "classetcpal_1_1_time_point.html", "classetcpal_1_1_time_point" ],
       [ "Timer", "classetcpal_1_1_timer.html", "classetcpal_1_1_timer" ],

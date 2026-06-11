@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['inthandlemanager_895',['IntHandleManager',['../struct_int_handle_manager.html',1,'']]],
-  ['ipaddr_896',['IpAddr',['../classetcpal_1_1_ip_addr.html',1,'etcpal']]]
+  ['deferlocktag_898',['DeferLockTag',['../structetcpal_1_1_defer_lock_tag.html',1,'etcpal']]]
 ];

@@ -15,6 +15,12 @@ var dir_fa86f7c0f1af55176d8f05dc5aff685f =
     [ "sem.h", "cpp_2sem_8h.html", null ],
     [ "signal.h", "cpp_2signal_8h.html", null ],
     [ "static_queue.h", "static__queue_8h_source.html", null ],
+    [ "synchronized_value.h", "synchronized__value_8h.html", [
+      [ "FirstType", "structetcpal_1_1detail_1_1_first_type.html", "structetcpal_1_1detail_1_1_first_type" ],
+      [ "FirstType< First, Rest... >", "structetcpal_1_1detail_1_1_first_type_3_01_first_00_01_rest_8_8_8_01_4.html", "structetcpal_1_1detail_1_1_first_type_3_01_first_00_01_rest_8_8_8_01_4" ],
+      [ "SupportsTimedLock< Mutex >", "structetcpal_1_1_supports_timed_lock_3_01_mutex_01_4.html", null ],
+      [ "SupportsTimedLock< RecursiveMutex >", "structetcpal_1_1_supports_timed_lock_3_01_recursive_mutex_01_4.html", null ]
+    ] ],
     [ "thread.h", "cpp_2thread_8h.html", null ],
     [ "timer.h", "cpp_2timer_8h.html", "cpp_2timer_8h" ],
     [ "uuid.h", "cpp_2uuid_8h.html", "cpp_2uuid_8h" ]

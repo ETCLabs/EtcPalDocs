@@ -1,10 +1,12 @@
 var searchData=
 [
-  ['canlog_949',['CanLog',['../classetcpal_1_1_logger.html#a446621c38cfc4ef6c119c8a26551ccc6',1,'etcpal::Logger']]],
-  ['clear_950',['Clear',['../classetcpal_1_1_opaque_id.html#a9f59558d3c06e0f35ae8a5801b4e626d',1,'etcpal::OpaqueId']]],
-  ['clearbits_951',['ClearBits',['../classetcpal_1_1_event_group.html#a00b51ef9ad31be233f2005ed798f8b6c',1,'etcpal::EventGroup']]],
-  ['clearbitsfromisr_952',['ClearBitsFromIsr',['../classetcpal_1_1_event_group.html#a41ba5cddf117130676e4a27cb3ebcdd5',1,'etcpal::EventGroup']]],
-  ['clock_5fseq_5fand_5fnode_953',['clock_seq_and_node',['../classetcpal_1_1_uuid.html#ad1c7dfeea57e4e696bca56b1cb172292',1,'etcpal::Uuid']]],
-  ['code_954',['code',['../classetcpal_1_1_error.html#a65e890bf700cdd8262c552690a03baad',1,'etcpal::Error']]],
-  ['critical_955',['Critical',['../classetcpal_1_1_logger.html#a1c8920f98f8e58c892f8db1b07309c34',1,'etcpal::Logger']]]
+  ['canlog_991',['CanLog',['../classetcpal_1_1_logger.html#a446621c38cfc4ef6c119c8a26551ccc6',1,'etcpal::Logger']]],
+  ['clear_992',['Clear',['../classetcpal_1_1_opaque_id.html#a9f59558d3c06e0f35ae8a5801b4e626d',1,'etcpal::OpaqueId']]],
+  ['clearbits_993',['ClearBits',['../classetcpal_1_1_event_group.html#a00b51ef9ad31be233f2005ed798f8b6c',1,'etcpal::EventGroup']]],
+  ['clearbitsfromisr_994',['ClearBitsFromIsr',['../classetcpal_1_1_event_group.html#a41ba5cddf117130676e4a27cb3ebcdd5',1,'etcpal::EventGroup']]],
+  ['clock_5fseq_5fand_5fnode_995',['clock_seq_and_node',['../classetcpal_1_1_uuid.html#ad1c7dfeea57e4e696bca56b1cb172292',1,'etcpal::Uuid']]],
+  ['code_996',['code',['../classetcpal_1_1_error.html#a65e890bf700cdd8262c552690a03baad',1,'etcpal::Error']]],
+  ['conststrictlockptr_997',['ConstStrictLockPtr',['../classetcpal_1_1_const_strict_lock_ptr.html#aaa75cdf99b33039cd24ad7e5717501a1',1,'etcpal::ConstStrictLockPtr::ConstStrictLockPtr(const SynchronizedValue&lt; T, LockType &gt; &amp;sync)'],['../classetcpal_1_1_const_strict_lock_ptr.html#a167f83c57d9ca760fe6be00e43d22925',1,'etcpal::ConstStrictLockPtr::ConstStrictLockPtr(const SynchronizedValue&lt; T, LockType &gt; &amp;sync, AdoptLockTag) noexcept'],['../classetcpal_1_1_const_strict_lock_ptr.html#a5e8f9daa6639a449c82f37d36b57398d',1,'etcpal::ConstStrictLockPtr::ConstStrictLockPtr(ConstUniqueLockPtr&lt; T, LockType &gt; &amp;&amp;other)'],['../classetcpal_1_1_const_strict_lock_ptr.html#a42cf441d3130952820566c139fcc3b49',1,'etcpal::ConstStrictLockPtr::ConstStrictLockPtr(ConstStrictLockPtr &amp;&amp;other) noexcept']]],
+  ['constuniquelockptr_998',['ConstUniqueLockPtr',['../classetcpal_1_1_const_unique_lock_ptr.html#adb78f47d381f6ef7180add954e078870',1,'etcpal::ConstUniqueLockPtr::ConstUniqueLockPtr(const SynchronizedValue&lt; T, LockType &gt; &amp;sync)'],['../classetcpal_1_1_const_unique_lock_ptr.html#aa367ec2de6c216b2c36db5bbc65196af',1,'etcpal::ConstUniqueLockPtr::ConstUniqueLockPtr(const SynchronizedValue&lt; T, LockType &gt; &amp;sync, AdoptLockTag) noexcept'],['../classetcpal_1_1_const_unique_lock_ptr.html#a0af54018b781df493aabb62a5c9df8c7',1,'etcpal::ConstUniqueLockPtr::ConstUniqueLockPtr(const SynchronizedValue&lt; T, LockType &gt; &amp;sync, DeferLockTag) noexcept'],['../classetcpal_1_1_const_unique_lock_ptr.html#ae21986cb940c982d5d43e07a5d7c867e',1,'etcpal::ConstUniqueLockPtr::ConstUniqueLockPtr(const SynchronizedValue&lt; T, LockType &gt; &amp;sync, TryToLockTag, int timeout_ms=0) noexcept'],['../classetcpal_1_1_const_unique_lock_ptr.html#a8ae1dae3ec269b2d05724d11de306571',1,'etcpal::ConstUniqueLockPtr::ConstUniqueLockPtr(ConstUniqueLockPtr &amp;&amp;other) noexcept']]],
+  ['critical_999',['Critical',['../classetcpal_1_1_logger.html#a1c8920f98f8e58c892f8db1b07309c34',1,'etcpal::Logger']]]
 ];

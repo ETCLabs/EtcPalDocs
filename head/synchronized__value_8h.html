@@ -1,0 +1,265 @@
+<!-- HTML header for doxygen 1.9.1-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.9.1"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>EtcPal: include/etcpal/cpp/synchronized_value.h File Reference</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="etcdevtool.css" rel="stylesheet" type="text/css"/>
+<link href="etcpal_dox_styles.css" rel="stylesheet" type="text/css"/>
+<!-- BEGIN CUSTOM SCRIPTS -->
+<!-- BEGIN ETCDEVTOOL VERSION SELECTOR SCRIPT -->
+<script type="text/javascript">
+  $(function () {
+    $.get('/EtcPalDocs/versions.txt', function (data) {
+      if (data) {
+        var lines = data.split('\n');
+        if (lines.length > 0) {
+          var version_select = $("#version_select").empty();
+          lines.forEach(function (line) {
+            line = line.trim();
+            if (!line) {
+              return;
+            }
+            line = line.split(':');
+            var option_name = line[0].replace(/^v/, '');
+            if (line.length > 1) {
+              option_name += ' (' + line[1] + ')';
+            }
+            var option_val = '/EtcPalDocs/' + line[0];
+            var option = $('<option></option>').attr("value", option_val)
+              .text(option_name);
+            if (window.location.pathname.match(line[0])) {
+              option = option.attr("selected", "selected");
+            }
+            version_select.append(option);
+          });
+        }
+      }
+    }, 'text');
+  });
+</script>
+<!-- END ETCDEVTOOL VERSION SELECTOR SCRIPT -->
+<script type="text/javascript">
+  $(function () { selectAllC() });
+</script>
+<script type="text/javascript">
+  function selectAllC() {
+    // Enable all C-language blocks
+    var tabcontent = document.getElementsByClassName("code-tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      if (tabcontent[i].id.endsWith("_c")) {
+        tabcontent[i].style.display = "block";
+      } else {
+        tabcontent[i].style.display = "none"
+      }
+    }
+    // Enable all C-language buttons
+    var tablinks = document.getElementsByClassName("code-tab-links");
+    for (i = 0; i < tablinks.length; i++) {
+      if (tablinks[i].id.endsWith("_c")) {
+        if (!tablinks[i].className.includes("active")) {
+          tablinks[i].className = tablinks[i].className += " active";
+        }
+      } else {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    }
+  }
+  function selectAllCpp() {
+    // Enable all C++-language blocks
+    var tabcontent = document.getElementsByClassName("code-tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      if (tabcontent[i].id.endsWith("_cpp")) {
+        tabcontent[i].style.display = "block";
+      } else {
+        tabcontent[i].style.display = "none"
+      }
+    }
+    // Enable all C++-language buttons
+    var tablinks = document.getElementsByClassName("code-tab-links");
+    for (i = 0; i < tablinks.length; i++) {
+      if (tablinks[i].id.endsWith("_cpp")) {
+        if (!tablinks[i].className.includes("active")) {
+          tablinks[i].className = tablinks[i].className += " active";
+        }
+      } else {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    }
+  }
+  function selectLanguage(evt, block_id, language) {
+    // Get all elements with class="tabcontent" and hide them
+    var tabcontent = document.getElementsByClassName("code-tab-content");
+    for (i = 0; i < tabcontent.length; i++) {
+      if (tabcontent[i].id.startsWith("div_" + block_id)) {
+        tabcontent[i].style.display = "none";
+      }
+    }
+    // Get all elements with class="tablinks" and remove the class "active"
+    var tablinks = document.getElementsByClassName("code-tab-links");
+    for (i = 0; i < tablinks.length; i++) {
+      if (tablinks[i].id.startsWith("button_" + block_id)) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+      }
+    }
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById("div_" + block_id + "_" + language).style.display = "block";
+    if (!evt.currentTarget.className.includes("active")) {
+      evt.currentTarget.className += " active";
+    }
+  }
+</script>
+<!-- END CUSTOM SCRIPTS -->
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">EtcPal
+   &#160;<span id="projectnumber">HEAD (unstable)</span>
+   </div>
+   <div id="projectbrief">ETC Platform Abstraction Layer (EtcPal)</div>
+  </td>
+  <!-- BEGIN VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
+  <td style="text-align: right; padding-right: 0.5em">
+    <div id="otherversions">
+      View other versions:
+      <select id="version_select" onchange="location = this.value">
+      </select>
+    </div>
+  </td>
+  <!-- END VERSION SELECTOR INSERTED BY ETCDEVTOOL -->
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.9.1 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "search",false,'Search','.html');
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('',true,false,'search.php','Search');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(document).ready(function(){initNavTree('synchronized__value_8h.html',''); initResizable(); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Data Structures</a>  </div>
+  <div class="headertitle">
+<div class="title">synchronized_value.h File Reference</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a name="details" id="details"></a><h2 class="groupheader">Overview</h2>
+<div class="textblock"><p>Partially based on / inspired by Boost's synchronized_value type: <a href="https://github.com/boostorg/thread/blob/ac15f907be14ce070a99d0c719aa8bcdb14de6b0/include/boost/thread/synchronized_value.hpp">https://github.com/boostorg/thread/blob/ac15f907be14ce070a99d0c719aa8bcdb14de6b0/include/boost/thread/synchronized_value.hpp</a> (C) Copyright 2010 Just Software Solutions Ltd <a href="http://www.justsoftwaresolutions.co.uk">http://www.justsoftwaresolutions.co.uk</a> (C) Copyright 2012 Vicente J. </p>
+<p>Botet Escriba Distributed under the Boost Software License, Version 1.0. (See accompanying file LICENSE_1_0.txt or copy at <a href="http://www.boost.org/LICENSE_1_0.txt">http://www.boost.org/LICENSE_1_0.txt</a>)</p>
+<p>C++ utility for bundling a value with the lock that guards it. Like a Rust <code>Mutex&lt;T&gt;</code>. </p>
+</div>
+<p><a href="synchronized__value_8h_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Data Structures</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structetcpal_1_1detail_1_1_first_type.html">FirstType&lt;... &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Meta struct to extract the first type from a parameter pack.  <a href="structetcpal_1_1detail_1_1_first_type.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structetcpal_1_1detail_1_1_first_type_3_01_first_00_01_rest_8_8_8_01_4.html">FirstType&lt; First, Rest... &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structetcpal_1_1_adopt_lock_tag.html">AdoptLockTag</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag requesting that a lock already held by the calling thread be adopted rather than acquired.  <a href="structetcpal_1_1_adopt_lock_tag.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structetcpal_1_1_defer_lock_tag.html">DeferLockTag</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag requesting that the lock be left unacquired on construction, to be acquired later with <a class="el" href="classetcpal_1_1_const_unique_lock_ptr.html#a74d183962cfb39d8c50382b496c82703" title="Acquire the lock, blocking until it is available.">ConstUniqueLockPtr::Lock()</a> or <a class="el" href="classetcpal_1_1_const_unique_lock_ptr.html#a8ad93c25cdc665654314bba0797d37ef" title="Try to acquire the lock, waiting up to timeout_ms.">ConstUniqueLockPtr::TryLock()</a>.  <a href="structetcpal_1_1_defer_lock_tag.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structetcpal_1_1_try_to_lock_tag.html">TryToLockTag</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tag requesting that the lock be acquired with a poll or optional timed wait, never failing with an exception; check OwnsLock() for the result.  <a href="structetcpal_1_1_try_to_lock_tag.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structetcpal_1_1_supports_timed_lock.html">SupportsTimedLock&lt; LockType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trait reporting whether SynchronizedValue::TryToSynchronize() honors its timeout for <code>LockType</code> on the target platform.  <a href="structetcpal_1_1_supports_timed_lock.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structetcpal_1_1_supports_timed_lock_3_01_mutex_01_4.html">SupportsTimedLock&lt; Mutex &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structetcpal_1_1_supports_timed_lock_3_01_recursive_mutex_01_4.html">SupportsTimedLock&lt; RecursiveMutex &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_const_strict_lock_ptr.html">ConstStrictLockPtr&lt; T, LockType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An RAII handle holding a <a class="el" href="classetcpal_1_1_synchronized_value.html" title="A value bundled with a lock that guards all access to it.">SynchronizedValue</a>'s lock and granting read-only access to the value.  <a href="classetcpal_1_1_const_strict_lock_ptr.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_strict_lock_ptr.html">StrictLockPtr&lt; T, LockType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An RAII handle holding a <a class="el" href="classetcpal_1_1_synchronized_value.html" title="A value bundled with a lock that guards all access to it.">SynchronizedValue</a>'s lock and granting mutable access to the value.  <a href="classetcpal_1_1_strict_lock_ptr.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_const_unique_lock_ptr.html">ConstUniqueLockPtr&lt; T, LockType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An RAII handle for read-only access whose lock may or may not be held.  <a href="classetcpal_1_1_const_unique_lock_ptr.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_unique_lock_ptr.html">UniqueLockPtr&lt; T, LockType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">An RAII handle for mutable access whose lock may or may not be held.  <a href="classetcpal_1_1_unique_lock_ptr.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classetcpal_1_1_synchronized_value.html">SynchronizedValue&lt; T, LockType &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">A value bundled with a lock that guards all access to it.  <a href="classetcpal_1_1_synchronized_value.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="dir_d44c64559bbebec7f509842c48db8b23.html">include</a></li><li class="navelem"><a class="el" href="dir_81a3fb26cc06c42d281987e41831a70b.html">etcpal</a></li><li class="navelem"><a class="el" href="dir_fa86f7c0f1af55176d8f05dc5aff685f.html">cpp</a></li><li class="navelem"><a class="el" href="synchronized__value_8h.html">synchronized_value.h</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.1 </li>
+  </ul>
+</div>
+</body>
+</html>
